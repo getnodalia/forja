@@ -1274,3 +1274,152 @@
 	Ctrl+Enter to apply	Ctrl+Enter to apply
 	Edit Text	Edit Text
 	The drawing changed. Close the window and open it again.	El dibujo cambió. Cierre la ventana y ábrala de nuevo.
+# Home, Options, hatch, block editor, aliases, shortcuts and save dialogs (added with the Nodalia interface).
+	A bracket with its layouts	Un soporte con sus presentaciones
+	A shortcut you give wins over Forja's own. Changes apply at once and are kept for next time.	Un atajo que asignes tiene prioridad sobre el de Forja. Los cambios se aplican al momento y se conservan para la próxima vez.
+	Add: Pick points	Añadir: designar puntos
+	Add: Select objects	Añadir: seleccionar objetos
+	Add…	Añadir…
+	Alias	Alias
+	Alias file: {file}	Archivo de alias: {file}
+	Aliases are saved in your Forja profile and survive restarts.	Los alias se guardan en tu perfil de Forja y se conservan al reiniciar.
+	Associative	Asociativo
+	Back to Forja's shortcut	Volver al atajo de Forja
+	Back to drawing	Volver al dibujo
+	Backup copies are off, so the current file will be replaced.	Las copias de seguridad están desactivadas, así que se sustituirá el archivo actual.
+	Block to create or edit	Bloque que crear o editar
+	Bottom left	Abajo a la izquierda
+	Bottom right	Abajo a la derecha
+	Boundaries	Contornos
+	Boundaries picked: {n}	Contornos designados: {n}
+	Centered	Centrado
+	Choose the command the alias starts.	Elige el comando que inicia el alias.
+	Click the ruler to add a tab stop, right-click to remove one	Haz clic en la regla para añadir una tabulación y clic derecho para quitarla
+	Click to set new origin	Haz clic para fijar el nuevo origen
+	Close Block Editor	Cerrar el editor de bloques
+	Color 1	Color 1
+	Color 2	Color 2
+	Command	Comando
+	Command Mode	Modo comando
+	Create separate hatches	Crear sombreados independientes
+	Crossing selection color:	Color de la selección de captura:
+	Curved	Curvo
+	DXF 2010 and earlier keep them. Use Save As to keep them in the drawing.	DXF 2010 y anteriores los conservan. Usa Guardar como para conservarlos en el dibujo.
+	DXF keeps them. Use Save As to keep them in the drawing.	DXF los conserva. Usa Guardar como para conservarlos en el dibujo.
+	Default Mode	Modo por defecto
+	Default to boundary extents	Por defecto, extensión del contorno
+	Define each corner of the selection window with a separate click.	Define cada esquina de la ventana de selección con un clic aparte.
+	Discard	Descartar
+	Don't Save	No guardar
+	Drawing (inches)	Dibujo (pulgadas)
+	Drawing (mm)	Dibujo (mm)
+	ENTER	INTRO
+	Edit Block Definition	Editar definición de bloque
+	Edit Mode	Modo edición
+	Edit…	Editar…
+	Exclude:	Excluir:
+	Font	Fuente
+	Grips	Pinzamientos
+	Groups	Grupos
+	Hatch and Gradient	Sombreado y degradado
+	Hatch origin	Origen del sombreado
+	Hatches	Sombreados
+	Hemispherical	Semiesférico
+	Ignore	Ignorar
+	Imperial (inches)	Imperial (pulgadas)
+	Imperial units	Unidades imperiales
+	Import and replace	Importar y sustituir
+	Import: there is no file dialog here; run ALIASEDIT with the file's contents using its text parameter.	Importar: aquí no hay diálogo de archivos; ejecuta ALIASEDIT con el contenido del archivo en su parámetro text.
+	Importing a file replaces your {n} aliases, and any changes not applied yet.	Importar un archivo sustituye tus {n} alias y cualquier cambio aún sin aplicar.
+	Import…	Importar…
+	Indicate selection area	Indicar el área de selección
+	Interface scale	Escala de la interfaz
+	Inverted	Invertido
+	Island	Isla
+	Island detection	Detección de islas
+	Italic	Cursiva
+	Justify	Justificar
+	Keep my aliases	Conservar mis alias
+	Keyboard Shortcuts	Atajos de teclado
+	Longer click duration:	Duración del clic largo:
+	Menu	Menú
+	Metric (millimetres)	Métrico (milímetros)
+	Metric units	Unidades métricas
+	More than {n} aliases.	Más de {n} alias.
+	Multiline text	Texto de líneas múltiples
+	Needs Ctrl, Alt or a function key	Necesita Ctrl, Alt o una tecla de función
+	New and the first drawing at startup use these units unless a default template is set (QNEWTEMPLATE).	Nuevo y el primer dibujo al iniciar usan estas unidades salvo que haya una plantilla por defecto (QNEWTEMPLATE).
+	New block	Bloque nuevo
+	No alias file loaded. REINIT replaces these aliases with a file's.	No hay ningún archivo de alias cargado. REINIT sustituye estos alias por los de un archivo.
+	No objects selected and no command running:	Sin objetos seleccionados ni comandos en curso:
+	Object grouping	Agrupación de objetos
+	Object selection limit for display of grips	Límite de objetos seleccionados para mostrar pinzamientos
+	Objects on locked layers	Objetos en capas bloqueadas
+	Objects selected and no command running:	Con objetos seleccionados y sin comandos en curso:
+	Open in Block Editor	Abrir en el editor de bloques
+	Origin: {x}, {y}	Origen: {x}, {y}
+	Outer	Exterior
+	Overline	Suprarrayado
+	Preferences	Preferencias
+	Press the keys	Pulsa las teclas
+	Preview	Vista previa
+	Repeat last command	Repetir el último comando
+	Replaces the shortcut of {commands}	Sustituye el atajo de {commands}
+	Right-Click Customization	Personalización del clic derecho
+	Right-Click Customization...	Personalización del clic derecho...
+	Run ALIASEDIT with the file's contents using its text parameter.	Ejecuta ALIASEDIT con el contenido del archivo en su parámetro text.
+	Sample drawing	Dibujo de ejemplo
+	Save Anyway	Guardar de todos modos
+	Save Block	Guardar bloque
+	Save Block As	Guardar bloque como
+	Save alias	Guardar alias
+	Save cancelled: {path} was not changed.	Guardado cancelado: {path} no se ha modificado.
+	Save changes to block "{name}"?	¿Guardar los cambios en el bloque "{name}"?
+	Save changes to {name}?	¿Guardar los cambios en {name}?
+	Saving {name} will remove content	Al guardar {name} se perderá contenido
+	Select boundaries to remove	Selecciona los contornos que quitar
+	Select using two clicks only	Seleccionar solo con dos clics
+	Selection Area Effect	Efecto del área de selección
+	Selection Preview Filter	Filtro de vista previa de la selección
+	Selection area opacity:	Opacidad del área de selección:
+	Selection effect color	Color del efecto de selección
+	Selection modes	Modos de selección
+	Selection preview	Vista previa de la selección
+	Shape	Forma
+	Shortcut Menu	Menú contextual
+	Shortcut Menu: always enabled	Menú contextual: siempre activado
+	Shortcut Menu: enabled when command options are present	Menú contextual: activado cuando el comando tiene opciones
+	Show grips	Mostrar pinzamientos
+	Specified origin	Origen especificado
+	Spherical	Esférico
+	Tables	Tablas
+	Text color	Color del texto
+	The current file doesn't look whole, so {name} stays as it is and the current file will be replaced.	El archivo actual no parece completo, así que {name} se queda como está y se sustituirá el archivo actual.
+	The current file is kept as {name} until the next save.	El archivo actual se conserva como {name} hasta el próximo guardado.
+	There is nothing here yet. To get started, create or open a drawing.	Aún no hay nada aquí. Para empezar, crea o abre un dibujo.
+	This format can't keep these objects yet: {objects}.	Este formato todavía no puede conservar estos objetos: {objects}.
+	Top left	Arriba a la izquierda
+	Top right	Arriba a la derecha
+	Turn on time-sensitive right-click	Activar el clic derecho según su duración
+	Turned off, a right-click while a command runs does what Right-Click Customization sets for Command mode.	Desactivado, un clic derecho durante un comando hace lo que Personalización del clic derecho fija para el modo comando.
+	Type an alias name.	Escribe un nombre de alias.
+	Underline	Subrayado
+	Units of new drawings	Unidades de los dibujos nuevos
+	Unsaved changes	Cambios sin guardar
+	Use current origin	Usar el origen actual
+	Visual Effect Settings	Parámetros de efectos visuales
+	Visual Effect Settings...	Parámetros de efectos visuales...
+	When a command is active	Con un comando activo
+	When no command is active	Sin ningún comando activo
+	While a command runs, a quick click is Enter and a longer click opens the shortcut menu.	Durante un comando, un clic rápido equivale a Intro y uno más largo abre el menú contextual.
+	While a command runs:	Durante un comando:
+	Window selection color:	Color de la selección de ventana:
+	Xrefs	Referencias externas
+	Your changes will be lost if you don't save them.	Si no los guardas, perderás los cambios.
+	built-in	integrado
+	milliseconds	milisegundos
+	overrides built-in	sustituye al integrado
+	{alias} is already defined; select it and use Edit.	{alias} ya está definido; selecciónalo y usa Editar.
+	{command} is an unknown command.	{command} es un comando desconocido.
+	{count} more types	{count} tipos más
+	{n} more warnings; see the command line.	{n} avisos más; consulta la línea de comandos.
