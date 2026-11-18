@@ -31,9 +31,7 @@ fn count_grips(shape: &egui::Shape, canvas: egui::Rect, color: egui::Color32) ->
         egui::Shape::Rect(rect) => usize::from(rect.fill == color && canvas.contains(rect.rect.center())),
         egui::Shape::Vec(shapes) => shapes.iter().map(|shape| count_grips(shape, canvas, color)).sum(),
         // Grips drawn from the cached mesh: each filled rectangle keeps four vertices of its fill.
-        egui::Shape::Mesh(mesh) => {
-            mesh.vertices.iter().filter(|v| v.color == color && canvas.contains(v.pos)).count().div_ceil(4)
-        }
+        egui::Shape::Mesh(mesh) => mesh.vertices.iter().filter(|v| v.color == color && canvas.contains(v.pos)).count().div_ceil(4),
         _ => 0,
     }
 }
