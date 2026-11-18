@@ -1,7 +1,7 @@
 //! Snap/grid spacing uses legacy HEADER variables and the current *ACTIVE VPORT (#607).
 
+use craft_dxf::{Tag, records, sections};
 use forja_doc::{Drawing, HVal};
-use forja_dxf::{Tag, records, sections};
 use forja_geom::{Vec2, Vec3};
 
 fn header(snap: Vec2, grid: Vec2) -> Vec<Tag> {
@@ -24,7 +24,7 @@ fn read(header: &[Tag], vports: &[Vec<Tag>]) -> Drawing {
         tags.extend_from_slice(vp);
     }
     tags.extend([Tag::s(0, "ENDTAB"), Tag::s(0, "ENDSEC"), Tag::s(0, "EOF")]);
-    forja_io::read_dxf(forja_dxf::write_ascii(&tags).as_bytes()).unwrap()
+    forja_io::read_dxf(craft_dxf::write_ascii(&tags).as_bytes()).unwrap()
 }
 
 fn assert_units(d: &Drawing, snap: Vec2, grid: Vec2) {
@@ -43,7 +43,7 @@ fn writes_spacing_to_header_and_active_vport_and_roundtrips() {
     d.header.set("SNAPUNIT", HVal::Point(snap.to3(0.0)));
     d.header.set("GRIDUNIT", HVal::Point(grid.to3(0.0)));
     let text = forja_io::write_dxf(&d);
-    let tags = forja_dxf::parse_ascii(&text).unwrap();
+    let tags = craft_dxf::parse_ascii(&text).unwrap();
     let sections = sections(&tags);
     let header = &sections.iter().find(|s| s.name == "HEADER").unwrap().tags;
     for (name, unit) in [("$SNAPUNIT", snap), ("$GRIDUNIT", grid)] {

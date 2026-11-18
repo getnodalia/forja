@@ -2,6 +2,7 @@
 
 use std::collections::HashMap;
 
+use craft_dxf::{Tag, records, sections};
 use forja_color::{Color, Rgb};
 use forja_doc::{
     Arc, AssocSnap, Attrib, AttribModes, AttribProps, Block, Circle, Common, DashElement, DimAssoc, DimKind, DimStyle, Dimension, Drawing, Ellipse,
@@ -9,7 +10,6 @@ use forja_doc::{
     Linetype, Lineweight, LwPolyline, MAX_FRAME_CHARS, MLeaderStyle, MText, MultilineAttrib, NamedView, PageSetup, Point, Polyline3d, RawTag,
     RayLine, Solid, Table, TableCell, Text, TextStyle, Tolerance, Transparency, Ucs, Unknown, VAlign, Viewport, VportConfig, VportTile, Wipeout,
 };
-use forja_dxf::{Tag, records, sections};
 use forja_geom::{PolyVertex, Spline, Vec2, Vec3};
 
 use crate::{IoError, Result};
@@ -83,18 +83,9 @@ type BlockDef = (String, Vec3, String, Vec<(Option<String>, bool, Entity)>, i64)
 type LayoutDef = (String, u32, String, PageSetup, Option<(Vec2, Vec2)>, bool);
 
 /// Import DXF sections while sharing one materialized-table-cell budget across blocks and entity sections.
-fn read_budgeted(bytes: &[u8], table_cells_left: usize) -> Result<Drawing> {
-    let tags = forja_dxf::parse(bytes).map_err(|e| IoError::Format(e.to_string()))?;
-    read_tags_budgeted(&tags, table_cells_left)
-}
-
-/// Parse already-decoded DXF tags; DWG import can release its large intermediate DXF first.
-pub(crate) fn read_tags(tags: &[Tag]) -> Result<Drawing> {
-    read_tags_budgeted(tags, 4_000_000)
-}
-
-fn read_tags_budgeted(tags: &[Tag], mut table_cells_left: usize) -> Result<Drawing> {
-    let secs = sections(tags);
+fn read_budgeted(bytes: &[u8], mut table_cells_left: usize) -> Result<Drawing> {
+    let tags = crate::parse_dxf(bytes)?;
+    let secs = sections(&tags);
     if secs.is_empty() {
         return Err(IoError::Format("no sections found".into()));
     }
@@ -119,7 +110,7 @@ fn read_tags_budgeted(tags: &[Tag], mut table_cells_left: usize) -> Result<Drawi
         }
     }
     let mut skipped = std::collections::BTreeMap::new();
-    count_skipped(&mut skipped, "(no section)", outside_sections(tags));
+    count_skipped(&mut skipped, "(no section)", outside_sections(&tags));
     for s in &secs {
         match s.name.as_str() {
             "HEADER" => header(&s.tags, &mut d),

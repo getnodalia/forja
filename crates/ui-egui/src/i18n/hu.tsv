@@ -1453,3 +1453,31 @@ menu	View	Nézet
 	{alias} is already defined; select it and use Edit.	A(z) {alias} már létezik; jelöld ki, és használd a Szerkesztés gombot.
 	{command} is an unknown command.	A(z) {command} ismeretlen parancs.
 	{n} more warnings; see the command line.	Még {n} figyelmeztetés; lásd a parancssort.
+	Add a drawing file as a block library	Rajzfájl hozzáadása blokkkönyvtárként
+	Add a folder of drawings or a drawing file to use its blocks.	Adj hozzá egy rajzokat tartalmazó mappát vagy egy rajzfájlt, hogy használhasd a blokkjait.
+	Block Libraries	Blokkkönyvtárak
+	Block Library	Blokkkönyvtár
+	Blocks Palette	Blokkpaletta
+	Click a block, then pick its insertion point.	Kattints egy blokkra, majd add meg a beszúrási pontját.
+	Current Drawing	Aktuális rajz
+	Details	Részletek
+	Extra Large Icons	Extra nagy ikonok
+	Folder or file	Mappa vagy fájl
+	Import Library Block	Könyvtárblokk importálása
+	Insert and Explode	Beszúrás és szétbontás
+	Large Icons	Nagy ikonok
+	Libraries	Könyvtárak
+	Medium Icons	Közepes ikonok
+	No block matches the filter.	Egy blokk sem felel meg a szűrőnek.
+	This block is already in the drawing, so its definition is used.	Ez a blokk már szerepel a rajzban, ezért a meglévő definícióját használjuk.
+	Open Library...	Könyvtár megnyitása...
+	Read the library again	Könyvtár újraolvasása
+	Reading the library...	Könyvtár olvasása...
+	Refresh	Frissítés
+	Remove from the list	Eltávolítás a listáról
+	Repeat Placement	Elhelyezés ismétlése
+	Small Icons	Kis ikonok
+	This drawing has no blocks.	Ez a rajz nem tartalmaz blokkokat.
+	This library has no drawings or blocks.	Ez a könyvtár nem tartalmaz rajzokat vagy blokkokat.
+	Only the first {n} are shown.	Csak az első {n} látható.
+	Additional Tools	További eszközök

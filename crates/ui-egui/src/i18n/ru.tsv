@@ -1384,3 +1384,31 @@
 	{alias} is already defined; select it and use Edit.	{alias} уже задан; выберите его и нажмите «Изменить».
 	{command} is an unknown command.	{command} — неизвестная команда.
 	{n} more warnings; see the command line.	Ещё предупреждений: {n}; см. командную строку.
+	Add a drawing file as a block library	Добавить файл чертежа как библиотеку блоков
+	Add a folder of drawings or a drawing file to use its blocks.	Добавьте папку с чертежами или файл чертежа, чтобы использовать его блоки.
+	Block Libraries	Библиотеки блоков
+	Block Library	Библиотека блоков
+	Blocks Palette	Палитра блоков
+	Click a block, then pick its insertion point.	Щелкните блок, затем укажите точку вставки.
+	Current Drawing	Текущий чертеж
+	Details	Подробно
+	Extra Large Icons	Огромные значки
+	Folder or file	Папка или файл
+	Import Library Block	Импортировать блок из библиотеки
+	Insert and Explode	Вставить и расчленить
+	Large Icons	Крупные значки
+	Libraries	Библиотеки
+	Medium Icons	Обычные значки
+	No block matches the filter.	Нет блоков, соответствующих фильтру.
+	This block is already in the drawing, so its definition is used.	Этот блок уже есть в чертеже, поэтому используется его определение.
+	Open Library...	Открыть библиотеку...
+	Read the library again	Прочитать библиотеку заново
+	Reading the library...	Чтение библиотеки...
+	Refresh	Обновить
+	Remove from the list	Убрать из списка
+	Repeat Placement	Повторять размещение
+	Small Icons	Мелкие значки
+	This drawing has no blocks.	В этом чертеже нет блоков.
+	This library has no drawings or blocks.	В этой библиотеке нет чертежей и блоков.
+	Only the first {n} are shown.	Показаны только первые {n}.
+	Additional Tools	Дополнительные инструменты
