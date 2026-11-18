@@ -2,6 +2,7 @@
 
 use std::collections::HashMap;
 
+use craft_dxf::{Tag, records, sections};
 use forja_color::{Color, Rgb};
 use forja_doc::{
     Arc, AssocSnap, Attrib, AttribModes, AttribProps, Block, Circle, Common, DashElement, DimAssoc, DimKind, DimStyle, Dimension, Drawing, Ellipse,
@@ -9,7 +10,6 @@ use forja_doc::{
     Linetype, Lineweight, LwPolyline, MAX_FRAME_CHARS, MLeaderStyle, MText, MultilineAttrib, NamedView, PageSetup, Point, Polyline3d, RawTag,
     RayLine, Solid, Table, TableCell, Text, TextStyle, Tolerance, Transparency, Ucs, Unknown, VAlign, Viewport, VportConfig, VportTile, Wipeout,
 };
-use forja_dxf::{Tag, records, sections};
 use forja_geom::{PolyVertex, Spline, Vec2, Vec3};
 
 use crate::{IoError, Result};
@@ -84,7 +84,7 @@ type LayoutDef = (String, u32, String, PageSetup, Option<(Vec2, Vec2)>);
 
 /// Import DXF sections while sharing one materialized-table-cell budget across blocks and entity sections.
 fn read_budgeted(bytes: &[u8], mut table_cells_left: usize) -> Result<Drawing> {
-    let tags = forja_dxf::parse(bytes).map_err(|e| IoError::Format(e.to_string()))?;
+    let tags = craft_dxf::parse(bytes).map_err(|e| IoError::Format(e.to_string()))?;
     let secs = sections(&tags);
     if secs.is_empty() {
         return Err(IoError::Format("no sections found".into()));

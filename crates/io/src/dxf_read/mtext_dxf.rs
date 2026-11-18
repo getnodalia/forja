@@ -5,8 +5,8 @@
 //! ATTRIB and DIMENSION strings use the same encoding ([`encode_line`]): AutoCAD reads a bare
 //! `^2` in `10^2` as a control character.
 
+use craft_dxf::Tag;
 use forja_doc::{MText, MTextColumnType, MTextColumns};
-use forja_dxf::Tag;
 
 /// Upper bound on column heights read from a file.
 const MAX_COLUMNS: usize = 1_000;

@@ -867,8 +867,8 @@ repositories; Cargo fetches a repository by `rev`, so a commit that exists only 
 approval. The final revisions are placeholders until that approval:
 
 ```toml
-craft-ui     = { version = "0.1.0", git = "https://github.com/storytold/craft-libs", rev = "<craft-libs final reviewed rev>", features = ["serde"] }
-craft-docpath= { version = "0.1.0", git = "https://github.com/storytold/craft-libs", rev = "<same final craft-libs rev>" }
+craft-ui     = { version = "0.1.0", git = "https://github.com/getnodalia/foundation", rev = "<craft-libs final reviewed rev>", features = ["serde"] }
+craft-docpath= { version = "0.1.0", git = "https://github.com/getnodalia/foundation", rev = "<same final craft-libs rev>" }
 egui         = { version = "0.37.0", features = ["default_fonts", "monochrome_emoji_fonts"] }
 egui_kittest = "0.37.0"
 eframe       = { version = "0.37.0", default-features = false }
@@ -879,16 +879,16 @@ and one root redirect for exactly the crates in the graph:
 
 ```toml
 [patch.crates-io]
-egui = { git = "https://github.com/storytold/egui", rev = "<storytold/egui final reviewed rev>" }
-epaint = { git = "https://github.com/storytold/egui", rev = "<same egui rev>" }
-emath = { git = "https://github.com/storytold/egui", rev = "<same egui rev>" }
-ecolor = { git = "https://github.com/storytold/egui", rev = "<same egui rev>" }
-epaint_default_fonts = { git = "https://github.com/storytold/egui", rev = "<same egui rev>" }
-egui-wgpu = { git = "https://github.com/storytold/egui", rev = "<same egui rev>" }
-egui-winit = { git = "https://github.com/storytold/egui", rev = "<same egui rev>" }
-eframe = { git = "https://github.com/storytold/egui", rev = "<same egui rev>" }
-egui_kittest = { git = "https://github.com/storytold/egui", rev = "<same egui rev>" }
-winit = { git = "https://github.com/storytold/winit", rev = "<storytold/winit final reviewed rev>" }
+egui = { git = "https://github.com/getnodalia/foundation", rev = "<storytold/egui final reviewed rev>" }
+epaint = { git = "https://github.com/getnodalia/foundation", rev = "<same egui rev>" }
+emath = { git = "https://github.com/getnodalia/foundation", rev = "<same egui rev>" }
+ecolor = { git = "https://github.com/getnodalia/foundation", rev = "<same egui rev>" }
+epaint_default_fonts = { git = "https://github.com/getnodalia/foundation", rev = "<same egui rev>" }
+egui-wgpu = { git = "https://github.com/getnodalia/foundation", rev = "<same egui rev>" }
+egui-winit = { git = "https://github.com/getnodalia/foundation", rev = "<same egui rev>" }
+eframe = { git = "https://github.com/getnodalia/foundation", rev = "<same egui rev>" }
+egui_kittest = { git = "https://github.com/getnodalia/foundation", rev = "<same egui rev>" }
+winit = { git = "https://github.com/getnodalia/foundation", rev = "<storytold/winit final reviewed rev>" }
 ```
 
 Trim any crate not in the graph; an unused `[patch]` entry is a Cargo **warning**, not

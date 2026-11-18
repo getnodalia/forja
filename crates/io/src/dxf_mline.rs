@@ -7,12 +7,12 @@
 
 use std::collections::HashMap;
 
+use craft_dxf::{Section, Tag};
 use forja_color::Color;
 use forja_doc::{
     Drawing, Entity, EntityKind, EntityStore, MAX_MLINE_CUTS, MAX_MLINE_ELEMENTS, MAX_MLINE_VERTICES, MLine, MLineCaps, MLineCut, MLineElement,
     MLineJust, MLineStyle, MLineVertex, STANDARD_MLINE_STYLE,
 };
-use forja_dxf::{Section, Tag};
 use forja_geom::{Vec2, Vec3};
 
 /// Most groups 41 kept per element and vertex (start, then break pairs).
