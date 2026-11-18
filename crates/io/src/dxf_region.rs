@@ -5,8 +5,8 @@
 //! our own file builds the region back from the first and drops the others. Foreign REGIONs are
 //! kept as unknown objects.
 
+use craft_dxf::Tag;
 use forja_doc::{EntityKind, HatchLoop, LwPolyline, MAX_REGION_LOOPS, Region};
-use forja_dxf::Tag;
 use forja_geom::{PolyVertex, Vec2};
 
 use crate::dxf_ext::{APP, xdata, xdata_list};

@@ -5,7 +5,7 @@
 | Upstream | `storytold/cadcraft` |
 | Last observed | `6f0f1fefa81d08031bde56a8b3d5b1556810f397` |
 | Last evaluated | `6f0f1fefa81d08031bde56a8b3d5b1556810f397` |
-| Last integrated | `6f0f1fefa81d08031bde56a8b3d5b1556810f397` imported with full history on 2026-11-10 |
+| Last integrated | `f1b76fab5446a2aa57251ec8dde948f489371692` (105 commits since the last sync) on 2026-11-18 |
 | Skipped | none |
 | Adapted | app icon; every CADCraft name renamed to Forja (`.github/rebrand.toml`); DWG/DXF, MTEXT and native-open fixes (upstream PR #1086); GNOME Wayland window controls (upstream PR #1368) |
 | Conflicting | `docs/file-format-parity.md` when merging the PR #1086 work: upstream's text kept |
@@ -22,12 +22,13 @@ upstream's repository name, files to skip such as `NOTICE`, and lines that keep 
 such as the version). A line marked `rebrand: keep` is left alone, for compatibility code that has
 to name the old product.
 
-The branch `upstream-forja` mirrors upstream with Forja's names. Each of its commits holds the
-rebranded tree of one upstream commit, has the previous mirror commit and that upstream commit as
-parents, and names it in an `Upstream-Commit:` trailer. The weekly sync
-(`.github/workflows/upstream-sync.yml`) adds a mirror commit for upstream's new head and merges
-that, so upstream's changes arrive already speaking Forja, and a conflict is a real one. Files in
-`.github/upstream-keep` keep Forja's version.
+Each weekly sync (`.github/workflows/upstream-sync.yml`) records upstream's new head, renamed, as
+one mirror commit: its only parent is the previous mirror commit, its subject is
+`Upstream <sha> with this app's names`, and an `Upstream-Commit:` trailer names the upstream commit
+it renames. The sync merges that commit into a branch and opens a pull request, so upstream's
+changes arrive already speaking Forja, and a conflict is a real one. Files in
+`.github/upstream-keep` keep Forja's version. No mirror branch is pushed, so merge sync pull
+requests with a merge commit: a squash would drop the mirror commit the next sync starts from.
 
 The first mirror commit is upstream `6f0f1fef` renamed; it was merged with `-s ours` when the
 whole repository was renamed, so only later upstream changes come through it.

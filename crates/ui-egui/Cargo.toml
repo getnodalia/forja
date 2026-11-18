@@ -16,6 +16,8 @@ forja-color = { workspace = true }
 forja-doc = { workspace = true }
 forja-render = { workspace = true }
 forja-engine = { workspace = true }
+forja-io = { workspace = true }
+craft-image-codecs = { workspace = true }
 forja-fonts = { workspace = true }
 craft-window = { workspace = true }
 egui = { workspace = true }
