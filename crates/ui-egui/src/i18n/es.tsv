@@ -1259,33 +1259,6 @@
 	Check for Updates…	Buscar actualizaciones…
 	Forja is up to date.	Forja está actualizado.
 	Could not check for updates.	No se pudo buscar actualizaciones.
-	Add a drawing file as a block library	Añadir un archivo de dibujo como biblioteca de bloques
-	Add a folder of drawings or a drawing file to use its blocks.	Añada una carpeta de dibujos o un archivo de dibujo para usar sus bloques.
-	Block Libraries	Bibliotecas de bloques
-	Block Library	Biblioteca de bloques
-	Blocks Palette	Paleta de bloques
-	Click a block, then pick its insertion point.	Haga clic en un bloque y luego indique su punto de inserción.
-	Current Drawing	Dibujo actual
-	Details	Detalles
-	Extra Large Icons	Iconos extragrandes
-	Folder or file	Carpeta o archivo
-	Import Library Block	Importar bloque de biblioteca
-	Insert and Explode	Insertar y descomponer
-	Large Icons	Iconos grandes
-	Libraries	Bibliotecas
-	Medium Icons	Iconos medianos
-	No block matches the filter.	Ningún bloque coincide con el filtro.
-	This block is already in the drawing, so its definition is used.	Este bloque ya está en el dibujo, así que se usa su definición.
-	Open Library...	Abrir biblioteca...
-	Read the library again	Volver a leer la biblioteca
-	Reading the library...	Leyendo la biblioteca...
-	Refresh	Actualizar
-	Remove from the list	Quitar de la lista
-	Repeat Placement	Repetir colocación
-	Small Icons	Iconos pequeños
-	This drawing has no blocks.	Este dibujo no tiene bloques.
-	This library has no drawings or blocks.	Esta biblioteca no tiene dibujos ni bloques.
-	Only the first {n} are shown.	Solo se muestran los primeros {n}.
 	Find All	Find All
 	Find what:	Find what:
 	Match case	Match case
@@ -1450,5 +1423,68 @@
 	{command} is an unknown command.	{command} es un comando desconocido.
 	{count} more types	{count} tipos más
 	{n} more warnings; see the command line.	{n} avisos más; consulta la línea de comandos.
-
+	Align Multileaders	Alinear directrices múltiples
+	Analyze Usage	Analizar uso
+	Break-line Symbol	Símbolo de línea de corte
+	Change	Cambiar
+	Change Properties	Cambiar propiedades
+	Clear Recent Files	Borrar archivos recientes
+	Clip Xref	Delimitar xref
+	Collect	Agrupar
+	Collect Multileaders	Agrupar directrices múltiples
+	Convert Text to Mtext	Convertir texto en texto de líneas múltiples
+	Customize	Personalizar
+	DView	DView
+	Drag Dynamic Grip	Arrastrar pinzamiento dinámico
+	Dynamic Block Data	Datos de bloque dinámico
+	Dynamic Block Grips	Pinzamientos de bloque dinámico
+	Dynamic Block Reference	Referencia a bloque dinámico
+	Edit Command Aliases (PGP)...	Editar alias de comandos (PGP)...
+	Edit Multileader	Editar directriz múltiple
+	Evaluate LISP	Evaluar LISP
+	Explode Attributes to Text	Descomponer atributos en texto
+	Express Tools	Herramientas exprés
+	Hatch Pick	Designar sombreado
+	Implied Loops	Contornos implícitos
+	Keyboard Shortcuts...	Atajos de teclado...
+	Load Application...	Cargar aplicación...
+	Move/Copy/Rotate	Desplazar/copiar/girar
+	Multiple Insert	Inserción múltiple
+	Open Recent	Abrir reciente
+	Raster Image Reference...	Referencia a imagen ráster...
+	Raster Images	Imágenes ráster
+	Run Script...	Ejecutar script...
+	Save Layout as Template	Guardar presentación como plantilla
+	Set Dynamic Property	Establecer propiedad dinámica
+	Sheet Books to PDF...	Cuadernos de planos a PDF...
+	Units	Unidades
+	Xref	Xref
+	Xref Clip Frame	Marco de delimitación de xref
+	Add a drawing file as a block library	Añadir un archivo de dibujo como biblioteca de bloques
+	Add a folder of drawings or a drawing file to use its blocks.	Añada una carpeta de dibujos o un archivo de dibujo para usar sus bloques.
+	Block Libraries	Bibliotecas de bloques
+	Block Library	Biblioteca de bloques
+	Blocks Palette	Paleta de bloques
+	Click a block, then pick its insertion point.	Haga clic en un bloque y luego indique su punto de inserción.
+	Current Drawing	Dibujo actual
+	Details	Detalles
+	Extra Large Icons	Iconos extragrandes
+	Folder or file	Carpeta o archivo
+	Import Library Block	Importar bloque de biblioteca
+	Insert and Explode	Insertar y descomponer
+	Large Icons	Iconos grandes
+	Libraries	Bibliotecas
+	Medium Icons	Iconos medianos
+	No block matches the filter.	Ningún bloque coincide con el filtro.
+	This block is already in the drawing, so its definition is used.	Este bloque ya está en el dibujo, así que se usa su definición.
+	Open Library...	Abrir biblioteca...
+	Read the library again	Volver a leer la biblioteca
+	Reading the library...	Leyendo la biblioteca...
+	Refresh	Actualizar
+	Remove from the list	Quitar de la lista
+	Repeat Placement	Repetir colocación
+	Small Icons	Iconos pequeños
+	This drawing has no blocks.	Este dibujo no tiene bloques.
+	This library has no drawings or blocks.	Esta biblioteca no tiene dibujos ni bloques.
+	Only the first {n} are shown.	Solo se muestran los primeros {n}.
 	Additional Tools	Herramientas adicionales

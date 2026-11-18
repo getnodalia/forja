@@ -1346,6 +1346,113 @@ menu	View	Nézet
 	Check for Updates…	Frissítések keresése…
 	Forja is up to date.	A Forja naprakész.
 	Could not check for updates.	A frissítések keresése nem sikerült.
+	Find All	Find All
+	Find what:	Find what:
+	Match case	Match case
+	Replace	Replace
+	Replace All	Replace All
+	Replace with:	Replace with:
+	Replacement text	Replacement text
+	Results	Results
+	Searches the current space.	Searches the current space.
+	Text to find	Text to find
+	Whole words	Whole words
+	Nothing found	Nothing found
+	Ctrl+Enter to apply	Ctrl+Enter to apply
+	Edit Text	Edit Text
+	The drawing changed. Close the window and open it again.	A rajz megváltozott. Zárja be az ablakot, és nyissa meg újra.
+	A bracket with its layouts	Egy tartókonzol az elrendezéseivel
+	A shortcut you give wins over Forja's own. Changes apply at once and are kept for next time.	Az általad megadott billentyűparancs elsőbbséget élvez a Forja sajátjával szemben. A változások azonnal érvényesek, és a következő alkalomra is megmaradnak.
+	Add…	Hozzáadás…
+	Alias	Álnév
+	Alias file: {file}	Álnévfájl: {file}
+	Aliases are saved in your Forja profile and survive restarts.	Az álnevek a Forja-profilodban vannak mentve, és újraindítás után is megmaradnak.
+	Analyze Shapes	Alakzatok elemzése
+	Analyze Usage	Használat elemzése
+	Back to Forja's shortcut	Vissza a Forja billentyűparancsához
+	Back to drawing	Vissza a rajzhoz
+	Backup copy	Biztonsági másolat
+	Break-line Symbol	Törésvonal-szimbólum
+	Change	Módosítás
+	Change Properties	Tulajdonságok módosítása
+	Choose the command the alias starts.	Válaszd ki a parancsot, amelyet az álnév indít.
+	Clip Xref	Xref vágása
+	Command	Parancs
+	Command Mode	Parancsmód
+	Convert Text to Mtext	Szöveg átalakítása többsoros szöveggé
+	Create backup copy with each save	Biztonsági másolat készítése minden mentéskor
+	Customize	Testreszabás
+	DView	DView
+	Default Mode	Alapértelmezett mód
+	Define each corner of the selection window with a separate click.	A kijelölőablak minden sarkát külön kattintással add meg.
+	Discard	Elvetés
+	Drawing (inches)	Rajz (hüvelyk)
+	Drawing (mm)	Rajz (mm)
+	ENTER	ENTER
+	Edit Command Aliases (PGP)...	Parancsálnevek szerkesztése (PGP)...
+	Edit Mode	Szerkesztési mód
+	Edit…	Szerkesztés…
+	Explode Attributes to Text	Attribútumok felbontása szöveggé
+	Express Tools	Express eszközök
+	Font	Betűtípus
+	Imperial (inches)	Angolszász (hüvelyk)
+	Imperial units	Angolszász mértékegységek
+	Implied Loops	Implicit hurkok
+	Import and replace	Importálás és csere
+	Import: there is no file dialog here; run ALIASEDIT with the file's contents using its text parameter.	Importálás: itt nincs fájlpárbeszéd; futtasd az ALIASEDIT parancsot a fájl tartalmával a text paraméterében.
+	Importing a file replaces your {n} aliases, and any changes not applied yet.	Egy fájl importálása lecseréli a(z) {n} álnevedet és minden még nem alkalmazott változást.
+	Import…	Importálás…
+	Interface scale	Felület mérete
+	Island	Sziget
+	Keep my aliases	Álneveim megtartása
+	Keyboard Shortcuts	Billentyűparancsok
+	Keyboard Shortcuts...	Billentyűparancsok...
+	Longer click duration:	Hosszabb kattintás időtartama:
+	Menu	Menü
+	Metric (millimetres)	Metrikus (milliméter)
+	Metric units	Metrikus mértékegységek
+	More than {n} aliases.	Több mint {n} álnév.
+	Move/Copy/Rotate	Mozgatás/másolás/forgatás
+	Multiple Insert	Többszörös beszúrás
+	Needs Ctrl, Alt or a function key	Ctrl, Alt vagy funkcióbillentyű szükséges
+	New and the first drawing at startup use these units unless a default template is set (QNEWTEMPLATE).	Az új rajzok és az induláskori első rajz ezeket a mértékegységeket használják, hacsak nincs beállítva alapértelmezett sablon (QNEWTEMPLATE).
+	No alias file loaded. REINIT replaces these aliases with a file's.	Nincs betöltve álnévfájl. A REINIT ezeket az álneveket egy fájl álneveire cseréli.
+	No objects selected and no command running:	Nincs kijelölt objektum, és nem fut parancs:
+	Objects selected and no command running:	Vannak kijelölt objektumok, és nem fut parancs:
+	Preferences	Beállítások
+	Press the keys	Nyomd le a billentyűket
+	Raster Image Reference...	Raszterkép-hivatkozás...
+	Raster Images	Raszterképek
+	Repeat last command	Utolsó parancs ismétlése
+	Replaces the shortcut of {commands}	Lecseréli a(z) {commands} billentyűparancsát
+	Right-Click Customization	Jobb kattintás testreszabása
+	Right-Click Customization...	Jobb kattintás testreszabása...
+	Run ALIASEDIT with the file's contents using its text parameter.	Futtasd az ALIASEDIT parancsot a fájl tartalmával a text paraméterében.
+	Sample drawing	Mintarajz
+	Save Layout as Template	Elrendezés mentése sablonként
+	Save alias	Álnév mentése
+	Save changes to block "{name}"?	Menti a(z) „{name}” blokk változásait?
+	Select boundaries to remove	Eltávolítandó határok kijelölése
+	Select using two clicks only	Kijelölés csak két kattintással
+	Shortcut Menu	Helyi menü
+	Shortcut Menu: always enabled	Helyi menü: mindig engedélyezve
+	Shortcut Menu: enabled when command options are present	Helyi menü: engedélyezve, ha a parancsnak vannak beállításai
+	There is nothing here yet. To get started, create or open a drawing.	Itt még nincs semmi. Kezdésként hozz létre vagy nyiss meg egy rajzot.
+	Turn on time-sensitive right-click	Időérzékeny jobb kattintás bekapcsolása
+	Turned off, a right-click while a command runs does what Right-Click Customization sets for Command mode.	Kikapcsolva a parancs közbeni jobb kattintás azt teszi, amit a Jobb kattintás testreszabása a parancsmódhoz beállít.
+	Type an alias name.	Írj be egy álnevet.
+	Units	Mértékegységek
+	Units of new drawings	Új rajzok mértékegységei
+	While a command runs, a quick click is Enter and a longer click opens the shortcut menu.	Parancs futása közben a gyors kattintás Entert jelent, a hosszabb kattintás pedig megnyitja a helyi menüt.
+	While a command runs:	Parancs futása közben:
+	Xref	Xref
+	Xref Clip Frame	Xref vágókerete
+	built-in	beépített
+	milliseconds	ezredmásodperc
+	overrides built-in	felülírja a beépítettet
+	{alias} is already defined; select it and use Edit.	A(z) {alias} már létezik; jelöld ki, és használd a Szerkesztés gombot.
+	{command} is an unknown command.	A(z) {command} ismeretlen parancs.
+	{n} more warnings; see the command line.	Még {n} figyelmeztetés; lásd a parancssort.
 	Add a drawing file as a block library	Rajzfájl hozzáadása blokkkönyvtárként
 	Add a folder of drawings or a drawing file to use its blocks.	Adj hozzá egy rajzokat tartalmazó mappát vagy egy rajzfájlt, hogy használhasd a blokkjait.
 	Block Libraries	Blokkkönyvtárak
@@ -1373,21 +1480,4 @@ menu	View	Nézet
 	This drawing has no blocks.	Ez a rajz nem tartalmaz blokkokat.
 	This library has no drawings or blocks.	Ez a könyvtár nem tartalmaz rajzokat vagy blokkokat.
 	Only the first {n} are shown.	Csak az első {n} látható.
-	Find All	Find All
-	Find what:	Find what:
-	Match case	Match case
-	Replace	Replace
-	Replace All	Replace All
-	Replace with:	Replace with:
-	Replacement text	Replacement text
-	Results	Results
-	Searches the current space.	Searches the current space.
-	Text to find	Text to find
-	Whole words	Whole words
-	Nothing found	Nothing found
-	Ctrl+Enter to apply	Ctrl+Enter to apply
-	Edit Text	Edit Text
-	The drawing changed. Close the window and open it again.	A rajz megváltozott. Zárja be az ablakot, és nyissa meg újra.
-
-# ArtCraft feature naming
 	Additional Tools	További eszközök

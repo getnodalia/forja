@@ -1014,6 +1014,376 @@
 	Check for Updates…	Rechercher des mises à jour…
 	Forja is up to date.	Forja est à jour.
 	Could not check for updates.	Impossible de rechercher les mises à jour.
+	Find All	Find All
+	Find what:	Find what:
+	Match case	Match case
+	Replace	Replace
+	Replace All	Replace All
+	Replace with:	Replace with:
+	Replacement text	Replacement text
+	Results	Results
+	Searches the current space.	Searches the current space.
+	Text to find	Text to find
+	Whole words	Whole words
+	Nothing found	Nothing found
+	Ctrl+Enter to apply	Ctrl+Enter to apply
+	Edit Text	Edit Text
+	The drawing changed. Close the window and open it again.	Le dessin a changé. Fermez la fenêtre et rouvrez-la.
+	Keyboard Shortcuts...	Raccourcis clavier...
+	Keyboard Shortcuts	Raccourcis clavier
+	Replaces the shortcut of {commands}	Remplace le raccourci de : {commands}
+	Needs Ctrl, Alt or a function key	Il faut Ctrl, Alt ou une touche de fonction
+	Press the keys	Appuyez sur les touches
+	Back to Forja's shortcut	Revenir au raccourci de Forja
+	A shortcut you give wins over Forja's own. Changes apply at once and are kept for next time.	Un raccourci que vous définissez l'emporte sur celui de Forja. Les modifications s'appliquent tout de suite et sont conservées.
+	3D Mouse Navigation	Navigation avec souris 3D
+	3D Mouse...	Souris 3D...
+	A bracket with its layouts	Un support avec ses présentations
+	A drawing opened from a file keeps that file's format.	Un dessin ouvert depuis un fichier garde le format de ce fichier.
+	A variable name starts with a letter and has only letters, digits and _	Un nom de variable commence par une lettre et ne contient que des lettres, des chiffres et _
+	Add Current Scale	Ajouter l'échelle courante
+	Add/Delete Scales...	Ajouter/supprimer des échelles...
+	Add: Pick points	Ajouter : choisir des points
+	Add: Select objects	Ajouter : sélectionner des objets
+	Additional angles	Angles supplémentaires
+	Add…	Ajouter…
+	Alias	Alias
+	Alias file: {file}	Fichier d'alias : {file}
+	Aliases are saved in your Forja profile and survive restarts.	Les alias sont enregistrés dans votre profil Forja et sont conservés après un redémarrage.
+	Align Multileaders	Aligner les multi-repères
+	All Annotation Objects	Tous les objets annotatifs
+	All Scales	Toutes les échelles
+	An array that would create more objects than this is refused.	Un réseau qui créerait plus d'objets que cela est refusé.
+	Analyze Usage	Analyser l'utilisation
+	Annotative Object Scale	Échelle des objets annotatifs
+	Annotative Update	Mise à jour annotative
+	Apply	Appliquer
+	Associative	Associatif
+	Attach DWG...	Attacher un DWG...
+	Automatic save every	Enregistrement automatique toutes les
+	Automatic save file location	Emplacement des fichiers d'enregistrement automatique
+	Back to drawing	Retour au dessin
+	Backup copy	Copie de sauvegarde
+	Bind	Lier
+	Bind...	Lier...
+	Block to create or edit	Bloc à créer ou à modifier
+	Bottom left	En bas à gauche
+	Bottom right	En bas à droite
+	Boundaries	Contours
+	Boundaries picked: {n}	Contours choisis : {n}
+	Break-line Symbol	Symbole de ligne de rupture
+	Bring Above Objects	Placer au-dessus des objets
+	Bring Annotations to Front	Mettre les annotations au premier plan
+	Bulleted list	Liste à puces
+	Calibrate 3D Mouse	Étalonner la souris 3D
+	Centered	Centré
+	Change	Modifier
+	Change Properties	Modifier les propriétés
+	Changed: {n}	Modifiés : {n}
+	Changes apply at once and are kept for next time.	Les modifications s'appliquent tout de suite et sont conservées pour la prochaine fois.
+	Choose the command the alias starts.	Choisissez la commande que l'alias lance.
+	Clear Command History	Effacer l'historique des commandes
+	Clear History	Effacer l'historique
+	Clear Recent Files	Effacer les fichiers récents
+	Click the ruler to add a tab stop, right-click to remove one	Cliquez sur la règle pour ajouter une tabulation, clic droit pour en supprimer une
+	Click to set new origin	Cliquez pour définir la nouvelle origine
+	Clip	Découper
+	Clip Viewport	Découper la fenêtre
+	Clip Xref	Découper la xréf
+	Close Array Editing	Fermer la modification du réseau
+	Close Block Editor	Fermer l'éditeur de blocs
+	Close Comparison	Fermer la comparaison
+	Collapse Palettes	Réduire les palettes
+	Collect	Rassembler
+	Collect Multileaders	Rassembler les multi-repères
+	Color 1	Couleur 1
+	Color 2	Couleur 2
+	Command	Commande
+	Command Aliases	Alias de commandes
+	Command Mode	Mode commande
+	Command line history	Historique de la ligne de commande
+	Compare Drawings...	Comparer des dessins...
+	Convert	Convertir
+	Convert Text to Mtext	Convertir le texte en texte multiligne
+	Copy as JSON	Copier en JSON
+	Count List	Liste de comptage
+	Count Table	Table de comptage
+	Create backup copy with each save	Créer une copie de sauvegarde à chaque enregistrement
+	Create separate hatches	Créer des hachures distinctes
+	Crosshair size	Taille du réticule
+	Crossing selection color:	Couleur de la sélection par capture :
+	Current Scale Only	Échelle courante uniquement
+	Curved	Courbe
+	Customize	Personnaliser
+	DView	DView
+	DWG Reference...	Référence DWG...
+	Data Extraction...	Extraction de données...
+	Data Link...	Liaison de données...
+	Default Mode	Mode par défaut
+	Default Save Version	Version d'enregistrement par défaut
+	Default save version	Version d'enregistrement par défaut
+	Default to boundary extents	Étendue du contour par défaut
+	Define each corner of the selection window with a separate click.	Définir chaque coin de la fenêtre de sélection par un clic séparé.
+	Degrees of Freedom	Degrés de liberté
+	Degrees of freedom: {n}	Degrés de liberté : {n}
+	Delete Current Scale	Supprimer l'échelle courante
+	Detach	Détacher
+	Dimension Break	Coupure de cote
+	Dimension Edit	Modifier la cote
+	Dimension Objects Only	Objets de cote uniquement
+	Discard	Ignorer
+	Drag Dynamic Grip	Faire glisser une poignée dynamique
+	Drawing (inches)	Dessin (pouces)
+	Drawing (mm)	Dessin (mm)
+	Drawing Recovery Manager...	Gestionnaire de récupération de dessins...
+	Drawings with no file yet are saved in the default version. 0 minutes turns automatic save off.	Les dessins sans fichier sont enregistrés dans la version par défaut. 0 minute désactive l'enregistrement automatique.
+	Dynamic	Dynamique
+	Dynamic Block Data	Données des blocs dynamiques
+	Dynamic Block Grips	Poignées des blocs dynamiques
+	Dynamic Block Reference	Référence de bloc dynamique
+	ENTER	ENTRÉE
+	Edit Array	Modifier le réseau
+	Edit Block Definition	Modifier la définition du bloc
+	Edit Command Aliases (PGP)...	Modifier les alias de commandes (PGP)...
+	Edit Mode	Mode édition
+	Edit Multileader	Modifier le multi-repère
+	Edit Table Cell	Modifier la cellule du tableau
+	Edit…	Modifier…
+	End Object Isolation	Terminer l'isolation des objets
+	Evaluate	Évaluer
+	Evaluate LISP	Évaluer du LISP
+	Exclude:	Exclure :
+	Explode Attributes to Text	Décomposer les attributs en texte
+	Export Comparison	Exporter la comparaison
+	Export Table	Exporter le tableau
+	Express Tools	Outils Express
+	External Reference	Référence externe
+	External References	Références externes
+	Font	Police
+	Forja keeps these preferences, object snap modes and drafting toggles for your user account and restores them when it starts.	Forja garde ces préférences, modes d'accrochage aux objets et aides au dessin pour votre compte utilisateur et les rétablit au démarrage.
+	Get from the Drawing	Récupérer dans le dessin
+	Grid snap	Accrochage à la grille
+	Grip Edit	Modification par poignées
+	Grip Option	Option de poignée
+	Grip size	Taille des poignées
+	Grips	Poignées
+	Group Options	Options de groupe
+	Group Selection	Sélection de groupe
+	Groups	Groupes
+	Hatch Patterns	Motifs de hachures
+	Hatch Pick	Choisir une hachure
+	Hatch and Gradient	Hachures et dégradés
+	Hatch origin	Origine des hachures
+	Hatches	Hachures
+	Hemispherical	Hémisphérique
+	Hide Objects	Masquer des objets
+	History	Historique
+	Hold Shift to add to the selection	Maintenez Maj pour ajouter à la sélection
+	Ignore	Ignorer
+	Imperial (inches)	Impérial (pouces)
+	Imperial units	Unités impériales
+	Implied Loops	Contours implicites
+	Import and replace	Importer et remplacer
+	Import: there is no file dialog here; run ALIASEDIT with the file's contents using its text parameter.	Importer : il n'y a pas de boîte de dialogue de fichiers ici ; lancez ALIASEDIT avec le contenu du fichier dans son paramètre text.
+	Importing a file replaces your {n} aliases, and any changes not applied yet.	Importer un fichier remplace vos {n} alias et toutes les modifications pas encore appliquées.
+	Import…	Importer…
+	Indicate selection area	Indiquer la zone de sélection
+	Infer Constraints	Déduire les contraintes
+	Insert Table Formula	Insérer une formule de tableau
+	Insert tab	Insérer une tabulation
+	Inspection	Contrôle
+	Interface language	Langue de l'interface
+	Interface scale	Échelle de l'interface
+	Interface theme	Thème de l'interface
+	Inverted	Inversé
+	Island	Îlot
+	Island detection	Détection des îlots
+	Isolate Objects	Isoler des objets
+	Isometric Plane	Plan isométrique
+	Isometric snap	Accrochage isométrique
+	Italic	Italique
+	Jogged	Raccourcie
+	Jogged Linear	Linéaire raccourcie
+	Justify	Justifié
+	Keep my aliases	Garder mes alias
+	Keep the system cursor visible over the drawing area	Garder le pointeur système visible sur la zone de dessin
+	Largest array	Plus grand réseau
+	Layout paper	Papier de la présentation
+	Leaders Only	Repères uniquement
+	Load Application...	Charger une application...
+	Lock viewport	Verrouiller la fenêtre
+	Longer click duration:	Durée d'un clic long :
+	Make it a block of this drawing, keeping its layer names	En faire un bloc de ce dessin, en gardant ses noms de calques
+	Make it a block of this drawing; its layers become NAME$0$LAYER	En faire un bloc de ce dessin ; ses calques deviennent NOM$0$CALQUE
+	Menu	Menu
+	Metric (millimetres)	Métrique (millimètres)
+	Metric units	Unités métriques
+	Model background	Arrière-plan de l'espace objet
+	More than {n} aliases.	Plus de {n} alias.
+	More toolbar commands	Autres commandes de la barre d'outils
+	Move/Copy/Rotate	Déplacer/Copier/Faire pivoter
+	Multiline Style...	Style de multiligne...
+	Multiline text	Texte multiligne
+	Multiline...	Multiligne...
+	Multiple Insert	Insertion multiple
+	Named Views...	Vues nommées...
+	New and the first drawing at startup use these units unless a default template is set (QNEWTEMPLATE).	Les nouveaux dessins et le premier dessin au démarrage utilisent ces unités, sauf si un gabarit par défaut est défini (QNEWTEMPLATE).
+	New block	Nouveau bloc
+	New from Template...	Nouveau à partir d'un gabarit...
+	Next Change	Modification suivante
+	No alias file loaded. REINIT replaces these aliases with a file's.	Aucun fichier d'alias chargé. REINIT remplace ces alias par ceux d'un fichier.
+	No external references are attached.	Aucune référence externe n'est attachée.
+	No objects selected and no command running:	Aucun objet sélectionné et aucune commande en cours :
+	Numbered list	Liste numérotée
+	Object Snap Tracking Settings	Paramètres du repérage par accrochage
+	Object grouping	Groupement d'objets
+	Object selection limit for display of grips	Nombre maximal d'objets sélectionnés pour afficher les poignées
+	Object snap aperture	Ouverture de l'accrochage aux objets
+	Object snap marker size	Taille du marqueur d'accrochage
+	Objects on locked layers	Objets sur des calques verrouillés
+	Objects selected and no command running:	Objets sélectionnés et aucune commande en cours :
+	Oblique	Oblique
+	Only in this drawing: {n}	Uniquement dans ce dessin : {n}
+	Only in {name}: {n}	Uniquement dans {name} : {n}
+	Open	Ouvrir
+	Open Recent	Ouvrir un fichier récent
+	Open Xref	Ouvrir la xréf
+	Open in Block Editor	Ouvrir dans l'éditeur de blocs
+	Options	Options
+	Options...	Options...
+	Origin: {x}, {y}	Origine : {x}, {y}
+	Outer	Externe
+	Over-constrained	Surcontraint
+	Overlay	Superposer
+	Overline	Surligné
+	Paste to Command Line	Coller dans la ligne de commande
+	Pickbox size	Taille de la cible de sélection
+	Plot Window	Tracer la fenêtre
+	Plotter Manager	Gestionnaire de traceurs
+	Plotter Manager...	Gestionnaire de traceurs...
+	Polar angle measurement	Mesure des angles polaires
+	Polar distance	Distance polaire
+	PolarSnap	Accrochage polaire
+	Polygonal Viewport	Fenêtre polygonale
+	Preferences	Préférences
+	Preview	Aperçu
+	Previous Change	Modification précédente
+	QuickCalc Pick	Choix pour la calculatrice rapide
+	Raster Image Reference...	Référence d'image raster...
+	Raster Images	Images raster
+	Recalculate Table Formulas	Recalculer les formules du tableau
+	Rectangular snap	Accrochage rectangulaire
+	Reference Manager	Gestionnaire de références
+	Reference Name	Nom de la référence
+	References: {n}	Références : {n}
+	Reinitialize	Réinitialiser
+	Relative to last segment	Relatif au dernier segment
+	Reload	Recharger
+	Reload All	Tout recharger
+	Repeat last command	Répéter la dernière commande
+	Reset keeps the interface language.	La réinitialisation garde la langue de l'interface.
+	Reset to Defaults	Rétablir les valeurs par défaut
+	Right-Click Customization	Personnalisation du clic droit
+	Right-Click Customization...	Personnalisation du clic droit...
+	Run ALIASEDIT with the file's contents using its text parameter.	Lancez ALIASEDIT avec le contenu du fichier dans son paramètre text.
+	Run Script...	Exécuter un script...
+	Sample drawing	Dessin d'exemple
+	Save Block	Enregistrer le bloc
+	Save Block As	Enregistrer le bloc sous
+	Save Layout as Template	Enregistrer la présentation comme gabarit
+	Save alias	Enregistrer l'alias
+	Save changes to block "{name}"?	Enregistrer les modifications du bloc « {name} » ?
+	Save new drawings as	Enregistrer les nouveaux dessins comme
+	Saved Path	Chemin enregistré
+	Scale List...	Liste des échelles...
+	Screen magnifiers, screen readers and recorders follow the system cursor.	Les loupes, lecteurs d'écran et enregistreurs suivent le pointeur système.
+	Select Similar	Sélectionner les objets similaires
+	Select boundaries to remove	Sélectionner les contours à retirer
+	Select objects first, then choose a command	Sélectionnez d'abord des objets, puis choisissez une commande
+	Select using two clicks only	Sélectionner uniquement avec deux clics
+	Selection Area Effect	Effet de la zone de sélection
+	Selection Preview Filter	Filtre de l'aperçu de sélection
+	Selection area opacity:	Opacité de la zone de sélection :
+	Selection effect color	Couleur de l'effet de sélection
+	Selection modes	Modes de sélection
+	Selection preview	Aperçu de la sélection
+	Send Hatches to Back	Envoyer les hachures à l'arrière-plan
+	Send Under Objects	Placer sous les objets
+	Set Current Viewport	Définir la fenêtre courante
+	Set Dynamic Property	Définir la propriété dynamique
+	Set Table Cell Style	Définir le style de cellule du tableau
+	Shape	Forme
+	Sheet Books to PDF...	Jeux de feuilles en PDF...
+	Shortcut Menu	Menu contextuel
+	Shortcut Menu: always enabled	Menu contextuel : toujours activé
+	Shortcut Menu: enabled when command options are present	Menu contextuel : activé quand la commande a des options
+	Show Annotative Objects	Afficher les objets annotatifs
+	Show Quick Properties for selected objects	Afficher les propriétés rapides des objets sélectionnés
+	Show and hide the tools of this category	Afficher ou masquer les outils de cette catégorie
+	Show command prompting near the crosshairs	Afficher les invites de commande près du réticule
+	Show grips	Afficher les poignées
+	Show in Tool Sets	Afficher dans les jeux d'outils
+	Snap type	Type d'accrochage
+	Snap, grid, polar tracking and Dynamic Input:	Accrochage, grille, repérage polaire et saisie dynamique :
+	Solid Editing	Modification des solides
+	Specified origin	Origine spécifiée
+	Spherical	Sphérique
+	Synchronize Multiple-scale Positions	Synchroniser les positions à plusieurs échelles
+	Table Breaks	Coupures de tableau
+	Table Cell Style	Style de cellule du tableau
+	Tables	Tableaux
+	Text Objects Only	Objets texte uniquement
+	Text color	Couleur du texte
+	The aperture is how near the cursor must come to a point for an object snap to find it.	L'ouverture définit à quelle distance d'un point le curseur doit venir pour que l'accrochage aux objets le trouve.
+	There is nothing here yet. To get started, create or open a drawing.	Il n'y a encore rien ici. Pour commencer, créez ou ouvrez un dessin.
+	Time-sensitive right-click: a quick click is Enter, holding opens the menu	Clic droit selon la durée : un clic rapide vaut Entrée, un clic maintenu ouvre le menu
+	To	Jusqu'à
+	Tolerance...	Tolérance...
+	Top left	En haut à gauche
+	Top right	En haut à droite
+	Track orthogonally only	Repérage orthogonal uniquement
+	Track using all polar angle settings	Repérage avec tous les angles polaires
+	Turn on time-sensitive right-click	Activer le clic droit selon la durée
+	Turned off, a right-click while a command runs does what Right-Click Customization sets for Command mode.	Désactivé, un clic droit pendant une commande fait ce que la personnalisation du clic droit définit pour le mode commande.
+	Type an alias name.	Saisissez un nom d'alias.
+	Underline	Souligné
+	Units	Unités
+	Units Conversion	Conversion d'unités
+	Units of new drawings	Unités des nouveaux dessins
+	Unload	Décharger
+	Unlock viewport	Déverrouiller la fenêtre
+	Unsaved changes	Modifications non enregistrées
+	Update Data Links	Mettre à jour les liaisons de données
+	Use current origin	Utiliser l'origine courante
+	Variables	Variables
+	Version 2000	Version 2000
+	Version 2004	Version 2004
+	Version 2007	Version 2007
+	Version 2010	Version 2010
+	Version 2013	Version 2013
+	Version 2018	Version 2018
+	Viewport is locked	La fenêtre est verrouillée
+	Viewport scale	Échelle de la fenêtre
+	Visual Effect Settings	Paramètres des effets visuels
+	Visual Effect Settings...	Paramètres des effets visuels...
+	When a command is active	Quand une commande est active
+	When no command is active	Quand aucune commande n'est active
+	While a command runs, a quick click is Enter and a longer click opens the shortcut menu.	Pendant une commande, un clic rapide vaut Entrée et un clic plus long ouvre le menu contextuel.
+	While a command runs:	Pendant une commande :
+	Window selection color:	Couleur de la sélection par fenêtre :
+	Xref	Xréf
+	Xref Clip Frame	Cadre de découpe de la xréf
+	Xrefs	Xréfs
+	Zoom Dynamic	Zoom dynamique
+	Zoom Realtime	Zoom en temps réel
+	built-in	intégré
+	milliseconds	millisecondes
+	min	min
+	objects	objets
+	overrides built-in	remplace l'intégré
+	{alias} is already defined; select it and use Edit.	{alias} est déjà défini ; sélectionnez-le et utilisez Modifier.
+	{command} is an unknown command.	{command} est une commande inconnue.
+	{n} more warnings; see the command line.	{n} avertissements de plus ; voir la ligne de commande.
 	Add a drawing file as a block library	Ajouter un fichier de dessin comme bibliothèque de blocs
 	Add a folder of drawings or a drawing file to use its blocks.	Ajoutez un dossier de dessins ou un fichier de dessin pour utiliser ses blocs.
 	Block Libraries	Bibliothèques de blocs
@@ -1040,30 +1410,5 @@
 	Small Icons	Petites icônes
 	This drawing has no blocks.	Ce dessin ne contient aucun bloc.
 	This library has no drawings or blocks.	Cette bibliothèque ne contient ni dessin ni bloc.
-	Options	Options
 	Only the first {n} are shown.	Seuls les {n} premiers sont affichés.
-	Find All	Find All
-	Find what:	Find what:
-	Match case	Match case
-	Replace	Replace
-	Replace All	Replace All
-	Replace with:	Replace with:
-	Replacement text	Replacement text
-	Results	Results
-	Searches the current space.	Searches the current space.
-	Text to find	Text to find
-	Whole words	Whole words
-	Nothing found	Nothing found
-	Ctrl+Enter to apply	Ctrl+Enter to apply
-	Edit Text	Edit Text
-	The drawing changed. Close the window and open it again.	Le dessin a changé. Fermez la fenêtre et rouvrez-la.
-	Keyboard Shortcuts...	Raccourcis clavier...
-	Keyboard Shortcuts	Raccourcis clavier
-	Replaces the shortcut of {commands}	Remplace le raccourci de : {commands}
-	Needs Ctrl, Alt or a function key	Il faut Ctrl, Alt ou une touche de fonction
-	Press the keys	Appuyez sur les touches
-	Back to Forja's shortcut	Revenir au raccourci de Forja
-	A shortcut you give wins over Forja's own. Changes apply at once and are kept for next time.	Un raccourci que vous définissez l'emporte sur celui de Forja. Les modifications s'appliquent tout de suite et sont conservées.
-
-# ArtCraft feature naming
 	Additional Tools	Outils supplémentaires

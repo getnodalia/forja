@@ -1449,6 +1449,72 @@ menu	Modify	Hiệu chỉnh
 	Change Properties	Đổi thuộc tính
 	Font	Phông chữ
 	Save Layout as Template	Lưu layout thành mẫu
+	Find All	Find All
+	Find what:	Find what:
+	Match case	Match case
+	Replace	Replace
+	Replace All	Replace All
+	Replace with:	Replace with:
+	Replacement text	Replacement text
+	Results	Results
+	Searches the current space.	Searches the current space.
+	Text to find	Text to find
+	Whole words	Whole words
+	Nothing found	Nothing found
+	Ctrl+Enter to apply	Ctrl+Enter to apply
+	Edit Text	Edit Text
+	The drawing changed. Close the window and open it again.	Bản vẽ đã thay đổi. Đóng cửa sổ và mở lại.
+	A bracket with its layouts	Một giá đỡ cùng các bố cục của nó
+	A shortcut you give wins over Forja's own. Changes apply at once and are kept for next time.	Phím tắt bạn đặt được ưu tiên hơn phím tắt riêng của Forja. Thay đổi có hiệu lực ngay và được giữ cho lần sau.
+	Aliases are saved in your Forja profile and survive restarts.	Bí danh được lưu trong hồ sơ Forja của bạn và vẫn còn sau khi khởi động lại.
+	Back to Forja's shortcut	Trở về phím tắt của Forja
+	Back to drawing	Quay lại bản vẽ
+	Change	Thay đổi
+	Clip Xref	Cắt xref
+	Command Mode	Chế độ lệnh
+	DView	DView
+	Default Mode	Chế độ mặc định
+	Drawing (inches)	Bản vẽ (inch)
+	Drawing (mm)	Bản vẽ (mm)
+	ENTER	ENTER
+	Edit Mode	Chế độ chỉnh sửa
+	Imperial units	Đơn vị hệ Anh
+	Import and replace	Nhập và thay thế
+	Import: there is no file dialog here; run ALIASEDIT with the file's contents using its text parameter.	Nhập: ở đây không có hộp thoại tệp; hãy chạy ALIASEDIT với nội dung tệp qua tham số text của nó.
+	Importing a file replaces your {n} aliases, and any changes not applied yet.	Nhập một tệp sẽ thay thế {n} bí danh của bạn và mọi thay đổi chưa áp dụng.
+	Import…	Nhập…
+	Keep my aliases	Giữ bí danh của tôi
+	Keyboard Shortcuts	Phím tắt
+	Keyboard Shortcuts...	Phím tắt...
+	Longer click duration:	Thời gian nhấp lâu hơn:
+	Menu	Menu
+	Metric units	Đơn vị hệ mét
+	Needs Ctrl, Alt or a function key	Cần Ctrl, Alt hoặc một phím chức năng
+	No objects selected and no command running:	Không chọn đối tượng nào và không có lệnh đang chạy:
+	Objects selected and no command running:	Đã chọn đối tượng và không có lệnh đang chạy:
+	Preferences	Tùy chọn
+	Press the keys	Nhấn các phím
+	Raster Image Reference...	Tham chiếu ảnh raster...
+	Raster Images	Ảnh raster
+	Repeat last command	Lặp lại lệnh cuối
+	Replaces the shortcut of {commands}	Thay thế phím tắt của {commands}
+	Right-Click Customization	Tùy chỉnh nhấp chuột phải
+	Right-Click Customization...	Tùy chỉnh nhấp chuột phải...
+	Run ALIASEDIT with the file's contents using its text parameter.	Hãy chạy ALIASEDIT với nội dung tệp qua tham số text của nó.
+	Sample drawing	Bản vẽ mẫu
+	Shortcut Menu	Menu lối tắt
+	Shortcut Menu: always enabled	Menu lối tắt: luôn bật
+	Shortcut Menu: enabled when command options are present	Menu lối tắt: bật khi lệnh có tùy chọn
+	There is nothing here yet. To get started, create or open a drawing.	Chưa có gì ở đây. Để bắt đầu, hãy tạo hoặc mở một bản vẽ.
+	Turn on time-sensitive right-click	Bật nhấp chuột phải theo thời gian
+	Turned off, a right-click while a command runs does what Right-Click Customization sets for Command mode.	Khi tắt, nhấp chuột phải lúc lệnh đang chạy sẽ làm theo thiết lập của Tùy chỉnh nhấp chuột phải cho chế độ lệnh.
+	Units	Đơn vị
+	While a command runs, a quick click is Enter and a longer click opens the shortcut menu.	Khi một lệnh đang chạy, nhấp nhanh là Enter và nhấp lâu hơn sẽ mở menu lối tắt.
+	While a command runs:	Khi một lệnh đang chạy:
+	Xref	Xref
+	Xref Clip Frame	Khung cắt xref
+	milliseconds	mili giây
+	{n} more warnings; see the command line.	Còn {n} cảnh báo; xem dòng lệnh.
 	Add a drawing file as a block library	Thêm tệp bản vẽ làm thư viện block
 	Add a folder of drawings or a drawing file to use its blocks.	Thêm thư mục chứa bản vẽ hoặc tệp bản vẽ để dùng các block của nó.
 	Block Libraries	Thư viện block
@@ -1476,21 +1542,4 @@ menu	Modify	Hiệu chỉnh
 	This drawing has no blocks.	Bản vẽ này không có block.
 	This library has no drawings or blocks.	Thư viện này không có bản vẽ hay block.
 	Only the first {n} are shown.	Chỉ hiển thị {n} mục đầu tiên.
-	Find All	Find All
-	Find what:	Find what:
-	Match case	Match case
-	Replace	Replace
-	Replace All	Replace All
-	Replace with:	Replace with:
-	Replacement text	Replacement text
-	Results	Results
-	Searches the current space.	Searches the current space.
-	Text to find	Text to find
-	Whole words	Whole words
-	Nothing found	Nothing found
-	Ctrl+Enter to apply	Ctrl+Enter to apply
-	Edit Text	Edit Text
-	The drawing changed. Close the window and open it again.	Bản vẽ đã thay đổi. Đóng cửa sổ và mở lại.
-
-# ArtCraft feature naming
 	Additional Tools	Công cụ bổ sung

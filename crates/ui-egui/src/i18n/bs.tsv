@@ -1444,6 +1444,78 @@ menu	Modify	Izmijeni
 	Save changes to block "{name}"?	Sačuvati promjene u bloku „{name}”?
 	Layouts	Rasporedi
 	Associate	Poveži
+	Find All	Find All
+	Find what:	Find what:
+	Match case	Match case
+	Replace	Replace
+	Replace All	Replace All
+	Replace with:	Replace with:
+	Replacement text	Replacement text
+	Results	Results
+	Searches the current space.	Searches the current space.
+	Text to find	Text to find
+	Whole words	Whole words
+	Nothing found	Nothing found
+	Ctrl+Enter to apply	Ctrl+Enter to apply
+	Edit Text	Edit Text
+	The drawing changed. Close the window and open it again.	Crtež se promijenio. Zatvorite prozor i otvorite ga ponovo.
+	A bracket with its layouts	Nosač sa svojim rasporedima
+	A shortcut you give wins over Forja's own. Changes apply at once and are kept for next time.	Prečica koju zadate ima prednost nad Forjinom. Promjene se primjenjuju odmah i čuvaju za sljedeći put.
+	Aliases are saved in your Forja profile and survive restarts.	Aliasi se čuvaju u vašem Forja profilu i ostaju nakon ponovnog pokretanja.
+	Back to Forja's shortcut	Nazad na Forjinu prečicu
+	Back to drawing	Nazad na crtež
+	Backup copy	Rezervna kopija
+	Change	Promijeni
+	Change Properties	Promijeni svojstva
+	Clip Xref	Isijeci xref
+	Command Mode	Način naredbe
+	Create backup copy with each save	Napravi rezervnu kopiju pri svakom spremanju
+	DView	DView
+	Default Mode	Zadani način
+	Drawing (inches)	Crtež (inči)
+	Drawing (mm)	Crtež (mm)
+	ENTER	ENTER
+	Edit Mode	Način uređivanja
+	Font	Font
+	Imperial units	Imperijalne jedinice
+	Import and replace	Uvezi i zamijeni
+	Import: there is no file dialog here; run ALIASEDIT with the file's contents using its text parameter.	Uvoz: ovdje nema dijaloga za datoteke; pokrenite ALIASEDIT sa sadržajem datoteke kroz njegov parametar text.
+	Importing a file replaces your {n} aliases, and any changes not applied yet.	Uvoz datoteke zamjenjuje vaših {n} aliasa i sve promjene koje još nisu primijenjene.
+	Import…	Uvezi…
+	Keep my aliases	Zadrži moje aliase
+	Keyboard Shortcuts	Prečice na tastaturi
+	Keyboard Shortcuts...	Prečice na tastaturi...
+	Longer click duration:	Duže trajanje klika:
+	Menu	Meni
+	Metric units	Metričke jedinice
+	Multiple Insert	Višestruko umetanje
+	Needs Ctrl, Alt or a function key	Potreban je Ctrl, Alt ili funkcijska tipka
+	No objects selected and no command running:	Nema odabranih objekata i nijedna naredba ne radi:
+	Objects selected and no command running:	Objekti su odabrani i nijedna naredba ne radi:
+	Preferences	Postavke
+	Press the keys	Pritisnite tipke
+	Raster Image Reference...	Referenca na rastersku sliku...
+	Raster Images	Rasterske slike
+	Repeat last command	Ponovi posljednju naredbu
+	Replaces the shortcut of {commands}	Zamjenjuje prečicu za {commands}
+	Right-Click Customization	Prilagođavanje desnog klika
+	Right-Click Customization...	Prilagođavanje desnog klika...
+	Run ALIASEDIT with the file's contents using its text parameter.	Pokrenite ALIASEDIT sa sadržajem datoteke kroz njegov parametar text.
+	Sample drawing	Primjer crteža
+	Save Layout as Template	Spremi raspored kao šablon
+	Shortcut Menu	Kontekstni meni
+	Shortcut Menu: always enabled	Kontekstni meni: uvijek uključen
+	Shortcut Menu: enabled when command options are present	Kontekstni meni: uključen kada naredba ima opcije
+	There is nothing here yet. To get started, create or open a drawing.	Ovdje još nema ničega. Za početak napravite ili otvorite crtež.
+	Turn on time-sensitive right-click	Uključi vremenski osjetljiv desni klik
+	Turned off, a right-click while a command runs does what Right-Click Customization sets for Command mode.	Kada je isključeno, desni klik tokom naredbe radi ono što Prilagođavanje desnog klika postavlja za način naredbe.
+	Units	Jedinice
+	While a command runs, a quick click is Enter and a longer click opens the shortcut menu.	Dok naredba radi, brzi klik je Enter, a duži klik otvara kontekstni meni.
+	While a command runs:	Dok naredba radi:
+	Xref	Xref
+	Xref Clip Frame	Okvir isijecanja xrefa
+	milliseconds	milisekunde
+	{n} more warnings; see the command line.	Još {n} upozorenja; pogledajte komandnu liniju.
 	Add a drawing file as a block library	Dodaj datoteku crteža kao biblioteku blokova
 	Add a folder of drawings or a drawing file to use its blocks.	Dodajte mapu s crtežima ili datoteku crteža da biste koristili njene blokove.
 	Block Libraries	Biblioteke blokova
@@ -1471,21 +1543,4 @@ menu	Modify	Izmijeni
 	This drawing has no blocks.	Ovaj crtež nema blokova.
 	This library has no drawings or blocks.	Ova biblioteka nema crteža ni blokova.
 	Only the first {n} are shown.	Prikazano je samo prvih {n}.
-	Find All	Find All
-	Find what:	Find what:
-	Match case	Match case
-	Replace	Replace
-	Replace All	Replace All
-	Replace with:	Replace with:
-	Replacement text	Replacement text
-	Results	Results
-	Searches the current space.	Searches the current space.
-	Text to find	Text to find
-	Whole words	Whole words
-	Nothing found	Nothing found
-	Ctrl+Enter to apply	Ctrl+Enter to apply
-	Edit Text	Edit Text
-	The drawing changed. Close the window and open it again.	Crtež se promijenio. Zatvorite prozor i otvorite ga ponovo.
-
-# ArtCraft feature naming
 	Additional Tools	Dodatni alati

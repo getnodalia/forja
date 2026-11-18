@@ -1224,6 +1224,207 @@ menu	Modify	Modifikace
 	Check for Updates…	Zkontrolovat aktualizace…
 	Forja is up to date.	Forja je aktuální.
 	Could not check for updates.	Aktualizace se nepodařilo zkontrolovat.
+	Find All	Find All
+	Find what:	Find what:
+	Match case	Match case
+	Replace	Replace
+	Replace All	Replace All
+	Replace with:	Replace with:
+	Replacement text	Replacement text
+	Results	Results
+	Searches the current space.	Searches the current space.
+	Text to find	Text to find
+	Whole words	Whole words
+	Nothing found	Nothing found
+	Ctrl+Enter to apply	Ctrl+Enter to apply
+	Edit Text	Edit Text
+	The drawing changed. Close the window and open it again.	Výkres se změnil. Zavřete okno a otevřete jej znovu.
+	3D Mouse Navigation	Navigace 3D myší
+	3D Mouse...	3D myš...
+	A bracket with its layouts	Držák s rozvrženími
+	A shortcut you give wins over Forja's own. Changes apply at once and are kept for next time.	Klávesová zkratka, kterou zadáte, má přednost před zkratkou Forja. Změny se projeví hned a zůstanou uložené i pro příště.
+	Add: Pick points	Přidat: vybrat body
+	Add: Select objects	Přidat: vybrat objekty
+	Add…	Přidat…
+	Alias	Alias
+	Alias file: {file}	Soubor aliasů: {file}
+	Aliases are saved in your Forja profile and survive restarts.	Aliasy se ukládají do vašeho profilu Forja a zůstanou zachovány i po restartu.
+	Align Multileaders	Zarovnat multiodkazy
+	Analyze Usage	Analyzovat využití
+	Associative	Asociativní
+	Automatic save every	Automaticky ukládat každých
+	Automatic save file location	Umístění souborů automatického ukládání
+	Back to Forja's shortcut	Zpět na zkratku Forja
+	Back to drawing	Zpět na výkres
+	Backup copy	Záložní kopie
+	Block to create or edit	Blok k vytvoření nebo úpravě
+	Bottom left	Vlevo dole
+	Bottom right	Vpravo dole
+	Boundaries	Hranice
+	Boundaries picked: {n}	Vybrané hranice: {n}
+	Break-line Symbol	Symbol přerušovací čáry
+	Calibrate 3D Mouse	Kalibrovat 3D myš
+	Centered	Na střed
+	Change	Změnit
+	Change Properties	Změnit vlastnosti
+	Choose the command the alias starts.	Zvolte příkaz, který alias spustí.
+	Clear Recent Files	Vymazat nedávné soubory
+	Click the ruler to add a tab stop, right-click to remove one	Kliknutím na pravítko přidáte zarážku tabulátoru, kliknutím pravým tlačítkem ji odeberete
+	Click to set new origin	Kliknutím nastavíte nový počátek
+	Clip Xref	Oříznout externí referenci
+	Close Block Editor	Zavřít editor bloků
+	Collapse Palettes	Sbalit palety
+	Collect	Shromáždit
+	Collect Multileaders	Shromáždit multiodkazy
+	Color 1	Barva 1
+	Color 2	Barva 2
+	Command	Příkaz
+	Command Mode	Režim příkazu
+	Convert Text to Mtext	Převést text na víceřádkový text
+	Create backup copy with each save	Při každém uložení vytvořit záložní kopii
+	Create separate hatches	Vytvořit samostatná šrafování
+	Crossing selection color:	Barva výběru křížením:
+	Curved	Zakřivený
+	Customize	Přizpůsobit
+	DView	DView
+	Default Mode	Výchozí režim
+	Default save version	Výchozí verze pro ukládání
+	Default to boundary extents	Výchozí podle rozsahu hranice
+	Define each corner of the selection window with a separate click.	Každý roh výběrového okna určíte samostatným kliknutím.
+	Discard	Zahodit
+	Drag Dynamic Grip	Táhnout dynamický uzel
+	Drawing (inches)	Výkres (palce)
+	Drawing (mm)	Výkres (mm)
+	Drawings with no file yet are saved in the default version. 0 minutes turns automatic save off.	Výkresy, které ještě nemají soubor, se ukládají ve výchozí verzi. 0 minut automatické ukládání vypne.
+	Dynamic Block Data	Data dynamického bloku
+	Dynamic Block Grips	Uzly dynamického bloku
+	Dynamic Block Reference	Reference dynamického bloku
+	ENTER	ENTER
+	Edit Block Definition	Upravit definici bloku
+	Edit Command Aliases (PGP)...	Upravit aliasy příkazů (PGP)...
+	Edit Mode	Režim úprav
+	Edit Multileader	Upravit multiodkaz
+	Edit…	Upravit…
+	Evaluate LISP	Vyhodnotit LISP
+	Exclude:	Vyloučit:
+	Explode Attributes to Text	Rozložit atributy na text
+	Express Tools	Nástroje Express
+	Font	Písmo
+	Grips	Uzly
+	Groups	Skupiny
+	Hatch Pick	Výběr šrafování
+	Hatch and Gradient	Šrafování a přechod
+	Hatch origin	Počátek šrafování
+	Hatches	Šrafování
+	Hemispherical	Polokulový
+	Ignore	Ignorovat
+	Imperial (inches)	Britské (palce)
+	Imperial units	Britské jednotky
+	Implied Loops	Implicitní smyčky
+	Import and replace	Importovat a nahradit
+	Import: there is no file dialog here; run ALIASEDIT with the file's contents using its text parameter.	Import: zde není dialog pro výběr souboru; spusťte ALIASEDIT s obsahem souboru v parametru text.
+	Importing a file replaces your {n} aliases, and any changes not applied yet.	Import souboru nahradí vašich {n} aliasů i všechny dosud nepoužité změny.
+	Import…	Importovat…
+	Indicate selection area	Označit oblast výběru
+	Interface scale	Měřítko rozhraní
+	Inverted	Obrácený
+	Island	Ostrov
+	Island detection	Detekce ostrovů
+	Italic	Kurzíva
+	Justify	Zarovnat
+	Keep my aliases	Ponechat moje aliasy
+	Keyboard Shortcuts	Klávesové zkratky
+	Keyboard Shortcuts...	Klávesové zkratky...
+	Load Application...	Načíst aplikaci...
+	Longer click duration:	Delší doba kliknutí:
+	Menu	Nabídka
+	Metric (millimetres)	Metrické (milimetry)
+	Metric units	Metrické jednotky
+	More than {n} aliases.	Více než {n} aliasů.
+	Move/Copy/Rotate	Přesunout/kopírovat/otočit
+	Multiline text	Víceřádkový text
+	Multiple Insert	Vícenásobné vložení
+	Needs Ctrl, Alt or a function key	Vyžaduje Ctrl, Alt nebo funkční klávesu
+	New and the first drawing at startup use these units unless a default template is set (QNEWTEMPLATE).	Nový výkres a první výkres při spuštění používají tyto jednotky, pokud není nastavena výchozí šablona (QNEWTEMPLATE).
+	New block	Nový blok
+	No alias file loaded. REINIT replaces these aliases with a file's.	Není načten žádný soubor aliasů. REINIT nahradí tyto aliasy aliasy ze souboru.
+	No objects selected and no command running:	Nejsou vybrány žádné objekty a neběží žádný příkaz:
+	Object grouping	Seskupování objektů
+	Object selection limit for display of grips	Limit výběru objektů pro zobrazení uzlů
+	Objects on locked layers	Objekty v uzamčených hladinách
+	Objects selected and no command running:	Jsou vybrány objekty a neběží žádný příkaz:
+	Open Recent	Otevřít nedávné
+	Open in Block Editor	Otevřít v editoru bloků
+	Origin: {x}, {y}	Počátek: {x}, {y}
+	Outer	Vnější
+	Overline	Nadtržení
+	Preferences	Předvolby
+	Press the keys	Stiskněte klávesy
+	Preview	Náhled
+	Raster Image Reference...	Reference rastrového obrázku...
+	Raster Images	Rastrové obrázky
+	Repeat last command	Opakovat poslední příkaz
+	Replaces the shortcut of {commands}	Nahrazuje zkratku příkazů {commands}
+	Right-Click Customization	Přizpůsobení pravého tlačítka
+	Right-Click Customization...	Přizpůsobení pravého tlačítka...
+	Run ALIASEDIT with the file's contents using its text parameter.	Spusťte ALIASEDIT s obsahem souboru v parametru text.
+	Run Script...	Spustit skript...
+	Sample drawing	Ukázkový výkres
+	Save Block	Uložit blok
+	Save Block As	Uložit blok jako
+	Save Layout as Template	Uložit rozvržení jako šablonu
+	Save alias	Uložit alias
+	Save changes to block "{name}"?	Uložit změny bloku „{name}“?
+	Select boundaries to remove	Vyberte hranice k odebrání
+	Select using two clicks only	Vybírat pouze dvěma kliknutími
+	Selection Area Effect	Efekt oblasti výběru
+	Selection Preview Filter	Filtr náhledu výběru
+	Selection area opacity:	Neprůhlednost oblasti výběru:
+	Selection effect color	Barva efektu výběru
+	Selection modes	Režimy výběru
+	Selection preview	Náhled výběru
+	Set Dynamic Property	Nastavit dynamickou vlastnost
+	Shape	Tvar
+	Sheet Books to PDF...	Sady listů do PDF...
+	Shortcut Menu	Místní nabídka
+	Shortcut Menu: always enabled	Místní nabídka: vždy povolena
+	Shortcut Menu: enabled when command options are present	Místní nabídka: povolena, když jsou k dispozici možnosti příkazu
+	Show and hide the tools of this category	Zobrazit a skrýt nástroje této kategorie
+	Show grips	Zobrazit uzly
+	Show in Tool Sets	Zobrazit v sadách nástrojů
+	Specified origin	Zadaný počátek
+	Spherical	Kulový
+	Tables	Tabulky
+	Text color	Barva textu
+	There is nothing here yet. To get started, create or open a drawing.	Zatím zde nic není. Začněte vytvořením nebo otevřením výkresu.
+	Time-sensitive right-click: a quick click is Enter, holding opens the menu	Pravé tlačítko citlivé na čas: rychlé kliknutí je Enter, podržení otevře nabídku
+	Top left	Vlevo nahoře
+	Top right	Vpravo nahoře
+	Turn on time-sensitive right-click	Zapnout pravé tlačítko citlivé na čas
+	Turned off, a right-click while a command runs does what Right-Click Customization sets for Command mode.	Když je vypnuto, kliknutí pravým tlačítkem během příkazu provede to, co pro režim příkazu nastavuje Přizpůsobení pravého tlačítka.
+	Type an alias name.	Zadejte název aliasu.
+	Underline	Podtržení
+	Units	Jednotky
+	Units of new drawings	Jednotky nových výkresů
+	Unsaved changes	Neuložené změny
+	Use current origin	Použít aktuální počátek
+	Visual Effect Settings	Nastavení vizuálních efektů
+	Visual Effect Settings...	Nastavení vizuálních efektů...
+	When a command is active	Když je aktivní příkaz
+	When no command is active	Když není aktivní žádný příkaz
+	While a command runs, a quick click is Enter and a longer click opens the shortcut menu.	Během příkazu je rychlé kliknutí Enter a delší kliknutí otevře místní nabídku.
+	While a command runs:	Během příkazu:
+	Window selection color:	Barva výběru oknem:
+	Xref	Externí reference
+	Xref Clip Frame	Rámeček oříznutí externí reference
+	Xrefs	Externí reference
+	built-in	vestavěný
+	milliseconds	milisekund
+	min	min
+	overrides built-in	přepisuje vestavěný
+	{alias} is already defined; select it and use Edit.	{alias} je již definován; vyberte jej a použijte Upravit.
+	{command} is an unknown command.	{command} je neznámý příkaz.
+	{n} more warnings; see the command line.	Další varování: {n}; viz příkazový řádek.
 	Add a drawing file as a block library	Přidat výkresový soubor jako knihovnu bloků
 	Add a folder of drawings or a drawing file to use its blocks.	Přidejte složku s výkresy nebo výkresový soubor, abyste mohli používat jeho bloky.
 	Block Libraries	Knihovny bloků
@@ -1251,21 +1452,4 @@ menu	Modify	Modifikace
 	This drawing has no blocks.	Tento výkres neobsahuje žádné bloky.
 	This library has no drawings or blocks.	Tato knihovna neobsahuje žádné výkresy ani bloky.
 	Only the first {n} are shown.	Zobrazuje se pouze prvních {n}.
-	Find All	Find All
-	Find what:	Find what:
-	Match case	Match case
-	Replace	Replace
-	Replace All	Replace All
-	Replace with:	Replace with:
-	Replacement text	Replacement text
-	Results	Results
-	Searches the current space.	Searches the current space.
-	Text to find	Text to find
-	Whole words	Whole words
-	Nothing found	Nothing found
-	Ctrl+Enter to apply	Ctrl+Enter to apply
-	Edit Text	Edit Text
-	The drawing changed. Close the window and open it again.	Výkres se změnil. Zavřete okno a otevřete jej znovu.
-
-# ArtCraft feature naming
 	Additional Tools	Další nástroje

@@ -1366,33 +1366,6 @@ menu	Modify	Edita
 	Check for Updates…	Verifica aggiornamenti…
 	Forja is up to date.	Forja è aggiornato.
 	Could not check for updates.	Impossibile verificare gli aggiornamenti.
-	Add a drawing file as a block library	Aggiungi un file di disegno come libreria di blocchi
-	Add a folder of drawings or a drawing file to use its blocks.	Aggiungi una cartella di disegni o un file di disegno per usarne i blocchi.
-	Block Libraries	Librerie di blocchi
-	Block Library	Libreria di blocchi
-	Blocks Palette	Tavolozza blocchi
-	Click a block, then pick its insertion point.	Fai clic su un blocco, quindi indica il punto di inserimento.
-	Current Drawing	Disegno corrente
-	Details	Dettagli
-	Extra Large Icons	Icone molto grandi
-	Folder or file	Cartella o file
-	Import Library Block	Importa blocco da libreria
-	Insert and Explode	Inserisci ed esplodi
-	Large Icons	Icone grandi
-	Libraries	Librerie
-	Medium Icons	Icone medie
-	No block matches the filter.	Nessun blocco corrisponde al filtro.
-	This block is already in the drawing, so its definition is used.	Questo blocco è già nel disegno, quindi viene usata la sua definizione.
-	Open Library...	Apri libreria...
-	Read the library again	Rileggi la libreria
-	Reading the library...	Lettura della libreria...
-	Refresh	Aggiorna
-	Remove from the list	Rimuovi dall'elenco
-	Repeat Placement	Ripeti posizionamento
-	Small Icons	Icone piccole
-	This drawing has no blocks.	Questo disegno non contiene blocchi.
-	This library has no drawings or blocks.	Questa libreria non contiene disegni o blocchi.
-	Only the first {n} are shown.	Vengono mostrati solo i primi {n}.
 	Find All	Find All
 	Find what:	Find what:
 	Match case	Match case
@@ -1425,6 +1398,76 @@ menu	Modify	Edita
 	ENTER	INVIO
 	Shortcut Menu: always enabled	Menu di scelta rapida: sempre attivo
 	Shortcut Menu: enabled when command options are present	Menu di scelta rapida: attivo se il comando ha opzioni
-
-# ArtCraft feature naming
+	A bracket with its layouts	Una staffa con i suoi layout
+	A shortcut you give wins over Forja's own. Changes apply at once and are kept for next time.	Una scorciatoia che assegni ha la precedenza su quella di Forja. Le modifiche valgono subito e restano per la prossima volta.
+	Aliases are saved in your Forja profile and survive restarts.	Gli alias sono salvati nel tuo profilo di Forja e restano dopo il riavvio.
+	Analyze Usage	Analizza utilizzo
+	Back to Forja's shortcut	Torna alla scorciatoia di Forja
+	Back to drawing	Torna al disegno
+	Backup copy	Copia di backup
+	Change	Cambia
+	Change Properties	Cambia proprietà
+	Create backup copy with each save	Crea una copia di backup a ogni salvataggio
+	DView	DView
+	Drawing (inches)	Disegno (pollici)
+	Drawing (mm)	Disegno (mm)
+	Font	Carattere
+	Imperial (inches)	Imperiale (pollici)
+	Imperial units	Unità imperiali
+	Implied Loops	Contorni impliciti
+	Import and replace	Importa e sostituisci
+	Import: there is no file dialog here; run ALIASEDIT with the file's contents using its text parameter.	Importa: qui non c'è una finestra dei file; esegui ALIASEDIT con il contenuto del file nel suo parametro text.
+	Importing a file replaces your {n} aliases, and any changes not applied yet.	L'importazione di un file sostituisce i tuoi {n} alias e tutte le modifiche non ancora applicate.
+	Import…	Importa…
+	Keep my aliases	Mantieni i miei alias
+	Keyboard Shortcuts	Scorciatoie da tastiera
+	Keyboard Shortcuts...	Scorciatoie da tastiera...
+	Menu	Menu
+	Metric (millimetres)	Metrico (millimetri)
+	Metric units	Unità metriche
+	Multiple Insert	Inserimento multiplo
+	Needs Ctrl, Alt or a function key	Richiede Ctrl, Alt o un tasto funzione
+	New and the first drawing at startup use these units unless a default template is set (QNEWTEMPLATE).	I nuovi disegni e il primo disegno all'avvio usano queste unità, a meno che non sia impostato un modello predefinito (QNEWTEMPLATE).
+	Preferences	Preferenze
+	Press the keys	Premi i tasti
+	Raster Image Reference...	Riferimento immagine raster...
+	Raster Images	Immagini raster
+	Replaces the shortcut of {commands}	Sostituisce la scorciatoia di {commands}
+	Run ALIASEDIT with the file's contents using its text parameter.	Esegui ALIASEDIT con il contenuto del file nel suo parametro text.
+	Sample drawing	Disegno di esempio
+	Save Layout as Template	Salva layout come modello
+	Save changes to block "{name}"?	Salvare le modifiche al blocco "{name}"?
+	There is nothing here yet. To get started, create or open a drawing.	Qui non c'è ancora nulla. Per iniziare, crea o apri un disegno.
+	Turned off, a right-click while a command runs does what Right-Click Customization sets for Command mode.	Se disattivato, un clic destro mentre è in corso un comando fa ciò che Personalizzazione clic destro imposta per la modalità comando.
+	Units	Unità
+	Units of new drawings	Unità dei nuovi disegni
+	Xref	Xref
+	{n} more warnings; see the command line.	Altri {n} avvisi; vedi la riga di comando.
+	Add a drawing file as a block library	Aggiungi un file di disegno come libreria di blocchi
+	Add a folder of drawings or a drawing file to use its blocks.	Aggiungi una cartella di disegni o un file di disegno per usarne i blocchi.
+	Block Libraries	Librerie di blocchi
+	Block Library	Libreria di blocchi
+	Blocks Palette	Tavolozza blocchi
+	Click a block, then pick its insertion point.	Fai clic su un blocco, quindi indica il punto di inserimento.
+	Current Drawing	Disegno corrente
+	Details	Dettagli
+	Extra Large Icons	Icone molto grandi
+	Folder or file	Cartella o file
+	Import Library Block	Importa blocco da libreria
+	Insert and Explode	Inserisci ed esplodi
+	Large Icons	Icone grandi
+	Libraries	Librerie
+	Medium Icons	Icone medie
+	No block matches the filter.	Nessun blocco corrisponde al filtro.
+	This block is already in the drawing, so its definition is used.	Questo blocco è già nel disegno, quindi viene usata la sua definizione.
+	Open Library...	Apri libreria...
+	Read the library again	Rileggi la libreria
+	Reading the library...	Lettura della libreria...
+	Refresh	Aggiorna
+	Remove from the list	Rimuovi dall'elenco
+	Repeat Placement	Ripeti posizionamento
+	Small Icons	Icone piccole
+	This drawing has no blocks.	Questo disegno non contiene blocchi.
+	This library has no drawings or blocks.	Questa libreria non contiene disegni o blocchi.
+	Only the first {n} are shown.	Vengono mostrati solo i primi {n}.
 	Additional Tools	Strumenti aggiuntivi

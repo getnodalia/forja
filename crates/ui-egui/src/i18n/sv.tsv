@@ -1448,33 +1448,6 @@ menu	Modify	Ändra
 	Check for Updates…	Sök efter uppdateringar…
 	Forja is up to date.	Forja är uppdaterat.
 	Could not check for updates.	Det gick inte att söka efter uppdateringar.
-	Add a drawing file as a block library	Lägg till en ritningsfil som blockbibliotek
-	Add a folder of drawings or a drawing file to use its blocks.	Lägg till en mapp med ritningar eller en ritningsfil för att använda dess block.
-	Block Libraries	Blockbibliotek
-	Block Library	Blockbibliotek
-	Blocks Palette	Blockpalett
-	Click a block, then pick its insertion point.	Klicka på ett block och ange sedan dess infogningspunkt.
-	Current Drawing	Aktuell ritning
-	Details	Detaljer
-	Extra Large Icons	Extra stora ikoner
-	Folder or file	Mapp eller fil
-	Import Library Block	Importera biblioteksblock
-	Insert and Explode	Infoga och lös upp
-	Large Icons	Stora ikoner
-	Libraries	Bibliotek
-	Medium Icons	Medelstora ikoner
-	No block matches the filter.	Inget block matchar filtret.
-	This block is already in the drawing, so its definition is used.	Det här blocket finns redan i ritningen, så dess definition används.
-	Open Library...	Öppna bibliotek...
-	Read the library again	Läs in biblioteket igen
-	Reading the library...	Läser biblioteket...
-	Refresh	Uppdatera
-	Remove from the list	Ta bort från listan
-	Repeat Placement	Upprepa placering
-	Small Icons	Små ikoner
-	This drawing has no blocks.	Den här ritningen har inga block.
-	This library has no drawings or blocks.	Det här biblioteket har inga ritningar eller block.
-	Only the first {n} are shown.	Endast de första {n} visas.
 	Find All	Find All
 	Find what:	Find what:
 	Match case	Match case
@@ -1510,6 +1483,81 @@ menu	Modify	Ändra
 	Ctrl+Enter to apply	Ctrl+Enter to apply
 	Edit Text	Edit Text
 	The drawing changed. Close the window and open it again.	Ritningen har ändrats. Stäng fönstret och öppna det igen.
-
-# ArtCraft feature naming
+	A bracket with its layouts	En konsol med sina layouter
+	A shortcut you give wins over Forja's own. Changes apply at once and are kept for next time.	Ett kortkommando du anger går före Forjas eget. Ändringar gäller direkt och sparas till nästa gång.
+	Aliases are saved in your Forja profile and survive restarts.	Alias sparas i din Forja-profil och finns kvar efter omstart.
+	Back to Forja's shortcut	Tillbaka till Forjas kortkommando
+	Back to drawing	Tillbaka till ritningen
+	Clip Xref	Beskär xref
+	Command Mode	Kommandoläge
+	DView	DView
+	Default Mode	Standardläge
+	Drawing (inches)	Ritning (tum)
+	Drawing (mm)	Ritning (mm)
+	ENTER	ENTER
+	Edit Mode	Redigeringsläge
+	Imperial units	Brittiska enheter
+	Import and replace	Importera och ersätt
+	Import: there is no file dialog here; run ALIASEDIT with the file's contents using its text parameter.	Importera: här finns ingen fildialog; kör ALIASEDIT med filens innehåll i dess text-parameter.
+	Importing a file replaces your {n} aliases, and any changes not applied yet.	Att importera en fil ersätter dina {n} alias och alla ändringar som inte har tillämpats än.
+	Import…	Importera…
+	Keep my aliases	Behåll mina alias
+	Keyboard Shortcuts	Kortkommandon
+	Keyboard Shortcuts...	Kortkommandon...
+	Longer click duration:	Längre klicktid:
+	Menu	Meny
+	Metric units	Metriska enheter
+	Multiple Insert	Flerfaldig infogning
+	Needs Ctrl, Alt or a function key	Kräver Ctrl, Alt eller en funktionstangent
+	No objects selected and no command running:	Inga objekt valda och inget kommando körs:
+	Objects selected and no command running:	Objekt valda och inget kommando körs:
+	Preferences	Inställningar
+	Press the keys	Tryck på tangenterna
+	Raster Image Reference...	Rasterbildsreferens...
+	Raster Images	Rasterbilder
+	Repeat last command	Upprepa senaste kommandot
+	Replaces the shortcut of {commands}	Ersätter kortkommandot för {commands}
+	Right-Click Customization	Anpassa högerklick
+	Right-Click Customization...	Anpassa högerklick...
+	Run ALIASEDIT with the file's contents using its text parameter.	Kör ALIASEDIT med filens innehåll i dess text-parameter.
+	Sample drawing	Exempelritning
+	Shortcut Menu	Snabbmeny
+	Shortcut Menu: always enabled	Snabbmeny: alltid aktiverad
+	Shortcut Menu: enabled when command options are present	Snabbmeny: aktiverad när kommandot har alternativ
+	There is nothing here yet. To get started, create or open a drawing.	Här finns inget ännu. Kom igång genom att skapa eller öppna en ritning.
+	Turn on time-sensitive right-click	Aktivera tidskänsligt högerklick
+	Turned off, a right-click while a command runs does what Right-Click Customization sets for Command mode.	Avstängt gör ett högerklick under ett kommando det som Anpassa högerklick anger för kommandoläget.
+	While a command runs, a quick click is Enter and a longer click opens the shortcut menu.	Medan ett kommando körs är ett snabbt klick Enter och ett längre klick öppnar snabbmenyn.
+	While a command runs:	Medan ett kommando körs:
+	Xref	Xref
+	Xref Clip Frame	Beskärningsram för xref
+	milliseconds	millisekunder
+	{n} more warnings; see the command line.	{n} varningar till; se kommandoraden.
+	Add a drawing file as a block library	Lägg till en ritningsfil som blockbibliotek
+	Add a folder of drawings or a drawing file to use its blocks.	Lägg till en mapp med ritningar eller en ritningsfil för att använda dess block.
+	Block Libraries	Blockbibliotek
+	Block Library	Blockbibliotek
+	Blocks Palette	Blockpalett
+	Click a block, then pick its insertion point.	Klicka på ett block och ange sedan dess infogningspunkt.
+	Current Drawing	Aktuell ritning
+	Details	Detaljer
+	Extra Large Icons	Extra stora ikoner
+	Folder or file	Mapp eller fil
+	Import Library Block	Importera biblioteksblock
+	Insert and Explode	Infoga och lös upp
+	Large Icons	Stora ikoner
+	Libraries	Bibliotek
+	Medium Icons	Medelstora ikoner
+	No block matches the filter.	Inget block matchar filtret.
+	This block is already in the drawing, so its definition is used.	Det här blocket finns redan i ritningen, så dess definition används.
+	Open Library...	Öppna bibliotek...
+	Read the library again	Läs in biblioteket igen
+	Reading the library...	Läser biblioteket...
+	Refresh	Uppdatera
+	Remove from the list	Ta bort från listan
+	Repeat Placement	Upprepa placering
+	Small Icons	Små ikoner
+	This drawing has no blocks.	Den här ritningen har inga block.
+	This library has no drawings or blocks.	Det här biblioteket har inga ritningar eller block.
+	Only the first {n} are shown.	Endast de första {n} visas.
 	Additional Tools	Ytterligare verktyg

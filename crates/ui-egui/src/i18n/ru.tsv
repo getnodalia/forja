@@ -1015,6 +1015,375 @@
 	Check for Updates…	Проверить обновления…
 	Forja is up to date.	У вас последняя версия Forja.
 	Could not check for updates.	Не удалось проверить обновления.
+	Find All	Find All
+	Find what:	Find what:
+	Match case	Match case
+	Replace	Replace
+	Replace All	Replace All
+	Replace with:	Replace with:
+	Replacement text	Replacement text
+	Results	Results
+	Searches the current space.	Searches the current space.
+	Text to find	Text to find
+	Whole words	Whole words
+	Nothing found	Nothing found
+	Ctrl+Enter to apply	Ctrl+Enter to apply
+	Edit Text	Edit Text
+	The drawing changed. Close the window and open it again.	Чертёж изменился. Закройте окно и откройте его снова.
+	3D Mouse Navigation	Навигация 3D-мышью
+	3D Mouse...	3D-мышь...
+	A bracket with its layouts	Кронштейн со своими листами
+	A drawing opened from a file keeps that file's format.	Чертёж, открытый из файла, сохраняет формат этого файла.
+	A shortcut you give wins over Forja's own. Changes apply at once and are kept for next time.	Назначенное вами сочетание клавиш имеет приоритет над сочетанием Forja. Изменения действуют сразу и сохраняются на следующий раз.
+	A variable name starts with a letter and has only letters, digits and _	Имя переменной начинается с буквы и содержит только буквы, цифры и _
+	Add Current Scale	Добавить текущий масштаб
+	Add/Delete Scales...	Добавить/удалить масштабы...
+	Add: Pick points	Добавить: указать точки
+	Add: Select objects	Добавить: выбрать объекты
+	Additional angles	Дополнительные углы
+	Add…	Добавить…
+	Alias	Псевдоним
+	Alias file: {file}	Файл псевдонимов: {file}
+	Aliases are saved in your Forja profile and survive restarts.	Псевдонимы сохраняются в вашем профиле Forja и остаются после перезапуска.
+	Align Multileaders	Выровнять мультивыноски
+	All Annotation Objects	Все аннотативные объекты
+	All Scales	Все масштабы
+	An array that would create more objects than this is refused.	Массив, который создал бы больше объектов, отклоняется.
+	Analyze Usage	Анализ использования
+	Annotative Object Scale	Масштаб аннотативного объекта
+	Annotative Update	Обновить аннотативность
+	Apply	Применить
+	Associative	Ассоциативная
+	Attach DWG...	Вставить DWG...
+	Automatic save every	Автосохранение каждые
+	Automatic save file location	Папка автосохранения
+	Back to Forja's shortcut	Вернуть сочетание Forja
+	Back to drawing	Назад к чертежу
+	Backup copy	Резервная копия
+	Bind	Внедрить
+	Bind...	Внедрить...
+	Block to create or edit	Блок для создания или редактирования
+	Bottom left	Снизу слева
+	Bottom right	Снизу справа
+	Boundaries	Контуры
+	Boundaries picked: {n}	Выбрано контуров: {n}
+	Break-line Symbol	Символ линии обрыва
+	Bring Above Objects	Поместить над объектами
+	Bring Annotations to Front	Аннотации на передний план
+	Bulleted list	Маркированный список
+	Calibrate 3D Mouse	Калибровать 3D-мышь
+	Centered	По центру
+	Change	Изменить
+	Change Properties	Изменить свойства
+	Changed: {n}	Изменено: {n}
+	Changes apply at once and are kept for next time.	Изменения действуют сразу и сохраняются на следующий раз.
+	Choose the command the alias starts.	Выберите команду, которую запускает псевдоним.
+	Clear Command History	Очистить историю команд
+	Clear History	Очистить историю
+	Clear Recent Files	Очистить недавние файлы
+	Click the ruler to add a tab stop, right-click to remove one	Щёлкните линейку, чтобы добавить позицию табуляции, щёлкните правой кнопкой, чтобы удалить
+	Click to set new origin	Щёлкните, чтобы задать новое начало координат
+	Clip	Подрезать
+	Clip Viewport	Подрезать видовой экран
+	Clip Xref	Подрезать внешнюю ссылку
+	Close Array Editing	Закрыть редактирование массива
+	Close Block Editor	Закрыть редактор блоков
+	Close Comparison	Закрыть сравнение
+	Collapse Palettes	Свернуть палитры
+	Collect	Собрать
+	Collect Multileaders	Собрать мультивыноски
+	Color 1	Цвет 1
+	Color 2	Цвет 2
+	Command	Команда
+	Command Aliases	Псевдонимы команд
+	Command Mode	Режим команды
+	Command line history	История командной строки
+	Compare Drawings...	Сравнить чертежи...
+	Convert	Преобразовать
+	Convert Text to Mtext	Преобразовать текст в многострочный
+	Copy as JSON	Копировать как JSON
+	Count List	Список подсчёта
+	Count Table	Таблица подсчёта
+	Create backup copy with each save	Создавать резервную копию при каждом сохранении
+	Create separate hatches	Создавать отдельные штриховки
+	Crosshair size	Размер перекрестия
+	Crossing selection color:	Цвет выбора секущей рамкой:
+	Current Scale Only	Только текущий масштаб
+	Curved	Изогнутая
+	Customize	Адаптация
+	DView	DView
+	DWG Reference...	Ссылка на DWG...
+	Data Extraction...	Извлечение данных...
+	Data Link...	Связь с данными...
+	Default Mode	Режим по умолчанию
+	Default Save Version	Версия сохранения по умолчанию
+	Default save version	Версия сохранения по умолчанию
+	Default to boundary extents	По умолчанию по границам контура
+	Define each corner of the selection window with a separate click.	Задавать каждый угол рамки выбора отдельным щелчком.
+	Degrees of Freedom	Степени свободы
+	Degrees of freedom: {n}	Степеней свободы: {n}
+	Delete Current Scale	Удалить текущий масштаб
+	Detach	Отсоединить
+	Dimension Break	Разрыв размера
+	Dimension Edit	Редактировать размер
+	Dimension Objects Only	Только размерные объекты
+	Discard	Отменить
+	Drag Dynamic Grip	Перетащить динамическую ручку
+	Drawing (inches)	Чертёж (дюймы)
+	Drawing (mm)	Чертёж (мм)
+	Drawing Recovery Manager...	Диспетчер восстановления чертежей...
+	Drawings with no file yet are saved in the default version. 0 minutes turns automatic save off.	Чертежи, ещё не сохранённые в файл, сохраняются в версии по умолчанию. 0 минут отключает автосохранение.
+	Dynamic	Динамический
+	Dynamic Block Data	Данные динамических блоков
+	Dynamic Block Grips	Ручки динамических блоков
+	Dynamic Block Reference	Ссылка на динамический блок
+	ENTER	ENTER
+	Edit Array	Редактировать массив
+	Edit Block Definition	Редактировать определение блока
+	Edit Command Aliases (PGP)...	Редактировать псевдонимы команд (PGP)...
+	Edit Mode	Режим редактирования
+	Edit Multileader	Редактировать мультивыноску
+	Edit Table Cell	Редактировать ячейку таблицы
+	Edit…	Изменить…
+	End Object Isolation	Завершить изоляцию объектов
+	Evaluate	Вычислить
+	Evaluate LISP	Вычислить LISP
+	Exclude:	Исключить:
+	Explode Attributes to Text	Расчленить атрибуты в текст
+	Export Comparison	Экспортировать сравнение
+	Export Table	Экспортировать таблицу
+	Express Tools	Инструменты Express
+	External Reference	Внешняя ссылка
+	External References	Внешние ссылки
+	Font	Шрифт
+	Forja keeps these preferences, object snap modes and drafting toggles for your user account and restores them when it starts.	Forja сохраняет эти параметры, режимы объектной привязки и режимы черчения для вашей учётной записи и восстанавливает их при запуске.
+	Get from the Drawing	Взять из чертежа
+	Grid snap	Привязка к сетке
+	Grip Edit	Редактирование ручками
+	Grip Option	Параметр ручки
+	Grip size	Размер ручек
+	Grips	Ручки
+	Group Options	Параметры групп
+	Group Selection	Выбор групп
+	Groups	Группы
+	Hatch Patterns	Образцы штриховки
+	Hatch Pick	Выбор штриховки
+	Hatch and Gradient	Штриховка и градиент
+	Hatch origin	Исходная точка штриховки
+	Hatches	Штриховки
+	Hemispherical	Полусферический
+	Hide Objects	Скрыть объекты
+	History	История
+	Hold Shift to add to the selection	Удерживайте Shift, чтобы добавить к выбору
+	Ignore	Пропустить
+	Imperial (inches)	Британская (дюймы)
+	Imperial units	Британские единицы
+	Implied Loops	Неявные контуры
+	Import and replace	Импортировать и заменить
+	Import: there is no file dialog here; run ALIASEDIT with the file's contents using its text parameter.	Импорт: здесь нет окна выбора файлов; выполните ALIASEDIT с содержимым файла в параметре text.
+	Importing a file replaces your {n} aliases, and any changes not applied yet.	Импорт файла заменит ваши псевдонимы ({n}) и все ещё не применённые изменения.
+	Import…	Импортировать…
+	Indicate selection area	Укажите область выбора
+	Infer Constraints	Определить зависимости
+	Insert Table Formula	Вставить формулу таблицы
+	Insert tab	Вставить позицию табуляции
+	Inspection	Проверка
+	Interface language	Язык интерфейса
+	Interface scale	Масштаб интерфейса
+	Interface theme	Тема интерфейса
+	Inverted	Инвертированный
+	Island	Островок
+	Island detection	Обнаружение островков
+	Isolate Objects	Изолировать объекты
+	Isometric Plane	Изометрическая плоскость
+	Isometric snap	Изометрическая привязка
+	Italic	Курсив
+	Jogged	С изломом
+	Jogged Linear	Линейный с изломом
+	Justify	По ширине
+	Keep my aliases	Сохранить мои псевдонимы
+	Keep the system cursor visible over the drawing area	Не скрывать системный указатель над областью чертежа
+	Keyboard Shortcuts	Сочетания клавиш
+	Keyboard Shortcuts...	Сочетания клавиш...
+	Largest array	Наибольший массив
+	Layout paper	Бумага листа
+	Leaders Only	Только выноски
+	Load Application...	Загрузить приложение...
+	Lock viewport	Заблокировать видовой экран
+	Longer click duration:	Длительность долгого щелчка:
+	Make it a block of this drawing, keeping its layer names	Сделать блоком этого чертежа, сохранив имена слоёв
+	Make it a block of this drawing; its layers become NAME$0$LAYER	Сделать блоком этого чертежа; его слои станут ИМЯ$0$СЛОЙ
+	Menu	Меню
+	Metric (millimetres)	Метрическая (миллиметры)
+	Metric units	Метрические единицы
+	Model background	Фон пространства модели
+	More than {n} aliases.	Больше {n} псевдонимов.
+	More toolbar commands	Другие команды панели инструментов
+	Move/Copy/Rotate	Перенести/копировать/повернуть
+	Multiline Style...	Стиль мультилинии...
+	Multiline text	Многострочный текст
+	Multiline...	Мультилиния...
+	Multiple Insert	Множественная вставка
+	Named Views...	Именованные виды...
+	Needs Ctrl, Alt or a function key	Нужна клавиша Ctrl, Alt или функциональная клавиша
+	New and the first drawing at startup use these units unless a default template is set (QNEWTEMPLATE).	Новые чертежи и первый чертёж при запуске используют эти единицы, если не задан шаблон по умолчанию (QNEWTEMPLATE).
+	New block	Новый блок
+	New from Template...	Создать из шаблона...
+	Next Change	Следующее изменение
+	No alias file loaded. REINIT replaces these aliases with a file's.	Файл псевдонимов не загружен. REINIT заменяет эти псевдонимы псевдонимами из файла.
+	No external references are attached.	Внешние ссылки не вставлены.
+	No objects selected and no command running:	Объекты не выбраны и команда не выполняется:
+	Numbered list	Нумерованный список
+	Object Snap Tracking Settings	Параметры объектного отслеживания
+	Object grouping	Группировка объектов
+	Object selection limit for display of grips	Предел числа выбранных объектов для показа ручек
+	Object snap aperture	Апертура объектной привязки
+	Object snap marker size	Размер маркера объектной привязки
+	Objects on locked layers	Объекты на заблокированных слоях
+	Objects selected and no command running:	Объекты выбраны и команда не выполняется:
+	Oblique	Наклонный
+	Only in this drawing: {n}	Только в этом чертеже: {n}
+	Only in {name}: {n}	Только в {name}: {n}
+	Open	Открыть
+	Open Recent	Последние файлы
+	Open Xref	Открыть внешнюю ссылку
+	Open in Block Editor	Открыть в редакторе блоков
+	Options	Параметры
+	Options...	Параметры...
+	Origin: {x}, {y}	Начало: {x}, {y}
+	Outer	Внешний
+	Over-constrained	Переопределено
+	Overlay	Наложение
+	Overline	Надчёркнутый
+	Paste to Command Line	Вставить в командную строку
+	Pickbox size	Размер прицела
+	Plot Window	Печать рамки
+	Plotter Manager	Диспетчер плоттеров
+	Plotter Manager...	Диспетчер плоттеров...
+	Polar angle measurement	Отсчёт полярных углов
+	Polar distance	Полярное расстояние
+	PolarSnap	Полярная привязка
+	Polygonal Viewport	Многоугольный видовой экран
+	Preferences	Параметры
+	Press the keys	Нажмите клавиши
+	Preview	Предпросмотр
+	Previous Change	Предыдущее изменение
+	QuickCalc Pick	Выбор для быстрого калькулятора
+	Raster Image Reference...	Ссылка на растровое изображение...
+	Raster Images	Растровые изображения
+	Recalculate Table Formulas	Пересчитать формулы таблицы
+	Rectangular snap	Прямоугольная привязка
+	Reference Manager	Диспетчер ссылок
+	Reference Name	Имя ссылки
+	References: {n}	Ссылок: {n}
+	Reinitialize	Повторная инициализация
+	Relative to last segment	Относительно последнего сегмента
+	Reload	Обновить
+	Reload All	Обновить все
+	Repeat last command	Повторить последнюю команду
+	Replaces the shortcut of {commands}	Заменяет сочетание для {commands}
+	Reset keeps the interface language.	Сброс сохраняет язык интерфейса.
+	Reset to Defaults	Восстановить значения по умолчанию
+	Right-Click Customization	Настройка правой кнопки
+	Right-Click Customization...	Настройка правой кнопки...
+	Run ALIASEDIT with the file's contents using its text parameter.	Выполните ALIASEDIT с содержимым файла в параметре text.
+	Run Script...	Запустить сценарий...
+	Sample drawing	Образец чертежа
+	Save Block	Сохранить блок
+	Save Block As	Сохранить блок как
+	Save Layout as Template	Сохранить лист как шаблон
+	Save alias	Сохранить псевдоним
+	Save changes to block "{name}"?	Сохранить изменения в блоке «{name}»?
+	Save new drawings as	Сохранять новые чертежи как
+	Saved Path	Сохранённый путь
+	Scale List...	Список масштабов...
+	Screen magnifiers, screen readers and recorders follow the system cursor.	Экранные лупы, программы чтения с экрана и записи следуют за системным указателем.
+	Select Similar	Выбрать подобные
+	Select boundaries to remove	Выберите контуры для удаления
+	Select objects first, then choose a command	Сначала выберите объекты, затем команду
+	Select using two clicks only	Выбирать только двумя щелчками
+	Selection Area Effect	Эффект области выбора
+	Selection Preview Filter	Фильтр предпросмотра выбора
+	Selection area opacity:	Непрозрачность области выбора:
+	Selection effect color	Цвет эффекта выбора
+	Selection modes	Режимы выбора
+	Selection preview	Предпросмотр выбора
+	Send Hatches to Back	Штриховки на задний план
+	Send Under Objects	Поместить под объекты
+	Set Current Viewport	Сделать видовой экран текущим
+	Set Dynamic Property	Задать динамическое свойство
+	Set Table Cell Style	Задать стиль ячейки таблицы
+	Shape	Форма
+	Shortcut Menu	Контекстное меню
+	Shortcut Menu: always enabled	Контекстное меню: всегда включено
+	Shortcut Menu: enabled when command options are present	Контекстное меню: включено, если у команды есть параметры
+	Show Annotative Objects	Показать аннотативные объекты
+	Show Quick Properties for selected objects	Показывать быстрые свойства выбранных объектов
+	Show and hide the tools of this category	Показать или скрыть инструменты этой категории
+	Show command prompting near the crosshairs	Показывать запросы команд у перекрестия
+	Show grips	Показывать ручки
+	Show in Tool Sets	Показать в наборах инструментов
+	Snap type	Тип привязки
+	Snap, grid, polar tracking and Dynamic Input:	Привязка, сетка, полярное отслеживание и динамический ввод:
+	Solid Editing	Редактирование тел
+	Specified origin	Заданное начало
+	Spherical	Сферический
+	Synchronize Multiple-scale Positions	Синхронизировать положения для нескольких масштабов
+	Table Breaks	Разрывы таблицы
+	Table Cell Style	Стиль ячейки таблицы
+	Tables	Таблицы
+	Text Objects Only	Только текстовые объекты
+	Text color	Цвет текста
+	The aperture is how near the cursor must come to a point for an object snap to find it.	Апертура задаёт, насколько близко к точке должен подойти курсор, чтобы объектная привязка её нашла.
+	There is nothing here yet. To get started, create or open a drawing.	Здесь пока ничего нет. Чтобы начать, создайте или откройте чертёж.
+	Time-sensitive right-click: a quick click is Enter, holding opens the menu	Правый щелчок с учётом времени: быстрый щелчок — это Enter, удержание открывает меню
+	To	До
+	Tolerance...	Допуск...
+	Top left	Сверху слева
+	Top right	Сверху справа
+	Track orthogonally only	Отслеживать только ортогонально
+	Track using all polar angle settings	Отслеживать по всем полярным углам
+	Turn on time-sensitive right-click	Включить правый щелчок с учётом времени
+	Turned off, a right-click while a command runs does what Right-Click Customization sets for Command mode.	Если выключено, правый щелчок во время команды делает то, что задано в настройке правой кнопки для режима команды.
+	Type an alias name.	Введите имя псевдонима.
+	Underline	Подчёркнутый
+	Units	Единицы
+	Units Conversion	Преобразование единиц
+	Units of new drawings	Единицы новых чертежей
+	Unload	Выгрузить
+	Unlock viewport	Разблокировать видовой экран
+	Unsaved changes	Несохранённые изменения
+	Update Data Links	Обновить связи с данными
+	Use current origin	Использовать текущее начало
+	Variables	Переменные
+	Version 2000	Версия 2000
+	Version 2004	Версия 2004
+	Version 2007	Версия 2007
+	Version 2010	Версия 2010
+	Version 2013	Версия 2013
+	Version 2018	Версия 2018
+	Viewport is locked	Видовой экран заблокирован
+	Viewport scale	Масштаб видового экрана
+	Visual Effect Settings	Параметры визуальных эффектов
+	Visual Effect Settings...	Параметры визуальных эффектов...
+	When a command is active	Когда команда активна
+	When no command is active	Когда команда не активна
+	While a command runs, a quick click is Enter and a longer click opens the shortcut menu.	Во время команды быстрый щелчок — это Enter, а долгий щелчок открывает контекстное меню.
+	While a command runs:	Во время команды:
+	Window selection color:	Цвет выбора рамкой:
+	Xref	Внешняя ссылка
+	Xref Clip Frame	Рамка подрезки внешней ссылки
+	Xrefs	Внешние ссылки
+	Zoom Dynamic	Динамическое зумирование
+	Zoom Realtime	Зумирование в реальном времени
+	built-in	встроенный
+	milliseconds	миллисекунд
+	min	мин
+	objects	объектов
+	overrides built-in	заменяет встроенный
+	{alias} is already defined; select it and use Edit.	{alias} уже задан; выберите его и нажмите «Изменить».
+	{command} is an unknown command.	{command} — неизвестная команда.
+	{n} more warnings; see the command line.	Ещё предупреждений: {n}; см. командную строку.
 	Add a drawing file as a block library	Добавить файл чертежа как библиотеку блоков
 	Add a folder of drawings or a drawing file to use its blocks.	Добавьте папку с чертежами или файл чертежа, чтобы использовать его блоки.
 	Block Libraries	Библиотеки блоков
@@ -1041,23 +1410,5 @@
 	Small Icons	Мелкие значки
 	This drawing has no blocks.	В этом чертеже нет блоков.
 	This library has no drawings or blocks.	В этой библиотеке нет чертежей и блоков.
-	Options	Параметры
 	Only the first {n} are shown.	Показаны только первые {n}.
-	Find All	Find All
-	Find what:	Find what:
-	Match case	Match case
-	Replace	Replace
-	Replace All	Replace All
-	Replace with:	Replace with:
-	Replacement text	Replacement text
-	Results	Results
-	Searches the current space.	Searches the current space.
-	Text to find	Text to find
-	Whole words	Whole words
-	Nothing found	Nothing found
-	Ctrl+Enter to apply	Ctrl+Enter to apply
-	Edit Text	Edit Text
-	The drawing changed. Close the window and open it again.	Чертёж изменился. Закройте окно и откройте его снова.
-
-# ArtCraft feature naming
 	Additional Tools	Дополнительные инструменты

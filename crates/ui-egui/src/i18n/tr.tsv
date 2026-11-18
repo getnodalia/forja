@@ -1349,6 +1349,113 @@ menu	View	Görünüm
 	Check for Updates…	Güncellemeleri denetle…
 	Forja is up to date.	Forja güncel.
 	Could not check for updates.	Güncellemeler denetlenemedi.
+	Find All	Find All
+	Find what:	Find what:
+	Match case	Match case
+	Replace	Replace
+	Replace All	Replace All
+	Replace with:	Replace with:
+	Replacement text	Replacement text
+	Results	Results
+	Searches the current space.	Searches the current space.
+	Text to find	Text to find
+	Whole words	Whole words
+	Nothing found	Nothing found
+	Ctrl+Enter to apply	Ctrl+Enter to apply
+	Edit Text	Edit Text
+	The drawing changed. Close the window and open it again.	Çizim değişti. Pencereyi kapatıp yeniden açın.
+	A bracket with its layouts	Düzenleriyle birlikte bir braket
+	A shortcut you give wins over Forja's own. Changes apply at once and are kept for next time.	Atadığınız bir kısayol Forja'nın kendi kısayolundan önce gelir. Değişiklikler hemen geçerli olur ve bir sonraki sefere saklanır.
+	Add…	Ekle…
+	Alias	Takma ad
+	Alias file: {file}	Takma ad dosyası: {file}
+	Aliases are saved in your Forja profile and survive restarts.	Takma adlar Forja profilinize kaydedilir ve yeniden başlatmadan sonra da kalır.
+	Analyze Shapes	Şekilleri çözümle
+	Analyze Usage	Kullanımı çözümle
+	Back to Forja's shortcut	Forja'nın kısayoluna dön
+	Back to drawing	Çizime dön
+	Backup copy	Yedek kopya
+	Break-line Symbol	Kesme çizgisi simgesi
+	Change	Değiştir
+	Change Properties	Özellikleri değiştir
+	Choose the command the alias starts.	Takma adın başlatacağı komutu seçin.
+	Clip Xref	Xref kırp
+	Command	Komut
+	Command Mode	Komut modu
+	Convert Text to Mtext	Metni çok satırlı metne dönüştür
+	Create backup copy with each save	Her kaydetmede yedek kopya oluştur
+	Customize	Özelleştir
+	DView	DView
+	Default Mode	Varsayılan mod
+	Define each corner of the selection window with a separate click.	Seçim penceresinin her köşesini ayrı bir tıklamayla belirleyin.
+	Discard	Vazgeç
+	Drawing (inches)	Çizim (inç)
+	Drawing (mm)	Çizim (mm)
+	ENTER	ENTER
+	Edit Command Aliases (PGP)...	Komut takma adlarını düzenle (PGP)...
+	Edit Mode	Düzenleme modu
+	Edit…	Düzenle…
+	Explode Attributes to Text	Öznitelikleri metne patlat
+	Express Tools	Express araçları
+	Font	Yazı tipi
+	Imperial (inches)	İngiliz (inç)
+	Imperial units	İngiliz birimleri
+	Implied Loops	Örtük döngüler
+	Import and replace	İçe aktar ve değiştir
+	Import: there is no file dialog here; run ALIASEDIT with the file's contents using its text parameter.	İçe aktar: burada dosya iletişim kutusu yok; ALIASEDIT komutunu dosyanın içeriğiyle text parametresi üzerinden çalıştırın.
+	Importing a file replaces your {n} aliases, and any changes not applied yet.	Bir dosyayı içe aktarmak {n} takma adınızı ve henüz uygulanmamış tüm değişiklikleri değiştirir.
+	Import…	İçe aktar…
+	Interface scale	Arayüz ölçeği
+	Island	Ada
+	Keep my aliases	Takma adlarımı koru
+	Keyboard Shortcuts	Klavye kısayolları
+	Keyboard Shortcuts...	Klavye kısayolları...
+	Longer click duration:	Uzun tıklama süresi:
+	Menu	Menü
+	Metric (millimetres)	Metrik (milimetre)
+	Metric units	Metrik birimler
+	More than {n} aliases.	{n} takma addan fazla.
+	Move/Copy/Rotate	Taşı/Kopyala/Döndür
+	Multiple Insert	Çoklu ekleme
+	Needs Ctrl, Alt or a function key	Ctrl, Alt veya bir işlev tuşu gerekir
+	New and the first drawing at startup use these units unless a default template is set (QNEWTEMPLATE).	Yeni çizimler ve başlangıçtaki ilk çizim, varsayılan bir şablon ayarlanmadıkça (QNEWTEMPLATE) bu birimleri kullanır.
+	No alias file loaded. REINIT replaces these aliases with a file's.	Yüklü takma ad dosyası yok. REINIT bu takma adları bir dosyadakilerle değiştirir.
+	No objects selected and no command running:	Seçili nesne yok ve çalışan komut yok:
+	Objects selected and no command running:	Seçili nesneler var ve çalışan komut yok:
+	Preferences	Tercihler
+	Press the keys	Tuşlara basın
+	Raster Image Reference...	Raster görüntü referansı...
+	Raster Images	Raster görüntüler
+	Repeat last command	Son komutu yinele
+	Replaces the shortcut of {commands}	{commands} kısayolunun yerini alır
+	Right-Click Customization	Sağ tıklama özelleştirmesi
+	Right-Click Customization...	Sağ tıklama özelleştirmesi...
+	Run ALIASEDIT with the file's contents using its text parameter.	ALIASEDIT komutunu dosyanın içeriğiyle text parametresi üzerinden çalıştırın.
+	Sample drawing	Örnek çizim
+	Save Layout as Template	Düzeni şablon olarak kaydet
+	Save alias	Takma adı kaydet
+	Save changes to block "{name}"?	"{name}" bloğundaki değişiklikler kaydedilsin mi?
+	Select boundaries to remove	Kaldırılacak sınırları seçin
+	Select using two clicks only	Yalnızca iki tıklamayla seç
+	Shortcut Menu	Kısayol menüsü
+	Shortcut Menu: always enabled	Kısayol menüsü: her zaman etkin
+	Shortcut Menu: enabled when command options are present	Kısayol menüsü: komutun seçenekleri olduğunda etkin
+	There is nothing here yet. To get started, create or open a drawing.	Burada henüz bir şey yok. Başlamak için bir çizim oluşturun veya açın.
+	Turn on time-sensitive right-click	Zamana duyarlı sağ tıklamayı aç
+	Turned off, a right-click while a command runs does what Right-Click Customization sets for Command mode.	Kapalıyken, bir komut çalışırken yapılan sağ tıklama, Sağ tıklama özelleştirmesinin komut modu için belirlediği işi yapar.
+	Type an alias name.	Bir takma ad yazın.
+	Units	Birimler
+	Units of new drawings	Yeni çizimlerin birimleri
+	While a command runs, a quick click is Enter and a longer click opens the shortcut menu.	Bir komut çalışırken hızlı tıklama Enter'dır, uzun tıklama ise kısayol menüsünü açar.
+	While a command runs:	Bir komut çalışırken:
+	Xref	Xref
+	Xref Clip Frame	Xref kırpma çerçevesi
+	built-in	yerleşik
+	milliseconds	milisaniye
+	overrides built-in	yerleşiği geçersiz kılar
+	{alias} is already defined; select it and use Edit.	{alias} zaten tanımlı; seçip Düzenle'yi kullanın.
+	{command} is an unknown command.	{command} bilinmeyen bir komut.
+	{n} more warnings; see the command line.	{n} uyarı daha; komut satırına bakın.
 	Add a drawing file as a block library	Çizim dosyasını blok kitaplığı olarak ekle
 	Add a folder of drawings or a drawing file to use its blocks.	Bloklarını kullanmak için çizim içeren bir klasör veya bir çizim dosyası ekleyin.
 	Block Libraries	Blok Kitaplıkları
@@ -1376,21 +1483,4 @@ menu	View	Görünüm
 	This drawing has no blocks.	Bu çizimde blok yok.
 	This library has no drawings or blocks.	Bu kitaplıkta çizim veya blok yok.
 	Only the first {n} are shown.	Yalnızca ilk {n} gösteriliyor.
-	Find All	Find All
-	Find what:	Find what:
-	Match case	Match case
-	Replace	Replace
-	Replace All	Replace All
-	Replace with:	Replace with:
-	Replacement text	Replacement text
-	Results	Results
-	Searches the current space.	Searches the current space.
-	Text to find	Text to find
-	Whole words	Whole words
-	Nothing found	Nothing found
-	Ctrl+Enter to apply	Ctrl+Enter to apply
-	Edit Text	Edit Text
-	The drawing changed. Close the window and open it again.	Çizim değişti. Pencereyi kapatıp yeniden açın.
-
-# ArtCraft feature naming
 	Additional Tools	Ek Araçlar

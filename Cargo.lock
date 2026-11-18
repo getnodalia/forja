@@ -1881,7 +1881,7 @@ checksum = "aa9a19cbb55df58761df49b23516a86d432839add4af60fc256da840f66ed35b"
 
 [[package]]
 name = "forja"
-version = "0.2.1"
+version = "0.2.2"
 dependencies = [
  "chrono",
  "clap",
@@ -1911,7 +1911,7 @@ dependencies = [
 
 [[package]]
 name = "forja-cli"
-version = "0.2.1"
+version = "0.2.2"
 dependencies = [
  "clap",
  "clap_complete",
@@ -1927,14 +1927,14 @@ dependencies = [
 
 [[package]]
 name = "forja-color"
-version = "0.2.1"
+version = "0.2.2"
 dependencies = [
  "serde",
 ]
 
 [[package]]
 name = "forja-constraints"
-version = "0.2.1"
+version = "0.2.2"
 dependencies = [
  "forja-doc",
  "forja-geom",
@@ -1944,7 +1944,7 @@ dependencies = [
 
 [[package]]
 name = "forja-doc"
-version = "0.2.1"
+version = "0.2.2"
 dependencies = [
  "forja-color",
  "forja-geom",
@@ -1955,7 +1955,7 @@ dependencies = [
 
 [[package]]
 name = "forja-engine"
-version = "0.2.1"
+version = "0.2.2"
 dependencies = [
  "craft-docpath",
  "craft-dxf",
@@ -1977,7 +1977,7 @@ dependencies = [
 
 [[package]]
 name = "forja-fonts"
-version = "0.2.1"
+version = "0.2.2"
 dependencies = [
  "craft-dxf",
  "craft-font-catalog",
@@ -1992,14 +1992,14 @@ dependencies = [
 
 [[package]]
 name = "forja-geom"
-version = "0.2.1"
+version = "0.2.2"
 dependencies = [
  "serde",
 ]
 
 [[package]]
 name = "forja-io"
-version = "0.2.1"
+version = "0.2.2"
 dependencies = [
  "acadrust",
  "craft-dwg",
@@ -2023,7 +2023,7 @@ dependencies = [
 
 [[package]]
 name = "forja-mcp"
-version = "0.2.1"
+version = "0.2.2"
 dependencies = [
  "clap",
  "craft-jsonrpc",
@@ -2040,7 +2040,7 @@ dependencies = [
 
 [[package]]
 name = "forja-render"
-version = "0.2.1"
+version = "0.2.2"
 dependencies = [
  "craft-image-codecs 0.1.0 (git+https://github.com/getnodalia/foundation?rev=ae5020c1ed922cf7976a3a5545f05b07f466be12)",
  "forja-color",
@@ -2055,7 +2055,7 @@ dependencies = [
 
 [[package]]
 name = "forja-ui-egui"
-version = "0.2.1"
+version = "0.2.2"
 dependencies = [
  "chrono",
  "craft-image-codecs 0.1.0 (git+https://github.com/getnodalia/foundation?rev=ae5020c1ed922cf7976a3a5545f05b07f466be12)",
@@ -2085,7 +2085,7 @@ dependencies = [
 
 [[package]]
 name = "forja-web"
-version = "0.2.1"
+version = "0.2.2"
 dependencies = [
  "craft-web-api",
  "craft-web-host",
@@ -6220,7 +6220,7 @@ checksum = "9440ea3e5aeabb0ac63af70daf835274065238cdd0cec83418f417eae38bacee"
 
 [[package]]
 name = "xtask"
-version = "0.2.1"
+version = "0.2.2"
 dependencies = [
  "chrono",
  "serde_json",
