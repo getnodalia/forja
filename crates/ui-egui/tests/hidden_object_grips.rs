@@ -24,11 +24,16 @@ fn drawing_with_hidden_object() -> (CadApp, Handle, Handle) {
     (app, regular, hidden)
 }
 
-/// The grip rectangles (filled with `color`) inside `canvas` among the painted shapes.
+/// The grip rectangles (filled with `color`) inside `canvas` among the painted shapes, painted
+/// one by one or from Forja's cached grip mesh.
 fn count_grips(shape: &egui::Shape, canvas: egui::Rect, color: egui::Color32) -> usize {
     match shape {
         egui::Shape::Rect(rect) => usize::from(rect.fill == color && canvas.contains(rect.rect.center())),
         egui::Shape::Vec(shapes) => shapes.iter().map(|shape| count_grips(shape, canvas, color)).sum(),
+        // Grips drawn from the cached mesh: each filled rectangle keeps four vertices of its fill.
+        egui::Shape::Mesh(mesh) => {
+            mesh.vertices.iter().filter(|v| v.color == color && canvas.contains(v.pos)).count().div_ceil(4)
+        }
         _ => 0,
     }
 }
