@@ -26,8 +26,8 @@
 </div>
 
 <p align="center">
-  <img src="docs/images/ui-apartment.png" width="100%" alt="Forja with an apartment floor plan open: grey walls, blue windows, green door swings, furniture outlines, yellow room names and a room schedule table, cyan dimensions; Tool Sets on the left, Layers and Properties on the right, the command line at the bottom">
-  <br><sub><b>Apartment plan</b> (<a href="examples/apartment.dxf">examples/apartment.dxf</a>): hatched walls, room labels, a table, a multileader and dimensions, all drawn with Forja's own commands.</sub>
+  <img src="https://raw.githubusercontent.com/getnodalia/nodalia-web/main/assets/screens/forja/forja-dark.jpg" width="100%" alt="Forja in the dark theme with a part drawing open: tool sets on the left, layers and properties on the right, the command line at the bottom">
+  <br><sub><b>Dark theme</b>, with the shared engineering title bar. Everything is drawn with Forja's own commands.</sub>
 </p>
 
 ---
@@ -49,11 +49,11 @@ Linux.
 <table>
   <tr>
     <td width="50%"><img src="docs/images/ui-layout.png" alt="A paper-space layout in Forja: a white sheet with a viewport showing the apartment plan at scale, the status bar showing the Layout1 tab and the PAPER toggle"></td>
-    <td width="50%"><img src="docs/images/ui-bracket.png" alt="Forja in its light theme with a mounting bracket part drawing: front view with bolt holes, centre lines and dimensions, a hatched section view, notes and a title block"></td>
+    <td width="50%"><img src="https://raw.githubusercontent.com/getnodalia/nodalia-web/main/assets/screens/forja/forja-light.jpg" alt="Forja in its light theme with the same drawing open"></td>
   </tr>
   <tr>
     <td><sub><b>Layouts</b>: paper space with viewports, page setups and plotting to PDF.</sub></td>
-    <td><sub><b>Light theme</b>: a two-view part drawing with centre lines, a section hatch and a title block.</sub></td>
+    <td><sub><b>Light theme</b>: the same drawing in the light palette, chosen in Preferences.</sub></td>
   </tr>
 </table>
 
