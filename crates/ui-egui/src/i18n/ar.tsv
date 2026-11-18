@@ -1383,3 +1383,57 @@ menu	View	عرض
 	Ctrl+Enter to apply	Ctrl+Enter to apply
 	Edit Text	Edit Text
 	The drawing changed. Close the window and open it again.	تغيّر الرسم. أغلق النافذة وافتحها مرة أخرى.
+	A bracket with its layouts	حامل مع مخططاته
+	A shortcut you give wins over Forja's own. Changes apply at once and are kept for next time.	الاختصار الذي تعيّنه يتقدّم على اختصار Forja نفسه. تُطبَّق التغييرات فورًا وتُحفظ للمرة القادمة.
+	Aliases are saved in your Forja profile and survive restarts.	تُحفظ الأسماء المستعارة في ملفك الشخصي في Forja وتبقى بعد إعادة التشغيل.
+	Back to Forja's shortcut	العودة إلى اختصار Forja
+	Back to drawing	العودة إلى الرسم
+	Change	تغيير
+	Clear Recent Files	مسح الملفات الأخيرة
+	Clip Xref	قص المرجع الخارجي
+	Command Mode	وضع الأوامر
+	DView	DView
+	Default Mode	الوضع الافتراضي
+	Drawing (inches)	رسم (بوصة)
+	Drawing (mm)	رسم (مم)
+	ENTER	ENTER
+	Edit Mode	وضع التحرير
+	Imperial units	الوحدات الإمبراطورية
+	Import and replace	استيراد واستبدال
+	Import: there is no file dialog here; run ALIASEDIT with the file's contents using its text parameter.	استيراد: لا يوجد مربع حوار للملفات هنا؛ شغّل ALIASEDIT بمحتوى الملف عبر معامل text الخاص به.
+	Importing a file replaces your {n} aliases, and any changes not applied yet.	يؤدي استيراد ملف إلى استبدال أسمائك المستعارة البالغ عددها {n}، وأي تغييرات لم تُطبَّق بعد.
+	Import…	استيراد…
+	Keep my aliases	الاحتفاظ بأسمائي المستعارة
+	Keyboard Shortcuts	اختصارات لوحة المفاتيح
+	Keyboard Shortcuts...	اختصارات لوحة المفاتيح...
+	Longer click duration:	مدة النقرة الأطول:
+	Menu	القائمة
+	Metric units	الوحدات المترية
+	Multiple Insert	إدراج متعدد
+	Needs Ctrl, Alt or a function key	يتطلب Ctrl أو Alt أو مفتاح وظيفة
+	No objects selected and no command running:	لا توجد كائنات محددة ولا أمر قيد التشغيل:
+	Objects selected and no command running:	توجد كائنات محددة ولا أمر قيد التشغيل:
+	Open Recent	فتح الأخيرة
+	Preferences	التفضيلات
+	Press the keys	اضغط المفاتيح
+	Raster Image Reference...	مرجع صورة نقطية...
+	Raster Images	صور نقطية
+	Repeat last command	تكرار الأمر الأخير
+	Replaces the shortcut of {commands}	يستبدل اختصار {commands}
+	Right-Click Customization	تخصيص النقر بزر الماوس الأيمن
+	Right-Click Customization...	تخصيص النقر بزر الماوس الأيمن...
+	Run ALIASEDIT with the file's contents using its text parameter.	شغّل ALIASEDIT بمحتوى الملف عبر معامل text الخاص به.
+	Sample drawing	رسم نموذجي
+	Shortcut Menu	القائمة المختصرة
+	Shortcut Menu: always enabled	القائمة المختصرة: مفعّلة دائمًا
+	Shortcut Menu: enabled when command options are present	القائمة المختصرة: مفعّلة عند وجود خيارات للأمر
+	There is nothing here yet. To get started, create or open a drawing.	لا يوجد شيء هنا بعد. للبدء، أنشئ رسمًا أو افتحه.
+	Turn on time-sensitive right-click	تشغيل النقر الأيمن الحساس للوقت
+	Turned off, a right-click while a command runs does what Right-Click Customization sets for Command mode.	عند إيقافه، يؤدي النقر بزر الماوس الأيمن أثناء تشغيل أمر ما إلى ما يحدده تخصيص النقر بزر الماوس الأيمن لوضع الأوامر.
+	Units	الوحدات
+	While a command runs, a quick click is Enter and a longer click opens the shortcut menu.	أثناء تشغيل أمر، النقرة السريعة تعادل Enter والنقرة الأطول تفتح القائمة المختصرة.
+	While a command runs:	أثناء تشغيل أمر:
+	Xref	مرجع خارجي
+	Xref Clip Frame	إطار قص المرجع الخارجي
+	milliseconds	ميلي ثانية
+	{n} more warnings; see the command line.	{n} تحذيرات أخرى؛ راجع سطر الأوامر.

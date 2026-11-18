@@ -1472,3 +1472,56 @@ menu	View	ხედი
 	Text to find	მოსაძებნი ტექსტი
 	Whole words	მთლიანი სიტყვები
 	Nothing found	ვერაფერი მოიძებნა
+	A bracket with its layouts	სამაგრი თავისი განლაგებებით
+	A shortcut you give wins over Forja's own. Changes apply at once and are kept for next time.	თქვენ მიერ მინიჭებული მალსახმობი უპირატესია Forja-ს საკუთარზე. ცვლილებები მაშინვე მოქმედებს და შემდეგი ჯერისთვის ინახება.
+	Aliases are saved in your Forja profile and survive restarts.	ფსევდონიმები ინახება თქვენს Forja-ს პროფილში და გადატვირთვის შემდეგაც რჩება.
+	Back to Forja's shortcut	Forja-ს მალსახმობზე დაბრუნება
+	Back to drawing	ნახაზზე დაბრუნება
+	Clip Xref	xref-ის მოჭრა
+	Command Mode	ბრძანების რეჟიმი
+	Ctrl+Enter to apply	Ctrl+Enter გამოსაყენებლად
+	DView	DView
+	Default Mode	ნაგულისხმევი რეჟიმი
+	Drawing (inches)	ნახაზი (დიუმი)
+	Drawing (mm)	ნახაზი (მმ)
+	ENTER	ENTER
+	Edit Mode	რედაქტირების რეჟიმი
+	Edit Text	ტექსტის რედაქტირება
+	Imperial units	იმპერიული ერთეულები
+	Import and replace	იმპორტი და ჩანაცვლება
+	Import: there is no file dialog here; run ALIASEDIT with the file's contents using its text parameter.	იმპორტი: აქ ფაილის დიალოგი არ არის; გაუშვით ALIASEDIT ფაილის შიგთავსით მისი text პარამეტრის მეშვეობით.
+	Importing a file replaces your {n} aliases, and any changes not applied yet.	ფაილის იმპორტი ჩაანაცვლებს თქვენს {n} ფსევდონიმს და ყველა ჯერ არგამოყენებულ ცვლილებას.
+	Import…	იმპორტი…
+	Keep my aliases	ჩემი ფსევდონიმების შენარჩუნება
+	Keyboard Shortcuts	კლავიატურის მალსახმობები
+	Keyboard Shortcuts...	კლავიატურის მალსახმობები...
+	Longer click duration:	ხანგრძლივი დაწკაპუნების დრო:
+	Menu	მენიუ
+	Metric units	მეტრული ერთეულები
+	Multiple Insert	მრავალჯერადი ჩასმა
+	Needs Ctrl, Alt or a function key	საჭიროა Ctrl, Alt ან ფუნქციური კლავიში
+	No objects selected and no command running:	ობიექტები არ არის არჩეული და ბრძანება არ მუშაობს:
+	Objects selected and no command running:	ობიექტები არჩეულია და ბრძანება არ მუშაობს:
+	Preferences	პარამეტრები
+	Press the keys	დააჭირეთ კლავიშებს
+	Raster Image Reference...	რასტრული გამოსახულების მიმართვა...
+	Raster Images	რასტრული გამოსახულებები
+	Repeat last command	ბოლო ბრძანების გამეორება
+	Replaces the shortcut of {commands}	ჩაანაცვლებს {commands}-ის მალსახმობს
+	Right-Click Customization	მარჯვენა დაწკაპუნების მორგება
+	Right-Click Customization...	მარჯვენა დაწკაპუნების მორგება...
+	Run ALIASEDIT with the file's contents using its text parameter.	გაუშვით ALIASEDIT ფაილის შიგთავსით მისი text პარამეტრის მეშვეობით.
+	Sample drawing	ნიმუში ნახაზი
+	Shortcut Menu	კონტექსტური მენიუ
+	Shortcut Menu: always enabled	კონტექსტური მენიუ: ყოველთვის ჩართული
+	Shortcut Menu: enabled when command options are present	კონტექსტური მენიუ: ჩართულია, როცა ბრძანებას აქვს პარამეტრები
+	The drawing changed. Close the window and open it again.	ნახაზი შეიცვალა. დახურეთ ფანჯარა და ხელახლა გახსენით.
+	There is nothing here yet. To get started, create or open a drawing.	აქ ჯერ არაფერია. დასაწყებად შექმენით ან გახსენით ნახაზი.
+	Turn on time-sensitive right-click	დროზე დამოკიდებული მარჯვენა დაწკაპუნების ჩართვა
+	Turned off, a right-click while a command runs does what Right-Click Customization sets for Command mode.	გამორთულ მდგომარეობაში ბრძანების დროს მარჯვენა დაწკაპუნება აკეთებს იმას, რაც მარჯვენა დაწკაპუნების მორგებაში ბრძანების რეჟიმისთვისაა მითითებული.
+	While a command runs, a quick click is Enter and a longer click opens the shortcut menu.	ბრძანების მუშაობისას სწრაფი დაწკაპუნება Enter-ია, ხოლო ხანგრძლივი დაწკაპუნება კონტექსტურ მენიუს ხსნის.
+	While a command runs:	ბრძანების მუშაობისას:
+	Xref	Xref
+	Xref Clip Frame	xref-ის მოჭრის ჩარჩო
+	milliseconds	მილიწამი
+	{n} more warnings; see the command line.	კიდევ {n} გაფრთხილება; იხილეთ ბრძანების ხაზი.
