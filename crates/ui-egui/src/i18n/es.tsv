@@ -1423,3 +1423,40 @@
 	{command} is an unknown command.	{command} es un comando desconocido.
 	{count} more types	{count} tipos más
 	{n} more warnings; see the command line.	{n} avisos más; consulta la línea de comandos.
+	Align Multileaders	Alinear directrices múltiples
+	Analyze Usage	Analizar uso
+	Break-line Symbol	Símbolo de línea de corte
+	Change	Cambiar
+	Change Properties	Cambiar propiedades
+	Clear Recent Files	Borrar archivos recientes
+	Clip Xref	Delimitar xref
+	Collect	Agrupar
+	Collect Multileaders	Agrupar directrices múltiples
+	Convert Text to Mtext	Convertir texto en texto de líneas múltiples
+	Customize	Personalizar
+	DView	DView
+	Drag Dynamic Grip	Arrastrar pinzamiento dinámico
+	Dynamic Block Data	Datos de bloque dinámico
+	Dynamic Block Grips	Pinzamientos de bloque dinámico
+	Dynamic Block Reference	Referencia a bloque dinámico
+	Edit Command Aliases (PGP)...	Editar alias de comandos (PGP)...
+	Edit Multileader	Editar directriz múltiple
+	Evaluate LISP	Evaluar LISP
+	Explode Attributes to Text	Descomponer atributos en texto
+	Express Tools	Herramientas exprés
+	Hatch Pick	Designar sombreado
+	Implied Loops	Contornos implícitos
+	Keyboard Shortcuts...	Atajos de teclado...
+	Load Application...	Cargar aplicación...
+	Move/Copy/Rotate	Desplazar/copiar/girar
+	Multiple Insert	Inserción múltiple
+	Open Recent	Abrir reciente
+	Raster Image Reference...	Referencia a imagen ráster...
+	Raster Images	Imágenes ráster
+	Run Script...	Ejecutar script...
+	Save Layout as Template	Guardar presentación como plantilla
+	Set Dynamic Property	Establecer propiedad dinámica
+	Sheet Books to PDF...	Cuadernos de planos a PDF...
+	Units	Unidades
+	Xref	Xref
+	Xref Clip Frame	Marco de delimitación de xref

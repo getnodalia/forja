@@ -1476,3 +1476,45 @@ menu	View	视图
 	Ctrl+Enter to apply	Ctrl+Enter 应用
 	Edit Text	编辑文字
 	The drawing changed. Close the window and open it again.	图纸已切换。请关闭窗口后重新打开。
+	A bracket with its layouts	带布局的支架
+	A shortcut you give wins over Forja's own. Changes apply at once and are kept for next time.	你设置的快捷键优先于 Forja 自带的快捷键。更改立即生效，并保留到下次使用。
+	Aliases are saved in your Forja profile and survive restarts.	别名保存在你的 Forja 配置文件中，重启后仍然保留。
+	Back to Forja's shortcut	恢复 Forja 的快捷键
+	Back to drawing	返回图形
+	Command Mode	命令模式
+	Default Mode	默认模式
+	Drawing (inches)	图形（英寸）
+	Drawing (mm)	图形（毫米）
+	ENTER	ENTER
+	Edit Mode	编辑模式
+	Imperial units	英制单位
+	Import and replace	导入并替换
+	Import: there is no file dialog here; run ALIASEDIT with the file's contents using its text parameter.	导入：这里没有文件对话框；请运行 ALIASEDIT，并用其 text 参数传入文件内容。
+	Importing a file replaces your {n} aliases, and any changes not applied yet.	导入文件会替换你的 {n} 个别名，以及尚未应用的所有更改。
+	Import…	导入…
+	Keep my aliases	保留我的别名
+	Keyboard Shortcuts	键盘快捷键
+	Longer click duration:	较长单击时长：
+	Menu	菜单
+	Metric units	公制单位
+	Needs Ctrl, Alt or a function key	需要 Ctrl、Alt 或功能键
+	No objects selected and no command running:	未选择对象且没有命令运行时：
+	Objects selected and no command running:	已选择对象且没有命令运行时：
+	Preferences	首选项
+	Press the keys	按下按键
+	Repeat last command	重复上一个命令
+	Replaces the shortcut of {commands}	替换 {commands} 的快捷键
+	Right-Click Customization	右键单击自定义
+	Right-Click Customization...	右键单击自定义...
+	Run ALIASEDIT with the file's contents using its text parameter.	请运行 ALIASEDIT，并用其 text 参数传入文件内容。
+	Sample drawing	示例图形
+	Shortcut Menu	快捷菜单
+	Shortcut Menu: always enabled	快捷菜单：始终启用
+	Shortcut Menu: enabled when command options are present	快捷菜单：命令选项存在时启用
+	There is nothing here yet. To get started, create or open a drawing.	这里还没有内容。首先，新建或打开一个图形。
+	Turn on time-sensitive right-click	打开计时右键单击
+	Turned off, a right-click while a command runs does what Right-Click Customization sets for Command mode.	关闭后，命令运行时右键单击会执行“右键单击自定义”中为命令模式设置的操作。
+	While a command runs, a quick click is Enter and a longer click opens the shortcut menu.	命令运行时，快速单击相当于 Enter，较长单击会打开快捷菜单。
+	While a command runs:	命令运行时：
+	milliseconds	毫秒
+	{n} more warnings; see the command line.	还有 {n} 条警告；请查看命令行。

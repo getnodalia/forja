@@ -1422,3 +1422,25 @@
 	ENTER	Клавіша Enter
 	Shortcut Menu: always enabled	Контекстне меню: завжди
 	Shortcut Menu: enabled when command options are present	Контекстне меню: коли команда має параметри
+	A bracket with its layouts	Кронштейн зі своїми аркушами
+	Back to drawing	Назад до креслення
+	Change	Змінити
+	Change Properties	Змінити властивості
+	Drawing (inches)	Креслення (дюйми)
+	Drawing (mm)	Креслення (мм)
+	Font	Шрифт
+	Imperial units	Імперські одиниці
+	Import and replace	Імпортувати й замінити
+	Importing a file replaces your {n} aliases, and any changes not applied yet.	Імпорт файлу замінить ваші псевдоніми ({n}) і всі ще не застосовані зміни.
+	Keep my aliases	Залишити мої псевдоніми
+	Menu	Меню
+	Metric units	Метричні одиниці
+	Multiple Insert	Множинна вставка
+	Preferences	Параметри
+	Run ALIASEDIT with the file's contents using its text parameter.	Виконайте ALIASEDIT із вмістом файлу в параметрі text.
+	Sample drawing	Зразок креслення
+	Save Layout as Template	Зберегти аркуш як шаблон
+	There is nothing here yet. To get started, create or open a drawing.	Тут поки нічого немає. Щоб почати, створіть або відкрийте креслення.
+	Turned off, a right-click while a command runs does what Right-Click Customization sets for Command mode.	Коли вимкнено, клацання правою кнопкою під час команди робить те, що задано в налаштуваннях правої кнопки для режиму команди.
+	Units	Одиниці
+	Xref	Зовнішнє посилання

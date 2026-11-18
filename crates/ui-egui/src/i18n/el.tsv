@@ -1350,3 +1350,95 @@ menu	View	Προβολή
 	Ctrl+Enter to apply	Ctrl+Enter to apply
 	Edit Text	Edit Text
 	The drawing changed. Close the window and open it again.	Το σχέδιο άλλαξε. Κλείστε το παράθυρο και ανοίξτε το ξανά.
+	A bracket with its layouts	Ένα στήριγμα με τις διατάξεις του
+	A shortcut you give wins over Forja's own. Changes apply at once and are kept for next time.	Μια συντόμευση που ορίζετε υπερισχύει της συντόμευσης του Forja. Οι αλλαγές ισχύουν αμέσως και διατηρούνται για την επόμενη φορά.
+	Add…	Προσθήκη…
+	Alias	Ψευδώνυμο
+	Alias file: {file}	Αρχείο ψευδωνύμων: {file}
+	Aliases are saved in your Forja profile and survive restarts.	Τα ψευδώνυμα αποθηκεύονται στο προφίλ σας στο Forja και διατηρούνται μετά από επανεκκίνηση.
+	Analyze Shapes	Ανάλυση σχημάτων
+	Analyze Usage	Ανάλυση χρήσης
+	Back to Forja's shortcut	Επιστροφή στη συντόμευση του Forja
+	Back to drawing	Επιστροφή στο σχέδιο
+	Backup copy	Αντίγραφο ασφαλείας
+	Break-line Symbol	Σύμβολο γραμμής διακοπής
+	Change	Αλλαγή
+	Change Properties	Αλλαγή ιδιοτήτων
+	Choose the command the alias starts.	Επιλέξτε την εντολή που ξεκινά το ψευδώνυμο.
+	Clip Xref	Περικοπή xref
+	Command	Εντολή
+	Command Mode	Λειτουργία εντολής
+	Convert Text to Mtext	Μετατροπή κειμένου σε κείμενο πολλών γραμμών
+	Create backup copy with each save	Δημιουργία αντιγράφου ασφαλείας σε κάθε αποθήκευση
+	Customize	Προσαρμογή
+	DView	DView
+	Default Mode	Προεπιλεγμένη λειτουργία
+	Define each corner of the selection window with a separate click.	Ορίστε κάθε γωνία του παραθύρου επιλογής με ξεχωριστό κλικ.
+	Discard	Απόρριψη
+	Drawing (inches)	Σχέδιο (ίντσες)
+	Drawing (mm)	Σχέδιο (mm)
+	ENTER	ENTER
+	Edit Command Aliases (PGP)...	Επεξεργασία ψευδωνύμων εντολών (PGP)...
+	Edit Mode	Λειτουργία επεξεργασίας
+	Edit…	Επεξεργασία…
+	Explode Attributes to Text	Ανάλυση χαρακτηριστικών σε κείμενο
+	Express Tools	Εργαλεία Express
+	Font	Γραμματοσειρά
+	Imperial (inches)	Αγγλοσαξονικό (ίντσες)
+	Imperial units	Αγγλοσαξονικές μονάδες
+	Implied Loops	Έμμεσοι βρόχοι
+	Import and replace	Εισαγωγή και αντικατάσταση
+	Import: there is no file dialog here; run ALIASEDIT with the file's contents using its text parameter.	Εισαγωγή: εδώ δεν υπάρχει παράθυρο αρχείων· εκτελέστε το ALIASEDIT με το περιεχόμενο του αρχείου στην παράμετρο text.
+	Importing a file replaces your {n} aliases, and any changes not applied yet.	Η εισαγωγή ενός αρχείου αντικαθιστά τα {n} ψευδώνυμά σας και όσες αλλαγές δεν έχουν εφαρμοστεί ακόμα.
+	Import…	Εισαγωγή…
+	Interface scale	Κλίμακα διεπαφής
+	Island	Νησίδα
+	Keep my aliases	Διατήρηση των ψευδωνύμων μου
+	Keyboard Shortcuts	Συντομεύσεις πληκτρολογίου
+	Keyboard Shortcuts...	Συντομεύσεις πληκτρολογίου...
+	Longer click duration:	Διάρκεια μεγαλύτερου κλικ:
+	Menu	Μενού
+	Metric (millimetres)	Μετρικό (χιλιοστά)
+	Metric units	Μετρικές μονάδες
+	More than {n} aliases.	Περισσότερα από {n} ψευδώνυμα.
+	Move/Copy/Rotate	Μετακίνηση/Αντιγραφή/Περιστροφή
+	Multiple Insert	Πολλαπλή εισαγωγή
+	Needs Ctrl, Alt or a function key	Χρειάζεται Ctrl, Alt ή πλήκτρο λειτουργίας
+	New and the first drawing at startup use these units unless a default template is set (QNEWTEMPLATE).	Τα νέα σχέδια και το πρώτο σχέδιο κατά την εκκίνηση χρησιμοποιούν αυτές τις μονάδες, εκτός αν έχει οριστεί προεπιλεγμένο πρότυπο (QNEWTEMPLATE).
+	No alias file loaded. REINIT replaces these aliases with a file's.	Δεν έχει φορτωθεί αρχείο ψευδωνύμων. Το REINIT αντικαθιστά αυτά τα ψευδώνυμα με αυτά ενός αρχείου.
+	No objects selected and no command running:	Δεν υπάρχουν επιλεγμένα αντικείμενα και δεν εκτελείται εντολή:
+	Objects selected and no command running:	Υπάρχουν επιλεγμένα αντικείμενα και δεν εκτελείται εντολή:
+	Preferences	Προτιμήσεις
+	Press the keys	Πατήστε τα πλήκτρα
+	Raster Image Reference...	Αναφορά εικόνας raster...
+	Raster Images	Εικόνες raster
+	Repeat last command	Επανάληψη τελευταίας εντολής
+	Replaces the shortcut of {commands}	Αντικαθιστά τη συντόμευση για {commands}
+	Right-Click Customization	Προσαρμογή δεξιού κλικ
+	Right-Click Customization...	Προσαρμογή δεξιού κλικ...
+	Run ALIASEDIT with the file's contents using its text parameter.	Εκτελέστε το ALIASEDIT με το περιεχόμενο του αρχείου στην παράμετρο text.
+	Sample drawing	Δείγμα σχεδίου
+	Save Layout as Template	Αποθήκευση διάταξης ως προτύπου
+	Save alias	Αποθήκευση ψευδωνύμου
+	Save changes to block "{name}"?	Αποθήκευση αλλαγών στο μπλοκ "{name}";
+	Select boundaries to remove	Επιλέξτε όρια για αφαίρεση
+	Select using two clicks only	Επιλογή μόνο με δύο κλικ
+	Shortcut Menu	Μενού συντομεύσεων
+	Shortcut Menu: always enabled	Μενού συντομεύσεων: πάντα ενεργό
+	Shortcut Menu: enabled when command options are present	Μενού συντομεύσεων: ενεργό όταν η εντολή έχει επιλογές
+	There is nothing here yet. To get started, create or open a drawing.	Δεν υπάρχει τίποτα εδώ ακόμα. Για να ξεκινήσετε, δημιουργήστε ή ανοίξτε ένα σχέδιο.
+	Turn on time-sensitive right-click	Ενεργοποίηση χρονοεξαρτώμενου δεξιού κλικ
+	Turned off, a right-click while a command runs does what Right-Click Customization sets for Command mode.	Όταν είναι απενεργοποιημένο, ένα δεξί κλικ ενώ εκτελείται εντολή κάνει ό,τι ορίζει η Προσαρμογή δεξιού κλικ για τη λειτουργία εντολής.
+	Type an alias name.	Πληκτρολογήστε ένα όνομα ψευδωνύμου.
+	Units	Μονάδες
+	Units of new drawings	Μονάδες νέων σχεδίων
+	While a command runs, a quick click is Enter and a longer click opens the shortcut menu.	Ενώ εκτελείται εντολή, ένα γρήγορο κλικ είναι Enter και ένα μεγαλύτερο κλικ ανοίγει το μενού συντομεύσεων.
+	While a command runs:	Ενώ εκτελείται εντολή:
+	Xref	Xref
+	Xref Clip Frame	Πλαίσιο περικοπής xref
+	built-in	ενσωματωμένο
+	milliseconds	χιλιοστά του δευτερολέπτου
+	overrides built-in	αντικαθιστά ενσωματωμένο
+	{alias} is already defined; select it and use Edit.	Το {alias} έχει ήδη οριστεί· επιλέξτε το και χρησιμοποιήστε την Επεξεργασία.
+	{command} is an unknown command.	Η {command} είναι άγνωστη εντολή.
+	{n} more warnings; see the command line.	Ακόμα {n} προειδοποιήσεις· δείτε τη γραμμή εντολών.
