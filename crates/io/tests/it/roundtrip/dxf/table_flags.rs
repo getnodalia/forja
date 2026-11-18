@@ -4,9 +4,9 @@
 //! Annotative STYLE xdata is covered separately by the round-trip tests, not this native-bit test.
 //! References: Autodesk DXF Reference, LAYER and STYLE symbol table entries.
 
+use craft_dxf::{Tag, Value, records, sections};
 use forja_color::Color;
 use forja_doc::{Drawing, Layer, TextStyle};
-use forja_dxf::{Tag, Value, records, sections};
 use forja_io::{SaveOptions, Version, read, write_with};
 
 fn layers() -> Vec<(Layer, i64)> {
@@ -59,7 +59,7 @@ fn fixture(table: &str, body: &str) -> Drawing {
 
 fn output(drawing: &Drawing, table: &str, version: Version, binary: bool) -> Vec<Tag> {
     let bytes = write_with(drawing, "memory.dxf", &SaveOptions { version: Some(version), binary }).unwrap();
-    let tags = forja_dxf::parse(&bytes).unwrap();
+    let tags = craft_dxf::parse(&bytes).unwrap();
     let sections = sections(&tags);
     let tables = records(&sections.iter().find(|s| s.name == "TABLES").unwrap().tags);
     let matching: Vec<_> = tables.into_iter().filter(|(kind, groups)| kind == table && groups.contains(&Tag::s(2, "Flags"))).collect();

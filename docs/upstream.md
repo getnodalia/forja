@@ -5,7 +5,7 @@
 | Upstream | `storytold/cadcraft` |
 | Last observed | `6f0f1fefa81d08031bde56a8b3d5b1556810f397` |
 | Last evaluated | `6f0f1fefa81d08031bde56a8b3d5b1556810f397` |
-| Last integrated | `6f0f1fefa81d08031bde56a8b3d5b1556810f397` imported with full history on 2026-11-10 |
+| Last integrated | `f1b76fab` (105 commits since the last sync) on 2026-11-18, merged with this app's names |
 | Skipped | none |
 | Adapted | app icon; every CADCraft name renamed to Forja (`.github/rebrand.toml`); DWG/DXF, MTEXT and native-open fixes (upstream PR #1086); GNOME Wayland window controls (upstream PR #1368) |
 | Conflicting | `docs/file-format-parity.md` when merging the PR #1086 work: upstream's text kept |

@@ -7,8 +7,8 @@
 use std::collections::{HashMap, HashSet};
 use std::sync::Arc;
 
+use craft_dxf::{Section, Tag};
 use forja_doc::{Drawing, EntityKind, EntityStore, Handle, Image};
-use forja_dxf::{Section, Tag};
 use forja_geom::{Vec2, Vec3};
 
 /// Most clip boundary vertices kept per image (hostile files).

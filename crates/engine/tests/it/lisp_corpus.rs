@@ -23,10 +23,10 @@ fn groups(d: &forja_engine::doc::Drawing, e: &Entity) -> (String, Vec<(i32, Valu
         .into_iter()
         .map(|t| {
             let v = match t.value {
-                forja_dxf::Value::Str(s) | forja_dxf::Value::Hex(s) => json!(s),
-                forja_dxf::Value::Real(r) => json!(r),
-                forja_dxf::Value::Int(i) => json!(i),
-                forja_dxf::Value::Bool(b) => json!(i32::from(b)),
+                craft_dxf::Value::Str(s) | craft_dxf::Value::Hex(s) => json!(s),
+                craft_dxf::Value::Real(r) => json!(r),
+                craft_dxf::Value::Int(i) => json!(i),
+                craft_dxf::Value::Bool(b) => json!(i32::from(b)),
             };
             (t.code, v)
         })
