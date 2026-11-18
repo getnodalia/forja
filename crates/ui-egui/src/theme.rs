@@ -1,5 +1,5 @@
 //! Design tokens. The interface colours come from the Nodalia Design Language (`nodalia-theme`)
-//! with Forja's accent; every widget reads them from here.
+//! with Forja's accent, a muted orange; every widget reads them from here.
 //!
 //! Two palettes: [`Tokens::DARK`] (the original look) and [`Tokens::LIGHT`]. The interface theme
 //! changes the chrome (title and tool bar, menus, palettes, tabs, command line, status bar,
@@ -126,10 +126,34 @@ pub struct Tokens {
     pub paper: Color32,
 }
 
-/// The Nodalia Design Language palettes with the Nodalia accent: every interface colour below
-/// comes from them. Forja's dark palette is NDL's dark one lifted a few steps ([`lifted_dark`]).
-const NDL_DARK: nodalia_theme::Palette = lifted_dark(nodalia_theme::Mode::Dark.palette_with(nodalia_theme::Accent::Nodalia));
-const NDL_LIGHT: nodalia_theme::Palette = nodalia_theme::Mode::Light.palette_with(nodalia_theme::Accent::Nodalia);
+/// The Nodalia Design Language palettes with Forja's accent: every interface colour below comes
+/// from them. Forja's dark palette is NDL's dark one lifted a few steps ([`lifted_dark`]).
+const NDL_DARK: nodalia_theme::Palette =
+    lifted_dark(muted_accent(nodalia_theme::Mode::Dark.palette_with(nodalia_theme::Accent::Forja), nodalia_theme::Mode::Dark));
+const NDL_LIGHT: nodalia_theme::Palette =
+    muted_accent(nodalia_theme::Mode::Light.palette_with(nodalia_theme::Accent::Forja), nodalia_theme::Mode::Light);
+
+/// NDL's Forja ramp with three quarters of its chroma: an orange that stays calm next to a drawing.
+/// Each step keeps the luminance of NDL's step, so it keeps NDL's contrast (tested).
+const fn muted_accent(mut p: nodalia_theme::Palette, mode: nodalia_theme::Mode) -> nodalia_theme::Palette {
+    let (default, hover, pressed, subtle, text) = match mode {
+        nodalia_theme::Mode::Dark | nodalia_theme::Mode::DarkHc => {
+            (rgb(228, 165, 128), rgb(228, 195, 176), rgb(220, 141, 92), rgb(74, 45, 28), rgb(228, 165, 128))
+        }
+        nodalia_theme::Mode::Light | nodalia_theme::Mode::LightHc => {
+            (rgb(164, 103, 65), rgb(130, 80, 50), rgb(105, 65, 39), rgb(246, 239, 236), rgb(130, 80, 50))
+        }
+    };
+    p.accent_default = default;
+    p.accent_hover = hover;
+    p.accent_pressed = pressed;
+    p.accent_subtle = subtle;
+    p.accent_text = text;
+    p.text_link = text;
+    p.border_focus = default;
+    p.selection_bg = subtle;
+    p
+}
 
 /// The NDL palette of the theme on screen, for widgets that paint NDL's own roles (accent fills,
 /// text on the accent, fields, raised cards).
@@ -166,9 +190,9 @@ const fn lifted_dark(mut p: nodalia_theme::Palette) -> nodalia_theme::Palette {
     p.control_bg_pressed = rgb(65, 71, 87);
     p.control_bg_disabled = rgb(36, 39, 48);
     p.control_field_bg = rgb(30, 32, 40);
-    p.selection_bg = rgb(16, 72, 80);
+    p.selection_bg = rgb(89, 58, 41);
     p.selection_bg_inactive = rgb(45, 49, 60);
-    p.accent_subtle = rgb(16, 72, 80);
+    p.accent_subtle = rgb(89, 58, 41);
     p
 }
 
@@ -821,7 +845,7 @@ fn any_script(faces: &[forja_fonts::CraftFont], script: &str) -> bool {
     faces.iter().any(|f| f.style == "Regular" && f.scripts.contains(&script))
 }
 
-/// egui's visuals for `theme`: the Nodalia Design Language's, with the Nodalia accent, Forja's
+/// egui's visuals for `theme`: the Nodalia Design Language's, with Forja's muted accent, its
 /// lifted dark surfaces and the window frame behind the panels.
 fn visuals(theme: Theme) -> Visuals {
     use nodalia_theme::for_egui::color;
@@ -830,8 +854,8 @@ fn visuals(theme: Theme) -> Visuals {
         Theme::Dark => (nodalia_theme::Mode::Dark, NDL_DARK),
         Theme::Light => (nodalia_theme::Mode::Light, NDL_LIGHT),
     };
-    let mut v = nodalia_theme::for_egui::visuals_with(mode, nodalia_theme::Accent::Nodalia);
-    // `visuals_with` reads NDL's own palette; repaint its slots from Forja's (the same in light).
+    let mut v = nodalia_theme::for_egui::visuals_with(mode, nodalia_theme::Accent::Forja);
+    // `visuals_with` reads NDL's own palette; repaint its slots from Forja's.
     let w = &mut v.widgets;
     for (wv, fill, border) in [
         (&mut w.noninteractive, p.surface_panel, p.border_subtle),
@@ -845,6 +869,8 @@ fn visuals(theme: Theme) -> Visuals {
         wv.bg_stroke.color = color(border);
     }
     v.selection.bg_fill = color(p.selection_bg);
+    v.selection.stroke.color = color(p.accent_text);
+    v.hyperlink_color = color(p.text_link);
     v.faint_bg_color = color(p.surface_sunken);
     v.extreme_bg_color = color(p.control_field_bg);
     v.text_edit_bg_color = Some(color(p.control_field_bg));
@@ -1025,7 +1051,7 @@ mod tests {
 
 #[cfg(test)]
 mod palette_tests {
-    use super::{NDL_DARK, Tokens};
+    use super::{NDL_DARK, NDL_LIGHT, Tokens};
     use nodalia_theme::{Palette, contrast};
 
     fn surfaces(p: &Palette) -> [nodalia_theme::Rgba; 6] {
@@ -1058,13 +1084,31 @@ mod palette_tests {
         assert!(lum(NDL_DARK.surface_raised) > lum(NDL_DARK.surface_panel));
     }
 
-    /// The interface accent is Nodalia's cyan, not an orange.
+    /// The interface accent is a muted orange: Forja's NDL hue with less chroma than NDL's ramp.
     #[test]
-    fn the_accent_is_nodalia_cyan() {
+    fn the_accent_is_a_muted_orange() {
         for (t, mode) in [(Tokens::DARK, nodalia_theme::Mode::Dark), (Tokens::LIGHT, nodalia_theme::Mode::Light)] {
-            let a = mode.palette_with(nodalia_theme::Accent::Nodalia).accent_default;
-            assert_eq!(t.accent, egui::Color32::from_rgb(a.r, a.g, a.b));
-            assert!(t.accent.b() > t.accent.r(), "{:?}", t.accent);
+            let (r, g, b) = (t.accent.r(), t.accent.g(), t.accent.b());
+            assert!(r > g && g > b, "orange: {:?}", t.accent);
+            let ndl = mode.palette_with(nodalia_theme::Accent::Forja).accent_default;
+            let spread = |r: u8, b: u8| i32::from(r) - i32::from(b);
+            assert!(spread(r, b) < spread(ndl.r, ndl.b), "calmer than NDL's {ndl:?}: {:?}", t.accent);
+        }
+    }
+
+    /// The muted accent keeps NDL's accent contrast: text on the accent, the accent as text on
+    /// every surface, and text on the accent's subtle fill.
+    #[test]
+    fn the_accent_keeps_its_contrast() {
+        for p in [&NDL_DARK, &NDL_LIGHT] {
+            let c = contrast(p.text_on_accent, p.accent_default);
+            assert!(c >= 4.5, "text on accent: {c:.2}");
+            for bg in [p.surface_panel, p.surface_raised, p.accent_subtle] {
+                let c = contrast(p.accent_text, bg);
+                assert!(c >= 4.5, "accent text on {bg:?}: {c:.2}");
+            }
+            let c = contrast(p.text_primary, p.selection_bg);
+            assert!(c >= 4.5, "text on selection: {c:.2}");
         }
     }
 }
