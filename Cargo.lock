@@ -5297,7 +5297,7 @@ dependencies = [
 [[package]]
 name = "vectorcraft-geom"
 version = "0.18.0"
-source = "git+https://github.com/storytold/vectorcraft.git?rev=6b3a6b8788ebcb420d69449199cbdf323888d27e#6b3a6b8788ebcb420d69449199cbdf323888d27e"
+source = "git+https://github.com/getnodalia/pluma?rev=6b3a6b8788ebcb420d69449199cbdf323888d27e#6b3a6b8788ebcb420d69449199cbdf323888d27e"
 dependencies = [
  "kurbo",
  "serde",
@@ -5307,7 +5307,7 @@ dependencies = [
 [[package]]
 name = "vectorcraft-pathops"
 version = "0.18.0"
-source = "git+https://github.com/storytold/vectorcraft.git?rev=6b3a6b8788ebcb420d69449199cbdf323888d27e#6b3a6b8788ebcb420d69449199cbdf323888d27e"
+source = "git+https://github.com/getnodalia/pluma?rev=6b3a6b8788ebcb420d69449199cbdf323888d27e#6b3a6b8788ebcb420d69449199cbdf323888d27e"
 dependencies = [
  "kurbo",
  "linesweeper",
