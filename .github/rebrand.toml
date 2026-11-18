@@ -8,7 +8,9 @@
 # Left as they are wherever they appear.
 keep = [
     # Links: upstream's issues and pull requests, other people's forks, the shared test corpus.
-    "https?://[^\\s)\\]\"'<>`]+",
+    # Cargo sources from the shared libraries are renamed below: Nodalia vendors them in
+    # getnodalia/foundation at the same commits.
+    "https?://(?!github\\.com/storytold/(craft-libs|egui|winit)(\\.git)?\")[^\\s)\\]\"'<>`]+",
     # Upstream's repository, named without a link (the sync workflow, docs/upstream.md).
     'storytold/cadcraft[\w.-]*',
     # The shared test corpus repository and its checkout directory.
@@ -37,6 +39,32 @@ after = [["cargo", "fmt", "--all"]]
 [[pin]]
 file = "Cargo.toml"
 pattern = '^version = "[^"]*"'
+
+# Cargo sources: the shared libraries come from getnodalia/foundation, which vendors them at the
+# same commits (standards/shared-libraries.md there).
+[[replace]]
+from = 'git = "https://github.com/storytold/craft-libs.git"'
+to = 'git = "https://github.com/getnodalia/foundation"'
+
+[[replace]]
+from = 'git = "https://github.com/storytold/craft-libs"'
+to = 'git = "https://github.com/getnodalia/foundation"'
+
+[[replace]]
+from = 'git = "https://github.com/storytold/egui.git"'
+to = 'git = "https://github.com/getnodalia/foundation"'
+
+[[replace]]
+from = 'git = "https://github.com/storytold/egui"'
+to = 'git = "https://github.com/getnodalia/foundation"'
+
+[[replace]]
+from = 'git = "https://github.com/storytold/winit.git"'
+to = 'git = "https://github.com/getnodalia/foundation"'
+
+[[replace]]
+from = 'git = "https://github.com/storytold/winit"'
+to = 'git = "https://github.com/getnodalia/foundation"'
 
 # Identity: app id, publisher, installer GUIDs (a product of its own, never CADCraft's).
 [[replace]]
