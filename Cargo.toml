@@ -4,7 +4,7 @@ members = ["crates/*", "apps/*", "xtask"]
 # default-members
 
 [workspace.package]
-version = "0.2.3"
+version = "0.2.4"
 edition = "2024"
 license = "MIT OR Apache-2.0"
 rust-version = "1.95"
@@ -86,7 +86,7 @@ egui-wgpu = "0.37"
 # Monotonic time on native and web (performance.now on wasm).
 web-time = "1.1"
 # The in-app updater every Nodalia app shares (check, verified download, install, restart).
-nodalia-update = { git = "https://github.com/getnodalia/nodalia-design", rev = "d066d5d351f18f704bdfd8aad6f04b9e96a155e4", features = ["egui"] }
+nodalia-update = { git = "https://github.com/getnodalia/nodalia-design", rev = "114848a2ff1a7c29c9a5432fb12e955fbe0aeef2", features = ["egui"] }
 rfd = "0.17"
 arboard = { version = "3.6", default-features = false }
 
