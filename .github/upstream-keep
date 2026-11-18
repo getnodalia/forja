@@ -14,3 +14,4 @@ crates/ui-egui/src/ndl_window_chrome.rs
 .github/CODEOWNERS
 .github/PULL_REQUEST_TEMPLATE.md
 CONTRIBUTING.md
+docs/feature-names.md

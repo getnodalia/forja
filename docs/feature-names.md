@@ -1,6 +1,6 @@
 # Feature naming
 
-ArtCraft apps use descriptive names for their own features. Product names used to describe compatibility, file formats, attribution or external software remain accurate.
+Forja uses descriptive names for its own features. Product names used to describe compatibility, file formats, attribution or external software remain accurate.
 
 ## Naming map
 
