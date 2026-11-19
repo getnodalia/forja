@@ -1472,3 +1472,81 @@
 	This library has no drawings or blocks.	У цій бібліотеці немає креслень і блоків.
 	Only the first {n} are shown.	Показано лише перші {n}.
 	Additional Tools	Додаткові інструменти
+	Arrow size	Розмір стрілки
+	Forja	Forja
+	Maximize	Розгорнути
+	Minimize	Згорнути
+	Dim scale overall	Загальний масштаб розмірів
+	Licence	Ліцензія
+	Precision	Точність
+	Website	Вебсайт
+	Backup copies are off, so the current file will be replaced.	Резервні копії вимкнено, тому поточний файл буде замінено.
+	DXF 2010 and earlier keep them. Use Save As to keep them in the drawing.	DXF 2010 і старіші зберігають їх. Скористайтеся «Зберегти як», щоб залишити їх у кресленні.
+	DXF keeps them. Use Save As to keep them in the drawing.	DXF зберігає їх. Скористайтеся «Зберегти як», щоб залишити їх у кресленні.
+	Don't Save	Не зберігати
+	Save Anyway	Усе одно зберегти
+	Save cancelled: {path} was not changed.	Збереження скасовано: {path} не змінено.
+	Save changes to {name}?	Зберегти зміни в {name}?
+	Saving {name} will remove content	Збереження {name} видалить вміст
+	The current file doesn't look whole, so {name} stays as it is and the current file will be replaced.	Поточний файл виглядає неповним, тому {name} залишається як є, а поточний файл буде замінено.
+	The current file is kept as {name} until the next save.	Поточний файл зберігається як {name} до наступного збереження.
+	This format can't keep these objects yet: {objects}.	Цей формат поки що не може зберегти такі об'єкти: {objects}.
+	Your changes will be lost if you don't save them.	Якщо не зберегти, зміни буде втрачено.
+	{count} more types	Ще {count} типів
+	Every library linetype is loaded.	Усі типи ліній із бібліотеки завантажено.
+	Global scale factor	Глобальний коефіцієнт масштабу
+	Point Size	Розмір точки
+	This drawing has no layouts.	У цьому кресленні немає аркушів.
+	Printer/plotter	Принтер/плотер
+	Paper size	Розмір паперу
+	Orientation	Орієнтація
+	Plot area	Область друку
+	Plot offset	Зміщення друку
+	Window <	Вікно <
+	Apply to Layout	Застосувати до аркуша
+	Geometric	Геометричні
+	Constraint bar transparency (%)	Прозорість панелі обмежень (%)
+	Dimensional	Розмірні
+	Distance tolerance	Допуск відстані
+	Angle tolerance (degrees)	Допуск кута (градуси)
+	Current	Поточний
+	Draw new objects with the selected linetype	Малювати нові об'єкти вибраним типом лінії
+	New style name	Назва нового стилю
+	PDF on the paper chosen below	PDF на папері, вибраному нижче
+	Distance from the printable area's lower-left corner; values range from −100000 to 100000 mm	Відстань від лівого нижнього кута області друку; значення від −100000 до 100000 мм
+	Paper units per drawing unit, or a ratio such as 1:50	Одиниць паперу на одиницю креслення або співвідношення, наприклад 1:50
+	Plot objects with their transparency (PLOTTRANSPARENCYOVERRIDE can override it)	Друкувати об'єкти з їхньою прозорістю (PLOTTRANSPARENCYOVERRIDE може її перевизначити)
+	Pick the window's corners in the drawing	Вкажіть кути вікна на кресленні
+	Save these settings in the layout's page setup	Зберегти ці параметри в налаштуванні сторінки аркуша
+	The sheet as these settings plot it	Аркуш так, як його надрукують ці параметри
+	From File...	З файлу...
+	Hide ViewCube	Сховати ViewCube
+	Hide UCS Icon	Сховати піктограму ПСК
+	Coordinate system	Система координат
+	UCS icon: World Coordinate System	Піктограма ПСК: світова система координат
+	Forja draws in the World Coordinate System; user coordinate systems aren't available yet.	Forja малює у світовій системі координат; користувацькі системи координат поки недоступні.
+	Insertion scale	Масштаб вставлення
+	Units to scale inserted content	Одиниці для масштабування вставленого вмісту
+	Sample output	Приклад виводу
+	Forja did not close normally. These drawings were autosaved:	Forja закрилася ненормально. Ці креслення було автоматично збережено:
+	Later	Пізніше
+	The graphics device stopped working (a driver reset or a GPU that stopped responding). Forja can't draw again until it restarts.	Графічний пристрій припинив роботу (скидання драйвера або GPU, що перестав відповідати). Forja не зможе малювати, доки її не буде перезапущено.
+	Nothing needed autosaving.	Автоматично зберігати не було чого.
+	A recovery copy of the open drawing with unsaved changes was autosaved.	Копію відновлення відкритого креслення з незбереженими змінами було автоматично збережено.
+	Dismiss	Відхилити
+	Forja could not write a recovery copy, so recent changes would be lost if the app stopped now.	Forja не змогла записати копію відновлення, тож нещодавні зміни буде втрачено, якщо застосунок зупиниться зараз.
+	Keep the files and ask again next time	Залишити файли й запитати знову наступного разу
+	Part of Forja failed, and the app kept running.	Частина Forja зазнала збою, але застосунок продовжив працювати.
+	Part of Forja keeps failing, so it can't continue.	Частина Forja постійно зазнає збою, тому вона не може продовжувати.
+	Close Forja	Закрити Forja
+	This drawing has no blocks with attributes.	У цьому кресленні немає блоків з атрибутами.
+	Block:	Блок:
+	Sync	Синхронізувати
+	Tag	Тег
+	Prompt	Запит
+	Mode	Режим
+	Move Up	Вгору
+	Move Down	Вниз
+	Bring every reference in line with these definitions	Узгодити всі посилання з цими визначеннями
+	This drawing has no named viewport configurations.	У цьому кресленні немає іменованих конфігурацій видових екранів.
+	Delete the saved configuration	Видалити збережену конфігурацію

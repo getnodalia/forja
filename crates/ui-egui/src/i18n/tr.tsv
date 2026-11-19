@@ -1484,3 +1484,80 @@ menu	View	Görünüm
 	This library has no drawings or blocks.	Bu kitaplıkta çizim veya blok yok.
 	Only the first {n} are shown.	Yalnızca ilk {n} gösteriliyor.
 	Additional Tools	Ek Araçlar
+	Arrow size	Ok boyutu
+	Maximize	Ekranı kapla
+	Minimize	Simge durumuna küçült
+	Dim scale overall	Genel ölçü ölçeği
+	Licence	Lisans
+	Precision	Hassasiyet
+	Website	Web sitesi
+	Backup copies are off, so the current file will be replaced.	Yedek kopyalar kapalı, bu yüzden geçerli dosyanın yerine yazılacak.
+	DXF 2010 and earlier keep them. Use Save As to keep them in the drawing.	DXF 2010 ve öncesi bunları korur. Çizimde korumak için Farklı Kaydet'i kullanın.
+	DXF keeps them. Use Save As to keep them in the drawing.	DXF bunları korur. Çizimde korumak için Farklı Kaydet'i kullanın.
+	Don't Save	Kaydetme
+	Save Anyway	Yine de kaydet
+	Save cancelled: {path} was not changed.	Kaydetme iptal edildi: {path} değiştirilmedi.
+	Save changes to {name}?	Değişiklikler {name} dosyasına kaydedilsin mi?
+	Saving {name} will remove content	{name} dosyasını kaydetmek içerik kaldıracak
+	The current file doesn't look whole, so {name} stays as it is and the current file will be replaced.	Geçerli dosya bütün görünmüyor, bu yüzden {name} olduğu gibi kalır ve geçerli dosyanın yerine yazılır.
+	The current file is kept as {name} until the next save.	Geçerli dosya, bir sonraki kayda kadar {name} olarak saklanır.
+	This format can't keep these objects yet: {objects}.	Bu biçim şu nesneleri henüz koruyamıyor: {objects}.
+	Your changes will be lost if you don't save them.	Kaydetmezseniz değişiklikleriniz kaybolacak.
+	{count} more types	{count} tür daha
+	Every library linetype is loaded.	Kütüphanedeki tüm çizgi türleri yüklendi.
+	Global scale factor	Genel ölçek faktörü
+	Point Size	Nokta boyutu
+	This drawing has no layouts.	Bu çizimde yerleşim yok.
+	Printer/plotter	Yazıcı/çizici
+	Paper size	Kâğıt boyutu
+	Orientation	Yönlendirme
+	Plot area	Çizim alanı
+	Plot offset	Çizim kayması
+	Window <	Pencere <
+	Apply to Layout	Yerleşime uygula
+	Geometric	Geometrik
+	Constraint bar transparency (%)	Kısıt çubuğu saydamlığı (%)
+	Dimensional	Ölçüsel
+	Distance tolerance	Mesafe toleransı
+	Angle tolerance (degrees)	Açı toleransı (derece)
+	Current	Geçerli
+	Draw new objects with the selected linetype	Yeni nesneleri seçili çizgi türüyle çiz
+	New style name	Yeni stil adı
+	PDF on the paper chosen below	Aşağıda seçilen kâğıda PDF
+	Distance from the printable area's lower-left corner; values range from −100000 to 100000 mm	Yazdırılabilir alanın sol alt köşesinden uzaklık; değerler −100000 ile 100000 mm arasındadır
+	Paper units per drawing unit, or a ratio such as 1:50	Çizim birimi başına kâğıt birimi veya 1:50 gibi bir oran
+	Plot objects with their transparency (PLOTTRANSPARENCYOVERRIDE can override it)	Nesneleri saydamlıklarıyla çiz (PLOTTRANSPARENCYOVERRIDE bunu geçersiz kılabilir)
+	Pick the window's corners in the drawing	Çizimde pencerenin köşelerini gösterin
+	Save these settings in the layout's page setup	Bu ayarları yerleşimin sayfa yapısına kaydet
+	The sheet as these settings plot it	Bu ayarlarla çizilecek sayfa
+	From File...	Dosyadan...
+	Hide ViewCube	ViewCube'u gizle
+	Hide UCS Icon	UCS simgesini gizle
+	Coordinate system	Koordinat sistemi
+	UCS icon: World Coordinate System	UCS simgesi: Dünya Koordinat Sistemi
+	Forja draws in the World Coordinate System; user coordinate systems aren't available yet.	Forja Dünya Koordinat Sisteminde çizer; kullanıcı koordinat sistemleri henüz mevcut değil.
+	Insertion scale	Ekleme ölçeği
+	Units to scale inserted content	Eklenen içeriği ölçeklemek için birimler
+	Sample output	Örnek çıktı
+	Forja did not close normally. These drawings were autosaved:	Forja normal şekilde kapanmadı. Şu çizimler otomatik kaydedildi:
+	Later	Sonra
+	The graphics device stopped working (a driver reset or a GPU that stopped responding). Forja can't draw again until it restarts.	Grafik aygıtı çalışmayı durdurdu (bir sürücü sıfırlaması veya yanıt vermeyen bir GPU). Forja yeniden başlatılana kadar çizemez.
+	Nothing needed autosaving.	Otomatik kaydedilecek bir şey yoktu.
+	A recovery copy of the open drawing with unsaved changes was autosaved.	Kaydedilmemiş değişiklikleri olan açık çizimin bir kurtarma kopyası otomatik kaydedildi.
+	Dismiss	Kapat
+	Forja could not write a recovery copy, so recent changes would be lost if the app stopped now.	Forja bir kurtarma kopyası yazamadı, bu yüzden uygulama şimdi dursa son değişiklikler kaybolurdu.
+	Keep the files and ask again next time	Dosyaları sakla ve bir dahaki sefere yine sor
+	Part of Forja failed, and the app kept running.	Forja'nın bir bölümü başarısız oldu, uygulama çalışmaya devam etti.
+	Part of Forja keeps failing, so it can't continue.	Forja'nın bir bölümü sürekli başarısız oluyor, bu yüzden devam edemez.
+	Close Forja	Forja'yı kapat
+	This drawing has no blocks with attributes.	Bu çizimde öznitelikli blok yok.
+	Block:	Blok:
+	Sync	Eşitle
+	Tag	Etiket
+	Prompt	İstem
+	Mode	Mod
+	Move Up	Yukarı taşı
+	Move Down	Aşağı taşı
+	Bring every reference in line with these definitions	Tüm referansları bu tanımlarla uyumlu hale getir
+	This drawing has no named viewport configurations.	Bu çizimde adlandırılmış görünüm penceresi yapılandırması yok.
+	Delete the saved configuration	Kayıtlı yapılandırmayı sil

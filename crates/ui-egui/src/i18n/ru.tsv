@@ -1412,3 +1412,132 @@
 	This library has no drawings or blocks.	В этой библиотеке нет чертежей и блоков.
 	Only the first {n} are shown.	Показаны только первые {n}.
 	Additional Tools	Дополнительные инструменты
+	Arrow size	Размер стрелки
+	Forja	Forja
+	Maximize	Развернуть
+	Minimize	Свернуть
+	Dim scale overall	Общий масштаб размеров
+	Licence	Лицензия
+	Precision	Точность
+	Website	Веб-сайт
+	Backup copies are off, so the current file will be replaced.	Резервные копии отключены, поэтому текущий файл будет заменён.
+	DXF 2010 and earlier keep them. Use Save As to keep them in the drawing.	DXF 2010 и более ранние сохраняют их. Используйте «Сохранить как», чтобы оставить их в чертеже.
+	DXF keeps them. Use Save As to keep them in the drawing.	DXF сохраняет их. Используйте «Сохранить как», чтобы оставить их в чертеже.
+	Don't Save	Не сохранять
+	Save Anyway	Всё равно сохранить
+	Save cancelled: {path} was not changed.	Сохранение отменено: {path} не изменён.
+	Save changes to {name}?	Сохранить изменения в {name}?
+	Saving {name} will remove content	Сохранение {name} удалит часть содержимого
+	The current file doesn't look whole, so {name} stays as it is and the current file will be replaced.	Текущий файл выглядит неполным, поэтому {name} остаётся как есть, а текущий файл будет заменён.
+	The current file is kept as {name} until the next save.	Текущий файл сохраняется как {name} до следующего сохранения.
+	This format can't keep these objects yet: {objects}.	Этот формат пока не может сохранить такие объекты: {objects}.
+	Your changes will be lost if you don't save them.	Если не сохранить, изменения будут потеряны.
+	{count} more types	Ещё типов: {count}
+	Every library linetype is loaded.	Все типы линий библиотеки загружены.
+	Global scale factor	Общий масштабный коэффициент
+	Point Size	Размер точки
+	This drawing has no layouts.	В этом чертеже нет листов.
+	Printer/plotter	Принтер/плоттер
+	Paper size	Размер бумаги
+	Orientation	Ориентация
+	Plot area	Область печати
+	Plot offset	Смещение печати
+	Window <	Окно <
+	Apply to Layout	Применить к листу
+	Geometric	Геометрические
+	Constraint bar transparency (%)	Прозрачность панели ограничений (%)
+	Dimensional	Размерные
+	Distance tolerance	Допуск расстояния
+	Angle tolerance (degrees)	Допуск угла (градусы)
+	Current	Текущий
+	Draw new objects with the selected linetype	Рисовать новые объекты выбранным типом линии
+	New style name	Имя нового стиля
+	PDF on the paper chosen below	PDF на бумаге, выбранной ниже
+	Distance from the printable area's lower-left corner; values range from −100000 to 100000 mm	Расстояние от левого нижнего угла области печати; значения от −100000 до 100000 мм
+	Paper units per drawing unit, or a ratio such as 1:50	Единиц бумаги на единицу чертежа или соотношение вроде 1:50
+	Plot objects with their transparency (PLOTTRANSPARENCYOVERRIDE can override it)	Печатать объекты с их прозрачностью (PLOTTRANSPARENCYOVERRIDE может её переопределить)
+	Pick the window's corners in the drawing	Укажите углы окна на чертеже
+	Save these settings in the layout's page setup	Сохранить эти параметры в настройке страницы листа
+	The sheet as these settings plot it	Лист так, как его напечатают эти параметры
+	From File...	Из файла...
+	Hide ViewCube	Скрыть ViewCube
+	Hide UCS Icon	Скрыть значок ПСК
+	Coordinate system	Система координат
+	UCS icon: World Coordinate System	Значок ПСК: мировая система координат
+	Forja draws in the World Coordinate System; user coordinate systems aren't available yet.	Forja рисует в мировой системе координат; пользовательские системы координат пока недоступны.
+	Insertion scale	Масштаб вставки
+	Units to scale inserted content	Единицы для масштабирования вставляемого содержимого
+	Sample output	Пример вывода
+	Forja did not close normally. These drawings were autosaved:	Forja завершилась ненормально. Эти чертежи были сохранены автоматически:
+	Later	Позже
+	The graphics device stopped working (a driver reset or a GPU that stopped responding). Forja can't draw again until it restarts.	Графическое устройство перестало работать (сброс драйвера или GPU перестал отвечать). Forja не сможет рисовать, пока её не перезапустят.
+	Nothing needed autosaving.	Автоматически сохранять было нечего.
+	A recovery copy of the open drawing with unsaved changes was autosaved.	Копия восстановления открытого чертежа с несохранёнными изменениями была сохранена автоматически.
+	Dismiss	Закрыть
+	Forja could not write a recovery copy, so recent changes would be lost if the app stopped now.	Forja не смогла записать копию восстановления, поэтому последние изменения будут потеряны, если приложение остановится сейчас.
+	Keep the files and ask again next time	Оставить файлы и спросить снова в следующий раз
+	Part of Forja failed, and the app kept running.	Часть Forja дала сбой, но приложение продолжило работу.
+	Part of Forja keeps failing, so it can't continue.	Часть Forja постоянно даёт сбой, поэтому продолжить невозможно.
+	Close Forja	Закрыть Forja
+	This drawing has no blocks with attributes.	В этом чертеже нет блоков с атрибутами.
+	Block:	Блок:
+	Sync	Синхронизировать
+	Tag	Тег
+	Prompt	Запрос
+	Mode	Режим
+	Move Up	Вверх
+	Move Down	Вниз
+	Bring every reference in line with these definitions	Привести все ссылки в соответствие с этими определениями
+	This drawing has no named viewport configurations.	В этом чертеже нет именованных конфигураций видовых экранов.
+	Delete the saved configuration	Удалить сохранённую конфигурацию
+	SVG drawings (SVG, SVGZ)	Чертежи SVG (SVG, SVGZ)
+	Turned off, a right-click while a command runs always opens the shortcut menu.	Если выключено, щелчок правой кнопкой во время выполнения команды всегда открывает контекстное меню.
+	3D Mouse	3D-мышь
+	3D mouse input is unavailable on this platform	Ввод с 3D-мыши недоступен на этой платформе
+	No supported 3D mouse found	Поддерживаемая 3D-мышь не найдена
+	Release the 3D mouse to calibrate its resting position	Отпустите 3D-мышь, чтобы откалибровать её положение покоя
+	3D mouse connected	3D-мышь подключена
+	3D mouse busy, possibly 3DxWare or missing device permissions	3D-мышь занята, возможно, из-за 3DxWare или отсутствия прав на устройство
+	3D mouse disconnected	3D-мышь отключена
+	3D mouse input could not be started	Не удалось запустить ввод с 3D-мыши
+	Enable 3D mouse navigation	Включить навигацию с помощью 3D-мыши
+	Pan sensitivity	Чувствительность панорамирования
+	Zoom sensitivity	Чувствительность масштабирования
+	Reverse zoom direction	Обратить направление масштабирования
+	Calibrate	Калибровать
+	Move sideways to pan; push/pull or twist to zoom.	Сдвигайте вбок для панорамирования; нажимайте, тяните или поворачивайте для масштабирования.
+	Left device button: zoom extents. Right device button: calibrate.	Левая кнопка устройства: показать всё. Правая кнопка устройства: калибровка.
+	Add Vertex	Добавить вершину
+	Close All Other Drawings	Закрыть все остальные чертежи
+	Convert to Arc	Преобразовать в дугу
+	Convert to Line	Преобразовать в отрезок
+	Copy Full File Path	Копировать полный путь к файлу
+	Copy History	Копировать историю
+	Display	Отображение
+	Drawing Template (DWT)	Шаблон чертежа (DWT)
+	Edit Attributes...	Редактировать атрибуты...
+	Enter	Ввод
+	From Template...	Из шаблона...
+	Hide Palette	Скрыть палитру
+	Lines of Command History	Строк истории команд
+	Loaded	Загружен
+	Not Found	Не найден
+	Not loaded	Не загружен
+	Open and Save	Открытие и сохранение
+	Polyline Edit	Редактировать полилинию
+	Profiles	Профили
+	Recent Commands	Недавние команды
+	Recent Input	Недавний ввод
+	Remove Vertex	Удалить вершину
+	Selection	Выбор
+	Settings...	Параметры...
+	Snap Overrides	Переопределения привязки
+	Spline Edit	Редактировать сплайн
+	Stretch Vertex	Растянуть вершину
+	Temporary track point	Временная точка отслеживания
+	Thaw Layer	Разморозить слой
+	Turn On Layer	Включить слой
+	Unloaded	Выгружен
+	Unreferenced	Без ссылок
+	Unresolved	Не разрешён
+	User Preferences	Пользовательские настройки

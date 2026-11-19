@@ -1453,3 +1453,97 @@ menu	Modify	Modifikace
 	This library has no drawings or blocks.	Tato knihovna neobsahuje žádné výkresy ani bloky.
 	Only the first {n} are shown.	Zobrazuje se pouze prvních {n}.
 	Additional Tools	Další nástroje
+	Arrow size	Velikost šipky
+	Maximize	Maximalizovat
+	Minimize	Minimalizovat
+	Dim scale overall	Celkové měřítko kót
+	Licence	Licence
+	Precision	Přesnost
+	Website	Web
+	Backup copies are off, so the current file will be replaced.	Záložní kopie jsou vypnuté, proto bude stávající soubor nahrazen.
+	DXF 2010 and earlier keep them. Use Save As to keep them in the drawing.	DXF 2010 a starší je zachovává. Použijte Uložit jako, aby zůstaly ve výkresu.
+	DXF keeps them. Use Save As to keep them in the drawing.	DXF je zachovává. Použijte Uložit jako, aby zůstaly ve výkresu.
+	Don't Save	Neukládat
+	Save Anyway	Přesto uložit
+	Save cancelled: {path} was not changed.	Ukládání zrušeno: {path} nebyl změněn.
+	Save changes to {name}?	Uložit změny do souboru {name}?
+	Saving {name} will remove content	Uložením {name} se odstraní obsah
+	The current file doesn't look whole, so {name} stays as it is and the current file will be replaced.	Stávající soubor nevypadá úplně, proto {name} zůstane tak, jak je, a stávající soubor bude nahrazen.
+	The current file is kept as {name} until the next save.	Stávající soubor se do dalšího uložení uchová jako {name}.
+	This format can't keep these objects yet: {objects}.	Tento formát zatím nedokáže zachovat tyto objekty: {objects}.
+	Your changes will be lost if you don't save them.	Pokud změny neuložíte, budou ztraceny.
+	{count} more types	Dalších typů: {count}
+	Every library linetype is loaded.	Všechny typy čar z knihovny jsou načteny.
+	Global scale factor	Globální faktor měřítka
+	Point Size	Velikost bodu
+	This drawing has no layouts.	Tento výkres nemá žádná rozvržení.
+	Printer/plotter	Tiskárna/plotr
+	Paper size	Velikost papíru
+	Orientation	Orientace
+	Plot area	Oblast tisku
+	Plot offset	Posun tisku
+	Window <	Okno <
+	Apply to Layout	Použít na rozvržení
+	Geometric	Geometrické
+	Constraint bar transparency (%)	Průhlednost panelu vazeb (%)
+	Dimensional	Kótovací
+	Distance tolerance	Tolerance vzdálenosti
+	Angle tolerance (degrees)	Tolerance úhlu (stupně)
+	Current	Aktuální
+	Draw new objects with the selected linetype	Kreslit nové objekty vybraným typem čáry
+	New style name	Název nového stylu
+	PDF on the paper chosen below	PDF na papír zvolený níže
+	Distance from the printable area's lower-left corner; values range from −100000 to 100000 mm	Vzdálenost od levého dolního rohu tisknutelné oblasti; hodnoty jsou od −100000 do 100000 mm
+	Paper units per drawing unit, or a ratio such as 1:50	Jednotky papíru na jednotku výkresu nebo poměr, například 1:50
+	Plot objects with their transparency (PLOTTRANSPARENCYOVERRIDE can override it)	Tisknout objekty s jejich průhledností (PLOTTRANSPARENCYOVERRIDE ji může přepsat)
+	Pick the window's corners in the drawing	Zadejte rohy okna ve výkresu
+	Save these settings in the layout's page setup	Uložit tato nastavení do nastavení stránky rozvržení
+	The sheet as these settings plot it	List tak, jak ho tato nastavení vytisknou
+	From File...	Ze souboru...
+	Hide ViewCube	Skrýt ViewCube
+	Hide UCS Icon	Skrýt ikonu USS
+	Coordinate system	Souřadnicový systém
+	UCS icon: World Coordinate System	Ikona USS: světový souřadnicový systém
+	Forja draws in the World Coordinate System; user coordinate systems aren't available yet.	Forja kreslí ve světovém souřadnicovém systému; uživatelské souřadnicové systémy zatím nejsou k dispozici.
+	Insertion scale	Měřítko vložení
+	Units to scale inserted content	Jednotky pro změnu měřítka vloženého obsahu
+	Sample output	Ukázkový výstup
+	Forja did not close normally. These drawings were autosaved:	Forja nebyla ukončena běžným způsobem. Tyto výkresy byly automaticky uloženy:
+	Later	Později
+	The graphics device stopped working (a driver reset or a GPU that stopped responding). Forja can't draw again until it restarts.	Grafické zařízení přestalo fungovat (reset ovladače nebo GPU, která přestala reagovat). Forja nemůže znovu kreslit, dokud se nerestartuje.
+	Nothing needed autosaving.	Nebylo co automaticky ukládat.
+	A recovery copy of the open drawing with unsaved changes was autosaved.	Záložní kopie otevřeného výkresu s neuloženými změnami byla automaticky uložena.
+	Dismiss	Zavřít
+	Forja could not write a recovery copy, so recent changes would be lost if the app stopped now.	Forja nemohla zapsat záložní kopii, takže by poslední změny byly ztraceny, kdyby se aplikace nyní zastavila.
+	Keep the files and ask again next time	Ponechat soubory a zeptat se příště znovu
+	Part of Forja failed, and the app kept running.	Část Forjy selhala, ale aplikace běžela dál.
+	Part of Forja keeps failing, so it can't continue.	Část Forjy neustále selhává, a proto nemůže pokračovat.
+	Close Forja	Zavřít Forju
+	This drawing has no blocks with attributes.	Tento výkres nemá žádné bloky s atributy.
+	Block:	Blok:
+	Sync	Synchronizovat
+	Tag	Štítek
+	Prompt	Výzva
+	Mode	Režim
+	Move Up	Nahoru
+	Move Down	Dolů
+	Bring every reference in line with these definitions	Sladit všechny odkazy s těmito definicemi
+	This drawing has no named viewport configurations.	Tento výkres nemá žádné pojmenované konfigurace výřezů.
+	Delete the saved configuration	Odstranit uloženou konfiguraci
+	SVG drawings (SVG, SVGZ)	Výkresy SVG (SVG, SVGZ)
+	Turned off, a right-click while a command runs always opens the shortcut menu.	Je-li vypnuto, pravé kliknutí během příkazu vždy otevře místní nabídku.
+	3D Mouse	3D myš
+	3D mouse input is unavailable on this platform	Vstup z 3D myši není na této platformě k dispozici
+	No supported 3D mouse found	Nenalezena žádná podporovaná 3D myš
+	Release the 3D mouse to calibrate its resting position	Uvolněte 3D myš pro kalibraci její klidové polohy
+	3D mouse connected	3D myš připojena
+	3D mouse busy, possibly 3DxWare or missing device permissions	3D myš je zaneprázdněná, pravděpodobně kvůli 3DxWare nebo chybějícím oprávněním zařízení
+	3D mouse disconnected	3D myš odpojena
+	3D mouse input could not be started	Vstup z 3D myši se nepodařilo spustit
+	Enable 3D mouse navigation	Povolit navigaci 3D myší
+	Pan sensitivity	Citlivost posunu
+	Zoom sensitivity	Citlivost zvětšení
+	Reverse zoom direction	Obrátit směr zvětšení
+	Calibrate	Kalibrovat
+	Move sideways to pan; push/pull or twist to zoom.	Pohybem do strany posouváte; tlačením, tažením nebo otáčením zvětšujete.
+	Left device button: zoom extents. Right device button: calibrate.	Levé tlačítko zařízení: zoom na rozsah. Pravé tlačítko zařízení: kalibrace.

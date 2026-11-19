@@ -1471,3 +1471,81 @@ menu	Modify	Edita
 	This library has no drawings or blocks.	Questa libreria non contiene disegni o blocchi.
 	Only the first {n} are shown.	Vengono mostrati solo i primi {n}.
 	Additional Tools	Strumenti aggiuntivi
+	Arrow size	Dimensione freccia
+	Forja	Forja
+	Maximize	Ingrandisci
+	Minimize	Riduci a icona
+	Dim scale overall	Scala globale delle quote
+	Licence	Licenza
+	Precision	Precisione
+	Website	Sito web
+	Backup copies are off, so the current file will be replaced.	Le copie di backup sono disattivate, quindi il file corrente verrà sostituito.
+	DXF 2010 and earlier keep them. Use Save As to keep them in the drawing.	DXF 2010 e precedenti li mantengono. Usa Salva con nome per conservarli nel disegno.
+	DXF keeps them. Use Save As to keep them in the drawing.	Il DXF li mantiene. Usa Salva con nome per conservarli nel disegno.
+	Don't Save	Non salvare
+	Save Anyway	Salva comunque
+	Save cancelled: {path} was not changed.	Salvataggio annullato: {path} non è stato modificato.
+	Save changes to {name}?	Salvare le modifiche in {name}?
+	Saving {name} will remove content	Il salvataggio di {name} rimuoverà dei contenuti
+	The current file doesn't look whole, so {name} stays as it is and the current file will be replaced.	Il file corrente non sembra integro, quindi {name} resta com'è e il file corrente verrà sostituito.
+	The current file is kept as {name} until the next save.	Il file corrente viene conservato come {name} fino al prossimo salvataggio.
+	This format can't keep these objects yet: {objects}.	Questo formato non può ancora conservare questi oggetti: {objects}.
+	Your changes will be lost if you don't save them.	Se non le salvi, le modifiche andranno perse.
+	{count} more types	Altri {count} tipi
+	Every library linetype is loaded.	Tutti i tipi di linea della libreria sono caricati.
+	Global scale factor	Fattore di scala globale
+	Point Size	Dimensione del punto
+	This drawing has no layouts.	Questo disegno non ha layout.
+	Printer/plotter	Stampante/plotter
+	Paper size	Formato carta
+	Orientation	Orientamento
+	Plot area	Area di stampa
+	Plot offset	Scostamento di stampa
+	Window <	Finestra <
+	Apply to Layout	Applica al layout
+	Geometric	Geometrici
+	Constraint bar transparency (%)	Trasparenza della barra dei vincoli (%)
+	Dimensional	Dimensionali
+	Distance tolerance	Tolleranza di distanza
+	Angle tolerance (degrees)	Tolleranza angolare (gradi)
+	Current	Corrente
+	Draw new objects with the selected linetype	Disegna i nuovi oggetti con il tipo di linea selezionato
+	New style name	Nome del nuovo stile
+	PDF on the paper chosen below	PDF sulla carta scelta qui sotto
+	Distance from the printable area's lower-left corner; values range from −100000 to 100000 mm	Distanza dall'angolo inferiore sinistro dell'area stampabile; i valori vanno da −100000 a 100000 mm
+	Paper units per drawing unit, or a ratio such as 1:50	Unità di carta per unità di disegno, oppure un rapporto come 1:50
+	Plot objects with their transparency (PLOTTRANSPARENCYOVERRIDE can override it)	Stampa gli oggetti con la loro trasparenza (PLOTTRANSPARENCYOVERRIDE può sostituirla)
+	Pick the window's corners in the drawing	Indica gli angoli della finestra nel disegno
+	Save these settings in the layout's page setup	Salva queste impostazioni nell'impostazione pagina del layout
+	The sheet as these settings plot it	Il foglio come lo stampano queste impostazioni
+	From File...	Da file...
+	Hide ViewCube	Nascondi ViewCube
+	Hide UCS Icon	Nascondi icona SCU
+	Coordinate system	Sistema di coordinate
+	UCS icon: World Coordinate System	Icona SCU: sistema di coordinate globale
+	Forja draws in the World Coordinate System; user coordinate systems aren't available yet.	Forja disegna nel sistema di coordinate globale; i sistemi di coordinate utente non sono ancora disponibili.
+	Insertion scale	Scala di inserimento
+	Units to scale inserted content	Unità per scalare il contenuto inserito
+	Sample output	Esempio di output
+	Forja did not close normally. These drawings were autosaved:	Forja non si è chiuso normalmente. Questi disegni sono stati salvati automaticamente:
+	Later	Più tardi
+	The graphics device stopped working (a driver reset or a GPU that stopped responding). Forja can't draw again until it restarts.	Il dispositivo grafico ha smesso di funzionare (un ripristino del driver o una GPU che non risponde più). Forja non può disegnare di nuovo finché non viene riavviato.
+	Nothing needed autosaving.	Non c'era nulla da salvare automaticamente.
+	A recovery copy of the open drawing with unsaved changes was autosaved.	È stata salvata automaticamente una copia di ripristino del disegno aperto con modifiche non salvate.
+	Dismiss	Ignora
+	Forja could not write a recovery copy, so recent changes would be lost if the app stopped now.	Forja non è riuscito a scrivere una copia di ripristino, quindi le modifiche recenti andrebbero perse se l'app si fermasse ora.
+	Keep the files and ask again next time	Conserva i file e chiedi di nuovo la prossima volta
+	Part of Forja failed, and the app kept running.	Una parte di Forja ha avuto un errore e l'app ha continuato a funzionare.
+	Part of Forja keeps failing, so it can't continue.	Una parte di Forja continua ad avere errori, quindi non può proseguire.
+	Close Forja	Chiudi Forja
+	This drawing has no blocks with attributes.	Questo disegno non ha blocchi con attributi.
+	Block:	Blocco:
+	Sync	Sincronizza
+	Tag	Tag
+	Prompt	Richiesta
+	Mode	Modalità
+	Move Up	Sposta su
+	Move Down	Sposta giù
+	Bring every reference in line with these definitions	Allinea tutti i riferimenti a queste definizioni
+	This drawing has no named viewport configurations.	Questo disegno non ha configurazioni di viewport con nome.
+	Delete the saved configuration	Elimina la configurazione salvata

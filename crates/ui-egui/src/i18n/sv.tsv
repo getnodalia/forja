@@ -1561,3 +1561,54 @@ menu	Modify	Ändra
 	This library has no drawings or blocks.	Det här biblioteket har inga ritningar eller block.
 	Only the first {n} are shown.	Endast de första {n} visas.
 	Additional Tools	Ytterligare verktyg
+	Maximize	Maximera
+	Minimize	Minimera
+	Licence	Licens
+	Website	Webbplats
+	Every library linetype is loaded.	Alla linjetyper i biblioteket är inlästa.
+	Global scale factor	Global skalfaktor
+	Point Size	Punktstorlek
+	This drawing has no layouts.	Den här ritningen har inga layouter.
+	Geometric	Geometriska
+	Constraint bar transparency (%)	Transparens för villkorsfältet (%)
+	Dimensional	Måttsättning
+	Distance tolerance	Avståndstolerans
+	Angle tolerance (degrees)	Vinkeltolerans (grader)
+	Current	Aktuell
+	Draw new objects with the selected linetype	Rita nya objekt med den valda linjetypen
+	New style name	Namn på ny stil
+	PDF on the paper chosen below	PDF på papperet som väljs nedan
+	Distance from the printable area's lower-left corner; values range from −100000 to 100000 mm	Avstånd från det utskrivbara områdets nedre vänstra hörn; värdena sträcker sig från −100000 till 100000 mm
+	Paper units per drawing unit, or a ratio such as 1:50	Pappersenheter per ritningsenhet, eller ett förhållande som 1:50
+	Plot objects with their transparency (PLOTTRANSPARENCYOVERRIDE can override it)	Skriv ut objekt med deras transparens (PLOTTRANSPARENCYOVERRIDE kan åsidosätta det)
+	Pick the window's corners in the drawing	Ange fönstrets hörn i ritningen
+	Save these settings in the layout's page setup	Spara de här inställningarna i layoutens sidinställning
+	The sheet as these settings plot it	Arket så som de här inställningarna skriver ut det
+	From File...	Från fil...
+	Hide ViewCube	Dölj ViewCube
+	Hide UCS Icon	Dölj UCS-ikonen
+	Coordinate system	Koordinatsystem
+	UCS icon: World Coordinate System	UCS-ikon: världskoordinatsystem
+	Forja draws in the World Coordinate System; user coordinate systems aren't available yet.	Forja ritar i världskoordinatsystemet; användarkoordinatsystem finns inte ännu.
+	Forja did not close normally. These drawings were autosaved:	Forja avslutades inte normalt. De här ritningarna sparades automatiskt:
+	Later	Senare
+	The graphics device stopped working (a driver reset or a GPU that stopped responding). Forja can't draw again until it restarts.	Grafikenheten slutade fungera (en drivrutinsåterställning eller ett grafikkort som slutade svara). Forja kan inte rita igen förrän det startas om.
+	Nothing needed autosaving.	Inget behövde sparas automatiskt.
+	A recovery copy of the open drawing with unsaved changes was autosaved.	En återställningskopia av den öppna ritningen med osparade ändringar sparades automatiskt.
+	Dismiss	Avfärda
+	Forja could not write a recovery copy, so recent changes would be lost if the app stopped now.	Forja kunde inte skriva någon återställningskopia, så senaste ändringar skulle gå förlorade om appen stannade nu.
+	Keep the files and ask again next time	Behåll filerna och fråga igen nästa gång
+	Part of Forja failed, and the app kept running.	En del av Forja misslyckades, och appen fortsatte köra.
+	Part of Forja keeps failing, so it can't continue.	En del av Forja misslyckas hela tiden, så den kan inte fortsätta.
+	Close Forja	Stäng Forja
+	This drawing has no blocks with attributes.	Den här ritningen har inga block med attribut.
+	Block:	Block:
+	Sync	Synkronisera
+	Tag	Tagg
+	Prompt	Fråga
+	Mode	Läge
+	Move Up	Flytta upp
+	Move Down	Flytta ned
+	Bring every reference in line with these definitions	Anpassa alla referenser till de här definitionerna
+	This drawing has no named viewport configurations.	Den här ritningen har inga namngivna vyportskonfigurationer.
+	Delete the saved configuration	Ta bort den sparade konfigurationen

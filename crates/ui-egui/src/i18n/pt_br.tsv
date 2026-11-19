@@ -1545,3 +1545,64 @@ menu	View	Exibir
 	This library has no drawings or blocks.	Esta biblioteca não tem desenhos nem blocos.
 	Only the first {n} are shown.	Apenas os primeiros {n} são exibidos.
 	Additional Tools	Ferramentas adicionais
+	Maximize	Maximizar
+	Minimize	Minimizar
+	Licence	Licença
+	Website	Site
+	Backup copies are off, so the current file will be replaced.	As cópias de segurança estão desativadas, então o arquivo atual será substituído.
+	DXF 2010 and earlier keep them. Use Save As to keep them in the drawing.	O DXF 2010 e anteriores os mantêm. Use Salvar como para mantê-los no desenho.
+	DXF keeps them. Use Save As to keep them in the drawing.	O DXF os mantém. Use Salvar como para mantê-los no desenho.
+	Save Anyway	Salvar mesmo assim
+	Save cancelled: {path} was not changed.	Salvamento cancelado: {path} não foi alterado.
+	Saving {name} will remove content	Salvar {name} removerá conteúdo
+	The current file doesn't look whole, so {name} stays as it is and the current file will be replaced.	O arquivo atual não parece estar completo, então {name} permanece como está e o arquivo atual será substituído.
+	The current file is kept as {name} until the next save.	O arquivo atual é mantido como {name} até o próximo salvamento.
+	This format can't keep these objects yet: {objects}.	Este formato ainda não consegue manter estes objetos: {objects}.
+	{count} more types	mais {count} tipos
+	Every library linetype is loaded.	Todos os tipos de linha da biblioteca estão carregados.
+	Global scale factor	Fator de escala global
+	Point Size	Tamanho do ponto
+	This drawing has no layouts.	Este desenho não tem layouts.
+	Geometric	Geométricas
+	Constraint bar transparency (%)	Transparência da barra de restrições (%)
+	Dimensional	Dimensionais
+	Distance tolerance	Tolerância de distância
+	Angle tolerance (degrees)	Tolerância de ângulo (graus)
+	Current	Atual
+	Draw new objects with the selected linetype	Desenhar novos objetos com o tipo de linha selecionado
+	New style name	Nome do novo estilo
+	PDF on the paper chosen below	PDF no papel escolhido abaixo
+	Distance from the printable area's lower-left corner; values range from −100000 to 100000 mm	Distância do canto inferior esquerdo da área imprimível; os valores vão de −100000 a 100000 mm
+	Paper units per drawing unit, or a ratio such as 1:50	Unidades de papel por unidade de desenho, ou uma proporção como 1:50
+	Plot objects with their transparency (PLOTTRANSPARENCYOVERRIDE can override it)	Plotar os objetos com sua transparência (PLOTTRANSPARENCYOVERRIDE pode substituí-la)
+	Pick the window's corners in the drawing	Indique os cantos da janela no desenho
+	Save these settings in the layout's page setup	Salvar estas configurações na configuração de página do layout
+	The sheet as these settings plot it	A folha como estas configurações a plotam
+	From File...	De arquivo...
+	Hide ViewCube	Ocultar ViewCube
+	Hide UCS Icon	Ocultar ícone do SCU
+	Coordinate system	Sistema de coordenadas
+	UCS icon: World Coordinate System	Ícone do SCU: sistema de coordenadas universal
+	Forja draws in the World Coordinate System; user coordinate systems aren't available yet.	O Forja desenha no sistema de coordenadas universal; os sistemas de coordenadas do usuário ainda não estão disponíveis.
+	Forja did not close normally. These drawings were autosaved:	O Forja não foi encerrado normalmente. Estes desenhos foram salvos automaticamente:
+	Later	Mais tarde
+	The graphics device stopped working (a driver reset or a GPU that stopped responding). Forja can't draw again until it restarts.	O dispositivo gráfico parou de funcionar (uma reinicialização do driver ou uma GPU que parou de responder). O Forja não poderá desenhar novamente até reiniciar.
+	Nothing needed autosaving.	Nada precisava ser salvo automaticamente.
+	A recovery copy of the open drawing with unsaved changes was autosaved.	Uma cópia de recuperação do desenho aberto com alterações não salvas foi salva automaticamente.
+	Dismiss	Dispensar
+	Forja could not write a recovery copy, so recent changes would be lost if the app stopped now.	O Forja não conseguiu gravar uma cópia de recuperação, então as alterações recentes seriam perdidas se o aplicativo parasse agora.
+	Keep the files and ask again next time	Manter os arquivos e perguntar novamente da próxima vez
+	Part of Forja failed, and the app kept running.	Uma parte do Forja falhou, e o aplicativo continuou em execução.
+	Part of Forja keeps failing, so it can't continue.	Uma parte do Forja continua falhando, então ele não pode continuar.
+	Close Forja	Fechar o Forja
+	This drawing has no blocks with attributes.	Este desenho não tem blocos com atributos.
+	Block:	Bloco:
+	Sync	Sincronizar
+	Tag	Etiqueta
+	Prompt	Solicitação
+	Mode	Modo
+	Move Up	Subir
+	Move Down	Descer
+	Bring every reference in line with these definitions	Alinhar todas as referências com estas definições
+	This drawing has no named viewport configurations.	Este desenho não tem configurações de viewports nomeadas.
+	Delete the saved configuration	Excluir a configuração salva

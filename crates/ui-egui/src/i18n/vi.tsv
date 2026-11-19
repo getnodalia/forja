@@ -1543,3 +1543,64 @@ menu	Modify	Hiệu chỉnh
 	This library has no drawings or blocks.	Thư viện này không có bản vẽ hay block.
 	Only the first {n} are shown.	Chỉ hiển thị {n} mục đầu tiên.
 	Additional Tools	Công cụ bổ sung
+	Maximize	Phóng to
+	Minimize	Thu nhỏ
+	Licence	Giấy phép
+	Website	Trang web
+	Backup copies are off, so the current file will be replaced.	Sao lưu đang tắt, vì vậy tệp hiện tại sẽ bị thay thế.
+	DXF 2010 and earlier keep them. Use Save As to keep them in the drawing.	DXF 2010 trở về trước vẫn giữ chúng. Dùng Lưu thành để giữ chúng trong bản vẽ.
+	DXF keeps them. Use Save As to keep them in the drawing.	DXF giữ chúng. Dùng Lưu thành để giữ chúng trong bản vẽ.
+	Save Anyway	Vẫn lưu
+	Save cancelled: {path} was not changed.	Đã hủy lưu: {path} không bị thay đổi.
+	Saving {name} will remove content	Lưu {name} sẽ xóa bớt nội dung
+	The current file doesn't look whole, so {name} stays as it is and the current file will be replaced.	Tệp hiện tại có vẻ không nguyên vẹn, nên {name} được giữ nguyên và tệp hiện tại sẽ bị thay thế.
+	The current file is kept as {name} until the next save.	Tệp hiện tại được giữ dưới tên {name} cho đến lần lưu tiếp theo.
+	This format can't keep these objects yet: {objects}.	Định dạng này chưa thể giữ các đối tượng sau: {objects}.
+	{count} more types	Thêm {count} loại nữa
+	Every library linetype is loaded.	Mọi dạng đường trong thư viện đều đã được nạp.
+	Global scale factor	Hệ số tỷ lệ chung
+	Point Size	Kích thước điểm
+	This drawing has no layouts.	Bản vẽ này không có bố cục nào.
+	Geometric	Hình học
+	Constraint bar transparency (%)	Độ trong suốt của thanh ràng buộc (%)
+	Dimensional	Kích thước
+	Distance tolerance	Dung sai khoảng cách
+	Angle tolerance (degrees)	Dung sai góc (độ)
+	Current	Hiện tại
+	Draw new objects with the selected linetype	Vẽ đối tượng mới bằng dạng đường đã chọn
+	New style name	Tên kiểu mới
+	PDF on the paper chosen below	PDF trên khổ giấy chọn bên dưới
+	Distance from the printable area's lower-left corner; values range from −100000 to 100000 mm	Khoảng cách từ góc dưới bên trái của vùng in được; giá trị từ −100000 đến 100000 mm
+	Paper units per drawing unit, or a ratio such as 1:50	Đơn vị giấy trên mỗi đơn vị bản vẽ, hoặc một tỷ lệ như 1:50
+	Plot objects with their transparency (PLOTTRANSPARENCYOVERRIDE can override it)	In các đối tượng cùng độ trong suốt của chúng (PLOTTRANSPARENCYOVERRIDE có thể ghi đè)
+	Pick the window's corners in the drawing	Chọn các góc của cửa sổ trong bản vẽ
+	Save these settings in the layout's page setup	Lưu các thiết lập này vào thiết lập trang của bố cục
+	The sheet as these settings plot it	Tờ giấy như các thiết lập này sẽ in ra
+	From File...	Từ tệp...
+	Hide ViewCube	Ẩn ViewCube
+	Hide UCS Icon	Ẩn biểu tượng UCS
+	Coordinate system	Hệ tọa độ
+	UCS icon: World Coordinate System	Biểu tượng UCS: Hệ tọa độ thế giới
+	Forja draws in the World Coordinate System; user coordinate systems aren't available yet.	Forja vẽ trong hệ tọa độ thế giới; hệ tọa độ người dùng chưa khả dụng.
+	Forja did not close normally. These drawings were autosaved:	Forja đã không đóng bình thường. Các bản vẽ sau đã được tự động lưu:
+	Later	Để sau
+	The graphics device stopped working (a driver reset or a GPU that stopped responding). Forja can't draw again until it restarts.	Thiết bị đồ họa đã ngừng hoạt động (trình điều khiển được đặt lại hoặc GPU ngừng phản hồi). Forja không thể vẽ lại cho đến khi khởi động lại.
+	Nothing needed autosaving.	Không có gì cần tự động lưu.
+	A recovery copy of the open drawing with unsaved changes was autosaved.	Một bản sao phục hồi của bản vẽ đang mở có thay đổi chưa lưu đã được tự động lưu.
+	Dismiss	Bỏ qua
+	Forja could not write a recovery copy, so recent changes would be lost if the app stopped now.	Forja không thể ghi bản sao phục hồi, nên các thay đổi gần đây sẽ mất nếu ứng dụng dừng ngay bây giờ.
+	Keep the files and ask again next time	Giữ các tệp và hỏi lại lần sau
+	Part of Forja failed, and the app kept running.	Một phần của Forja đã gặp lỗi, và ứng dụng vẫn tiếp tục chạy.
+	Part of Forja keeps failing, so it can't continue.	Một phần của Forja liên tục gặp lỗi, nên không thể tiếp tục.
+	Close Forja	Đóng Forja
+	This drawing has no blocks with attributes.	Bản vẽ này không có khối nào có thuộc tính.
+	Block:	Khối:
+	Sync	Đồng bộ
+	Tag	Thẻ
+	Prompt	Lời nhắc
+	Mode	Chế độ
+	Move Up	Lên
+	Move Down	Xuống
+	Bring every reference in line with these definitions	Đưa mọi tham chiếu khớp với các định nghĩa này
+	This drawing has no named viewport configurations.	Bản vẽ này không có cấu hình khung nhìn có tên.
+	Delete the saved configuration	Xóa cấu hình đã lưu

@@ -1546,3 +1546,64 @@ menu	View	视图
 	This library has no drawings or blocks.	此库中没有图形或块。
 	Only the first {n} are shown.	仅显示前 {n} 个。
 	Additional Tools	其他工具
+	Maximize	最大化
+	Minimize	最小化
+	Licence	许可证
+	Website	网站
+	Backup copies are off, so the current file will be replaced.	备份已关闭，因此当前文件将被替换。
+	DXF 2010 and earlier keep them. Use Save As to keep them in the drawing.	DXF 2010 及更早版本会保留它们。请使用“另存为”将它们保留在图形中。
+	DXF keeps them. Use Save As to keep them in the drawing.	DXF 会保留它们。请使用“另存为”将它们保留在图形中。
+	Save Anyway	仍然保存
+	Save cancelled: {path} was not changed.	已取消保存：{path} 未被更改。
+	Saving {name} will remove content	保存 {name} 将删除部分内容
+	The current file doesn't look whole, so {name} stays as it is and the current file will be replaced.	当前文件看起来不完整，因此 {name} 保持原样，当前文件将被替换。
+	The current file is kept as {name} until the next save.	在下次保存之前，当前文件将保留为 {name}。
+	This format can't keep these objects yet: {objects}.	此格式暂时无法保留以下对象：{objects}。
+	{count} more types	另有 {count} 种类型
+	Every library linetype is loaded.	已加载库中的所有线型。
+	Global scale factor	全局比例因子
+	Point Size	点大小
+	This drawing has no layouts.	此图形没有布局。
+	Geometric	几何
+	Constraint bar transparency (%)	约束栏透明度（%）
+	Dimensional	标注
+	Distance tolerance	距离公差
+	Angle tolerance (degrees)	角度公差（度）
+	Current	当前
+	Draw new objects with the selected linetype	使用所选线型绘制新对象
+	New style name	新样式名称
+	PDF on the paper chosen below	按下方所选纸张输出 PDF
+	Distance from the printable area's lower-left corner; values range from −100000 to 100000 mm	距可打印区域左下角的距离；取值范围为 −100000 至 100000 毫米
+	Paper units per drawing unit, or a ratio such as 1:50	每个图形单位对应的图纸单位，或 1:50 之类的比例
+	Plot objects with their transparency (PLOTTRANSPARENCYOVERRIDE can override it)	按透明度打印对象（PLOTTRANSPARENCYOVERRIDE 可以覆盖）
+	Pick the window's corners in the drawing	在图形中拾取窗口的角点
+	Save these settings in the layout's page setup	将这些设置保存到布局的页面设置中
+	The sheet as these settings plot it	按这些设置打印出的图纸
+	From File...	从文件...
+	Hide ViewCube	隐藏 ViewCube
+	Hide UCS Icon	隐藏 UCS 图标
+	Coordinate system	坐标系
+	UCS icon: World Coordinate System	UCS 图标：世界坐标系
+	Forja draws in the World Coordinate System; user coordinate systems aren't available yet.	Forja 在世界坐标系中绘图；暂不支持用户坐标系。
+	Forja did not close normally. These drawings were autosaved:	Forja 未正常关闭。以下图形已自动保存：
+	Later	稍后
+	The graphics device stopped working (a driver reset or a GPU that stopped responding). Forja can't draw again until it restarts.	图形设备已停止工作（驱动程序重置或 GPU 无响应）。Forja 在重新启动之前无法再绘图。
+	Nothing needed autosaving.	没有需要自动保存的内容。
+	A recovery copy of the open drawing with unsaved changes was autosaved.	已自动保存当前打开且有未保存更改的图形的恢复副本。
+	Dismiss	忽略
+	Forja could not write a recovery copy, so recent changes would be lost if the app stopped now.	Forja 无法写入恢复副本，因此如果应用现在停止，最近的更改将会丢失。
+	Keep the files and ask again next time	保留文件，下次再询问
+	Part of Forja failed, and the app kept running.	Forja 的某个部分出现故障，但应用仍在运行。
+	Part of Forja keeps failing, so it can't continue.	Forja 的某个部分持续出现故障，因此无法继续。
+	Close Forja	关闭 Forja
+	This drawing has no blocks with attributes.	此图形没有带属性的块。
+	Block:	块：
+	Sync	同步
+	Tag	标记
+	Prompt	提示
+	Mode	模式
+	Move Up	上移
+	Move Down	下移
+	Bring every reference in line with these definitions	使所有引用与这些定义保持一致
+	This drawing has no named viewport configurations.	此图形没有已命名的视口配置。
+	Delete the saved configuration	删除已保存的配置
