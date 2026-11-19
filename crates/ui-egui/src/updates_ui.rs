@@ -3,7 +3,7 @@
 //! the windows are `nodalia-update`'s, shared with the other Nodalia apps: it replaces an AppImage
 //! or `Forja.app`, installs the MSI on Windows, and points other installs at the release page.
 
-use nodalia_update::egui::{Action, Status, Updater};
+use nodalia_update::egui::{Action, Status, Style, Updater};
 
 use crate::CadApp;
 
@@ -21,7 +21,7 @@ pub struct Runtime {
 impl Default for Runtime {
     fn default() -> Self {
         Self {
-            updater: Updater::new(crate::UPDATE_APP).with_accent([0xa4, 0x67, 0x41]),
+            updater: Updater::new(crate::UPDATE_APP).with_accent([0xa4, 0x67, 0x41]).with_style(Style::Engineering),
             enabled: false,
             check_requested: false,
             result_echoed: false,
