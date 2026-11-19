@@ -3,9 +3,9 @@
 //! radii, height, turns, twist and start point. Foreign helices read the same way; hostile ones
 //! don't panic.
 
-use craft_dxf::{Tag, records, sections};
 use forja_doc::{Common, Drawing, EntityKind, Helix, HelixConstrain, Space};
 use forja_geom::Vec3;
+use nodalia_dxf::{Tag, records, sections};
 
 fn helices(d: &Drawing) -> Vec<Helix> {
     d.model
@@ -65,7 +65,7 @@ fn helix_survives_save_and_reopen() {
     assert_eq!(back.model.iter().next().unwrap().common.layer, "Springs");
 
     // The file: a spline whose last control point is the helix's end, the helix data, a CLASS.
-    let tags = craft_dxf::parse(saved.as_bytes()).unwrap();
+    let tags = nodalia_dxf::parse(saved.as_bytes()).unwrap();
     let secs = sections(&tags);
     let recs = |name: &str| records(&secs.iter().find(|s| s.name == name).unwrap().tags);
     let ents = recs("ENTITIES");

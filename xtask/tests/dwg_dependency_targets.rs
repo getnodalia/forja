@@ -23,5 +23,5 @@ fn dwg_test_dependency_matches_the_shared_bridge_targets() {
         tests["target"], "cfg(not(any(target_arch = \"wasm32\", all(target_os = \"freebsd\", target_arch = \"aarch64\"))))",
         "--all-targets must not add acadrust where the shared DWG bridge excludes it"
     );
-    assert_eq!(tests["req"], "^0.6.6", "tests inspect output from the decoder version used by craft-dwg");
+    assert_eq!(tests["req"], "^0.6.6", "tests inspect output from the decoder version used by nodalia-dwg");
 }

@@ -3,9 +3,9 @@
 //! DXF reader shows; `FORJA` xdata on the first lets Forja read the region back whole.
 //! Foreign REGIONs stay unknown objects as before; hostile xdata doesn't panic.
 
-use craft_dxf::{records, sections};
 use forja_doc::{Common, Drawing, EntityKind, HatchLoop, Region, Space};
 use forja_geom::{PolyVertex, Vec2};
+use nodalia_dxf::{records, sections};
 
 fn regions(d: &Drawing) -> Vec<Region> {
     d.model
@@ -56,7 +56,7 @@ fn region_with_islands_survives_save_and_reopen() {
     assert!(matches!(back.entity(plain).unwrap().kind, EntityKind::LwPolyline(_)));
 
     // Other readers see four closed polylines on the region's layer.
-    let tags = craft_dxf::parse(saved.as_bytes()).unwrap();
+    let tags = nodalia_dxf::parse(saved.as_bytes()).unwrap();
     let ents = records(&sections(&tags).into_iter().find(|s| s.name == "ENTITIES").unwrap().tags);
     let polys: Vec<_> = ents.iter().filter(|(k, _)| k == "LWPOLYLINE").collect();
     assert_eq!(polys.len(), 5);

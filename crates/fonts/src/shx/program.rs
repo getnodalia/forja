@@ -2,7 +2,7 @@
 use super::{ShxFont, ShxGlyph, ShxKind};
 use forja_geom::Vec2;
 
-impl craft_shx::program::Font for ShxFont {
+impl nodalia_shx::program::Font for ShxFont {
     fn kind(&self) -> ShxKind {
         self.kind
     }
@@ -20,8 +20,8 @@ impl craft_shx::program::Font for ShxFont {
     }
 }
 
-pub(super) fn outline(font: &ShxFont, number: u16, vertical: bool) -> Result<ShxGlyph, craft_shx::program::Broken> {
-    let glyph = craft_shx::program::outline(font, number, vertical)?;
+pub(super) fn outline(font: &ShxFont, number: u16, vertical: bool) -> Result<ShxGlyph, nodalia_shx::program::Broken> {
+    let glyph = nodalia_shx::program::outline(font, number, vertical)?;
     Ok(ShxGlyph {
         strokes: glyph.strokes.into_iter().map(|stroke| stroke.into_iter().map(|p| Vec2::new(p.x, p.y)).collect()).collect(),
         advance: Vec2::new(glyph.advance.x, glyph.advance.y),

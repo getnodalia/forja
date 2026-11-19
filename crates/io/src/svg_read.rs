@@ -38,7 +38,7 @@ pub fn read(bytes: &[u8]) -> Result<Drawing> {
     let unpacked;
     let plain: &[u8] = if bytes.starts_with(&[0x1f, 0x8b]) {
         unpacked =
-            craft_svg::svgz::inflate(bytes, MAX_DECOMPRESSED).map_err(|_| IoError::Format("this SVGZ file's gzip stream is damaged".into()))?;
+            nodalia_svg::svgz::inflate(bytes, MAX_DECOMPRESSED).map_err(|_| IoError::Format("this SVGZ file's gzip stream is damaged".into()))?;
         &unpacked
     } else {
         bytes
@@ -118,7 +118,7 @@ impl Parser {
     }
 
     fn parse(&mut self, text: &str) -> Result<()> {
-        use craft_svg::neutral_document::{self, Event, Skipped};
+        use nodalia_svg::neutral_document::{self, Event, Skipped};
         let mut failure = None;
         let mut layer_color = 1u8;
         let result = neutral_document::visit(text, &mut |event| {
@@ -154,9 +154,9 @@ impl Parser {
         Ok(())
     }
 
-    fn map_shape(&mut self, shape: craft_svg::neutral_document::Shape) -> Result<()> {
-        use craft_svg::neutral_document::Primitive;
-        let point = |p: craft_svg::path_data::Point| Vec2::new(p.x, p.y);
+    fn map_shape(&mut self, shape: nodalia_svg::neutral_document::Shape) -> Result<()> {
+        use nodalia_svg::neutral_document::Primitive;
+        let point = |p: nodalia_svg::path_data::Point| Vec2::new(p.x, p.y);
         let [a, b, c, d, e, f] = shape.transform;
         if let Some(current) = self.stack.first_mut() {
             *current = Mat3 { a, b, c, d, e, f };
@@ -182,9 +182,9 @@ impl Parser {
                             .segs
                             .into_iter()
                             .map(|seg| match seg {
-                                craft_svg::path_data::Segment::Line(p) => Seg::Line(point(p)),
-                                craft_svg::path_data::Segment::Cubic(a, b, c) => Seg::Cubic(point(a), point(b), point(c)),
-                                craft_svg::path_data::Segment::Arc { rx, ry, rot, large, sweep, end } => {
+                                nodalia_svg::path_data::Segment::Line(p) => Seg::Line(point(p)),
+                                nodalia_svg::path_data::Segment::Cubic(a, b, c) => Seg::Cubic(point(a), point(b), point(c)),
+                                nodalia_svg::path_data::Segment::Arc { rx, ry, rot, large, sweep, end } => {
                                     Seg::Arc { rx, ry, rot, large, sweep, end: point(end) }
                                 }
                             })
@@ -393,8 +393,8 @@ enum Seg {
 }
 
 fn arc_center_circular(p0: Vec2, p1: Vec2, r: f64, large: bool, sweep: bool) -> Option<(Vec2, f64)> {
-    let point = |p: Vec2| craft_svg::path_data::Point::new(p.x, p.y);
-    craft_svg::path_data::arc_center_circular(point(p0), point(p1), r, large, sweep).map(|(p, angle)| (Vec2::new(p.x, p.y), angle))
+    let point = |p: Vec2| nodalia_svg::path_data::Point::new(p.x, p.y);
+    nodalia_svg::path_data::arc_center_circular(point(p0), point(p1), r, large, sweep).map(|(p, angle)| (Vec2::new(p.x, p.y), angle))
 }
 
 /// Flatten a general elliptical arc (any `rx`/`ry`/rotation) from `p0` to `p1` in user
@@ -421,17 +421,17 @@ fn flatten_arc(m: &Mat3, p0: Vec2, p1: Vec2, (rx, ry): (f64, f64), rot_deg: f64,
 }
 
 fn elliptical_params(p0: Vec2, p1: Vec2, rx: f64, ry: f64, phi: f64, large: bool, sweep: bool) -> Option<(Vec2, f64, f64)> {
-    let point = |p: Vec2| craft_svg::path_data::Point::new(p.x, p.y);
-    craft_svg::path_data::elliptical_params(point(p0), point(p1), rx, ry, phi, large, sweep)
+    let point = |p: Vec2| nodalia_svg::path_data::Point::new(p.x, p.y);
+    nodalia_svg::path_data::elliptical_params(point(p0), point(p1), rx, ry, phi, large, sweep)
         .map(|(p, start, sweep)| (Vec2::new(p.x, p.y), start, sweep))
 }
 
 /// Convert shared SVG path segments to Forja's geometry types.
 #[cfg(test)]
 fn parse_path(d: &str) -> Result<Vec<Subpath>> {
-    use craft_svg::path_data::{Point, Segment};
+    use nodalia_svg::path_data::{Point, Segment};
     let point = |p: Point| Vec2::new(p.x, p.y);
-    let paths = craft_svg::path_data::parse_path(d).map_err(|e| IoError::Format(e.to_string()))?;
+    let paths = nodalia_svg::path_data::parse_path(d).map_err(|e| IoError::Format(e.to_string()))?;
     Ok(paths
         .into_iter()
         .map(|sp| Subpath {

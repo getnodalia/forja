@@ -1,10 +1,10 @@
 //! LEADER vertex elevations survive the shared DXF read path and DWG bridge (#2245).
 
-use craft_dxf::Tag;
 use forja_color::Color;
 use forja_doc::{Common, DimStyle, Drawing, EntityKind, Handle, Leader, Lineweight, Space};
 use forja_geom::Vec3;
 use forja_io::{SaveOptions, Version, read, write_with};
+use nodalia_dxf::Tag;
 
 type TestResult<T = ()> = Result<T, Box<dyn std::error::Error>>;
 
@@ -93,7 +93,7 @@ fn missing_z_defaults_only_the_corresponding_vertex() -> TestResult {
             expected.push(Vec3::new(p.x, p.y, if has_z { p.z } else { 0.0 }));
         }
         tags.extend([Tag::s(0, "ENDSEC"), Tag::s(0, "EOF")]);
-        let dxf = craft_dxf::write_ascii(&tags);
+        let dxf = nodalia_dxf::write_ascii(&tags);
         let d = read(dxf.as_bytes(), "missing-z.dxf")?;
         let e = d.entity(Handle(0x10)).ok_or("LEADER missing")?;
         let EntityKind::Leader(l) = &e.kind else { return Err("expected LEADER".into()) };

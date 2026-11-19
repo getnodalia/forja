@@ -1,4 +1,4 @@
-//! `window.forja`: the page command API (`craft-web-api`, storytold/craft-libs#413) over the app's
+//! `window.forja`: the page command API (`nodalia-web-api`, storytold/craft-libs#413) over the app's
 //! own control channel, the one the desktop control server drives (`docs/control-protocol.md`).
 //!
 //! The crate owns the JavaScript side (`request`, `execute`, `commands`, `docInspect`, `uiInspect`,
@@ -10,9 +10,9 @@
 use std::rc::Rc;
 use std::sync::mpsc::{Receiver, channel};
 
-use craft_web_api::methods::Methods;
-use craft_web_api::page::{PageApi, Request};
 use forja_ui_egui::{ControlRequest, PendingReply};
+use nodalia_web_api::methods::Methods;
+use nodalia_web_api::page::{PageApi, Request};
 use serde_json::{Value, json};
 use wasm_bindgen_futures::JsFuture;
 

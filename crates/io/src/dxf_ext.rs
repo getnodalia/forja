@@ -11,10 +11,10 @@
 
 use std::collections::HashMap;
 
-use craft_dxf::{Tag, Version};
 use forja_color::Color;
 use forja_doc::{ArrayParams, AssocSnap, Constraint, DimAssoc, DimStyle, Handle, LayerState, Parametric, PlotStyleTable};
 use forja_render::Arrowhead;
+use nodalia_dxf::{Tag, Version};
 use serde::{Deserialize, Serialize};
 use serde_json::Value;
 

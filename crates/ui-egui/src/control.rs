@@ -714,7 +714,7 @@ fn write_screenshot_png(img: &image::RgbaImage, output: impl std::io::Write) -> 
 }
 
 fn save_explicit_screenshot(img: &image::RgbaImage, path: &str) -> std::io::Result<()> {
-    use craft_image_codecs::{ChannelLayout, EncodeOptions, Format, Image};
+    use nodalia_image_codecs::{ChannelLayout, EncodeOptions, Format, Image};
     let format = match image::ImageFormat::from_path(path).map_err(std::io::Error::other)? {
         image::ImageFormat::Png => Format::Png,
         image::ImageFormat::Jpeg => Format::Jpeg,
@@ -727,7 +727,7 @@ fn save_explicit_screenshot(img: &image::RgbaImage, path: &str) -> std::io::Resu
     }
     let pixels = Image::from_u8(img.width(), img.height(), ChannelLayout::Rgba, img.as_raw().clone()).map_err(std::io::Error::other)?;
     let opts = EncodeOptions { jpeg_quality: 75, jpeg_chroma_subsampling: false, ..EncodeOptions::default() };
-    let bytes = craft_image_codecs::encode(&pixels, format, &opts).map_err(std::io::Error::other)?;
+    let bytes = nodalia_image_codecs::encode(&pixels, format, &opts).map_err(std::io::Error::other)?;
     std::fs::write(path, bytes)
 }
 

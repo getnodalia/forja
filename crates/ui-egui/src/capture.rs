@@ -1,15 +1,15 @@
 //! Bounded, one-shot window screenshots for `ui.screenshot`.
 //!
 //! The request record owns the output path, reply, deadline, document/focus identity and the
-//! geometry it was admitted against. The shared `craft_ui::capture::CaptureSlot` owns the strong
+//! geometry it was admitted against. The shared `nodalia_ui::capture::CaptureSlot` owns the strong
 //! `egui::Context`; its screenshot callback holds only a weak reference and never writes a file.
 //! Files are encoded and written only from the logic drain, after the deadline and every identity
 //! check have passed.
 
 use std::sync::mpsc::Sender;
 
-use craft_ui::capture::CaptureSlot;
 use egui::ViewportCommand;
+use nodalia_ui::capture::CaptureSlot;
 use serde_json::{Value, json};
 use web_time::{Duration, Instant};
 

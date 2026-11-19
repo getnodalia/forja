@@ -12,7 +12,7 @@ pub fn plain_mtext(s: &str) -> String {
     let s = unescape_codes(s);
     let s = s.as_ref();
     let mut out = String::with_capacity(s.len());
-    use craft_dxf::mtext_tokens::{StackMode, Token, Tokens};
+    use nodalia_dxf::mtext_tokens::{StackMode, Token, Tokens};
     for token in Tokens::new(s, StackMode::Plain) {
         match token {
             Token::Control('P' | 'N') => out.push('\n'),
@@ -177,7 +177,7 @@ const MAX_ATOMS: usize = 200_000;
 const STACK_SCALE: f64 = 0.7;
 
 // Shared DXF escape handling and parameterized-command classification.
-pub(crate) use craft_dxf::mtext::unescape_codes;
+pub(crate) use nodalia_dxf::mtext::unescape_codes;
 
 /// The line-spacing factor to lay out with: AutoCAD's 0.25..=4 range, 1 for a missing or
 /// non-finite value.
@@ -237,7 +237,7 @@ fn font_switch(a: &str) -> Option<TextFont> {
 
 /// Parse MTEXT contents into words, spaces and paragraph breaks with their formats.
 fn parse(contents: &str, base: Fmt) -> (Vec<Atom>, Vec<Fmt>) {
-    use craft_dxf::mtext_tokens::{StackMode, Token, Tokens, split_stack};
+    use nodalia_dxf::mtext_tokens::{StackMode, Token, Tokens, split_stack};
     let h_min = base.height * 1e-3;
     let h_max = if (base.height * 1e3).is_finite() { base.height * 1e3 } else { f64::MAX };
     let mut fmts = vec![base];

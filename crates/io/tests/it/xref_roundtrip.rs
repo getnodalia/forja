@@ -5,11 +5,11 @@
 
 use std::sync::Arc;
 
-use craft_dxf::{Tag, parse_ascii, records, sections, write_ascii};
 use forja_color::Color;
 use forja_doc::*;
 use forja_geom::Vec3;
 use forja_io::{read_dxf, write_dxf};
+use nodalia_dxf::{Tag, parse_ascii, records, sections, write_ascii};
 
 fn roundtrip(d: &Drawing) -> Drawing {
     read_dxf(write_dxf(d).as_bytes()).expect("reopen")

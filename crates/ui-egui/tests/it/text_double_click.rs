@@ -73,7 +73,7 @@ fn double_clicked_text_takes_ime_composition_and_commit() {
     let mut h = harness();
     double_click(&mut h, Vec2::new(4.0, 1.2));
     assert_eq!(h.state().session.current_prompt().unwrap().message, "Enter new text");
-    // Without a CJK font (none installed, no craft-fonts) the command line draws 中文 as boxes,
+    // Without a CJK font (none installed, no nodalia-fonts) the command line draws 中文 as boxes,
     // which the harness takes for a bug. The IME path below is the same either way.
     let drawable = h.ctx.fonts_mut(|view| {
         [egui::FontFamily::Proportional, egui::FontFamily::Monospace]

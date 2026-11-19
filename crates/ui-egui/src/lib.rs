@@ -320,7 +320,7 @@ pub struct CadApp {
     /// The main window's own modifiers, put back the frame after forwarded keys went in.
     restore_modifiers: Option<egui::Modifiers>,
     /// A panel opened from a menu or command, whose floating window comes to the front on the
-    /// next frame (craft-ui's `DockArea::raise_panel`).
+    /// next frame (nodalia-ui's `DockArea::raise_panel`).
     pub raise_panel: Option<docking::Panel>,
     /// One synthetic batch has been put into `RawInput` and is waiting for a real `App::ui` call.
     synthetic_injected: bool,
@@ -915,7 +915,7 @@ impl CadApp {
         capture::request_hidden_paint(self, ctx);
     }
 
-    /// Queue keys typed in a floating panel's own OS window (craft-ui's
+    /// Queue keys typed in a floating panel's own OS window (nodalia-ui's
     /// `DockOutput::forwarded_events` and `forwarded_modifiers`) for the main window's next
     /// input. egui gives each OS window only its own input, and the shortcuts, the command line
     /// and the canvas all read the main window's, so the keys go in there as if typed in it.

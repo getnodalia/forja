@@ -152,7 +152,7 @@ Advanced `ui.dock` operations use the same validated transaction as pointer gest
 `setStackOpen` takes `open`, and `resizeStack` takes a point `height` or null.
 A center or tab `move` can include `before` (panel ID or null to append) for tab order.
 The equivalent `{"action": ...}` form accepts a serialized shared docking action;
-this is also the form emitted by the renderer, and it takes every action of craft-ui's docking, group, column and window moves included. Protected-canvas and app-specific panel
+this is also the form emitted by the renderer, and it takes every action of nodalia-ui's docking, group, column and window moves included. Protected-canvas and app-specific panel
 rules apply equally to both forms.
 
 ## Command-line replies
@@ -190,7 +190,7 @@ Select a language with `engine.execute` and the UI command `ui.language`:
 
 Supported values are `auto`, `en`, `uk`, `pt-BR`, `de`, `es`, `cs`, `ru`, `fr`, `zh`, `it`, `ko`, `sv`, `ar`, `hu`, `tr`, `bs`, `el` and `ka`.
 Chinese needs an installed CJK font, Arabic an installed Arabic font; Korean needs a font covering the Korean interface from the
-optional craft-fonts input or the operating system; Georgian needs the `Geor` face from craft-fonts (an installed font
+optional nodalia-fonts input or the operating system; Georgian needs the `Geor` face from nodalia-fonts (an installed font
 does not count). Without a suitable font, the saved choice is
 retained and the result's `shown` is `en`. `ui.set` also accepts
 `{"interfaceLanguage":"uk"}`; `ui.inspect` reports the saved choice in its UI state.

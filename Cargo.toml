@@ -13,14 +13,14 @@ repository = "https://github.com/danielmigueltejedor/forja"
 [workspace.dependencies]
 # internal
 forja-geom = { path = "crates/geom" }
-# DXF tags: the shared reader and writer (moved from crates/dxf; craft-libs#791).
-craft-dxf = { git = "https://github.com/getnodalia/foundation", rev = "9ed120e6b1bd5116a4649c578d1272d60cf932b9" }
-# craft-dwg with two fixes Forja kept from its own copy (a damaged model space, viewport IDs):
-# foundation branch vendor/craft-libs/forja-dwg-fixes, on top of upstream 7bb6c900.
-craft-dwg = { git = "https://github.com/getnodalia/foundation", rev = "e20a3e31bc0c1121dfb9a343874a355fecf9c615" }
-craft-shx = { git = "https://github.com/getnodalia/foundation", rev = "2f2d1d84e3a36b3f93e81507aeff3f0da97a7162" }
-craft-image-codecs = { git = "https://github.com/getnodalia/foundation", rev = "ae5020c1ed922cf7976a3a5545f05b07f466be12" }
-craft-mime = { git = "https://github.com/getnodalia/foundation", rev = "0325b2d73676d736e94097dbcef01219cf25c7db" }
+# DXF tags: the shared reader and writer (moved from crates/dxf; nodalia-libs#791).
+nodalia-dxf = { git = "https://github.com/getnodalia/foundation", rev = "a6eb9c3d814ac584f03725b2a0b1dabf70655b2d" }
+# nodalia-dwg with two fixes Forja kept from its own copy (a damaged model space, viewport IDs):
+# foundation branch vendor/nodalia-libs/forja-dwg-fixes, on top of upstream 7bb6c900.
+nodalia-dwg = { git = "https://github.com/getnodalia/foundation", rev = "8043b3b057530a69652d14e871cb18ad40c4e2ff" }
+nodalia-shx = { git = "https://github.com/getnodalia/foundation", rev = "e41e1c689c1e89fadeaa27b93e7fce31c24f6ecb" }
+nodalia-image-codecs = { git = "https://github.com/getnodalia/foundation", rev = "ffc5a918892d57fb42f18c4dd5c7d8928403f948" }
+nodalia-mime = { git = "https://github.com/getnodalia/foundation", rev = "053092695bc2468a4eee49662e9cb67cf06b74fa" }
 forja-color = { path = "crates/color" }
 forja-doc = { path = "crates/doc" }
 forja-constraints = { path = "crates/constraints" }
@@ -30,17 +30,17 @@ forja-io = { path = "crates/io" }
 forja-engine = { path = "crates/engine" }
 forja-ui-egui = { path = "crates/ui-egui" }
 forja-mcp = { path = "crates/mcp" }
-craft-mcp = { git = "https://github.com/getnodalia/foundation", rev = "b6222158fbc2a628f27d2c1fff9f648cd194404c" }
-craft-jsonrpc = { git = "https://github.com/getnodalia/foundation", rev = "b6222158fbc2a628f27d2c1fff9f648cd194404c" }
-# SVG/SVGZ import and export geometry (craft-libs#778).
-craft-svg = { git = "https://github.com/getnodalia/foundation", rev = "c4c4547b7b0151e7c79ab50fa97cb64fbdff4e52" }
+nodalia-mcp = { git = "https://github.com/getnodalia/foundation", rev = "86af25ee14d6fd9189c3623a188532968e469eb5" }
+nodalia-jsonrpc = { git = "https://github.com/getnodalia/foundation", rev = "86af25ee14d6fd9189c3623a188532968e469eb5" }
+# SVG/SVGZ import and export geometry (nodalia-libs#778).
+nodalia-svg = { git = "https://github.com/getnodalia/foundation", rev = "e6d43b3f7eccbf590256d9c5112733aa51edd658" }
 # Which paths stored in a drawing (xrefs, data links) may be opened.
-craft-docpath = { version = "0.1.0", git = "https://github.com/getnodalia/foundation", rev = "92d392cff132eaf53e13afff77f38b5c11b73aa0" }
+nodalia-docpath = { version = "0.1.0", git = "https://github.com/getnodalia/foundation", rev = "65a463571dd29bc67bee88b9c096b96888c2c3c3" }
 # PDF writing (krilla) for plots, and reading them back in tests. The root patches below pin
-# craft-pdf's patched backends to the same revision (Cargo ignores dependency-local patches).
-craft-pdf = { version = "=0.1.0", git = "https://github.com/getnodalia/foundation", rev = "92d392cff132eaf53e13afff77f38b5c11b73aa0", default-features = false }
-# TrueType embedding-permission classification for plotted fonts (craft-libs#778).
-craft-font-catalog = { git = "https://github.com/getnodalia/foundation", rev = "c07e38090879ffa994f893df9956c6d5b96c049c", default-features = false }
+# nodalia-pdf's patched backends to the same revision (Cargo ignores dependency-local patches).
+nodalia-pdf = { version = "=0.1.0", git = "https://github.com/getnodalia/foundation", rev = "65a463571dd29bc67bee88b9c096b96888c2c3c3", default-features = false }
+# TrueType embedding-permission classification for plotted fonts (nodalia-libs#778).
+nodalia-font-catalog = { git = "https://github.com/getnodalia/foundation", rev = "afdbc265479d4beed07f9041a0e5ff1c0a2fbce1", default-features = false }
 clap = { version = "4", features = ["derive", "env"] }
 clap_complete = "4.6.11"
 clap_mangen = { version = "0.3.3", features = ["env"] }
@@ -72,8 +72,8 @@ encoding_rs = "0.8.35"
 quick-xml = "0.42"
 
 # ui
-craft-ui = { version = "0.1.0", git = "https://github.com/getnodalia/foundation", rev = "92d392cff132eaf53e13afff77f38b5c11b73aa0", features = ["serde"] }
-craft-window = { version = "0.1.0", git = "https://github.com/getnodalia/foundation", rev = "92d392cff132eaf53e13afff77f38b5c11b73aa0", features = ["egui"] }
+nodalia-ui = { version = "0.1.0", git = "https://github.com/getnodalia/foundation", rev = "65a463571dd29bc67bee88b9c096b96888c2c3c3", features = ["serde"] }
+nodalia-window = { version = "0.1.0", git = "https://github.com/getnodalia/foundation", rev = "65a463571dd29bc67bee88b9c096b96888c2c3c3", features = ["egui"] }
 egui = { version = "0.37", default-features = false, features = ["default_fonts", "monochrome_emoji_fonts"] }
 # The Nodalia Design Language: tokens and the egui style built from them.
 # Nodalia Design Language: tokens, icons and the engineering suite's shared parts and IBM Plex faces.
@@ -115,12 +115,12 @@ lto = "thin"
 codegen-units = 16
 debug = 0
 
-# PDF backends for craft-pdf: pinned to the same reviewed craft-libs revision as craft-pdf itself
+# PDF backends for nodalia-pdf: pinned to the same reviewed nodalia-libs revision as nodalia-pdf itself
 # (Cargo ignores dependency-local patches).
 [patch.crates-io]
-krilla = { version = "=0.8.2", git = "https://github.com/getnodalia/foundation", rev = "92d392cff132eaf53e13afff77f38b5c11b73aa0" }
-hayro-syntax = { git = "https://github.com/getnodalia/foundation", rev = "92d392cff132eaf53e13afff77f38b5c11b73aa0" }
-hayro-jbig2 = { git = "https://github.com/getnodalia/foundation", rev = "92d392cff132eaf53e13afff77f38b5c11b73aa0" }
+krilla = { version = "=0.8.2", git = "https://github.com/getnodalia/foundation", rev = "65a463571dd29bc67bee88b9c096b96888c2c3c3" }
+hayro-syntax = { git = "https://github.com/getnodalia/foundation", rev = "65a463571dd29bc67bee88b9c096b96888c2c3c3" }
+hayro-jbig2 = { git = "https://github.com/getnodalia/foundation", rev = "65a463571dd29bc67bee88b9c096b96888c2c3c3" }
 
 # Keep the complete egui family and native event bridge on reviewed fork commits.
 ecolor = { git = "https://github.com/getnodalia/foundation", rev = "6d518fc799681571963842f95b55a6b68431b15a" }
@@ -136,7 +136,7 @@ egui_kittest = { git = "https://github.com/getnodalia/foundation", rev = "6d518f
 eframe = { git = "https://github.com/getnodalia/foundation", rev = "6d518fc799681571963842f95b55a6b68431b15a" }
 winit = { git = "https://github.com/getnodalia/foundation", rev = "a517b3846ee8457d84ee4975110bfda6797c44dc" }
 
-# craft-svg's path geometry, served from Nodalia's own copy of the same commit.
-[patch."https://github.com/storytold/vectorcraft.git"]
+# nodalia-svg's path geometry, served from Nodalia's own copy of the same commit.
+[patch."https://github.com/getnodalia/foundation"]
 vectorcraft-geom = { git = "https://github.com/getnodalia/pluma", rev = "6b3a6b8788ebcb420d69449199cbdf323888d27e" }
 vectorcraft-pathops = { git = "https://github.com/getnodalia/pluma", rev = "6b3a6b8788ebcb420d69449199cbdf323888d27e" }

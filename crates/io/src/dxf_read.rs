@@ -2,7 +2,6 @@
 
 use std::collections::HashMap;
 
-use craft_dxf::{Tag, records, sections};
 use forja_color::{Color, Rgb};
 use forja_doc::{
     Arc, AssocSnap, Attrib, AttribModes, AttribProps, Block, Circle, Common, DashElement, DimAssoc, DimKind, DimStyle, Dimension, Drawing, Ellipse,
@@ -11,6 +10,7 @@ use forja_doc::{
     RayLine, Solid, Table, TableCell, Text, TextStyle, Tolerance, Transparency, Ucs, Unknown, VAlign, Viewport, VportConfig, VportTile, Wipeout,
 };
 use forja_geom::{PolyVertex, Spline, Vec2, Vec3};
+use nodalia_dxf::{Tag, records, sections};
 
 use crate::{IoError, Result};
 

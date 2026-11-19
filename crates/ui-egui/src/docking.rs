@@ -1,11 +1,11 @@
 //! Application panel identities and persistence around the shared docking renderer.
 //! Document contents remain owned by their existing view implementations.
 
-use craft_ui::docking::{
+use nodalia_ui::docking::{
     Action, Column, DockArea, DockCommand, DockContent, DockHeights, DockOperation, DockStyle, FloatSpace, Group, Layout, Location, Node,
     PanelLimits, Permissions, Placement, Side, Sides, Target, UiDock, Zone,
 };
-use craft_ui::layout::{SplitAxis, SplitSize};
+use nodalia_ui::layout::{SplitAxis, SplitSize};
 use serde::{Deserialize, Serialize};
 use serde_json::{Value, json};
 
@@ -76,8 +76,8 @@ fn split(axis: SplitAxis, size: SplitSize, first: Node<Panel>, second: Node<Pane
     Node::Split { axis, size, first: Box::new(first), second: Box::new(second) }
 }
 
-/// The saved panel arrangement: craft-ui's workspace over Forja's panels.
-pub type Workspace = craft_ui::docking::Workspace<Panel>;
+/// The saved panel arrangement: nodalia-ui's workspace over Forja's panels.
+pub type Workspace = nodalia_ui::docking::Workspace<Panel>;
 
 /// The panel layout's shape version, saved beside it. Layouts saved without it, or with an
 /// older one, are the split frames from before the dock columns and give way to the default.
@@ -125,7 +125,7 @@ fn dock_groups(layout: &Layout<Panel>, side: Side) -> Vec<Vec<Vec<Panel>>> {
     let mut seen = 0usize;
     while let Some(node) = nodes.pop() {
         seen = seen.saturating_add(1);
-        if seen > 4 * craft_ui::docking::MAX_PANELS {
+        if seen > 4 * nodalia_ui::docking::MAX_PANELS {
             break;
         }
         match node {
@@ -178,7 +178,7 @@ fn home(layout: &Layout<Panel>, panel: Panel) -> Vec<Action<Panel>> {
     vec![Action::Open { panel, anchor: None }, Action::MovePanel { panel, to: Target::NewDock { side } }, Action::ResizeColumn { panel, width }]
 }
 
-/// craft-ui's checks plus the drawing view's: a saved or hand-edited file cannot hide, float,
+/// nodalia-ui's checks plus the drawing view's: a saved or hand-edited file cannot hide, float,
 /// group, collapse or dock it, or restore a palette over it.
 pub fn validate(workspace: &Workspace) -> Result<(), String> {
     workspace.validate().map_err(|error| error.to_string())?;
@@ -256,7 +256,7 @@ fn set_visible(workspace: &mut Workspace, panel: Panel, visible: bool) -> Result
     reveal_panel(workspace, panel)
 }
 
-/// `ui.dock` params: `{action}` or `{operation, …}` in craft-ui's shared grammar.
+/// `ui.dock` params: `{action}` or `{operation, …}` in nodalia-ui's shared grammar.
 fn apply_command(workspace: &mut Workspace, params: &Value) -> Result<(), String> {
     validate(workspace)?;
     let operation = if let Some(action) = params.get("action") {
@@ -377,7 +377,7 @@ pub fn show(app: &mut crate::CadApp, ui: &mut egui::Ui) {
     let _ = sync(&mut workspace, app);
     let stale = workspace != rendered;
     if stale {
-        craft_ui::docking::cancel_drag::<Panel>(ui.ctx(), egui::Id::unique("forja-docking"));
+        nodalia_ui::docking::cancel_drag::<Panel>(ui.ctx(), egui::Id::unique("forja-docking"));
     }
     publish_visibility(app, &workspace);
     app.ui.docking = workspace;

@@ -100,10 +100,10 @@ fn frozen_layers_use_native_331_and_leave_paper_entities_visible() {
     d.add(&paper, Common::default(), EntityKind::Viewport(Viewport { id: 1, frozen_layers: vec!["Notes".into()], ..Viewport::default() })).unwrap();
     let opts = forja_io::SaveOptions { version: Some(forja_io::Version::R2018), binary: false };
     let saved = forja_io::write_with(&d, "freeze.dxf", &opts).unwrap();
-    let tags = craft_dxf::parse(&saved).unwrap();
-    let sections = craft_dxf::sections(&tags);
+    let tags = nodalia_dxf::parse(&saved).unwrap();
+    let sections = nodalia_dxf::sections(&tags);
     let entities = sections.iter().find(|s| s.name == "ENTITIES").unwrap();
-    let records = craft_dxf::records(&entities.tags);
+    let records = nodalia_dxf::records(&entities.tags);
     let vp = records.iter().find(|(kind, _)| kind == "VIEWPORT").unwrap();
     assert!(vp.1.iter().any(|t| t.code == 331), "standard frozen-layer reference");
     assert!(!vp.1.iter().any(|t| t.code == 341), "R2018 uses 331; 341 belongs to R2000 DXF");
@@ -121,7 +121,7 @@ fn frozen_layers_use_native_331_and_leave_paper_entities_visible() {
             native.push(tag);
         }
     }
-    let mut cases = vec![read_dxf(craft_dxf::write_ascii(&native).as_bytes()).unwrap()];
+    let mut cases = vec![read_dxf(nodalia_dxf::write_ascii(&native).as_bytes()).unwrap()];
     cases.push(forja_io::read(&forja_io::write(&d, "freeze.dwg").unwrap(), "freeze.dwg").unwrap());
     for reopened in cases {
         let layout = reopened.layout("Layout1").unwrap();

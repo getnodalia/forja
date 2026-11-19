@@ -1,11 +1,11 @@
 //! Panel moves use the real app shell, retain commands, and survive a complete UI-state reload.
 
-use craft_ui::docking::{Column, Divider, DockArea, Hit, Layout, Node, Side};
 use egui::{Event, Modifiers, PointerButton, vec2};
 use egui_kittest::Harness;
 use egui_kittest::kittest::Queryable;
 use forja_engine::Session;
 use forja_ui_egui::{CadApp, Services, UiState, docking::Panel, menus};
+use nodalia_ui::docking::{Column, Divider, DockArea, Hit, Layout, Node, Side};
 use serde_json::json;
 
 fn harness(state: Option<UiState>, width: f32, scale: f32) -> Harness<'static, CadApp> {
@@ -128,7 +128,7 @@ fn palette_icons_are_painted_in_code_and_shown_in_an_iconic_column() {
         let mut output = ctx.run_ui(egui::RawInput::default(), |ui| {
             let painter = ui.ctx().layer_painter(egui::LayerId::background());
             let rect = egui::Rect::from_min_size(egui::Pos2::ZERO, vec2(20.0, 20.0));
-            painted = craft_ui::docking::DockContent::paint_icon(&mut content, &painter, rect, &panel, egui::Color32::RED);
+            painted = nodalia_ui::docking::DockContent::paint_icon(&mut content, &painter, rect, &panel, egui::Color32::RED);
         });
         output.textures_delta.clear();
         (painted, output.shapes.len())
@@ -240,7 +240,7 @@ fn docking_renders_default_float_and_redocked_at_normal_and_narrow_sizes() {
 
 #[test]
 fn automation_reaches_column_and_group_resizes_tab_reorder_and_minimize_through_the_same_handler() {
-    use craft_ui::docking::Action;
+    use nodalia_ui::docking::Action;
     let mut h = harness(None, 1280.0, 1.0);
     let act = |h: &mut Harness<'_, CadApp>, action: Action<Panel>| {
         h.state_mut().run("ui.dock", json!({"action": serde_json::to_value(action).unwrap()})).unwrap();
@@ -277,8 +277,8 @@ fn group_divider_resizes_by_pointer_and_keyboard_without_changing_the_drawing() 
 
 #[test]
 fn grouped_restore_preserves_order_and_rectangle_in_both_close_orders_after_reload() {
-    use craft_ui::docking::{Action, Placement};
     use forja_ui_egui::docking::{default_workspace, permissions, reveal_panel};
+    use nodalia_ui::docking::{Action, Placement};
     for order in [[Panel::Layers, Panel::Properties], [Panel::Properties, Panel::Layers]] {
         let mut workspace = default_workspace();
         let rect = [50.0, 60.0, 320.0, 400.0];
@@ -358,7 +358,7 @@ fn window_menu_reopens_closed_and_new_palettes_in_their_dock_groups() {
     assert_eq!(dock_panels(&h.state().ui.docking.layout, Side::End), [vec![vec![Panel::Layers], vec![Panel::Properties], vec![Panel::ExternalRefs]]]);
     // Tool Sets with no recorded place and no left dock makes one at its width.
     let mut workspace = forja_ui_egui::docking::default_workspace();
-    workspace.apply(craft_ui::docking::Action::Close { panel: Panel::ToolSets }, forja_ui_egui::docking::permissions).unwrap();
+    workspace.apply(nodalia_ui::docking::Action::Close { panel: Panel::ToolSets }, forja_ui_egui::docking::permissions).unwrap();
     workspace.hidden.clear();
     h.state_mut().ui.docking = workspace;
     h.state_mut().ui.show_toolsets = false;
@@ -392,7 +392,7 @@ fn explicit_properties_open_restores_closed_panel_and_activates_inactive_tab() {
     harness.run_steps(3);
     let location = harness.state().ui.docking.layout.location(&Panel::Properties).unwrap();
     assert_eq!(location.anchor, Some(Panel::Layers));
-    assert_eq!(harness.state().ui.docking.layout.panel_state(&Panel::Properties), craft_ui::docking::PanelState::Front);
+    assert_eq!(harness.state().ui.docking.layout.panel_state(&Panel::Properties), nodalia_ui::docking::PanelState::Front);
 }
 
 #[test]
@@ -445,7 +445,7 @@ fn properties_typed_in_rendered_command_line_reopens_and_selects_actual_workspac
     h.run_steps(3);
     type_command(&mut h, "PROPERTIES");
     assert!(h.state().ui.docking.layout.floating.iter().any(|group| group.contains(&Panel::Properties)));
-    assert_eq!(h.state().ui.docking.layout.panel_state(&Panel::Properties), craft_ui::docking::PanelState::Front);
+    assert_eq!(h.state().ui.docking.layout.panel_state(&Panel::Properties), nodalia_ui::docking::PanelState::Front);
     assert_eq!(h.state().session.doc().unwrap(), &drawing);
 }
 
@@ -464,7 +464,7 @@ fn reset_typed_in_canvas_preserves_authoritative_workspace_replacement() {
 
 #[test]
 fn canvas_reset_during_column_drag_discards_old_resize_and_ends_gesture() {
-    use craft_ui::docking::Action;
+    use nodalia_ui::docking::Action;
     let mut h = harness(None, 1280.0, 1.0);
     // Give the Tool Sets column a width different from Reset's.
     h.state_mut()

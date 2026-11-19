@@ -1,7 +1,7 @@
-//! Embeds the fonts of the optional craft-fonts build input (`CRAFT_FONTS_DIR`) as `CRAFT_FONTS`.
-//! The recipe is craft-fonts' `docs/integration.md` (as in the other Crafting Apps); unset or
-//! empty, `CRAFT_FONTS` is empty and the build is unchanged. It only reads the local checkout
-//! (no network). A bad checkout is a warning, or an error with `CRAFT_FONTS_REQUIRED=1`.
+//! Embeds the fonts of the optional nodalia-fonts build input (`NODALIA_FONTS_DIR`) as `NODALIA_FONTS`.
+//! The recipe is nodalia-fonts' `docs/integration.md` (as in the other Nodalia apps); unset or
+//! empty, `NODALIA_FONTS` is empty and the build is unchanged. It only reads the local checkout
+//! (no network). A bad checkout is a warning, or an error with `NODALIA_FONTS_REQUIRED=1`.
 //!
 //! On wasm32 it embeds only `BIZ UDPGothic` Regular, the `Arab` and `Geor` faces and the `Thai`
 //! Regular faces (about 6.1 MB), to keep the web build within hosting limits (Cloudflare Pages:
@@ -12,33 +12,37 @@ use std::fmt::Write as _;
 use std::path::PathBuf;
 
 fn main() {
-    println!("cargo::rerun-if-env-changed=CRAFT_FONTS_DIR");
-    println!("cargo::rerun-if-env-changed=CRAFT_FONTS_REQUIRED");
-    let mut src = String::from("pub static CRAFT_FONTS: &[CraftFont] = &[\n");
-    if let Some(dir) = std::env::var_os("CRAFT_FONTS_DIR").filter(|d| !d.is_empty()).map(PathBuf::from) {
-        match craft_fonts(&dir) {
+    println!("cargo::rerun-if-env-changed=NODALIA_FONTS_DIR");
+    println!("cargo::rerun-if-env-changed=NODALIA_FONTS_REQUIRED");
+    let mut src = String::from("pub static NODALIA_FONTS: &[NodaliaFont] = &[\n");
+    if let Some(dir) = std::env::var_os("NODALIA_FONTS_DIR").filter(|d| !d.is_empty()).map(PathBuf::from) {
+        match nodalia_fonts(&dir) {
             Ok(entries) => src.push_str(&entries),
-            Err(e) if std::env::var_os("CRAFT_FONTS_REQUIRED").is_some() => {
-                println!("cargo::error=CRAFT_FONTS_DIR={}: {}", one_line(&dir.display().to_string()), one_line(&e));
+            Err(e) if std::env::var_os("NODALIA_FONTS_REQUIRED").is_some() => {
+                println!("cargo::error=NODALIA_FONTS_DIR={}: {}", one_line(&dir.display().to_string()), one_line(&e));
             }
             Err(e) => {
-                println!("cargo::warning=building without craft-fonts: CRAFT_FONTS_DIR={}: {}", one_line(&dir.display().to_string()), one_line(&e));
+                println!(
+                    "cargo::warning=building without nodalia-fonts: NODALIA_FONTS_DIR={}: {}",
+                    one_line(&dir.display().to_string()),
+                    one_line(&e)
+                );
             }
         }
     }
     src.push_str("];\n");
-    let out = PathBuf::from(std::env::var_os("OUT_DIR").unwrap_or_default()).join("craft_fonts.rs");
+    let out = PathBuf::from(std::env::var_os("OUT_DIR").unwrap_or_default()).join("nodalia_fonts.rs");
     if let Err(e) = std::fs::write(&out, src) {
         println!("cargo::error=writing {}: {e}", out.display());
     }
 }
 
 /// Family-name prefixes AGENTS.md bars (no Adobe fonts, ever): Adobe's Source families and Noto
-/// CJK, which is Source Han under another name. `src/craft_fonts.rs` tests the same list.
+/// CJK, which is Source Han under another name. `src/nodalia_fonts.rs` tests the same list.
 const BARRED_FAMILIES: [&str; 5] = ["Source Han", "Source Serif", "Source Sans", "Noto Sans CJK", "Noto Serif CJK"];
 
-/// One `CraftFont { .. }` initialiser per manifest line, in manifest order.
-fn craft_fonts(dir: &std::path::Path) -> Result<String, String> {
+/// One `NodaliaFont { .. }` initialiser per manifest line, in manifest order.
+fn nodalia_fonts(dir: &std::path::Path) -> Result<String, String> {
     let manifest = dir.join("fonts/manifest.txt");
     rerun_if_changed(&manifest)?;
     // Resolve the checkout root once so every manifest file can be confined inside it.
@@ -55,7 +59,7 @@ fn craft_fonts(dir: &std::path::Path) -> Result<String, String> {
             return Err(format!("malformed manifest line {n}"));
         };
         if BARRED_FAMILIES.iter().any(|barred| family.starts_with(barred)) {
-            println!("cargo::warning=craft-fonts: not embedding {family} {style} (AGENTS.md: no Adobe fonts)");
+            println!("cargo::warning=nodalia-fonts: not embedding {family} {style} (AGENTS.md: no Adobe fonts)");
             continue;
         }
         let has = |script: &str| scripts.split(',').any(|s| s.trim() == script);
@@ -68,7 +72,7 @@ fn craft_fonts(dir: &std::path::Path) -> Result<String, String> {
         let scripts: Vec<String> = scripts.split(',').map(|s| format!("{:?}", s.trim())).collect();
         let _ = writeln!(
             out,
-            "    CraftFont {{ family: {family:?}, style: {style:?}, scripts: &[{}], bytes: include_bytes!({:?}) }},",
+            "    NodaliaFont {{ family: {family:?}, style: {style:?}, scripts: &[{}], bytes: include_bytes!({:?}) }},",
             scripts.join(", "),
             path.display().to_string(),
         );
@@ -110,7 +114,7 @@ fn resolve_font(root: &std::path::Path, file: &str) -> Result<PathBuf, String> {
     }
     let path = root.join(rel).canonicalize().map_err(|e| format!("{file}: {e}"))?;
     if !path.starts_with(root) {
-        return Err(format!("{file}: resolves outside the craft-fonts checkout"));
+        return Err(format!("{file}: resolves outside the nodalia-fonts checkout"));
     }
     Ok(path)
 }

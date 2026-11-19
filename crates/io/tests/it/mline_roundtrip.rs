@@ -3,10 +3,10 @@
 //! `ACAD_MLINESTYLE` dictionary, as the DXF Reference describes. Foreign files read the same way,
 //! and hostile ones don't panic.
 
-use craft_dxf::{Tag, records, sections};
 use forja_color::Color;
 use forja_doc::{Common, Drawing, EntityKind, MLine, MLineCaps, MLineCut, MLineElement, MLineJust, MLineStyle, Space};
 use forja_geom::Vec2;
+use nodalia_dxf::{Tag, records, sections};
 
 fn mlines(d: &Drawing) -> Vec<MLine> {
     d.model
@@ -84,7 +84,7 @@ fn mlines_and_styles_survive_save_and_reopen() {
     assert_eq!(back.header.f64("CMLSCALE", 0.0), 2.5);
 
     // The file links up as the DXF Reference describes.
-    let tags = craft_dxf::parse(saved.as_bytes()).unwrap();
+    let tags = nodalia_dxf::parse(saved.as_bytes()).unwrap();
     let secs = sections(&tags);
     let recs = |name: &str| records(&secs.iter().find(|s| s.name == name).unwrap().tags);
     let val = |t: &[Tag], c: i32| t.iter().find(|g| g.code == c).map(Tag::str).unwrap_or_default();

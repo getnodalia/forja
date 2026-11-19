@@ -3,10 +3,10 @@
 
 use std::sync::Arc;
 
-use craft_dxf::Version;
 use forja_doc::{Block, ClipBoundary, Common, Drawing, Entity, EntityKind, Handle, Insert, Line, Space};
 use forja_geom::{Vec2, Vec3};
 use forja_io::{SaveOptions, read, write_with};
+use nodalia_dxf::Version;
 
 fn drawing() -> Drawing {
     let mut d = Drawing::new_metric();

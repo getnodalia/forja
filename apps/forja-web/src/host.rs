@@ -1,6 +1,6 @@
 //! Host modes: a page that runs Forja opens drawings in it and stores what it saves instead
-//! of the browser downloading. The messages and the two transports are `craft-web-host`'s
-//! (storytold/craft-libs), the same contract as the other Craft apps' bridges, with the
+//! of the browser downloading. The messages and the two transports are `nodalia-web-host`'s
+//! (getnodalia/foundation (nodalia/libs)), the same contract as the other Nodalia apps' bridges, with the
 //! `forja:` prefix. This module is Forja's part of it.
 //!
 //! - `?host=parent` (an `<iframe>`, such as a Nextcloud app) talks to the same-origin parent over
@@ -24,8 +24,8 @@
 use std::cell::RefCell;
 use std::rc::Rc;
 
-use craft_web_host::web::{FileData, Host, Message};
 use forja_ui_egui::CadApp;
+use nodalia_web_host::web::{FileData, Host, Message};
 
 /// The app id in the host messages (`forja:ready`).
 const APP: &str = "forja";

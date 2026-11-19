@@ -7,9 +7,9 @@
 use std::collections::{HashMap, HashSet};
 use std::sync::Arc;
 
-use craft_dxf::{Section, Tag};
 use forja_doc::{Drawing, EntityKind, EntityStore, Handle, Image};
 use forja_geom::{Vec2, Vec3};
+use nodalia_dxf::{Section, Tag};
 
 /// Most clip boundary vertices kept per image (hostile files).
 const MAX_CLIP: usize = 100_000;
