@@ -2,7 +2,7 @@
 
 Current reconciliation (2026-10-25): the local tree now incorporates main `e86d895ba1086a7efc2a83048348f89098282d08`. Managed run `egui037-cad-maine86-ci-20261025-0825` passed all seven CI stages: 2,515 passing test executions, zero failures and one ignored across 103 summaries. Independent review verified preservation of both parents and dependency pins; the compare-export regression now verifies document-epoch advancement. Earlier validation counts below describe prior candidates. Native/browser GUI, platform and paired performance checks remain open. Publication requires explicit approval; human review and human merge are required.
 
-**Status (2026-10-25):** reconciled main `b90165666917ec3ac6c308c2ea1c55bb6ea8317d` and passed all 7 mandatory CI stages. Managed job `egui037-forja-main-refresh-ci-20261025-0615` recorded 2,451 passing test executions, zero failures and 1 ignored. The shared-docking adoption uses the reviewed craft-ui revision `650b1c0b058017c4eb3af06d5b39586d6732e07b`; the lock changed only that package and its dependency list. This revision is reachable from the published craft-libs migration branch. Native/platform GUI and IME workflows, final packages and paired app performance remain open. Earlier source identities and counts below are historical.
+**Status (2026-10-25):** reconciled main `b90165666917ec3ac6c308c2ea1c55bb6ea8317d` and passed all 7 mandatory CI stages. Managed job `egui037-forja-main-refresh-ci-20261025-0615` recorded 2,451 passing test executions, zero failures and 1 ignored. The shared-docking adoption uses the reviewed nodalia-ui revision `650b1c0b058017c4eb3af06d5b39586d6732e07b`; the lock changed only that package and its dependency list. This revision is reachable from the published nodalia-libs migration branch. Native/platform GUI and IME workflows, final packages and paired app performance remain open. Earlier source identities and counts below are historical.
 
 Current landing status, 2026-10-25: the implementation integrates main `fcfdf33001cf2462bdafb6e1237becd8ef0ea1cb` and selects egui `6d518fc799681571963842f95b55a6b68431b15a`, winit `a517b3846ee8457d84ee4975110bfda6797c44dc`, shared UI `25da1314d443171b4adeaad2cd9454b273f35c6f` and independent PDF/document-path revisions in the lockfile. Full managed CI0300 passed all seven stages, with 2,448 passing tests, no failures and one ignored across 103 summaries. Fresh review0320 verified the tested source, all seven latest-main paths and all 13 new source files.
 
@@ -19,7 +19,7 @@ Every future host build/test and owned-VM command goes through
 
 Scope: the `storytold/cadcraft` checkout at
 `/home/codex/work/CraftApps/egui037-migration-20261022/forja` only. The shared
-`storytold/egui` fork, `storytold/winit`, `storytold/craft-libs` and the sibling apps
+`storytold/egui` fork, `storytold/winit`, `getnodalia/foundation (nodalia/libs)` and the sibling apps
 are dependencies and hand-off points, not repositories changed by this plan.
 
 Claims are written to be checked against the named source. Historical compiler output
@@ -38,7 +38,7 @@ Default limits are 4 requests, 128 MiB/image and 256 MiB aggregate; Forja's expl
 ## 1. Decision in one page
 
 Forja's committed dependency state does not currently build as written:
-`Cargo.toml:52-57` asks for egui/eframe/egui-wgpu/egui_kittest 0.37 while `craft-ui`
+`Cargo.toml:52-57` asks for egui/eframe/egui-wgpu/egui_kittest 0.37 while `nodalia-ui`
 is pinned to `5c874d51…`, whose egui dependency is 0.36.2. The lock therefore resolves
 two incompatible egui families, and `DockArea::show` receives a 0.37 `Ui` from a
 0.36-typed API. This is a reconciliation task, not a version bump.
@@ -54,7 +54,7 @@ Target state:
    the W1-W15 base, W17-W27 language/IME series and the new **W15P** PRIMARY path. The
    aiongg candidate `8b35388bd719e8cc86a95971ba0bc026c9a8f058` contains W17-W27 but no
    PRIMARY and is only a comparison input.
-3. `craft-ui` and `craft-docpath` from one **final reviewed `storytold/craft-libs`
+3. `nodalia-ui` and `nodalia-docpath` from one **final reviewed `getnodalia/foundation (nodalia/libs)`
    revision** that is current `main` (`49190884…`) plus only the egui-API hunks ported
    from PR #199's `8614e4a…`. The PR head `b68de8c…` and audit tree `ec8840a…` are
    stale unsafe trees and are never merged or checked out as the target.
@@ -72,7 +72,7 @@ Target state:
    input-dependent work moves into `App::ui`; consume-based queues run on every logic
    callback. This is a correction of an existing 0.36/0.37 hazard, not a new 0.37
    lifecycle.
-6. Screenshot completion uses the shared craft-ui CL-2 design: one bounded, cancelable
+6. Screenshot completion uses the shared nodalia-ui CL-2 design: one bounded, cancelable
    completion slot per admitted request, a callback holding only a **weak** reference to
    that slot, capture-time viewport/geometry/DPI binding, and aggregate byte bounds. The
    callback never holds a strong `Context` (which would create a Context→command→callback
@@ -90,10 +90,10 @@ Target state:
 |---|---|---|
 | Assigned Forja checkout | `1977a493c7d8340249185126744c5143f096dc86` | `HEAD`; branch `codex/egui-037-plan-20261022`; tracked tree clean; this plan is currently untracked |
 | Last coherent 0.36.2 Forja | `a08fd7c1d1d7c16f40dc31c25f815370c136a1d4` | Parent of the Dependabot bump that moved direct UI deps to 0.37 |
-| craft-libs `main` inspected | `49190884278f16c9a9f5823d7698a8ffb5deb062` | Baseline for the S1 rebase |
-| craft-libs PR #199 API commit | `8614e4a04fae516fba16c22b31ff1008cb6be10b` | Source of the port hunks only |
-| craft-libs PR #199 head | `b68de8c5f4f1c060904d211a7b1320aa0f7bce78` | Stale tree; never a target |
-| craft-libs audit merge | `ec8840af8c5fda695cf195cdd05e5ae078415c07` | Stale audit tree; evidence only |
+| nodalia-libs `main` inspected | `49190884278f16c9a9f5823d7698a8ffb5deb062` | Baseline for the S1 rebase |
+| nodalia-libs PR #199 API commit | `8614e4a04fae516fba16c22b31ff1008cb6be10b` | Source of the port hunks only |
+| nodalia-libs PR #199 head | `b68de8c5f4f1c060904d211a7b1320aa0f7bce78` | Stale tree; never a target |
+| nodalia-libs audit merge | `ec8840af8c5fda695cf195cdd05e5ae078415c07` | Stale audit tree; evidence only |
 | Upstream egui 0.37.0 | `841a328ba2dd8f6996beb7189ebb7fc00e668a2a` | Stock control and API source |
 | aiongg egui candidate | `a4f9a17f64a6bae61350fb85804c9df0d9865916` | Comparison input; not a production pin |
 | winit published base | `ffae5198770d7730e718043f035a772b7dbc3b1b` | `craft/0.30.13`, W1-W15 |
@@ -102,7 +102,7 @@ Target state:
 
 **Final production pins are unresolved until approved publication.** The manifest edits
 below use `<storytold/egui final reviewed rev>`, `<storytold/winit final reviewed rev>`
-and `<craft-libs final reviewed rev>`. A candidate SHA may not be copied into a
+and `<nodalia-libs final reviewed rev>`. A candidate SHA may not be copied into a
 production manifest, and a moving branch is never a pin.
 
 Governing instructions: repository `AGENTS.md`, suite `PLANNING-CONTRACT.md` and the
@@ -116,8 +116,8 @@ lacks the chrono rule and the contributor-credit section. `AGENTS.md` governs.
 
 * `egui` 0.36.2 **and** 0.37.0; likewise `emath`, `ecolor`, `epaint`.
 * `accesskit` 0.24.1 and 0.25.1 (one per egui family).
-* `craft-ui` at `git+…?rev=5c874d51…#5c874d51…`, depending on `egui 0.36.2`.
-* `craft-docpath` at `git+…?rev=82a24b0…#82a24b0…` (different craft-libs revision,
+* `nodalia-ui` at `git+…?rev=5c874d51…#5c874d51…`, depending on `egui 0.36.2`.
+* `nodalia-docpath` at `git+…?rev=82a24b0…#82a24b0…` (different nodalia-libs revision,
   no egui dependency).
 * `eframe`, `egui-wgpu`, `egui-winit`, `egui_kittest` at 0.37.0, and `winit` 0.30.13
   from crates.io.
@@ -131,7 +131,7 @@ lacks the chrono rule and the contributor-credit section. `AGENTS.md` governs.
 * No root `[patch.crates-io]`, no `vendor/` and no **external/local path patch** in
   this repository. Internal workspace members are path dependencies by design.
 * Read-only `cargo tree -d --locked --offline` shows the 0.36 family reachable only
-  through `craft-ui`, and the 0.37 family through Forja/eframe/egui-wgpu/kittest.
+  through `nodalia-ui`, and the 0.37 family through Forja/eframe/egui-wgpu/kittest.
   This is graph evidence, not a build.
 * The candidate fork's own `a4f9a17f/Cargo.toml:178-179` still has
   `[patch.crates-io] winit = { …, branch = "craft/0.30.13-lang" }`. Consumers' patches
@@ -151,7 +151,7 @@ produced by a path-patched trial, not by the committed manifests. It reports:
 * Warnings include 92 `egui::Id::new` calls (90 in `crates/ui-egui/src`, 2 in tests:
   `tests/docking_workflows.rs:303`, `tests/options_dialog.rs:237`), 51 `ui.id()` calls,
   2 `WidgetType`, 1 deprecated `AsId`, and private-font/dependency warnings.
-* The trial patched 11 crates.io crates and both craft-libs crates by path; those path
+* The trial patched 11 crates.io crates and both nodalia-libs crates by path; those path
   patches are evidence of the API delta and must never be committed.
 
 These are clues to re-check on the migration tip, not a fixed work list.
@@ -163,7 +163,7 @@ These are clues to re-check on the migration tip, not a fixed work list.
 | File | Facts that matter here |
 |---|---|
 | `Cargo.toml:6-11` | workspace version 0.12.0, edition 2024, `rust-version = "1.90"` |
-| `Cargo.toml:52-59` | `craft-ui` git rev `5c874d51…`; `egui`, `egui_kittest`, `eframe`, `egui-wgpu` set to `0.37`; unused `arboard` workspace entry |
+| `Cargo.toml:52-59` | `nodalia-ui` git rev `5c874d51…`; `egui`, `egui_kittest`, `eframe`, `egui-wgpu` set to `0.37`; unused `arboard` workspace entry |
 | `crates/ui-egui/Cargo.toml:7` | UI crate already declares `rust-version = "1.95"` |
 | `crates/ui-egui/Cargo.toml:20-32` | `egui`, `egui-wgpu`; dev `egui_kittest` with `wgpu,snapshot`; dev `naga 30` |
 | `apps/forja/Cargo.toml:19` | `eframe` features: `default_fonts,wgpu,accesskit,wayland,x11,links,persistence` — **missing `clipboard`** |
@@ -184,7 +184,7 @@ Platform cfgs that must keep compiling:
 | `cfg(target_os = "windows")` | `hidapi` windows-native, `windows` `UI_ViewManagement`, `graphics.rs`, `windows_subsystem` | DX12/FXC startup, animation settings |
 | `cfg(target_os = "linux")` | `hidapi` linux-native-basic-udev | spacemouse HID |
 
-`crates/fonts/build.rs` (`CRAFT_FONTS_DIR`) and `crates/ui-egui/build.rs`
+`crates/fonts/build.rs` (`NODALIA_FONTS_DIR`) and `crates/ui-egui/build.rs`
 (`contributors/*`) are build inputs unrelated to egui; do not change their contracts.
 
 Packages/binaries: `forja` (desktop, eframe), `forja-web` (wasm, eframe web
@@ -260,7 +260,7 @@ Verified against native `crates/eframe/src/native/epi_integration.rs:338-365` an
   `PanelState`.
 * All user-visible edits go through `CadApp::run` / `start` / `cmdline`
   (`lib.rs:315-359`) or menus; engine undo is the single transaction owner.
-* Docking is `craft_ui::docking::Layout<Panel>` (`docking.rs:1-130`), serialized
+* Docking is `nodalia_ui::docking::Layout<Panel>` (`docking.rs:1-130`), serialized
   without egui ids; the surface is created with `egui::Id::new("forja-docking")`
   and `cancel_drag` with the same id (`docking.rs:339,375`).
 * Top-level panels are `exact_size(...)` and non-resizable: `chrome.rs:69,180,300`,
@@ -290,7 +290,7 @@ Verified against native `crates/eframe/src/native/epi_integration.rs:338-365` an
 
 * `theme::install_fonts` (`theme.rs:314-387`) starts from
   `egui::FontDefinitions::default()`, prepends an installed system UI face, appends
-  CJK/Japanese/Arabic/Hangul faces and embedded craft-fonts faces. Tests inspect the
+  CJK/Japanese/Arabic/Hangul faces and embedded nodalia-fonts faces. Tests inspect the
   installed character maps through `ctx.fonts_mut(|view| view.fonts.font(&family))`
   (`i18n/tests.rs:407,423,442,557,607,803,912,1017,1125,1168`). In 0.37
   `FontsView.fonts` is private; use `view.characters(&family)`/`view.has_glyph`.
@@ -303,7 +303,7 @@ Verified against native `crates/eframe/src/native/epi_integration.rs:338-365` an
   `monochrome_emoji_fonts`; `⇧` is only in Hack (Monospace). U+22EE is absent from both
   0.36.2 and 0.37 bundled fonts, so its absence is not a 0.37 change.
 * Accessibility metadata is built with `egui::WidgetInfo` in `icons.rs:965-989`,
-  `craft_ui` buttons, `egui::accesskit_node_builder` for tab roles, and control-channel
+  `nodalia_ui` buttons, `egui::accesskit_node_builder` for tab roles, and control-channel
   role strings (`control.rs:113-180`). There is no explicit UI language in AccessKit.
 * There are 27 `TextEdit`, 18 `DragValue`, 32 `ComboBox` and 8 `Slider` sites. Forja
   currently has no password field and no custom `IMEOutput` producer: its editors use
@@ -327,7 +327,7 @@ Verified against native `crates/eframe/src/native/epi_integration.rs:338-365` an
   `style_dialogs.rs`, `dialog_dispatch.rs`, `text_double_click.rs`, `save_version.rs`,
   `rapid_clicks.rs`, `drawing_recovery.rs`, `options_dialog.rs`, `options_followups.rs`,
   and `src/i18n/tests.rs`. There are no golden images; the only PNG output is opt-in
-  (`CRAFT_UI_SUITE_SHOTS`, `CRAFT_UI_VISUAL_DIR`).
+  (`CRAFT_UI_SUITE_SHOTS`, `NODALIA_UI_VISUAL_DIR`).
 * There are ~68 direct `CadApp::logic` call sites, many in tests. After the split, a
   direct call on a bare `Context` still reports pass index 0, so it keeps running
   frame work; tests that need multi-pass semantics must use the `run_ui` helper shape
@@ -335,20 +335,20 @@ Verified against native `crates/eframe/src/native/epi_integration.rs:338-365` an
 
 ## 4. Upstream 0.37 compile incompatibilities
 
-These remain **after** `craft-ui` is moved to the same egui 0.37 source; before that,
-the craft-ui type mismatches dominate. Re-count on the migration tip.
+These remain **after** `nodalia-ui` is moved to the same egui 0.37 source; before that,
+the nodalia-ui type mismatches dominate. Re-count on the migration tip.
 
 | # | Anchor | Symptom | Replacement and semantics |
 |---|---|---|---|
 | C1 | `lib.rs:688-706` (`issue_screenshots`), `:707-740` (`collect_screenshots`) | `egui::UserData` gone; `Event::Screenshot` gone | Use `ctx.request_screenshot(move |image: Arc<ColorImage>| …)` (or `ViewportCommand::Screenshot(ScreenshotCallback::new(...))`). Keep the token, path, reply and deadline in Forja; the callback hands `(token, image)` to the request's completion slot. Call `ctx.request_repaint()` from the frame tick after completion, not from a callback holding a strong `Context` (§6.5). |
 | C2 | `animation.rs:78` pattern; `animation.rs:145,197`, `canvas.rs:2806`, **and tests `animation_effects.rs:102,133`** initializers | `MouseWheel` gained `source: MouseWheelSource` | Add `source: _` to the pattern (or `..`); construct test events with `MouseWheelSource::Unknown` (the platform value on X11/Wayland/Windows/web) or `Wheel`/`Trackpad` where the test is about macOS momentum. Prefer a local test helper so a future field does not break every constructor. |
 | C3 | `i18n/tests.rs:407,423,442,557,607,803,912,1017,1125,1168` | `FontsView.fonts` is private | Replace `view.fonts.font(&family).characters()` with the public `view.characters(&family)` or `view.has_glyph(&FontId, c)`. Keep the test intent: the family's actual character map, not a fallback glyph. |
-| C4 | `icons.rs:965-989` (`describe_control`), all `WidgetType::Button` | `WidgetType` is a deprecated alias of `accesskit::Role` | Use `egui::Role::Button`; `craft-ui` uses `Role::CheckBox`. Assert the role in a semantic test. |
+| C4 | `icons.rs:965-989` (`describe_control`), all `WidgetType::Button` | `WidgetType` is a deprecated alias of `accesskit::Role` | Use `egui::Role::Button`; `nodalia-ui` uses `Role::CheckBox`. Assert the role in a semantic test. |
 | C5 | 92 `egui::Id::new(...)` calls (90 src, 2 tests: `docking_workflows.rs:303`, `options_dialog.rs:237`), e.g. `palettes.rs:615,891,957`, `exchange.rs:75-144`, `docking.rs:339,375` | Deprecated; `clippy -D warnings` fails | `egui::Id::unique(...)` (same hash; `Id::new` now calls `Id::unique`), or `ui.make_persistent_id(salt)`/`IdSalt::new` where a scope-local id is wanted. `docking.rs` must keep the exact same id string for `DockArea` and `cancel_drag`. |
 | C6 | 51 `ui.id()` calls (e.g. `chrome.rs:83`, `palettes.rs:154`, `cmdline.rs:446`) | Deprecated | `ui.scope_id()`. No value change. |
 | C7 | `managers.rs:77` `num_field(ui, id: impl egui::AsId, …)` | `AsId` is a **deprecated blanket trait**, not removed (`egui/src/id.rs:7-12`, exported at `lib.rs:550`); clippy `-D warnings` rejects its use | Take `impl egui::AsIdSalt` and use `ui.make_persistent_id(id)`; the temporary field id becomes scope-local. |
 | C8 | `egui::Panel::top/left/right/bottom("…")` (`chrome.rs:69,180,300`, `palettes.rs:330,346`, `menus.rs:573`) | 0.37 panel constructors take `impl AsIdSalt`; `From<&str> for Id` is gone; the panel id becomes `parent_ui.scope_id().with_salt(...)` (`panel.rs:974-976`) instead of 0.36's `Id::new("…")` | Keep the literal names `cc_title_toolbar`, `cc_menubar`, `cc_status`, `cc_file_tabs`, `cc_toolsets_strip`, `cc_palettes`; do not hard-code ids in tests. The first compatibility PR includes the additive `PanelState` key migration in §7. |
-| C9 | `UiBuilder::id` inside `craft-ui` | Deprecated | `scope_id`; handled in craft-libs S1, not here. |
+| C9 | `UiBuilder::id` inside `nodalia-ui` | Deprecated | `scope_id`; handled in nodalia-libs S1, not here. |
 
 No other 0.37 removals appear in Forja source: no `AsId` removal, no
 `WidgetType::TextEdit`, no `global_theme_preference_switch`, no `show_inside`,
@@ -566,7 +566,7 @@ and request/session binding, and replies with `save_screenshot(&image, path)`. B
   `web_time::Instant` on web, never stale InputState::time; do not leave an infinite
   web deadline.
 
-Forja adopts the shared craft-ui CL-2 completion-slot API (the eleven existing craft-ui creative consumers'
+Forja adopts the shared nodalia-ui CL-2 completion-slot API (the eleven existing nodalia-ui creative consumers'
 approach; Lámina, FigCraft and ArtCraft Native keep local adapters).
 Request records, paths, PNG serialization, timeouts and the reply schema stay in
 Forja. If the provisional CL-2 API is unavailable, S3 is blocked rather than
@@ -649,7 +649,7 @@ real window.
   `cancel_drag::<Panel>(ctx, egui::Id::new("forja-docking"))` must migrate together
   to `Id::unique` with the same string. A mismatch leaves a drag active after a
   workspace replacement; `docking_workflows.rs` already tests host cancel.
-* `DockArea::direction` is an **explicit opt-in visual policy** from craft-libs
+* `DockArea::direction` is an **explicit opt-in visual policy** from nodalia-libs
   §7.7/CL-3. Forja passes `DockDirection::LeftToRight` by default and
   `RightToLeft` only in S5b if chrome mirroring is implemented. Never reverse saved
   tab order to simulate RTL. Preserve serialized split first/second, axes, ratios,
@@ -661,7 +661,7 @@ real window.
   detection.
 * Docking layout persistence is `Workspace` JSON (`docking.rs:74-130`), not egui ids.
   Assert `ui.dock`, `ui.set`, save/reload with floating groups, stacks and hidden
-  panels after the craft-ui update; changing direction must not rewrite the JSON.
+  panels after the nodalia-ui update; changing direction must not rewrite the JSON.
 * Narrow-window behavior remains: toolbar overflow (`chrome.rs:96-120`) keeps every
   command reachable; `chrome_geometry.rs` must keep passing at 1×/2×.
 * There are no secondary native viewports (`show_viewport_deferred`/immediate viewport
@@ -702,13 +702,13 @@ real window.
   `ctx.set_language(Some(language.to_owned()))` when the resolved language changes
   (fork E17). This places the BCP 47 tag on the AccessKit root; the web runner's
   speech/hidden-input language uses it through E18.
-* Do not adopt `craft-i18n`; Forja owns its TSV catalog and `with_language`.
+* Do not adopt `nodalia-i18n`; Forja owns its TSV catalog and `with_language`.
 * Arabic: keep Arabic **text** rendering (bidi + shaping, E5/E12/E13) and verify
   `ar.tsv` screens. `Style::right_to_left` (E9) mirrors egui menus, scroll bars,
   checkboxes, combo boxes and popups, but not Forja's custom chrome or docking.
   S4 keeps `right_to_left = false` (Arabic UI stays LTR with correctly shaped text,
   documented in `docs/localization-parity.md`). S5b may enable it only with app-owned
-  chrome mirroring and craft-ui `DockArea::direction`; until then do not claim an RTL UI.
+  chrome mirroring and nodalia-ui `DockArea::direction`; until then do not claim an RTL UI.
 * Logical text is authoritative. `crates/fonts/src/bidi.rs`/`mtext.rs` compute visual
   runs for rendering from logical text (`visual_runs`, `char_levels`); clipboard,
   DXF/DWG save, accessibility and search continue to use logical strings. Never feed
@@ -747,15 +747,15 @@ real window.
 
 Use the fixtures pinned by the egui plan §10.6; fetch them into the task evidence
 directory, never commit them into Forja, and retain adjacent licences. Forja’s
-own policy remains: optional central `craft-fonts` via `CRAFT_FONTS_DIR`, no font
+own policy remains: optional central `nodalia-fonts` via `NODALIA_FONTS_DIR`, no font
 binaries in this repository, no new `ATTRIBUTION.md` row for test-only external files.
 
 | Fixture | Source/path | SHA256 | License |
 |---|---|---|---|
-| Arabic | craft-fonts `2481a8a324b986a45954e90045ed1f8f2efaaf3c` `fonts/noto-sans-arabic/NotoSansArabic.ttf` | `63111b5b2e074dd48cc67692e0a2726d86ee94c1c37fe8598257b7b4e87e869e` | OFL-1.1 |
-| Thai | craft-fonts `fonts/noto-sans-thai/NotoSansThai.ttf` | `5a1c559bb539583c8a1fd99d1c5b9491e5e14478c9cd2bd0970d5c3096cc9ef8` | OFL-1.1 |
-| CJK SC/Latin | craft-fonts `fonts/noto-sans-cjk-sc/NotoSansCJKsc-Regular.otf` | `2c76254f6fc379fddfce0a7e84fb5385bb135d3e399294f6eeb6680d0365b74b` | OFL-1.1 |
-| Japanese | craft-fonts `fonts/biz-ud-pgothic/BIZUDPGothic-Regular.ttf` | `258d7156c165f2ff774b6efee637c22c3b950de0d8a10e501137061bc8085d01` | OFL-1.1 |
+| Arabic | nodalia-fonts `2481a8a324b986a45954e90045ed1f8f2efaaf3c` `fonts/noto-sans-arabic/NotoSansArabic.ttf` | `63111b5b2e074dd48cc67692e0a2726d86ee94c1c37fe8598257b7b4e87e869e` | OFL-1.1 |
+| Thai | nodalia-fonts `fonts/noto-sans-thai/NotoSansThai.ttf` | `5a1c559bb539583c8a1fd99d1c5b9491e5e14478c9cd2bd0970d5c3096cc9ef8` | OFL-1.1 |
+| CJK SC/Latin | nodalia-fonts `fonts/noto-sans-cjk-sc/NotoSansCJKsc-Regular.otf` | `2c76254f6fc379fddfce0a7e84fb5385bb135d3e399294f6eeb6680d0365b74b` | OFL-1.1 |
+| Japanese | nodalia-fonts `fonts/biz-ud-pgothic/BIZUDPGothic-Regular.ttf` | `258d7156c165f2ff774b6efee637c22c3b950de0d8a10e501137061bc8085d01` | OFL-1.1 |
 | Hebrew | google/fonts `8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5` `ofl/notosanshebrew/NotoSansHebrew[wdth,wght].ttf` | `7ef36a2c3593758cdb622e1bdef4f84523e92fbc3ccc667438dd80ff54c2de88` | OFL-1.1 |
 | Color emoji | googlefonts/noto-emoji `22e564626297b4df0a40570ad81d6c05cc7c38bd` `fonts/NotoColorEmoji.ttf` | `39ee3c587e10e89669b9ff32703261d10d5f9c4dd5ad147b6b5a1c5200591817` | OFL-1.1 |
 
@@ -867,8 +867,8 @@ repositories; Cargo fetches a repository by `rev`, so a commit that exists only 
 approval. The final revisions are placeholders until that approval:
 
 ```toml
-craft-ui     = { version = "0.1.0", git = "https://github.com/getnodalia/foundation", rev = "<craft-libs final reviewed rev>", features = ["serde"] }
-craft-docpath= { version = "0.1.0", git = "https://github.com/getnodalia/foundation", rev = "<same final craft-libs rev>" }
+nodalia-ui     = { version = "0.1.0", git = "https://github.com/getnodalia/foundation", rev = "<nodalia-libs final reviewed rev>", features = ["serde"] }
+nodalia-docpath= { version = "0.1.0", git = "https://github.com/getnodalia/foundation", rev = "<same final nodalia-libs rev>" }
 egui         = { version = "0.37.0", features = ["default_fonts", "monochrome_emoji_fonts"] }
 egui_kittest = "0.37.0"
 eframe       = { version = "0.37.0", default-features = false }
@@ -893,7 +893,7 @@ winit = { git = "https://github.com/getnodalia/foundation", rev = "<storytold/wi
 
 Trim any crate not in the graph; an unused `[patch]` entry is a Cargo **warning**, not
 a build error, but it is still removed. `egui_extras` is only a dev-dependency of
-`craft-ui` and is not in Forja's graph. No `branch` and no `path` may appear for a
+`nodalia-ui` and is not in Forja's graph. No `branch` and no `path` may appear for a
 published pin; the audit's local path patches are evidence only. The final fork/tag
 must also replace the fork's own root `[patch] winit = { branch = ... }` with the
 reviewed winit rev, or document an immutable equivalent.
@@ -902,10 +902,10 @@ reviewed winit rev, or document an immutable equivalent.
 `rust-version = "1.95"` to `apps/forja` and `apps/forja-web`, matching
 `crates/ui-egui/Cargo.toml:7` and `README.md:126-127`.
 
-### 11.2 craft-libs PR #199: port hunks, never the tree
+### 11.2 nodalia-libs PR #199: port hunks, never the tree
 
 `git diff --numstat 49190884 b68de8c -- crates/ui` is **78 insertions, 222 deletions**
-(14 files). The stale trees `b68de8c`/`ec8840a` are missing current `craft-platform`
+(14 files). The stale trees `b68de8c`/`ec8840a` are missing current `nodalia-platform`
 and revert docking/printing/security fixes (`c67b1e1` floating-group permission,
 `4f85efb` bounded `shown_names`, and related settings/printer hardening). Never merge
 or check them out as the target.
@@ -921,15 +921,15 @@ hunks from `8614e4a` (plus the relevant README change from `1764bca`):
 * the CL-2 capture-slot prototype and CL-3 opt-in `DockArea::direction` API.
 
 Preserve the current docking-permission and print-name hardening. Run
-`cargo test -p craft-ui --all-features`, the workspace tests, strict clippy and the
+`cargo test -p nodalia-ui --all-features`, the workspace tests, strict clippy and the
 all-feature wasm check; merge; publish an immutable commit; then pin Forja to it.
-`craft-docpath` is unchanged between `82a24b0` and `49190884`, so both Forja
-craft-libs dependencies can use the same new revision.
+`nodalia-docpath` is unchanged between `82a24b0` and `49190884`, so both Forja
+nodalia-libs dependencies can use the same new revision.
 
 ### 11.3 Language work #198
 
 Consume #198 through the final fork/winit pins (E5/E12-E21, W17-W27, plus E21b/W27);
-do not add a `craft-i18n` dependency or adopt its UI model. Forja keeps its TSV
+do not add a `nodalia-i18n` dependency or adopt its UI model. Forja keeps its TSV
 catalog and `with_language`, and uses only `Context::set_language` and
 `Style::right_to_left` from the fork. Any app-side #198 adoption is separate.
 
@@ -979,7 +979,7 @@ matrix. W16 (pinch/rotation) remains outside this cut.
 ### 11.6 Vendors and lockfile checks (native and wasm)
 
 * Forja has no vendor directory and no external path patch. Nothing is deleted.
-* craft-libs' `vendor/krilla`, `vendor/hayro*` are PDF-only and unrelated; leave them.
+* nodalia-libs' `vendor/krilla`, `vendor/hayro*` are PDF-only and unrelated; leave them.
 * pdfcraft's vendored `egui-wgpu`/winit are another repository's responsibility; do not
   remove them here or copy their patches into Forja.
 * After regeneration, assert on both target feature sets:
@@ -991,7 +991,7 @@ matrix. W16 (pinch/rotation) remains outside this cut.
     and `cargo metadata` filtered/interpreted for `apps/forja-web`;
   * no duplicate egui/emath/ecolor/epaint/accesskit 0.36/0.37 pairs;
   * every egui-family source is `git+https://github.com/storytold/egui?rev=<final>`;
-    winit is the storytold fork; craft-libs crates share one final rev;
+    winit is the storytold fork; nodalia-libs crates share one final rev;
   * `harfrust` may legitimately appear at 0.12 (egui) and 0.14 (`forja-fonts`);
   * `arboard` is present through `egui-winit` because `clipboard` is on;
   * the wasm graph has `egui/web_file`, eframe wgpu/accesskit and no native-only
@@ -1017,8 +1017,8 @@ tagged, merged or posted by this plan.
 ```
 storytold/winit final rev (bounded W15/W15P, W17-W27 lifecycle)
         -> storytold/egui final P8 (P2b/P7/P7b/P7c included)
-        -> craft-libs S1: current main + PR199 API hunks + CL-2F/CL-3
-        -> published craft-libs final rev
+        -> nodalia-libs S1: current main + PR199 API hunks + CL-2F/CL-3
+        -> published nodalia-libs final rev
         -> forja S2 (atomic compatibility; strict names/glyphs; clipboard/fonts;
                          PanelState migration; native+wasm graph)
              -> S3 lifecycle/screenshot/host
@@ -1028,7 +1028,7 @@ storytold/winit final rev (bounded W15/W15P, W17-W27 lifecycle)
              -> S6 docs + acceptance evidence
 ```
 
-* **S1 craft-libs** — fresh branch from `49190884`; apply only the `8614e4a` API
+* **S1 nodalia-libs** — fresh branch from `49190884`; apply only the `8614e4a` API
   hunks; preserve docking-permission/printing hardening; add CL-2 capture slot and
   CL-3 opt-in direction API; tests/clippy/wasm; merge; publish a final rev.
 * **S2 Forja compatibility** — final pins; `clipboard`, `default_fonts`,
@@ -1071,7 +1071,7 @@ No partial rollback to 0.36 is promised after S2 until the stack is reverted as 
   blocking unknowns.
 * Native **and** wasm graph checks from §11.6.
 * Optional features: `cargo test -p forja-ui-egui --features …` where the crate has
-  features (currently none); craft-libs all-features/craft-ui all-features in S1.
+  features (currently none); nodalia-libs all-features/nodalia-ui all-features in S1.
 * Windows: a task-specific craft-windows clone, separate target/evidence, native
   `cargo test --workspace --locked`, `cargo build --release -p forja`, then the GUI
   workflow in §13.5. Do not reuse the baseline executable as new-source evidence.
@@ -1157,7 +1157,7 @@ real evidence is produced.
 ### 14.1 Environment and identities
 
 Record for every run: exact Forja SHA, `Cargo.lock` SHA256, feature set,
-`CRAFT_FONTS_DIR` (or absent), fixture (`examples/apartment.dxf`, synthetic counts),
+`NODALIA_FONTS_DIR` (or absent), fixture (`examples/apartment.dxf`, synthetic counts),
 OS/kernel, Rust version, GPU or software renderer/driver, display scale, viewport size,
 build profile (`release`), and whether the canvas is GPU or `?cpu`. On Linux record
 `lscpu`, `uname -a`, DRM device identities and `vulkaninfo --summary` when available,
@@ -1166,7 +1166,7 @@ and `dxdiag` Basic Render Driver. Never mix software and real-GPU tables.
 
 ### 14.2 Baselines and attribution
 
-* **B0**: `a08fd7c` with the coherent 0.36.2 egui family and craft-ui `5c874d51`.
+* **B0**: `a08fd7c` with the coherent 0.36.2 egui family and nodalia-ui `5c874d51`.
 * **B0u**: B0 in a measurement-only worktree with `frame_nr`/pass/CPU counters and
   idle-frame instrumentation backported (never committed).
 * **B0e**: `1977a493` engine/format dependency state measured with `forja-cli perf`
@@ -1175,7 +1175,7 @@ and `dxdiag` Basic Render Driver. Never mix software and real-GPU tables.
   panel-key changes, so it is not a pure dependency baseline.
 * **C0u**: C0 with the same measurement-only counters.
 * **Cs**: C0's source compiled against **stock egui 0.37 `841a328b`** (and stock
-  craft-ui API port) where it compiles; if a fork-only API is already used, use the
+  nodalia-ui API port) where it compiles; if a fork-only API is already used, use the
   same operation in a pinned minimal adapter/harness and explain the semantic
   difference. Record B0/Cs/C0 source and lock identities.
 * **C1..Cn**: each later stage, compared with C0 for that stage.
@@ -1277,7 +1277,7 @@ Predefine and freeze before candidate measurement:
 Blocking before calling the migration complete:
 
 1. **Final pins/publication reachability**: only the approved final `storytold/egui`,
-   `storytold/winit` and `storytold/craft-libs` revisions are production pins. The
+   `storytold/winit` and `getnodalia/foundation (nodalia/libs)` revisions are production pins. The
    aiongg candidates are comparison inputs. The final fork/tag must replace the fork's
    own moving winit branch patch.
 2. **W15P/E4 PRIMARY**: the final winit rev must include W15P and the final egui rev
@@ -1285,8 +1285,8 @@ Blocking before calling the migration complete:
    measured, explicitly accepted exception.
 3. **E21b/P7b IME**: the final egui rev must include the bounded outgoing surrounding
    text producer/adapter; otherwise IME is not complete and the limitation is explicit.
-4. **craft-libs S1**: port only `8614e4a` hunks onto `49190884`; never merge
-   `b68de8c`/`ec8840a`; preserve `c67b1e1`/`4f85efb`/`craft-platform` and README.
+4. **nodalia-libs S1**: port only `8614e4a` hunks onto `49190884`; never merge
+   `b68de8c`/`ec8840a`; preserve `c67b1e1`/`4f85efb`/`nodalia-platform` and README.
 5. **Toolchain**: egui 0.37 requires Rust 1.95; apps must state it. The server's
    default `rustc` is 1.99.0 and 1.95.0/1.96.1/1.97.1 are installed; `trunk`, a browser
    and a compositor/Xvfb are absent.
@@ -1299,7 +1299,7 @@ Blocking before calling the migration complete:
    layout and real-GPU behavior unqualified; macOS hardware unavailable.
 9. **Fonts**: monochrome emoji changes `⌘`; the `⇧` decision may change macOS labels;
    pinned fixtures are external and must keep their licences. `can_show` gating remains.
-10. **RTL**: `Style::right_to_left` alone does not mirror Forja chrome; use craft-ui
+10. **RTL**: `Style::right_to_left` alone does not mirror Forja chrome; use nodalia-ui
     `DockArea::direction` only with app-owned mirroring; do not claim an RTL UI earlier.
 11. **Screenshot on web**: `now_ms` is 0 on wasm; the new slot deadline must use a web
     clock, and a browser screenshot remains a separate gate.
@@ -1327,11 +1327,11 @@ unverified behaviors.
 * Native/web eframe integrations: `native/epi_integration.rs`, `native/run.rs`,
   `native/wgpu_integration.rs`, `web/app_runner.rs` at `a4f9a17f` and `767b1cad`.
 * Candidate fork `PATCHES.md` and commits `0.37.0..a4f9a17f`; winit plan W15P and
-  `craft/0.30.13-lang`; craft-libs `49190884`, `8614e4a`, `b68de8c`, `ec8840a`.
+  `craft/0.30.13-lang`; nodalia-libs `49190884`, `8614e4a`, `b68de8c`, `ec8840a`.
 * `/home/codex/work/ssd2/task-evidence/egui037-migration-20261022/upstream-discussions.json`
   (#8731, #8736, #8763, #8748, #8535, #8489, #8555, #8583, #8512, #8428, #8657,
   #8577, #8641), `lifecycle-source-audit.md`, `ime-surrounding-gap.md`,
-  `graphics-device-inspection.json`, and `craft-libs/docs/egui-037-suite-rollout.md`.
+  `graphics-device-inspection.json`, and `nodalia-libs/docs/egui-037-suite-rollout.md`.
   These are reported findings/history, not fresh measurements.
 
 ## Appendix A — source anchors

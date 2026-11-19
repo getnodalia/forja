@@ -45,11 +45,11 @@ fn check(bytes: &[u8], name: &str) -> forja_doc::Drawing {
         })
         .unwrap();
     assert!(unknown.tags.iter().any(|t| t.code == 340 && t.value == line.hex()));
-    let dxf = if name.ends_with(".dwg") { craft_dwg::dwg_to_dxf(bytes).unwrap() } else { bytes.to_vec() };
-    let tags = craft_dxf::parse(&dxf).unwrap();
-    let sections = craft_dxf::sections(&tags);
+    let dxf = if name.ends_with(".dwg") { nodalia_dwg::dwg_to_dxf(bytes).unwrap() } else { bytes.to_vec() };
+    let tags = nodalia_dxf::parse(&dxf).unwrap();
+    let sections = nodalia_dxf::sections(&tags);
     let classes = sections.iter().find(|s| s.name == "CLASSES").unwrap();
-    let classes = craft_dxf::records(&classes.tags);
+    let classes = nodalia_dxf::records(&classes.tags);
     let decoded = acadrust::DxfReader::from_reader(Cursor::new(dxf)).unwrap().read().unwrap();
     let proxy = decoded
         .entities()
@@ -119,15 +119,15 @@ fn duplicate_class_dxf() -> Vec<u8> {
 fn duplicate_names_keep_distinct_classes_for_entities_and_dictionary_objects() {
     let source = duplicate_class_dxf();
     for binary in [false, true] {
-        let input = if binary { craft_dxf::write_binary(&craft_dxf::parse(&source).unwrap(), true) } else { source.clone() };
+        let input = if binary { nodalia_dxf::write_binary(&nodalia_dxf::parse(&source).unwrap(), true) } else { source.clone() };
         let mut drawing = forja_io::read(&input, "source.dxf").unwrap();
         for _ in 0..3 {
             for name in ["copy.dxf", "copy.dwg"] {
                 let bytes = forja_io::write_with(&drawing, name, &SaveOptions { version: Some(Version::R2018), ..Default::default() }).unwrap();
-                let dxf = if name.ends_with(".dwg") { craft_dwg::dwg_to_dxf(&bytes).unwrap() } else { bytes.clone() };
-                let tags = craft_dxf::parse(&dxf).unwrap();
-                let sections = craft_dxf::sections(&tags);
-                let classes = craft_dxf::records(&sections.iter().find(|s| s.name == "CLASSES").unwrap().tags);
+                let dxf = if name.ends_with(".dwg") { nodalia_dwg::dwg_to_dxf(&bytes).unwrap() } else { bytes.clone() };
+                let tags = nodalia_dxf::parse(&dxf).unwrap();
+                let sections = nodalia_dxf::sections(&tags);
+                let classes = nodalia_dxf::records(&sections.iter().find(|s| s.name == "CLASSES").unwrap().tags);
                 let custom: Vec<_> = classes.iter().filter(|(_, t)| t.iter().any(|t| t.code == 1 && t.str() == "CUSTOM")).collect();
                 assert_eq!(custom.len(), 3);
                 for (class, (cpp, flags)) in custom.iter().zip([("First", 1025), ("Second", 128), ("Object", 17)]) {
@@ -137,7 +137,7 @@ fn duplicate_names_keep_distinct_classes_for_entities_and_dictionary_objects() {
                     assert!(class.1.iter().any(|t| t.code == 280 && t.i64() == 1));
                 }
                 let records: Vec<_> =
-                    sections.iter().flat_map(|s| craft_dxf::records(&s.tags)).filter(|(kind, _)| kind.starts_with("ACAD_PROXY_")).collect();
+                    sections.iter().flat_map(|s| nodalia_dxf::records(&s.tags)).filter(|(kind, _)| kind.starts_with("ACAD_PROXY_")).collect();
                 assert_eq!(records.len(), 3);
                 let mut identities = Vec::new();
                 for (_, tags) in &records {
@@ -197,7 +197,7 @@ fn unused_malformed_classes_do_not_block_plain_geometry() {
         let dxf = format!(
             "0\nSECTION\n2\nHEADER\n9\n$ACADVER\n1\nAC1032\n0\nENDSEC\n0\nSECTION\n2\nCLASSES\n0\nCLASS\n1\n{name}\n2\n{cpp}\n3\nSynthetic\n90\n{flags}\n91\n{count}\n281\n1\n0\nENDSEC\n0\nSECTION\n2\nENTITIES\n0\nLINE\n5\n10\n100\nAcDbEntity\n8\n0\n100\nAcDbLine\n10\n2\n20\n3\n11\n12\n21\n13\n0\nENDSEC\n0\nEOF\n"
         );
-        let bytes = craft_dwg::dxf_to_dwg_as(dxf.as_bytes(), "AC1032").unwrap();
+        let bytes = nodalia_dwg::dxf_to_dwg_as(dxf.as_bytes(), "AC1032").unwrap();
         let drawing = forja_io::read(&bytes, "plain.dwg").unwrap();
         let lines: Vec<_> = drawing.model.iter().filter_map(|e| if let EntityKind::Line(l) = &e.kind { Some(l) } else { None }).collect();
         assert_eq!(lines.len(), 1);
@@ -216,13 +216,16 @@ fn proxy_spelling_is_preserved_in_dxf_and_normalized_only_for_dwg() {
         let drawing = forja_io::read(dxf.as_bytes(), "source.dxf").unwrap();
         assert_eq!(drawing.entity_count(), 3);
         let out = forja_io::write_with(&drawing, "copy.dxf", &SaveOptions { version: Some(Version::R2018), ..Default::default() }).unwrap();
-        let tags = craft_dxf::parse(&out).unwrap();
+        let tags = nodalia_dxf::parse(&out).unwrap();
         assert!(tags.iter().any(|t| t.code == 0 && t.str() == entity));
         let bytes = forja_io::write_with(&drawing, "copy.dwg", &SaveOptions { version: Some(Version::R2018), ..Default::default() }).unwrap();
-        let decoded = craft_dwg::dwg_to_dxf(&bytes).unwrap();
-        let tags = craft_dxf::parse(&decoded).unwrap();
-        let proxies: Vec<_> =
-            craft_dxf::sections(&tags).iter().flat_map(|s| craft_dxf::records(&s.tags)).filter(|(kind, _)| kind.starts_with("ACAD_PROXY_")).collect();
+        let decoded = nodalia_dwg::dwg_to_dxf(&bytes).unwrap();
+        let tags = nodalia_dxf::parse(&decoded).unwrap();
+        let proxies: Vec<_> = nodalia_dxf::sections(&tags)
+            .iter()
+            .flat_map(|s| nodalia_dxf::records(&s.tags))
+            .filter(|(kind, _)| kind.starts_with("ACAD_PROXY_"))
+            .collect();
         assert_eq!(proxies.len(), 3);
         for (_, tags) in proxies {
             assert!(tags.iter().any(|t| t.code == 310 && t.str() == "A580"));
@@ -236,7 +239,7 @@ fn proxy_spelling_is_preserved_in_dxf_and_normalized_only_for_dwg() {
 /// Exercise the actual ASCII bridge, which writes Unicode as CIF escapes.
 #[test]
 fn unicode_class_identity_survives_the_ascii_bridge() {
-    let mut tags = craft_dxf::parse(&duplicate_class_dxf()).unwrap();
+    let mut tags = nodalia_dxf::parse(&duplicate_class_dxf()).unwrap();
     for tag in &mut tags {
         let text = tag.str();
         let replacement = match (tag.code, text.as_str()) {
@@ -248,10 +251,10 @@ fn unicode_class_identity_survives_the_ascii_bridge() {
             _ => None,
         };
         if let Some(text) = replacement {
-            *tag = craft_dxf::Tag::s(tag.code, text);
+            *tag = nodalia_dxf::Tag::s(tag.code, text);
         }
     }
-    let text = craft_dxf::write_ascii(&tags);
+    let text = nodalia_dxf::write_ascii(&tags);
     assert!(text.contains("\\U+"));
     let mut drawing = forja_io::read(text.as_bytes(), "unicode.dxf").unwrap();
     for _ in 0..2 {
@@ -283,7 +286,7 @@ fn ambiguous_fallback_classes_are_reported_without_losing_plain_geometry() {
             source = source.replace("1\nCUSTOM\n2\nSecond", "1\n\\U+0043USTOM\n2\nSecond");
             source = source.replace("1\nCUSTOM\n2\nObject", "1\nOTHER\n2\nObject");
         }
-        let (bytes, unwritten) = craft_dwg::dxf_to_dwg_noted(source.as_bytes(), "AC1032").unwrap();
+        let (bytes, unwritten) = nodalia_dwg::dxf_to_dwg_noted(source.as_bytes(), "AC1032").unwrap();
         assert_eq!(unwritten.get("ACAD_PROXY_ENTITY"), Some(&2));
         assert_eq!(unwritten.get("ACAD_PROXY_OBJECT"), if escaped { None } else { Some(&1) });
         let drawing = forja_io::read(&bytes, "copy.dwg").unwrap();

@@ -54,7 +54,7 @@ pub fn export_list(list: &forja_render::DisplayList, window: Option<Bounds2>) ->
     let stroke = vw.max(vh) / 1500.0;
     // Decimals: at least 6, more when the stroke would otherwise lose its leading digits.
     let dp = (3.0 - stroke.log10().floor()).clamp(6.0, 15.0) as usize;
-    use craft_svg::write::{SvgWriter, num};
+    use nodalia_svg::write::{SvgWriter, num};
     let mut writer = SvgWriter::fragment();
     writer
         .root()
@@ -72,7 +72,7 @@ pub fn export_list(list: &forja_render::DisplayList, window: Option<Bounds2>) ->
         let pts = list.points(p);
         match p.kind {
             Kind::Polyline => {
-                let points = craft_svg::drawing_write::points(pts.iter().map(|q| [tx(q.x), ty(q.y)]), dp);
+                let points = nodalia_svg::drawing_write::points(pts.iter().map(|q| [tx(q.x), ty(q.y)]), dp);
                 let mut tag = writer.tag("polyline").attr("fill", "none").attr("stroke", &c);
                 if let Some(op) = &op {
                     tag = tag.attr("opacity", op);
@@ -88,7 +88,7 @@ pub fn export_list(list: &forja_render::DisplayList, window: Option<Bounds2>) ->
                 let triangles = pts
                     .chunks(3)
                     .filter_map(|t| if let [a, b, c] = t { Some([[tx(a.x), ty(a.y)], [tx(b.x), ty(b.y)], [tx(c.x), ty(c.y)]]) } else { None });
-                let path = craft_svg::drawing_write::triangles(triangles, dp);
+                let path = nodalia_svg::drawing_write::triangles(triangles, dp);
                 let mut tag = writer.tag("path").attr("fill", &c);
                 if let Some(op) = &op {
                     tag = tag.attr("opacity", op);

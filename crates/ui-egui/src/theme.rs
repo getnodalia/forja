@@ -399,7 +399,7 @@ pub fn mono() -> FontId {
 /// shows (#513). In a Chinese interface (`language` "zh…") the Chinese font comes first, else a
 /// Japanese one, so names take their own glyph forms; in an Arabic interface an installed
 /// Arabic font follows. The embedded Georgian face loads in every language, so the language
-/// picker can show ქართული. A font embedded from craft-fonts comes
+/// picker can show ქართული. A font embedded from nodalia-fonts comes
 /// last, for systems without any (and the web build, which has no system fonts). A Korean
 /// interface adds a Hangul font only when the CJK font found doesn't cover Hangul
 /// ([`korean_font`]).
@@ -450,7 +450,7 @@ pub fn install_fonts(ctx: &egui::Context, language: &str) {
             added.push(("system-arabic".into(), std::sync::Arc::new(egui::FontData::from_owned(bytes))));
         }
     }
-    let embedded: Vec<_> = forja_fonts::CRAFT_FONTS.iter().collect();
+    let embedded: Vec<_> = forja_fonts::NODALIA_FONTS.iter().collect();
     added.extend(
         embedded_ui_faces(&embedded, language)
             .into_iter()
@@ -565,15 +565,15 @@ pub fn shows_vietnamese(language: &str) -> bool {
     }
 }
 
-/// The faces `build.rs` embedded from craft-fonts that the interface loads, in order: every CJK
+/// The faces `build.rs` embedded from nodalia-fonts that the interface loads, in order: every CJK
 /// face, because file, layout and layer names can be Japanese or Chinese whatever the interface
 /// shows (#513), with the interface's own face leading. A sans-serif face reads best, and a
 /// Chinese interface takes the face with its own glyphs ahead of a Japanese one — a Japanese face
 /// shares most ideographs but lacks the simplified-only ones (图 园 测), which would be tofu.
 /// The Georgian face follows in every language (egui's bundled faces carry no Georgian glyphs, and
 /// the picker names the language ქართული); العربية adds its Arabic face after those.
-fn embedded_ui_faces<'a>(faces: &[&'a forja_fonts::CraftFont], language: &str) -> Vec<&'a forja_fonts::CraftFont> {
-    let cjk = |f: &&forja_fonts::CraftFont| f.style == "Regular" && f.scripts.iter().any(|s| matches!(*s, "Jpan" | "Hans" | "Hant"));
+fn embedded_ui_faces<'a>(faces: &[&'a forja_fonts::NodaliaFont], language: &str) -> Vec<&'a forja_fonts::NodaliaFont> {
+    let cjk = |f: &&forja_fonts::NodaliaFont| f.style == "Regular" && f.scripts.iter().any(|s| matches!(*s, "Jpan" | "Hans" | "Hant"));
     let mut out: Vec<_> = faces.iter().copied().filter(cjk).collect();
     out.sort_by_key(|f| !f.family.contains("Gothic") && !f.family.contains("Sans"));
     if language.starts_with("zh") {
@@ -750,7 +750,7 @@ pub fn cjk_covers_hangul() -> bool {
                 return true;
             }
         }
-        forja_fonts::CRAFT_FONTS
+        forja_fonts::NODALIA_FONTS
             .iter()
             .filter(|f| f.style == "Regular" && f.scripts.iter().any(|s| matches!(*s, "Jpan" | "Hans" | "Hant")))
             .any(|f| forja_fonts::ttf::faces(&std::sync::Arc::new(f.bytes.to_vec())).first().is_some_and(covers_hangul))
@@ -758,7 +758,7 @@ pub fn cjk_covers_hangul() -> bool {
 }
 
 /// A Hangul font for the Korean interface when the CJK fonts don't cover it: a Korean face from
-/// the optional craft-fonts input, else one installed where the OS or common packages put it.
+/// the optional nodalia-fonts input, else one installed where the OS or common packages put it.
 /// Nothing is bundled or downloaded; without one the interface stays English. Only looked for
 /// when Korean is asked about. Checked once; collections are scanned with the fonts crate's
 /// face-count cap and reads are capped.
@@ -766,7 +766,7 @@ pub fn korean_font() -> Option<&'static forja_fonts::ttf::Face> {
     static FOUND: std::sync::OnceLock<Option<forja_fonts::ttf::Face>> = std::sync::OnceLock::new();
     FOUND
         .get_or_init(|| {
-            for font in forja_fonts::CRAFT_FONTS.iter().filter(|f| f.scripts.iter().any(|s| matches!(*s, "Hang" | "Kore"))) {
+            for font in forja_fonts::NODALIA_FONTS.iter().filter(|f| f.scripts.iter().any(|s| matches!(*s, "Hang" | "Kore"))) {
                 if font.bytes.len() as u64 > MAX_UI_FONT_BYTES {
                     continue;
                 }
@@ -816,7 +816,7 @@ pub fn shows_hangul(language: &str) -> bool {
 }
 
 /// Whether the interface can show `language` without missing-glyph boxes: Chinese needs a font
-/// with its glyphs (installed, or the CJK face this build embedded from craft-fonts), Korean a
+/// with its glyphs (installed, or the CJK face this build embedded from nodalia-fonts), Korean a
 /// font with Hangul, العربية an installed Arabic font or the embedded Arabic face, Tiếng Việt a
 /// system interface font with its tone-marked letters ([`vietnamese_font`]), ქართული the
 /// embedded Georgian face.
@@ -831,17 +831,17 @@ pub fn can_show(language: &str) -> bool {
     }
 }
 
-/// Whether a face this build embedded from craft-fonts carries `script` (ISO 15924). The web
+/// Whether a face this build embedded from nodalia-fonts carries `script` (ISO 15924). The web
 /// build has no system fonts, so there the interface rides on the embedded faces alone; the
 /// Korean gate already asks this way ([`korean_font`]) and Arabic and Chinese match it. Only a
-/// build made with `CRAFT_FONTS_DIR` embeds any (`build.rs`), so the rest is unchanged.
+/// build made with `NODALIA_FONTS_DIR` embeds any (`build.rs`), so the rest is unchanged.
 fn embedded_script(script: &str) -> bool {
-    any_script(forja_fonts::CRAFT_FONTS, script)
+    any_script(forja_fonts::NODALIA_FONTS, script)
 }
 
 /// Whether any face of `faces` carries `script` (ISO 15924), the question [`embedded_script`]
 /// asks of the table this build embedded.
-fn any_script(faces: &[forja_fonts::CraftFont], script: &str) -> bool {
+fn any_script(faces: &[forja_fonts::NodaliaFont], script: &str) -> bool {
     faces.iter().any(|f| f.style == "Regular" && f.scripts.contains(&script))
 }
 
@@ -946,14 +946,14 @@ mod tests {
         assert_eq!(super::ui_font_choice(&candidates, true, installed, |_| false), None);
     }
 
-    use forja_fonts::CraftFont;
+    use forja_fonts::NodaliaFont;
 
     /// A face shaped like `build.rs` writes them, with no font file (as in `forja-fonts`).
-    fn face(family: &'static str, scripts: &'static [&'static str]) -> CraftFont {
-        CraftFont { family, style: "Regular", scripts, bytes: &[] }
+    fn face(family: &'static str, scripts: &'static [&'static str]) -> NodaliaFont {
+        NodaliaFont { family, style: "Regular", scripts, bytes: &[] }
     }
 
-    fn families<'a>(faces: &[&'a CraftFont]) -> Vec<&'a str> {
+    fn families<'a>(faces: &[&'a NodaliaFont]) -> Vec<&'a str> {
         faces.iter().map(|f| f.family).collect()
     }
 
@@ -981,12 +981,12 @@ mod tests {
         assert_eq!(families(&super::embedded_ui_faces(&faces, "ar")), ["BIZ UDPGothic", "Han Test Face", "Noto Sans Georgian", "Noto Sans Arabic"]);
         assert_eq!(families(&super::embedded_ui_faces(&faces, "ka")), ["BIZ UDPGothic", "Han Test Face", "Noto Sans Georgian"]);
         // Another weight is a style of a face, not an interface face of its own.
-        let bold = CraftFont { family: "BIZ UDPGothic", style: "Bold", scripts: &["Jpan"], bytes: &[] };
+        let bold = NodaliaFont { family: "BIZ UDPGothic", style: "Bold", scripts: &["Jpan"], bytes: &[] };
         assert!(super::embedded_ui_faces(&[&bold], "en").is_empty());
     }
 
     /// What the gate asks of the table: an embedded face of the script stands in for an installed
-    /// font, which the web build never has. The default (no `CRAFT_FONTS_DIR`) table answers no,
+    /// font, which the web build never has. The default (no `NODALIA_FONTS_DIR`) table answers no,
     /// leaving the installed-font answer the gate had before.
     #[test]
     fn embedded_faces_answer_for_their_scripts() {
@@ -994,7 +994,7 @@ mod tests {
         assert!(super::any_script(&faces, "Jpan") && super::any_script(&faces, "Arab") && super::any_script(&faces, "Geor"));
         assert!(!super::any_script(&faces, "Hans") && !super::any_script(&faces, "Hant"));
         // A `Bold`-only face is not the interface's, and a script code is matched whole.
-        let bold = CraftFont { family: "Some Han Bold", style: "Bold", scripts: &["Hans"], bytes: &[] };
+        let bold = NodaliaFont { family: "Some Han Bold", style: "Bold", scripts: &["Hans"], bytes: &[] };
         assert!(!super::any_script(&[bold], "Hans") && !super::any_script(&faces, "Ara"));
         assert!(!super::embedded_script("Hans") || super::can_show("zh"));
         // ქართული rides on the embedded Georgian face alone.
@@ -1025,7 +1025,7 @@ mod tests {
         assert_eq!(super::body(), nodalia_theme::engineering::body());
     }
 
-    /// With the craft-fonts Georgian face (release and web builds), every Mkhedruli letter and the
+    /// With the nodalia-fonts Georgian face (release and web builds), every Mkhedruli letter and the
     /// picker's ქართული render in both families, in a Georgian and in an English interface.
     #[test]
     fn embedded_georgian_face_covers_the_alphabet_in_every_interface() {

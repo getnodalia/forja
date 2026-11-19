@@ -1,4 +1,4 @@
-//! Vector PDF plotting (PLOT / EXPORTPDF), written with craft-pdf's PDF writer (krilla; pure
+//! Vector PDF plotting (PLOT / EXPORTPDF), written with nodalia-pdf's PDF writer (krilla; pure
 //! Rust, no file access, so it runs on the web too).
 //!
 //! One page per sheet: model-space extents fitted to a sheet, or a layout at 1:1 (or the given
@@ -20,8 +20,6 @@ use forja_geom::{Bounds2, Vec2};
 use forja_render::{DPrim, Kind, Sheet, clip, paper};
 use serde_json::Value;
 
-use craft_pdf::write::backend as kr;
-use craft_pdf::write::{self, Metadata, WriteError, Writer};
 use kr::action::LinkAction;
 use kr::annotation::{Annotation, LinkAnnotation, Target};
 use kr::error::KrillaError;
@@ -32,6 +30,8 @@ use kr::page::{PageLabel, PageSettings};
 use kr::paint::{Fill, FillRule, LineCap, LineJoin, Stroke};
 use kr::surface::Surface;
 use kr::text::{GlyphId, KrillaGlyph};
+use nodalia_pdf::write::backend as kr;
+use nodalia_pdf::write::{self, Metadata, WriteError, Writer};
 
 use crate::{IoError, Result};
 

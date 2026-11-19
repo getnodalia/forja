@@ -337,13 +337,13 @@ fn run_language_command(app: &mut CadApp, id: &str, params: &Value) -> Option<Re
     if shown != preference.resolve(&app.system_languages) {
         app.set_status(match preference.resolve(&app.system_languages) {
             "ko" => {
-                "No font covers the Korean interface, so it stays in English. Install a Hangul font (Malgun Gothic or Nanum Gothic), or build with a Hang/Kore craft-fonts face."
+                "No font covers the Korean interface, so it stays in English. Install a Hangul font (Malgun Gothic or Nanum Gothic), or build with a Hang/Kore nodalia-fonts face."
             }
             "vi" => {
                 "No installed interface font has the Vietnamese letters, so the interface stays in English. Install one that does (Segoe UI, Arial, DejaVu Sans or Noto Sans) to use Vietnamese."
             }
             "ar" => "No Arabic font is installed, so the interface stays in English. Install one (Noto Sans Arabic, for example) to use Arabic.",
-            "ka" => "This build has no Georgian font, so the interface stays in English. Build with craft-fonts (its Geor face) to use Georgian.",
+            "ka" => "This build has no Georgian font, so the interface stays in English. Build with nodalia-fonts (its Geor face) to use Georgian.",
             _ => "No Chinese font is installed, so the interface stays in English. Install one (Noto Sans CJK, for example) to use Chinese.",
         });
     }
@@ -823,14 +823,14 @@ pub fn activate_native(app: &mut CadApp, ctx: &egui::Context, id: &str) {
             app.synthetic.extend(events);
             ctx.request_repaint();
         }
-        TextCommand::Events(events) => craft_ui::docking::send_keys(ctx, window, events),
+        TextCommand::Events(events) => nodalia_ui::docking::send_keys(ctx, window, events),
     }
 }
 
 /// The window whose text field has the keyboard: a floating panel's own OS window, or the main
 /// window.
 pub fn text_field_window(ctx: &egui::Context) -> Option<egui::ViewportId> {
-    craft_ui::docking::typing_window(ctx).or_else(|| ctx.text_edit_focused().then_some(egui::ViewportId::ROOT))
+    nodalia_ui::docking::typing_window(ctx).or_else(|| ctx.text_edit_focused().then_some(egui::ViewportId::ROOT))
 }
 
 /// Whether a focused text field takes the menu command `id` ([`activate_native`]): a native

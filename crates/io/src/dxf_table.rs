@@ -7,9 +7,9 @@
 //! into Forja xdata (`CELLSTYLES`, JSON). ACAD_TABLE: the cell texts are the evaluated values;
 //! row and cell styles and the formulas go into Forja xdata (`TABLEX`, JSON).
 
-use craft_dxf::Tag;
 use forja_color::Color;
 use forja_doc::{CellBorder, CellStyle, DataLink, Lineweight, MAX_CELL_STYLES, MAX_TABLE_PARTS, Table, TableBreak, TableStyle};
+use nodalia_dxf::Tag;
 use serde::{Deserialize, Serialize};
 
 use crate::dxf_ext::{APP, xdata};

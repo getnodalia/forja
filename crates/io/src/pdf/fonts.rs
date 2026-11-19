@@ -7,10 +7,10 @@
 
 use std::collections::HashMap;
 
-use craft_pdf::write::backend::text::Font;
 use forja_fonts::subset::{self, Embedding};
 use forja_fonts::ttf::Face;
 use forja_render::{DisplayList, PlotText};
+use nodalia_pdf::write::backend::text::Font;
 
 /// Most embedded fonts in one file.
 const MAX_FONTS: usize = 64;

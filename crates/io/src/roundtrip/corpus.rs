@@ -36,7 +36,7 @@ impl Format {
     }
     /// The format of a file's bytes: DWG by its magic, otherwise DXF.
     pub fn of(bytes: &[u8]) -> Format {
-        if craft_dwg::is_dwg(bytes) { Format::Dwg } else { Format::Dxf }
+        if nodalia_dwg::is_dwg(bytes) { Format::Dwg } else { Format::Dxf }
     }
     fn other(self) -> Format {
         match self {
@@ -279,7 +279,7 @@ pub fn check_bytes(bytes: &[u8], rel: &str, opts: &CorpusOptions) -> FileReport 
     let format = Format::of(bytes);
     let mut f = FileReport { path: rel.to_string(), format: Some(format), bytes: bytes.len() as u64, ..FileReport::default() };
     if format == Format::Dwg {
-        f.version = craft_dwg::version(bytes).unwrap_or_default();
+        f.version = nodalia_dwg::version(bytes).unwrap_or_default();
     }
     let start = Instant::now();
     let name = format!("source.{}", format.ext());

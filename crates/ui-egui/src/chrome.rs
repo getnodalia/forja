@@ -75,7 +75,7 @@ pub fn title_and_toolbar(app: &mut CadApp, ui: &mut egui::Ui) {
             let mac = ui.ctx().os().is_mac();
             let widths: Vec<_> = TOOLBAR.iter().map(|group| group.len() as f32 * (size + 6.0) - 6.0).collect();
             let available = (row.right() - 12.0 - x).max(0.0);
-            let Some(fit) = craft_ui::layout::fit_toolbar(&widths, available, 24.0, 30.0) else {
+            let Some(fit) = nodalia_ui::layout::fit_toolbar(&widths, available, 24.0, 30.0) else {
                 // Very small windows still expose the complete command row by scrolling.
                 ui.scope_builder(egui::UiBuilder::new().max_rect(row.shrink2(vec2(4.0, 0.0))), |ui| {
                     egui::ScrollArea::horizontal().id_salt("toolbar_small").show(ui, |ui| {
@@ -198,7 +198,7 @@ fn title_bar(app: &mut CadApp, ui: &mut egui::Ui, row: Rect) {
             eng::title_bar_with(ui, &look, &bar, |ui, rect| {
                 // The platform's window move (AppKit's drag loop on macOS) and double-click action.
                 if app.integrated_titlebar || app.ndl_window_chrome {
-                    craft_window::title_bar::empty_area(ui, rect.with_max_x(rect.right() - controls_width))
+                    nodalia_window::title_bar::empty_area(ui, rect.with_max_x(rect.right() - controls_width))
                 } else {
                     ui.interact(rect, ui.scope_id().with("title_empty"), Sense::hover())
                 }

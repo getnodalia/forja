@@ -30,8 +30,8 @@ use forja_geom::{Bounds2, Vec2};
 pub use mtext::para::{DEFAULT_TAB, ListStyle, MTextColumnSpec, ParaAlign, ParaProps, Paragraphs, TabKind, list_contents};
 pub use mtext::{MTextColor, MTextLayout, MTextParams, MTextPiece, layout_mtext, layout_mtext_with, plain_mtext};
 
-mod craft_fonts;
-pub use craft_fonts::{CRAFT_FONTS, CraftFont};
+mod nodalia_fonts;
+pub use nodalia_fonts::{NODALIA_FONTS, NodaliaFont};
 
 /// Name of the built-in font.
 pub const BUILTIN_FONT: &str = "Forja Stroke";

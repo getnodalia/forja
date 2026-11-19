@@ -6,11 +6,11 @@
 use crate::ttf::Face;
 
 /// Whether a face may be embedded as a subset.
-pub use craft_font_catalog::SubsetEmbedding as Embedding;
+pub use nodalia_font_catalog::SubsetEmbedding as Embedding;
 
 /// The embedding permission of a face.
 pub fn embedding(face: &Face) -> Embedding {
-    craft_font_catalog::subset_embedding(&face.bytes, face.index)
+    nodalia_font_catalog::subset_embedding(&face.bytes, face.index)
 }
 
 #[cfg(test)]

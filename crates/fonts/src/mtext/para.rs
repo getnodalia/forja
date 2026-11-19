@@ -311,7 +311,7 @@ pub struct Paragraphs {
 impl Paragraphs {
     pub fn scan(contents: &str) -> Paragraphs {
         let contents = super::unescape_codes(contents);
-        use craft_dxf::mtext_tokens::{StackMode, Token, Tokens};
+        use nodalia_dxf::mtext_tokens::{StackMode, Token, Tokens};
         let mut out = Paragraphs { states: vec![ParaProps::default()], ..Default::default() };
         let mut cur = 0usize;
         let brk = |out: &mut Paragraphs, cur: usize, column: bool| {

@@ -90,7 +90,7 @@ The translations add no font assets and work on the web without system fonts.
 Korean needs a font that covers **every Hangul character in its catalog** and the language
 picker label. The CJK font loaded in every language (Noto Sans CJK, Microsoft YaHei, PingFang)
 usually covers Hangul already, and then nothing more is loaded. Otherwise, only when Korean is
-chosen, desktop builds look for a `Hang`/`Kore` face from the optional `CRAFT_FONTS_DIR` input,
+chosen, desktop builds look for a `Hang`/`Kore` face from the optional `NODALIA_FONTS_DIR` input,
 then installed fonts: Malgun Gothic/Gulim on Windows, Apple SD Gothic Neo/AppleGothic on macOS,
 and Nanum Gothic or Noto CJK on Linux/FreeBSD. Collection faces are checked individually, and
 file reads/face scans are bounded. No system fonts or new font assets are redistributed.
@@ -102,10 +102,10 @@ command reports that a font is needed, and the picker uses the readable label **
 Hangul can't be shown. This change does not fix platform IME issues or localize engine output.
 
 The bundled egui fonts have no Georgian letters. Georgian is drawn with the Noto Sans Georgian face
-(`Geor`) of the craft-fonts build input, which release builds embed (`craft-fonts-ref` in the
+(`Geor`) of the nodalia-fonts build input, which release builds embed (`nodalia-fonts-ref` in the
 workflows, and `web-craft-fonts` for the web build, whose embedded faces include it). The face loads
 in every interface language, so Georgian text (file, layout and layer names, labels) draws. A build
-without craft-fonts has no Georgian face.
+without nodalia-fonts has no Georgian face.
 
 ## Greek (`el`) interface
 
@@ -138,7 +138,7 @@ the meaning of each English string, with Georgian technical-drawing vocabulary (
 მომრგვალება, ფასკა, წანაცვლება, ობიექტზე მიბმა, ხედვის არე); terminology and doubtful strings
 were decided by a native Georgian speaker (@devius). No other product's localization was consulted.
 
-egui's bundled faces have no Georgian letters, so Georgian is drawn with the craft-fonts Noto Sans
+egui's bundled faces have no Georgian letters, so Georgian is drawn with the nodalia-fonts Noto Sans
 Georgian (`Geor`) face, which loads in every interface language when a build embeds it; the picker
 then shows **ქართული**. A build without that face keeps the saved `ka` choice but shows the interface
 in English, names the language **Georgian** in the picker, and the language command reports that a

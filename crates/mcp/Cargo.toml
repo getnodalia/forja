@@ -9,8 +9,8 @@ license.workspace = true
 workspace = true
 
 [dependencies]
-craft-mcp = { workspace = true }
-craft-jsonrpc = { workspace = true }
+nodalia-mcp = { workspace = true }
+nodalia-jsonrpc = { workspace = true }
 forja-engine = { workspace = true }
 forja-render = { workspace = true }
 forja-io = { workspace = true }

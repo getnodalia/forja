@@ -12,9 +12,9 @@
 use std::collections::{HashMap, HashSet};
 use std::sync::Arc;
 
-use craft_dxf::Tag;
 use forja_doc::{Attrib, Drawing, Entity, EntityKind, Handle, Insert, MLeader, MLeaderStyle, MText};
 use forja_geom::Vec3;
+use nodalia_dxf::Tag;
 
 /// Most leader roots (landings) read per multileader.
 const MAX_ROOTS: usize = 256;

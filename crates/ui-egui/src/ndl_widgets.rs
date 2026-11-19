@@ -118,9 +118,9 @@ fn toggle(ui: &mut Ui, kind: Kind, on: bool, text: WidgetText) -> Response {
     response
 }
 
-/// A combo box with NDL's chevron (craft_ui's combo with its triangle replaced).
-pub fn combo(id_salt: impl egui::AsIdSalt) -> craft_ui::ComboBox<'static> {
-    craft_ui::ComboBox::from_id_salt(id_salt).icon(chevron_icon)
+/// A combo box with NDL's chevron (nodalia_ui's combo with its triangle replaced).
+pub fn combo(id_salt: impl egui::AsIdSalt) -> nodalia_ui::ComboBox<'static> {
+    nodalia_ui::ComboBox::from_id_salt(id_salt).icon(chevron_icon)
 }
 
 /// NDL's chevron, pointing down (up while the menu is open), in the widget's text colour.

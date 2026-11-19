@@ -3,10 +3,10 @@
 //! the other. Group meanings: https://ezdxf.readthedocs.io/en/stable/dxfentities/index.html
 
 use super::super::{cases, compare};
-use craft_dxf::{Tag, records, sections};
 use forja_doc::{Arc, Common, Ellipse, EntityKind, LwPolyline, MText, Point, RayLine};
 use forja_geom::{PolyVertex, Vec2, Vec3};
 use forja_io::{SaveOptions, Version, read, write_with};
+use nodalia_dxf::{Tag, records, sections};
 
 struct Fixture {
     wire_type: &'static str,
@@ -121,7 +121,7 @@ fn writes_extended_entities_with_independent_groups() {
         for version in Version::ALL {
             for binary in [false, true] {
                 let bytes = write_with(&source.drawing, "memory.dxf", &SaveOptions { version: Some(version), binary }).unwrap();
-                let tags = craft_dxf::parse(&bytes).unwrap();
+                let tags = nodalia_dxf::parse(&bytes).unwrap();
                 let sections = sections(&tags);
                 let records = records(&sections.iter().find(|s| s.name == "ENTITIES").unwrap().tags);
                 assert_eq!(records.len(), 1);

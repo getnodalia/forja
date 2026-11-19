@@ -4,8 +4,8 @@
 //! fine stroke, the icon colour for existing geometry and the accent for the geometry a command
 //! creates; the generic icons (files, edit, view, navigation, chevrons) in NDL's bold style.
 
-use craft_ui::buttons::{ButtonVisuals, IconButton, IconButtonStyle};
 use egui::{Color32, Painter, Rect, Stroke};
+use nodalia_ui::buttons::{ButtonVisuals, IconButton, IconButtonStyle};
 
 use crate::theme::Tokens;
 

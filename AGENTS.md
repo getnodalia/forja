@@ -56,8 +56,8 @@ Drive the running app with JSON lines on `127.0.0.1:PORT` (`cmdline.input`, `eng
 `docs/control-protocol.md`. For UI work, look at the screenshot; with no presented frame use
 `ui.render` or `forja-cli`.
 
-Fonts are an optional build input: `CRAFT_FONTS_DIR` pointing at a checkout of the
-`vendor/craft-fonts/main` branch of getnodalia/foundation, embedded by `crates/fonts/build.rs`.
+Fonts are an optional build input: `NODALIA_FONTS_DIR` pointing at a checkout of the
+`nodalia/fonts` branch of getnodalia/foundation, embedded by `crates/fonts/build.rs`.
 Code and tests work without it. Parallel agents use separate `CARGO_TARGET_DIR`s and delete them
 when done.
 

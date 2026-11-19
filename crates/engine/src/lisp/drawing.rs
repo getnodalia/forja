@@ -9,9 +9,9 @@
 
 use std::sync::{Arc, Mutex};
 
-use craft_dxf::Tag;
 use forja_doc::{Entity, Handle, Space};
 use forja_geom::Vec2;
+use nodalia_dxf::Tag;
 
 use super::LispError;
 use super::builtins::args_err;
@@ -253,20 +253,20 @@ fn convert_angles(kind: &str, tags: &mut [Tag], f: fn(f64) -> f64) {
             continue;
         }
         let v = match t.value {
-            craft_dxf::Value::Real(r) => r,
-            craft_dxf::Value::Int(i) => i as f64,
+            nodalia_dxf::Value::Real(r) => r,
+            nodalia_dxf::Value::Int(i) => i as f64,
             _ => continue,
         };
-        t.value = craft_dxf::Value::Real(f(v));
+        t.value = nodalia_dxf::Value::Real(f(v));
     }
 }
 
 fn tag_value(t: &Tag) -> Value {
     match &t.value {
-        craft_dxf::Value::Str(s) | craft_dxf::Value::Hex(s) => Value::str(s),
-        craft_dxf::Value::Real(r) => Value::Real(*r),
-        craft_dxf::Value::Int(i) => Value::Int(i32::try_from(*i).unwrap_or(if *i < 0 { i32::MIN } else { i32::MAX })),
-        craft_dxf::Value::Bool(b) => Value::Int(i32::from(*b)),
+        nodalia_dxf::Value::Str(s) | nodalia_dxf::Value::Hex(s) => Value::str(s),
+        nodalia_dxf::Value::Real(r) => Value::Real(*r),
+        nodalia_dxf::Value::Int(i) => Value::Int(i32::try_from(*i).unwrap_or(if *i < 0 { i32::MIN } else { i32::MAX })),
+        nodalia_dxf::Value::Bool(b) => Value::Int(i32::from(*b)),
     }
 }
 

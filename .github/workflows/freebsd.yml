@@ -35,4 +35,4 @@ jobs:
       # mesa-dri carries the software Vulkan driver the GPU tests render with in the VM.
       packages: "libxkbcommon wayland libX11 libXcursor libXrandr libXi libxcb mesa-libs mesa-dri vulkan-loader gtk3 fontconfig freetype2 alsa-lib dejavu"
       fonts-repository: getnodalia/foundation
-      fonts-ref: b076417b5880bd4154bd22f00695b1d28c6bea83
+      fonts-ref: d4f57e6b31d7c7526b539f7aaaa07312c9908bb8

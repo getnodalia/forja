@@ -206,7 +206,7 @@ fn tiff_uses_first_directory_and_keeps_stored_orientation() {
         tiff.new_image::<RGB8>(2, 2).unwrap().write_data(&[200; 12]).unwrap();
     }
     let file = file.into_inner();
-    assert_eq!(craft_image_codecs::tiff_info(&file).unwrap().default_page(), Some(1));
+    assert_eq!(nodalia_image_codecs::tiff_info(&file).unwrap().default_page(), Some(1));
     let old = image::load_from_memory(&file).unwrap().to_rgba8();
     assert_eq!(old.dimensions(), (1, 2));
     assert_eq!(probe(&file).unwrap(), (1, 2));

@@ -48,7 +48,7 @@ fn visible_text(shape: &Shape, clip: Rect, result: &mut Vec<(String, Rect)>) {
 
 fn check_status_labels_case(width: f32, height: f32, scale: f32, message: bool, overlaps: &mut Vec<String>) {
     let mut h = harness(width, height, scale, message);
-    if let Ok(directory) = std::env::var("CRAFT_UI_VISUAL_DIR") {
+    if let Ok(directory) = std::env::var("NODALIA_UI_VISUAL_DIR") {
         std::fs::create_dir_all(&directory).unwrap();
         h.render().unwrap().save(format!("{directory}/cad-{width}-{scale}-{message}.png")).unwrap();
     }

@@ -545,7 +545,7 @@ fn interface_fonts_cover_every_letter_in_each_catalog() {
 }
 
 /// Chinese shows only with a font for it: an installed CJK font, or one this build embedded from
-/// craft-fonts (the web build has no system fonts). Without either the interface stays English
+/// nodalia-fonts (the web build has no system fonts). Without either the interface stays English
 /// instead of drawing boxes, and choosing it says why.
 #[test]
 fn chinese_needs_a_cjk_font() {

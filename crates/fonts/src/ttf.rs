@@ -192,7 +192,7 @@ const HEBREW_FALLBACK: &[&str] = &["notosanshebrew", "notoserifhebrew", "arial",
 /// marks need. First the Windows faces Thai drawings are laid out with (Cordia New, Angsana New,
 /// Browallia New: Thai SHX fonts such as `cordia2.shx` copy their design and widths, so text
 /// keeps its fit in title blocks and tables), then IBM Plex Sans Thai (installed, or embedded
-/// from craft-fonts, which makes it the web build's Thai font), then Noto and the fonts each OS
+/// from nodalia-fonts, which makes it the web build's Thai font), then Noto and the fonts each OS
 /// ships (macOS Thonburi and Sukhumvit, Windows Leelawadee and Tahoma, the Linux TLWG fonts).
 /// Matched as parts of file names: `angsa` and `browa` find both today's Windows collections
 /// (`angsana.ttc`, `browalia.ttc`) and the older single faces (`angsa.ttf`, `browab.ttf`).
@@ -296,7 +296,7 @@ struct Fallback {
 enum Source {
     /// An installed font file, read on first use.
     File(PathBuf),
-    /// A font compiled into the binary ([`crate::CRAFT_FONTS`]), copied on first use.
+    /// A font compiled into the binary ([`crate::NODALIA_FONTS`]), copied on first use.
     Static(&'static [u8]),
 }
 
@@ -310,9 +310,9 @@ fn lock() -> MutexGuard<'static, Db> {
         let mut all = scan();
         all.extend(user);
         g.paths = all.into_iter().map(|(stem, p)| (stem, Source::File(p))).collect();
-        // Embedded craft-fonts fonts take the place of an installed file with the same stem,
+        // Embedded nodalia-fonts fonts take the place of an installed file with the same stem,
         // but not of a font in the user's own folders (which they chose to use).
-        for f in crate::CRAFT_FONTS {
+        for f in crate::NODALIA_FONTS {
             let stem = f.stem();
             if !g.user.contains(&stem) {
                 g.paths.insert(stem, Source::Static(f.bytes));
@@ -796,9 +796,9 @@ pub(crate) fn rank_fallback(stems: &[String]) -> Vec<String> {
         .map(|s| {
             let n = norm(s);
             let pref = PREFERRED_FALLBACK.iter().position(|p| n.contains(p)).unwrap_or(PREFERRED_FALLBACK.len());
-            // Embedded craft-fonts fonts come right after the installed wide-coverage (CJK) fonts,
+            // Embedded nodalia-fonts fonts come right after the installed wide-coverage (CJK) fonts,
             // before the general-purpose ones, so the bounded search always reaches them.
-            let pref = if crate::craft_fonts::is_embedded(s) { pref.min(embedded_rank) } else { pref };
+            let pref = if crate::nodalia_fonts::is_embedded(s) { pref.min(embedded_rank) } else { pref };
             (pref, weight_penalty(s, ""), s.clone())
         })
         .collect();
@@ -818,7 +818,7 @@ pub fn register(name: &str, bytes: Vec<u8>) {
 }
 
 /// Register font bytes that live for the whole process under a name; they are copied only when
-/// the font is first used, the way the embedded craft-fonts fonts are listed.
+/// the font is first used, the way the embedded nodalia-fonts fonts are listed.
 #[cfg(test)]
 pub(crate) fn register_static(name: &str, bytes: &'static [u8]) {
     let mut g = lock();
@@ -1373,7 +1373,7 @@ mod family_tests {
         let stems: Vec<String> = ["LeelawUI", "Thonburi", "Loma", "msyh"].map(norm).to_vec();
         assert!(stems.iter().filter(|s| THAI_FALLBACK.iter().any(|p| s.contains(p))).count() == 3);
         // The faces Thai drawings are laid out with come first, then IBM Plex Sans Thai (an
-        // installed file or the craft-fonts face, both under this stem), then the others; regular
+        // installed file or the nodalia-fonts face, both under this stem), then the others; regular
         // weights before bold.
         let stems: Vec<String> =
             ["notosansthai-regular", "ibmplexsansthai-bold", "ibmplexsansthai-regular", "msyh", "cordiab", "cordia", "ibmplexsansthailooped-regular"]

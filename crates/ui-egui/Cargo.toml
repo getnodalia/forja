@@ -10,16 +10,16 @@ rust-version = "1.95"
 workspace = true
 
 [dependencies]
-craft-ui = { workspace = true }
+nodalia-ui = { workspace = true }
 forja-geom = { workspace = true }
 forja-color = { workspace = true }
 forja-doc = { workspace = true }
 forja-render = { workspace = true }
 forja-engine = { workspace = true }
 forja-io = { workspace = true }
-craft-image-codecs = { workspace = true }
+nodalia-image-codecs = { workspace = true }
 forja-fonts = { workspace = true }
-craft-window = { workspace = true }
+nodalia-window = { workspace = true }
 egui = { workspace = true }
 nodalia-theme = { workspace = true }
 egui_extras = { workspace = true }
@@ -37,7 +37,7 @@ nodalia-update = { workspace = true }
 
 [dev-dependencies]
 # Tests build the dock area as the desktop app does (headless contexts keep floats in-window).
-craft-ui = { workspace = true, features = ["native-windows"] }
+nodalia-ui = { workspace = true, features = ["native-windows"] }
 # The workspace `egui` dependency enables `default_fonts` and `monochrome_emoji_fonts` in
 # production too; the tests exercise the same installed chain as the app.
 egui_kittest = { workspace = true, features = ["wgpu", "snapshot"] }

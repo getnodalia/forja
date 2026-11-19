@@ -1,11 +1,11 @@
-//! Reads a plotted PDF back for tests, with craft-pdf's reader: pages, media boxes, decoded
+//! Reads a plotted PDF back for tests, with nodalia-pdf's reader: pages, media boxes, decoded
 //! content, transparency graphics states, link annotations, fonts, page labels and document
 //! information.
 #![allow(dead_code)]
 
 use std::ops::Deref;
 
-use craft_pdf::syntax::object::{Array, Dict, Name, Stream, String as PdfString};
+use nodalia_pdf::syntax::object::{Array, Dict, Name, Stream, String as PdfString};
 
 /// What a reader sees in a PDF.
 pub struct Doc {
@@ -120,7 +120,7 @@ fn font(d: &Dict<'_>) -> Font {
 /// Read a PDF; panics when it doesn't parse.
 pub fn read(bytes: &[u8]) -> Doc {
     assert!(bytes.starts_with(b"%PDF-"), "a PDF header");
-    let pdf = craft_pdf::open_slice(bytes, None).expect("the PDF opens");
+    let pdf = nodalia_pdf::open_slice(bytes, None).expect("the PDF opens");
     let mut pages = Vec::new();
     for page in pdf.pages().iter() {
         let m = page.media_box();

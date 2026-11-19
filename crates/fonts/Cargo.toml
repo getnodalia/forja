@@ -10,9 +10,9 @@ workspace = true
 
 [dependencies]
 forja-geom = { workspace = true }
-craft-dxf = { workspace = true }
-craft-font-catalog = { workspace = true }
-craft-shx = { workspace = true }
+nodalia-dxf = { workspace = true }
+nodalia-font-catalog = { workspace = true }
+nodalia-shx = { workspace = true }
 skrifa = { workspace = true }
 harfrust = { workspace = true }
 unicode-bidi = { workspace = true }

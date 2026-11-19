@@ -1,4 +1,4 @@
-//! Display-time localization, following the sibling Craft apps' TSV convention.
+//! Display-time localization, following the sibling Nodalia apps' TSV convention.
 //! English strings remain lookup keys; command IDs, drawing data and automation stay unchanged.
 //! Add a catalog, a `LANGUAGES` row and a preference variant to introduce another language.
 
@@ -157,7 +157,7 @@ impl Preference {
             Self::Arabic => "العربية",
             Self::Hungarian => "Magyar",
             Self::Turkish => "Türkçe",
-            // Georgian letters come from the craft-fonts Georgian face; a build without it shows
+            // Georgian letters come from the nodalia-fonts Georgian face; a build without it shows
             // the English name (as Korean does) and keeps the interface in English.
             Self::Georgian => {
                 if crate::theme::can_show("ka") {
@@ -274,7 +274,7 @@ pub static LANGUAGES: [Language; 20] = [
     // Turkish keeps a noun singular after a number ("3 commit"), so like Korean it has one form.
     Language { code: "tr", name: "Türkçe", source: include_str!("i18n/tr.tsv"), plural: plural_ko, plural_forms: 1, catalog: OnceLock::new() },
     // Georgian keeps a noun singular after a numeral ("5 კომიტი"), so one form, the Korean rule.
-    // Its letters come from the craft-fonts `Geor` face (`theme::can_show`).
+    // Its letters come from the nodalia-fonts `Geor` face (`theme::can_show`).
     Language {
         code: "ka", name: "ქართული", source: include_str!("i18n/ka.tsv"), plural: plural_ko, plural_forms: 1, catalog: OnceLock::new()
     },

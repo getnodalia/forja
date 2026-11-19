@@ -2,9 +2,9 @@
 //! display settings, and its IMAGEDEF (file path and name), written with the IMAGEDEF_REACTOR,
 //! RASTERVARIABLES and dictionaries the DXF Reference describes.
 
-use craft_dxf::{Tag, records, sections};
 use forja_doc::{Drawing, EntityKind, Image};
 use forja_geom::Vec2;
+use nodalia_dxf::{Tag, records, sections};
 
 /// A small DXF as another program writes it: a line, an image on layer `Pics` pointing at an
 /// IMAGEDEF named `logo`, and an MLINE without vertices.
@@ -114,7 +114,7 @@ fn images(d: &Drawing) -> Vec<Image> {
 
 /// The records of a section of a DXF text.
 fn section(dxf: &str, name: &str) -> Vec<(String, Vec<Tag>)> {
-    let tags = craft_dxf::parse(dxf.as_bytes()).unwrap();
+    let tags = nodalia_dxf::parse(dxf.as_bytes()).unwrap();
     let s = sections(&tags).into_iter().find(|s| s.name == name).unwrap();
     records(&s.tags)
 }

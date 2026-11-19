@@ -122,7 +122,7 @@ mod tests {
             let available = ui.available_rect_before_wrap();
             assert_eq!(available, rect.shrink(if resize { f32::from(RESIZE_INSET) } else { 0.0 }));
             let row = available.with_max_y(available.top() + nodalia_theme::engineering::layout::TITLE_BAR);
-            craft_window::title_bar::empty_area(ui, row.with_max_x(row.right() - CONTROLS_WIDTH));
+            nodalia_window::title_bar::empty_area(ui, row.with_max_x(row.right() - CONTROLS_WIDTH));
             controls(ui, row);
             if resize {
                 resize_edges(ui, rect);

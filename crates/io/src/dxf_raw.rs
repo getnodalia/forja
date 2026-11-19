@@ -16,9 +16,9 @@ use std::borrow::Cow;
 use std::collections::{BTreeMap, HashMap, HashSet};
 use std::sync::Arc;
 
-use craft_dxf::{Section, Tag};
 use forja_doc::foreign::{Foreign, ForeignExtra, ForeignKey, ForeignObject, class_group, class_index, class_number};
 use forja_doc::{Drawing, Entity, EntityKind, Handle, RawTag, Unknown};
+use nodalia_dxf::{Section, Tag};
 
 /// Named object dictionary entries Forja writes itself from its model (plus every key that
 /// starts with `FORJA`): they are read into the model, not kept raw. A change that starts
@@ -71,7 +71,7 @@ fn raw(t: &Tag) -> RawTag {
 /// A kept group with the value type its code has (so binary output encodes it right); text that
 /// doesn't parse as that type stays text.
 fn tag(r: &RawTag) -> Tag {
-    use craft_dxf::{Kind, Value, kind_of};
+    use nodalia_dxf::{Kind, Value, kind_of};
     let v = r.value.trim();
     let value = match kind_of(r.code) {
         Kind::Real => v.parse::<f64>().ok().filter(|x| x.is_finite()).map(Value::Real),

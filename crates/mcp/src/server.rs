@@ -22,16 +22,16 @@ Verify with inspect_drawing / query_entities and look with render.";
 
 pub struct Server {
     backend: Box<dyn Backend>,
-    session: craft_mcp::Session,
+    session: nodalia_mcp::Session,
 }
 
 impl Server {
     pub fn new(backend: Box<dyn Backend>) -> Self {
         Self {
             backend,
-            session: craft_mcp::Session::new("forja", env!("CARGO_PKG_VERSION"), craft_mcp::Policy::Compatible)
+            session: nodalia_mcp::Session::new("forja", env!("CARGO_PKG_VERSION"), nodalia_mcp::Policy::Compatible)
                 .with_capabilities(json!({"tools": {"listChanged": false}, "resources": {"listChanged": false}}))
-                .unwrap_or_else(|_| craft_mcp::Session::new("forja", env!("CARGO_PKG_VERSION"), craft_mcp::Policy::Compatible))
+                .unwrap_or_else(|_| nodalia_mcp::Session::new("forja", env!("CARGO_PKG_VERSION"), nodalia_mcp::Policy::Compatible))
                 .with_legacy_initialize(SUPPORTED, json!({"name": "forja", "title": "Forja", "version": env!("CARGO_PKG_VERSION")})),
         }
     }
@@ -62,7 +62,7 @@ impl Server {
         }
         let reply = match serde_json::from_str::<Value>(line) {
             Ok(msg) => self.handle_message(&msg),
-            Err(e) => Some(craft_jsonrpc::error_response(Value::Null, craft_jsonrpc::RpcError::new(PARSE_ERROR, format!("parse error: {e}")))),
+            Err(e) => Some(nodalia_jsonrpc::error_response(Value::Null, nodalia_jsonrpc::RpcError::new(PARSE_ERROR, format!("parse error: {e}")))),
         };
         reply.map(|r| r.to_string())
     }
@@ -70,14 +70,14 @@ impl Server {
     pub fn handle(&mut self, msg: Value) -> Option<Value> {
         // `handle` historically routes only one envelope; batches belong to `handle_line`.
         if msg.is_array() {
-            return Some(craft_jsonrpc::error_response(Value::Null, craft_jsonrpc::RpcError::new(INVALID_REQUEST, "message must be an object")));
+            return Some(nodalia_jsonrpc::error_response(Value::Null, nodalia_jsonrpc::RpcError::new(INVALID_REQUEST, "message must be an object")));
         }
         self.handle_message(&msg)
     }
 
     fn handle_message(&mut self, msg: &Value) -> Option<Value> {
         let server = std::cell::RefCell::new(self);
-        craft_jsonrpc::process_legacy(
+        nodalia_jsonrpc::process_legacy(
             msg,
             |request| {
                 let mut server = server.borrow_mut();
@@ -90,7 +90,7 @@ impl Server {
                 }
                 server
                     .request(request.method, request.params.unwrap_or(&Value::Null))
-                    .map_err(|(code, message)| craft_jsonrpc::RpcError::new(code, message))
+                    .map_err(|(code, message)| nodalia_jsonrpc::RpcError::new(code, message))
             },
             |request| server.borrow_mut().session.notification(request),
         )
