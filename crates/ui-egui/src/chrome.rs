@@ -44,12 +44,16 @@ const TOOLBAR: &[&[(Icon, &str, &str, Option<&str>)]] = &[
 /// centred in the standard 28 pt title-bar band at the top of the window; moving them would take
 /// AppKit calls (`unsafe`, which the workspace forbids). So the title row is that band, and what
 /// it holds is centred on the same line as the lights.
+#[cfg(test)]
 const MAC_TITLE_BAR: f32 = 28.0;
 /// The traffic lights as AppKit lays them out: button diameter, centre-to-centre pitch and the
 /// first button's left edge (8–10 pt depending on the macOS version; the larger value keeps the
 /// gap after them from shrinking).
+#[cfg(test)]
 const MAC_LIGHT: f32 = 12.0;
+#[cfg(test)]
 const MAC_LIGHT_PITCH: f32 = 20.0;
+#[cfg(test)]
 const MAC_LIGHTS_LEFT: f32 = 10.0;
 /// Where title-row content may start to the right of the traffic lights: the end of the three
 /// lights plus the same gap the lights keep from the top of the window.
