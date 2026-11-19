@@ -52,12 +52,6 @@ pub fn name(icon: Icon) -> (&'static str, Kind) {
         Menu => "menu",
         ZoomIn => "zoom",
         ZoomOut => "zoom-out",
-        _ => "",
-    };
-    if !interface.is_empty() {
-        return (interface, Kind::Interface);
-    }
-    let cad = match icon {
         SaveAs => "save-as",
         Publish => "publish",
         PageSetup => "page-setup",
@@ -65,8 +59,18 @@ pub fn name(icon: Icon) -> (&'static str, Kind) {
         Export => "export",
         ZoomWindow => "zoom-window",
         Properties => "properties",
-        Blocks => "blocks",
         Layers => "layers",
+        Blocks => "blocks",
+        Measure => "measure",
+        List => "list",
+        Area => "area",
+        Distance => "distance",
+        _ => "",
+    };
+    if !interface.is_empty() {
+        return (interface, Kind::Interface);
+    }
+    let cad = match icon {
         Line => "line",
         Polyline => "polyline",
         Circle => "circle",
@@ -161,10 +165,6 @@ pub fn name(icon: Icon) -> (&'static str, Kind) {
         Symmetric => "symmetric",
         DelConstraint => "del-constraint",
         Parameters => "parameters",
-        Measure => "measure",
-        Distance => "distance",
-        Area => "area",
-        List => "list",
         PickAdd => "pick-add",
         SelectObjects => "select-objects",
         QuickSelect => "quick-select",
