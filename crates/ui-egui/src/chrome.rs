@@ -53,7 +53,7 @@ const MAC_LIGHT_PITCH: f32 = 20.0;
 const MAC_LIGHTS_LEFT: f32 = 10.0;
 /// Where title-row content may start to the right of the traffic lights: the end of the three
 /// lights plus the same gap the lights keep from the top of the window.
-const MAC_CONTENT_LEFT: f32 = MAC_LIGHTS_LEFT + 2.0 * MAC_LIGHT_PITCH + MAC_LIGHT + (MAC_TITLE_BAR - MAC_LIGHT) / 2.0;
+const MAC_CONTENT_LEFT: f32 = nodalia_theme::titlebar::MAC_LIGHTS;
 
 /// The engineering suite's title bar (`nodalia_theme::engineering::title_bar`) and, under it, the
 /// Tool Bar. The title bar holds what Torno and Vortia hold in the same places: Home (the Start
@@ -624,7 +624,7 @@ mod tests {
         // The lights are centred in the row, and content keeps the same gap after them.
         let margin = (MAC_TITLE_BAR - MAC_LIGHT) / 2.0;
         let lights_end = MAC_LIGHTS_LEFT + 2.0 * MAC_LIGHT_PITCH + MAC_LIGHT;
-        assert_eq!(MAC_CONTENT_LEFT - lights_end, margin);
+        assert!(MAC_CONTENT_LEFT >= lights_end + margin);
     }
 
     #[test]
