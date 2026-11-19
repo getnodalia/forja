@@ -30,7 +30,7 @@ pub fn dialog(app: &mut CadApp, ctx: &egui::Context, open: &mut bool) -> Option<
     let t = Tokens::get();
     let Ok(d) = app.session.doc() else {
         crate::ndl_window::Window::new("Named Viewports").open(open).collapsible(false).resizable(false).show(ctx, |ui| {
-            ui.label("Open a drawing first.");
+            ui.label(crate::tl!("Open a drawing first."));
         });
         return None;
     };
@@ -52,7 +52,7 @@ pub fn dialog(app: &mut CadApp, ctx: &egui::Context, open: &mut bool) -> Option<
         }
         ui.separator();
         if configs.is_empty() {
-            ui.label("This drawing has no named viewport configurations.");
+            ui.label(crate::tl!("This drawing has no named viewport configurations."));
         }
         ui.horizontal_top(|ui| {
             egui::ScrollArea::vertical().id_salt("namedvp_list").max_height(120.0).min_scrolled_width(180.0).show(ui, |ui| {
@@ -74,15 +74,18 @@ pub fn dialog(app: &mut CadApp, ctx: &egui::Context, open: &mut bool) -> Option<
         ui.separator();
         ui.horizontal(|ui| {
             let hint = if model { "Show this configuration's viewports" } else { "Place this configuration's viewports in the layout" };
-            if ui.add_enabled(sel.is_some(), egui::Button::new("Restore")).on_hover_text(hint).clicked() {
+            if ui.add_enabled(sel.is_some(), egui::Button::new(crate::tl!("Restore"))).on_hover_text(hint).clicked() {
                 restore = true;
             }
-            if ui.add_enabled(sel.is_some(), egui::Button::new("Delete")).on_hover_text("Delete the saved configuration").clicked()
+            if ui
+                .add_enabled(sel.is_some(), egui::Button::new(crate::tl!("Delete")))
+                .on_hover_text(crate::tl!("Delete the saved configuration"))
+                .clicked()
                 && let Some(n) = &sel
             {
                 action = Some(("vports.named", json!({ "name": n, "delete": true })));
             }
-            if ui.button("Close").clicked() {
+            if ui.button(crate::tl!("Close")).clicked() {
                 close = true;
             }
         });

@@ -98,14 +98,14 @@ fn notice(app: &mut CadApp, ctx: &egui::Context) {
         .anchor(egui::Align2::CENTER_TOP, vec2(0.0, 48.0))
         .show(ctx, |ui| {
             ui.set_width(440.0);
-            ui.label("Part of Forja failed, and the app kept running.");
+            ui.label(crate::tl!("Part of Forja failed, and the app kept running."));
             ui.label(saved_text(app.fault.autosaved));
             ui.label(RichText::new("Save your work and restart Forja.").strong());
             ui.add_space(4.0);
             details(ui, t, &message);
             // A row just as tall as the button (a plain right-to-left layout takes the rest).
             ui.allocate_ui_with_layout(vec2(ui.available_width(), 0.0), egui::Layout::right_to_left(egui::Align::Center), |ui| {
-                if ui.button("Dismiss").clicked() {
+                if ui.button(crate::tl!("Dismiss")).clicked() {
                     dismiss = true;
                 }
             });
@@ -125,7 +125,7 @@ fn broken_window(app: &CadApp, ctx: &egui::Context) {
         .anchor(egui::Align2::CENTER_CENTER, vec2(0.0, 0.0))
         .show(ctx, |ui| {
             ui.set_width(440.0);
-            ui.label("Part of Forja keeps failing, so it can't continue.");
+            ui.label(crate::tl!("Part of Forja keeps failing, so it can't continue."));
             ui.label(saved_text(app.fault.autosaved));
             ui.label(RichText::new("Drawing Recovery offers them at the next start.").strong());
             ui.add_space(4.0);
@@ -133,7 +133,7 @@ fn broken_window(app: &CadApp, ctx: &egui::Context) {
                 details(ui, t, message);
             }
             ui.allocate_ui_with_layout(vec2(ui.available_width(), 0.0), egui::Layout::right_to_left(egui::Align::Center), |ui| {
-                if ui.button("Close Forja").clicked() {
+                if ui.button(crate::tl!("Close Forja")).clicked() {
                     ctx.send_viewport_cmd(egui::ViewportCommand::Close);
                 }
             });
@@ -149,7 +149,7 @@ fn saved_text(autosaved: usize) -> String {
 }
 
 fn details(ui: &mut egui::Ui, t: Tokens, message: &str) {
-    ui.collapsing("Details", |ui| {
+    ui.collapsing(crate::tl!("Details"), |ui| {
         ui.label(RichText::new(message).color(t.text_dim).monospace());
         #[cfg(not(target_arch = "wasm32"))]
         if let Some(path) = report::last() {
