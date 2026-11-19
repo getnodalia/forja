@@ -1,17 +1,23 @@
 //! The undecorated Linux root viewport. Drawing and CAD input stay inside the resize bands.
 
 use egui::{CursorIcon, PointerButton, Rect, ResizeDirection, Sense, Ui, ViewportCommand, pos2};
+use nodalia_theme::titlebar::{Placement, Side};
 use nodalia_theme::{space, window_controls};
 
 use crate::theme;
 
 pub(crate) const RESIZE_INSET: i8 = space::XS as i8;
 
-/// Draw the NDL window controls at the right of `row`, inset by the NDL margin, and act on them.
-pub(crate) fn controls(ui: &mut Ui, row: Rect) {
+/// The end of the title bar the NDL window controls sit at: the side the desktop keeps its own on
+/// (the right unless its button layout puts them at the left).
+pub(crate) fn side() -> Side {
+    nodalia_theme::titlebar::system_side()
+}
+
+/// Draw the NDL window controls at the `side` end of `row`, inset by the NDL margin, and act on them.
+pub(crate) fn controls(ui: &mut Ui, row: Rect, side: Side) {
     let (focused, maximized) = ui.input(|i| (i.focused, i.viewport().maximized.unwrap_or(false)));
-    let buttons_right = row.right() - space::SM;
-    let buttons = Rect::from_min_max(pos2(buttons_right - window_controls::WIDTH, row.top()), pos2(buttons_right, row.bottom()));
+    let buttons = Placement::nodalia(side).controls_rect(row);
     let labels = window_controls::Labels {
         minimize: crate::tl!("Minimize"),
         maximize: crate::tl!("Maximize"),
@@ -22,7 +28,7 @@ pub(crate) fn controls(ui: &mut Ui, row: Rect) {
         egui::Theme::Light => nodalia_theme::Mode::Light,
         egui::Theme::Dark => nodalia_theme::Mode::Dark,
     };
-    if let Some(action) = window_controls::show(ui, buttons, &theme::ndl_palette(), mode, focused, maximized, labels) {
+    if let Some(action) = window_controls::show_on(ui, buttons, side, &theme::ndl_palette(), mode, focused, maximized, labels) {
         ui.ctx().send_viewport_cmd(viewport_command(action));
     }
 }
@@ -123,7 +129,7 @@ mod tests {
             assert_eq!(available, rect.shrink(if resize { f32::from(RESIZE_INSET) } else { 0.0 }));
             let row = available.with_max_y(available.top() + nodalia_theme::engineering::layout::TITLE_BAR);
             nodalia_window::title_bar::empty_area(ui, row.with_max_x(row.right() - CONTROLS_WIDTH));
-            controls(ui, row);
+            controls(ui, row, Side::Right);
             if resize {
                 resize_edges(ui, rect);
             }
