@@ -70,6 +70,7 @@ fn forja_dwg_message(message: &str) -> String {
         .replace("accepted for DWG conversion", "Forja converts to DWG")
         // The shared reader's wording, put in Forja's. rebrand: keep
         .replace(" CADCraft reads (set CADCRAFT_MAX_DXF_TAGS ", " Forja reads (set FORJA_MAX_DXF_TAGS ") // rebrand: keep
+        .replace(" Forja reads (set CADCRAFT_MAX_DXF_TAGS ", " Forja reads (set FORJA_MAX_DXF_TAGS ") // rebrand: keep
 }
 
 /// The variable that overrides how many DXF group codes Forja reads from one file. The shared
