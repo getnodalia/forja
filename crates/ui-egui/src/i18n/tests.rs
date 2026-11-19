@@ -687,3 +687,13 @@ fn polish_plural_forms() {
         assert_eq!(plural_pl(n), expected, "n={n}");
     }
 }
+
+#[test]
+fn the_recovery_and_manager_dialogs_speak_spanish() {
+    with_language("es", || {
+        assert_eq!(t("Close Forja"), "Cerrar Forja");
+        assert_eq!(t("Sync"), "Sincronizar");
+        assert_eq!(t("This drawing has no layouts."), "Este dibujo no tiene presentaciones.");
+    });
+    with_language("en", || assert_eq!(t("Close Forja"), "Close Forja"));
+}

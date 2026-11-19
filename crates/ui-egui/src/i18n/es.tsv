@@ -1488,3 +1488,60 @@
 	This library has no drawings or blocks.	Esta biblioteca no tiene dibujos ni bloques.
 	Only the first {n} are shown.	Solo se muestran los primeros {n}.
 	Additional Tools	Herramientas adicionales
+	Every library linetype is loaded.	Todos los tipos de línea de la biblioteca están cargados.
+	Global scale factor	Factor de escala global
+	Point Size	Tamaño de punto
+	This drawing has no layouts.	Este dibujo no tiene presentaciones.
+	Printer/plotter	Impresora/trazador
+	Paper size	Tamaño del papel
+	Orientation	Orientación
+	Plot area	Área de trazado
+	Plot offset	Desfase de trazado
+	Window <	Ventana <
+	Apply to Layout	Aplicar a la presentación
+	Geometric	Geométricas
+	Constraint bar transparency (%)	Transparencia de la barra de restricciones (%)
+	Dimensional	Dimensionales
+	Distance tolerance	Tolerancia de distancia
+	Angle tolerance (degrees)	Tolerancia de ángulo (grados)
+	Current	Actual
+	Draw new objects with the selected linetype	Dibujar los objetos nuevos con el tipo de línea seleccionado
+	New style name	Nombre del estilo nuevo
+	PDF on the paper chosen below	PDF en el papel elegido abajo
+	Distance from the printable area's lower-left corner; values range from −100000 to 100000 mm	Distancia desde la esquina inferior izquierda del área imprimible; los valores van de −100000 a 100000 mm
+	Paper units per drawing unit, or a ratio such as 1:50	Unidades de papel por unidad de dibujo, o una proporción como 1:50
+	Plot objects with their transparency (PLOTTRANSPARENCYOVERRIDE can override it)	Trazar los objetos con su transparencia (PLOTTRANSPARENCYOVERRIDE puede anularla)
+	Pick the window's corners in the drawing	Designa las esquinas de la ventana en el dibujo
+	Save these settings in the layout's page setup	Guardar estos ajustes en la configuración de página de la presentación
+	The sheet as these settings plot it	La hoja tal como la trazan estos ajustes
+	From File...	Desde archivo...
+	Hide ViewCube	Ocultar ViewCube
+	Hide UCS Icon	Ocultar el icono del SCP
+	Coordinate system	Sistema de coordenadas
+	UCS icon: World Coordinate System	Icono del SCP: sistema de coordenadas universal
+	Forja draws in the World Coordinate System; user coordinate systems aren't available yet.	Forja dibuja en el sistema de coordenadas universal; los sistemas de coordenadas de usuario aún no están disponibles.
+	Insertion scale	Escala de inserción
+	Units to scale inserted content	Unidades para escalar el contenido insertado
+	Sample output	Salida de ejemplo
+	Forja did not close normally. These drawings were autosaved:	Forja no se cerró con normalidad. Estos dibujos se guardaron automáticamente:
+	Later	Más tarde
+	The graphics device stopped working (a driver reset or a GPU that stopped responding). Forja can't draw again until it restarts.	El dispositivo gráfico dejó de funcionar (un reinicio del controlador o una GPU que dejó de responder). Forja no puede volver a dibujar hasta que se reinicie.
+	Nothing needed autosaving.	No hacía falta guardar nada automáticamente.
+	A recovery copy of the open drawing with unsaved changes was autosaved.	Se guardó automáticamente una copia de recuperación del dibujo abierto con cambios sin guardar.
+	Dismiss	Descartar
+	Forja could not write a recovery copy, so recent changes would be lost if the app stopped now.	Forja no pudo escribir una copia de recuperación, así que los cambios recientes se perderían si la aplicación se detuviera ahora.
+	Keep the files and ask again next time	Conservar los archivos y volver a preguntar la próxima vez
+	Part of Forja failed, and the app kept running.	Una parte de Forja falló, pero la aplicación siguió funcionando.
+	Part of Forja keeps failing, so it can't continue.	Una parte de Forja sigue fallando, así que no puede continuar.
+	Close Forja	Cerrar Forja
+	This drawing has no blocks with attributes.	Este dibujo no tiene bloques con atributos.
+	Block:	Bloque:
+	Sync	Sincronizar
+	Tag	Etiqueta
+	Prompt	Solicitud
+	Mode	Modo
+	Move Up	Subir
+	Move Down	Bajar
+	Bring every reference in line with these definitions	Poner todas las referencias de acuerdo con estas definiciones
+	This drawing has no named viewport configurations.	Este dibujo no tiene configuraciones de ventanas gráficas con nombre.
+	Delete the saved configuration	Eliminar la configuración guardada
