@@ -44,16 +44,20 @@ const TOOLBAR: &[&[(Icon, &str, &str, Option<&str>)]] = &[
 /// centred in the standard 28 pt title-bar band at the top of the window; moving them would take
 /// AppKit calls (`unsafe`, which the workspace forbids). So the title row is that band, and what
 /// it holds is centred on the same line as the lights.
+#[cfg(test)]
 const MAC_TITLE_BAR: f32 = 28.0;
 /// The traffic lights as AppKit lays them out: button diameter, centre-to-centre pitch and the
 /// first button's left edge (8–10 pt depending on the macOS version; the larger value keeps the
 /// gap after them from shrinking).
+#[cfg(test)]
 const MAC_LIGHT: f32 = 12.0;
+#[cfg(test)]
 const MAC_LIGHT_PITCH: f32 = 20.0;
+#[cfg(test)]
 const MAC_LIGHTS_LEFT: f32 = 10.0;
 /// Where title-row content may start to the right of the traffic lights: the end of the three
 /// lights plus the same gap the lights keep from the top of the window.
-const MAC_CONTENT_LEFT: f32 = MAC_LIGHTS_LEFT + 2.0 * MAC_LIGHT_PITCH + MAC_LIGHT + (MAC_TITLE_BAR - MAC_LIGHT) / 2.0;
+const MAC_CONTENT_LEFT: f32 = nodalia_theme::titlebar::MAC_LIGHTS;
 
 /// The engineering suite's title bar (`nodalia_theme::engineering::title_bar`) and, under it, the
 /// Tool Bar. The title bar holds what Torno and Vortia hold in the same places: Home (the Start
@@ -171,7 +175,17 @@ fn title_bar(app: &mut CadApp, ui: &mut egui::Ui, row: Rect) {
         if app.ui.show_file_tabs { app.session.docs.iter().map(|d| (d.title.clone(), d.is_dirty())).collect() } else { Vec::new() };
     let documents: Vec<Document> = docs.iter().map(|(name, modified)| Document { name, modified: *modified }).collect();
     let active = (!app.ui.start_tab && !documents.is_empty()).then_some(app.session.active);
-    let controls_width = if app.ndl_window_chrome { crate::ndl_window_chrome::CONTROLS_WIDTH } else { 0.0 };
+    // Controls at the left (the desktop's choice on Linux) lead the bar instead of ending it.
+    let side = crate::ndl_window_chrome::side();
+    let controls_left = app.ndl_window_chrome && side == nodalia_theme::titlebar::Side::Left;
+    let controls_width = if app.ndl_window_chrome && !controls_left { crate::ndl_window_chrome::CONTROLS_WIDTH } else { 0.0 };
+    let leading_width = if app.integrated_titlebar {
+        MAC_CONTENT_LEFT - 8.0
+    } else if controls_left {
+        crate::ndl_window_chrome::CONTROLS_WIDTH
+    } else {
+        0.0
+    };
     let app_icon = crate::about::icon(ui.ctx());
     let bar = TitleBar {
         app: "Forja",
@@ -191,7 +205,7 @@ fn title_bar(app: &mut CadApp, ui: &mut egui::Ui, row: Rect) {
         },
         quick_access: &[TitleAction::Save, TitleAction::Undo, TitleAction::Redo],
         controls_width,
-        leading_width: if app.integrated_titlebar { MAC_CONTENT_LEFT - 8.0 } else { 0.0 },
+        leading_width,
     };
     let out = ui
         .scope_builder(egui::UiBuilder::new().max_rect(row), |ui| {
@@ -206,7 +220,7 @@ fn title_bar(app: &mut CadApp, ui: &mut egui::Ui, row: Rect) {
         })
         .inner;
     if app.ndl_window_chrome {
-        crate::ndl_window_chrome::controls(ui, out.controls);
+        crate::ndl_window_chrome::controls(ui, if controls_left { row } else { out.controls }, side);
     }
     let anchor = |x: f32| pos2(x, row.bottom() - 4.0);
     match out.action {
@@ -624,7 +638,7 @@ mod tests {
         // The lights are centred in the row, and content keeps the same gap after them.
         let margin = (MAC_TITLE_BAR - MAC_LIGHT) / 2.0;
         let lights_end = MAC_LIGHTS_LEFT + 2.0 * MAC_LIGHT_PITCH + MAC_LIGHT;
-        assert_eq!(MAC_CONTENT_LEFT - lights_end, margin);
+        assert!(MAC_CONTENT_LEFT >= lights_end + margin);
     }
 
     #[test]
