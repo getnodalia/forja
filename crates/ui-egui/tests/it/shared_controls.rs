@@ -24,7 +24,9 @@ struct ButtonState {
 
 fn button_frame(ctx: &egui::Context, state: &mut ButtonState, events: Vec<Event>) -> egui::FullOutput {
     let mut output = ctx.run_ui(egui::RawInput { events, ..Default::default() }, |ui| {
-        let response = ui.add_enabled_ui(!state.disabled, |ui| icons::button(ui, icons::Icon::Line, state.size.unwrap_or(40.0), "Draw line", state.selected)).inner;
+        let response = ui
+            .add_enabled_ui(!state.disabled, |ui| icons::button(ui, icons::Icon::Line, state.size.unwrap_or(40.0), "Draw line", state.selected))
+            .inner;
         state.clicks += usize::from(response.clicked());
         state.response = Some(response);
     });
@@ -75,7 +77,10 @@ fn large_drafting_button_draws_the_volumetric_icon() {
     let out = button_frame(&ctx, &mut state, vec![]);
     let t = theme::Tokens::get();
     assert!(out.shapes.iter().any(|s| matches!(&s.shape, egui::Shape::Mesh(m) if !m.vertices.is_empty())), "no filled volume was painted");
-    assert!(!out.shapes.iter().any(|s| matches!(&s.shape, egui::Shape::Circle(c) if c.fill == t.icon_point)), "the flat picked-point dot belongs to the small icon");
+    assert!(
+        !out.shapes.iter().any(|s| matches!(&s.shape, egui::Shape::Circle(c) if c.fill == t.icon_point)),
+        "the flat picked-point dot belongs to the small icon"
+    );
 }
 
 #[test]
