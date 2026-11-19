@@ -315,6 +315,9 @@ pub const ALL: &[Icon] = &[
 
 /// Paint `icon` into `rect` (square), with `dim` for disabled.
 pub fn paint(p: &Painter, rect: Rect, icon: Icon, dim: bool) {
+    if rect.width() >= crate::ndl_icons::VOLUMETRIC_FROM && crate::ndl_icons::paint_volumetric(p, rect, icon, dim) {
+        return;
+    }
     let t = Tokens::get();
     let alpha = |c: Color32| if dim { c.gamma_multiply(0.4) } else { c };
     crate::ndl_icons::paint(p, rect, icon, alpha(t.icon), alpha(t.icon_accent));
