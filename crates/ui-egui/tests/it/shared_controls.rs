@@ -16,13 +16,17 @@ fn app() -> CadApp {
 struct ButtonState {
     selected: bool,
     disabled: bool,
+    /// The button's side; 40 points (a Tool Sets button, drawn in volume) when unset.
+    size: Option<f32>,
     clicks: usize,
     response: Option<Response>,
 }
 
 fn button_frame(ctx: &egui::Context, state: &mut ButtonState, events: Vec<Event>) -> egui::FullOutput {
     let mut output = ctx.run_ui(egui::RawInput { events, ..Default::default() }, |ui| {
-        let response = ui.add_enabled_ui(!state.disabled, |ui| icons::button(ui, icons::Icon::Line, 40.0, "Draw line", state.selected)).inner;
+        let response = ui
+            .add_enabled_ui(!state.disabled, |ui| icons::button(ui, icons::Icon::Line, state.size.unwrap_or(40.0), "Draw line", state.selected))
+            .inner;
         state.clicks += usize::from(response.clicked());
         state.response = Some(response);
     });
@@ -42,7 +46,8 @@ fn pointer(pos: egui::Pos2, pressed: bool) -> Event {
 fn drafting_button_preserves_multicolor_selection_and_accessibility() {
     let ctx = egui::Context::default();
     ctx.enable_accesskit();
-    let mut state = ButtonState { selected: true, ..Default::default() };
+    // A small button keeps the flat two-tone drawing (the volumetric one starts at 20 points).
+    let mut state = ButtonState { selected: true, size: Some(16.0), ..Default::default() };
     button_frame(&ctx, &mut state, vec![]);
     let center = state.response.as_ref().unwrap().rect.center();
     let out = button_frame(&ctx, &mut state, vec![Event::PointerMoved(center), pointer(center, true)]);
@@ -62,6 +67,20 @@ fn drafting_button_preserves_multicolor_selection_and_accessibility() {
     button_frame(&ctx, &mut state, vec![pointer(center, false)]);
     assert_eq!(state.clicks, 1);
     assert!(state.selected, "selection belongs to the caller");
+}
+
+#[test]
+fn large_drafting_button_draws_the_volumetric_icon() {
+    let ctx = egui::Context::default();
+    let mut state = ButtonState { selected: true, ..Default::default() };
+    button_frame(&ctx, &mut state, vec![]);
+    let out = button_frame(&ctx, &mut state, vec![]);
+    let t = theme::Tokens::get();
+    assert!(out.shapes.iter().any(|s| matches!(&s.shape, egui::Shape::Mesh(m) if !m.vertices.is_empty())), "no filled volume was painted");
+    assert!(
+        !out.shapes.iter().any(|s| matches!(&s.shape, egui::Shape::Circle(c) if c.fill == t.icon_point)),
+        "the flat picked-point dot belongs to the small icon"
+    );
 }
 
 #[test]

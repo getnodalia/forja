@@ -179,6 +179,97 @@ pub fn name(icon: Icon) -> (&'static str, Kind) {
     (cad, Kind::Cad)
 }
 
+/// The volumetric NDL icon for `icon`, when the set has one. Tool Sets and the quick toolbar draw
+/// these; interface, constraint and utility icons (layers, properties, snap, export...) stay flat.
+pub fn volumetric_name(icon: Icon) -> Option<&'static str> {
+    use Icon::*;
+    Some(match icon {
+        ArrayPolar => "pattern-circ",
+        ArrayRect => "pattern-rect",
+        Arc => "arc3",
+        AddLeader => "add-leader",
+        AlignLeaders => "align-leaders",
+        Area => "area",
+        Blocks => "blocks",
+        BlockCreate => "block-create",
+        BlockEdit => "block-edit",
+        Break => "break",
+        Chamfer => "sketch-chamfer",
+        Circle => "circle",
+        DimAligned => "dim-aligned",
+        DimAngular => "dim-angle",
+        DimArc => "dim-arc",
+        DimBaseline => "dim-baseline",
+        DimContinue => "dim-continue",
+        DimDiameter => "dim-diameter",
+        DimLinear => "dimension",
+        DimOrdinate => "dim-ordinate",
+        DimRadius => "dim-radius",
+        Distance => "distance",
+        Donut => "donut",
+        Ellipse => "ellipse",
+        Explode => "explode",
+        Extend => "extend",
+        Fillet => "sketch-fillet",
+        Gradient => "gradient",
+        Hatch => "hatch",
+        Insert => "insert",
+        Join => "join",
+        Lengthen => "lengthen",
+        Line => "line",
+        Measure => "measure",
+        MLeader => "m-leader",
+        Mirror => "mirror",
+        Move => "move",
+        MText => "m-text",
+        Offset => "offset",
+        Point => "point",
+        Polygon => "polygon",
+        Polyline => "polyline",
+        QDim => "q-dim",
+        Ray => "ray",
+        Rectangle => "rect",
+        RemoveLeader => "remove-leader",
+        Region => "region",
+        RevCloud => "rev-cloud",
+        Scale => "scale",
+        Spline => "spline",
+        Stretch => "stretch",
+        Text => "text",
+        Trim => "trim",
+        Wipeout => "wipeout",
+        XLine => "infinite",
+        _ => return None,
+    })
+}
+
+/// The icon size from which a tool is drawn in volume.
+pub const VOLUMETRIC_FROM: f32 = 20.0;
+
+/// Paint the volumetric icon of `icon` into `rect`, in Forja's light or dark roles and accent.
+/// False when there is none.
+pub fn paint_volumetric(p: &Painter, rect: Rect, icon: Icon, dim: bool) -> bool {
+    use nodalia_theme::icons::volumetric as vol;
+    let Some(glyph) = volumetric_name(icon).and_then(vol::get) else {
+        return false;
+    };
+    let t = crate::theme::Tokens::get();
+    let dark = (t.panel.r() as u32 * 299 + t.panel.g() as u32 * 587 + t.panel.b() as u32 * 114) / 1000 < 128;
+    let base = if dark { vol::Roles::dark() } else { vol::Roles::light() };
+    let a = t.accent;
+    let mix = |to: u8, k: f32| {
+        let m = |c: u8| (c as f32 + (to as f32 - c as f32) * k).round().clamp(0.0, 255.0) as u8;
+        Color32::from_rgb(m(a.r()), m(a.g()), m(a.b()))
+    };
+    let roles = base.with_accent(mix(255, 0.62), mix(255, 0.1), mix(0, 0.38));
+    if dim {
+        let mut faded = p.clone();
+        faded.multiply_opacity(0.4);
+        return vol::paint(&faded, rect, glyph, &roles);
+    }
+    vol::paint(p, rect, glyph, &roles)
+}
+
 /// Paint `icon` into the square `rect`: in `ink`, with the accented parts of a CAD icon in
 /// `accent`. False when NDL has no such icon (nothing is painted).
 pub fn paint(p: &Painter, rect: Rect, icon: Icon, ink: Color32, accent: Color32) -> bool {
@@ -208,6 +299,15 @@ pub fn paint_ink(p: &Painter, rect: Rect, icon: Icon, color: Color32) -> bool {
 #[cfg(test)]
 mod tests {
     use super::*;
+
+    #[test]
+    fn every_volumetric_icon_is_in_nodalia_design() {
+        for icon in crate::icons::ALL {
+            if let Some(n) = volumetric_name(*icon) {
+                assert!(nodalia_theme::icons::volumetric::get(n).is_some(), "{n} is not a volumetric icon");
+            }
+        }
+    }
 
     #[test]
     fn every_icon_forja_shows_is_in_nodalia_design() {
