@@ -126,7 +126,7 @@ The desktop app also takes a JSON control channel (`--control PORT`). See [docs/
 ## App icon
 
 Nodalia app icons are black-and-white portraits of historical figures over the app colour.
-Forja's is Leonardo da Vinci, engineer and master of technical drawing. Provenance and licence are
+Forja's is Gustave Eiffel, the engineer who built in iron. Provenance and licence are
 in [`assets/app-icon/`](assets/app-icon/).
 
 ## The Nodalia suite

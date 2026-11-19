@@ -1,0 +1,15 @@
+Forja app icon (every file in this directory).
+
+The icon is a portrait of Gustave Eiffel cut out, converted to black and white and placed over the
+app colour. It belongs to the Nodalia icon family: one historical figure per app.
+
+Source portrait: "Gustave Eiffel 1888 Nadar2.jpg" by Nadar (1888), from Wikimedia Commons
+(https://commons.wikimedia.org/wiki/File:Gustave_Eiffel_1888_Nadar2.jpg). Status of the source:
+public domain.
+
+The derived icon is licensed like the rest of the project, under either of
+
+  * Apache License, Version 2.0 (https://www.apache.org/licenses/LICENSE-2.0)
+  * MIT license (https://opensource.org/licenses/MIT)
+
+at your option.
