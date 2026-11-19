@@ -1473,3 +1473,77 @@ menu	View	Προβολή
 	This library has no drawings or blocks.	Αυτή η βιβλιοθήκη δεν έχει σχέδια ή μπλοκ.
 	Only the first {n} are shown.	Εμφανίζονται μόνο τα πρώτα {n}.
 	Additional Tools	Πρόσθετα εργαλεία
+	Arrow size	Μέγεθος βέλους
+	Maximize	Μεγιστοποίηση
+	Minimize	Ελαχιστοποίηση
+	Dim scale overall	Συνολική κλίμακα διαστάσεων
+	Licence	Άδεια χρήσης
+	Precision	Ακρίβεια
+	Website	Ιστοσελίδα
+	Backup copies are off, so the current file will be replaced.	Τα εφεδρικά αντίγραφα είναι απενεργοποιημένα, οπότε το τρέχον αρχείο θα αντικατασταθεί.
+	DXF 2010 and earlier keep them. Use Save As to keep them in the drawing.	Το DXF 2010 και παλαιότερα τα διατηρούν. Χρησιμοποιήστε το Αποθήκευση ως για να τα κρατήσετε στο σχέδιο.
+	DXF keeps them. Use Save As to keep them in the drawing.	Το DXF τα διατηρεί. Χρησιμοποιήστε το Αποθήκευση ως για να τα κρατήσετε στο σχέδιο.
+	Save Anyway	Αποθήκευση παρ' όλα αυτά
+	Save cancelled: {path} was not changed.	Η αποθήκευση ακυρώθηκε: το {path} δεν άλλαξε.
+	Saving {name} will remove content	Η αποθήκευση του {name} θα αφαιρέσει περιεχόμενο
+	The current file doesn't look whole, so {name} stays as it is and the current file will be replaced.	Το τρέχον αρχείο δεν φαίνεται ολόκληρο, οπότε το {name} μένει όπως είναι και το τρέχον αρχείο θα αντικατασταθεί.
+	The current file is kept as {name} until the next save.	Το τρέχον αρχείο διατηρείται ως {name} μέχρι την επόμενη αποθήκευση.
+	This format can't keep these objects yet: {objects}.	Αυτή η μορφή δεν μπορεί ακόμη να διατηρήσει αυτά τα αντικείμενα: {objects}.
+	{count} more types	{count} ακόμη τύποι
+	Every library linetype is loaded.	Όλοι οι τύποι γραμμής της βιβλιοθήκης έχουν φορτωθεί.
+	Global scale factor	Καθολικός παράγοντας κλίμακας
+	Point Size	Μέγεθος σημείου
+	This drawing has no layouts.	Αυτό το σχέδιο δεν έχει διατάξεις.
+	Printer/plotter	Εκτυπωτής/πλότερ
+	Paper size	Μέγεθος χαρτιού
+	Orientation	Προσανατολισμός
+	Plot area	Περιοχή εκτύπωσης
+	Plot offset	Μετατόπιση εκτύπωσης
+	Window <	Παράθυρο <
+	Apply to Layout	Εφαρμογή στη διάταξη
+	Geometric	Γεωμετρικοί
+	Constraint bar transparency (%)	Διαφάνεια γραμμής περιορισμών (%)
+	Dimensional	Διαστατικοί
+	Distance tolerance	Ανοχή απόστασης
+	Angle tolerance (degrees)	Ανοχή γωνίας (μοίρες)
+	Current	Τρέχον
+	Draw new objects with the selected linetype	Σχεδίαση νέων αντικειμένων με τον επιλεγμένο τύπο γραμμής
+	New style name	Όνομα νέου στυλ
+	PDF on the paper chosen below	PDF στο χαρτί που επιλέγεται παρακάτω
+	Distance from the printable area's lower-left corner; values range from −100000 to 100000 mm	Απόσταση από την κάτω αριστερή γωνία της εκτυπώσιμης περιοχής· οι τιμές κυμαίνονται από −100000 έως 100000 mm
+	Paper units per drawing unit, or a ratio such as 1:50	Μονάδες χαρτιού ανά μονάδα σχεδίου ή μια αναλογία όπως 1:50
+	Plot objects with their transparency (PLOTTRANSPARENCYOVERRIDE can override it)	Εκτύπωση αντικειμένων με τη διαφάνειά τους (το PLOTTRANSPARENCYOVERRIDE μπορεί να την παρακάμψει)
+	Pick the window's corners in the drawing	Επιλέξτε τις γωνίες του παραθύρου στο σχέδιο
+	Save these settings in the layout's page setup	Αποθήκευση αυτών των ρυθμίσεων στη ρύθμιση σελίδας της διάταξης
+	The sheet as these settings plot it	Το φύλλο όπως το εκτυπώνουν αυτές οι ρυθμίσεις
+	From File...	Από αρχείο...
+	Hide ViewCube	Απόκρυψη ViewCube
+	Hide UCS Icon	Απόκρυψη εικονιδίου UCS
+	Coordinate system	Σύστημα συντεταγμένων
+	UCS icon: World Coordinate System	Εικονίδιο UCS: Παγκόσμιο σύστημα συντεταγμένων
+	Forja draws in the World Coordinate System; user coordinate systems aren't available yet.	Το Forja σχεδιάζει στο παγκόσμιο σύστημα συντεταγμένων· τα συστήματα συντεταγμένων χρήστη δεν είναι ακόμη διαθέσιμα.
+	Insertion scale	Κλίμακα εισαγωγής
+	Units to scale inserted content	Μονάδες για την κλιμάκωση του εισαγόμενου περιεχομένου
+	Sample output	Δείγμα εξόδου
+	Forja did not close normally. These drawings were autosaved:	Το Forja δεν έκλεισε κανονικά. Αυτά τα σχέδια αποθηκεύτηκαν αυτόματα:
+	Later	Αργότερα
+	The graphics device stopped working (a driver reset or a GPU that stopped responding). Forja can't draw again until it restarts.	Η συσκευή γραφικών σταμάτησε να λειτουργεί (επαναφορά προγράμματος οδήγησης ή GPU που σταμάτησε να ανταποκρίνεται). Το Forja δεν μπορεί να σχεδιάσει ξανά μέχρι να επανεκκινήσει.
+	Nothing needed autosaving.	Δεν χρειάστηκε αυτόματη αποθήκευση.
+	A recovery copy of the open drawing with unsaved changes was autosaved.	Αποθηκεύτηκε αυτόματα ένα αντίγραφο ανάκτησης του ανοιχτού σχεδίου με μη αποθηκευμένες αλλαγές.
+	Dismiss	Απόρριψη
+	Forja could not write a recovery copy, so recent changes would be lost if the app stopped now.	Το Forja δεν μπόρεσε να γράψει αντίγραφο ανάκτησης, οπότε οι πρόσφατες αλλαγές θα χάνονταν αν η εφαρμογή σταματούσε τώρα.
+	Keep the files and ask again next time	Διατήρηση των αρχείων και νέα ερώτηση την επόμενη φορά
+	Part of Forja failed, and the app kept running.	Ένα τμήμα του Forja απέτυχε και η εφαρμογή συνέχισε να λειτουργεί.
+	Part of Forja keeps failing, so it can't continue.	Ένα τμήμα του Forja αποτυγχάνει συνεχώς, οπότε δεν μπορεί να συνεχίσει.
+	Close Forja	Κλείσιμο του Forja
+	This drawing has no blocks with attributes.	Αυτό το σχέδιο δεν έχει μπλοκ με χαρακτηριστικά.
+	Block:	Μπλοκ:
+	Sync	Συγχρονισμός
+	Tag	Ετικέτα
+	Prompt	Προτροπή
+	Mode	Λειτουργία
+	Move Up	Μετακίνηση πάνω
+	Move Down	Μετακίνηση κάτω
+	Bring every reference in line with these definitions	Ευθυγράμμιση όλων των αναφορών με αυτούς τους ορισμούς
+	This drawing has no named viewport configurations.	Αυτό το σχέδιο δεν έχει επώνυμες διαμορφώσεις θυρίδων προβολής.
+	Delete the saved configuration	Διαγραφή της αποθηκευμένης διαμόρφωσης

@@ -1544,3 +1544,64 @@ menu	Modify	Izmijeni
 	This library has no drawings or blocks.	Ova biblioteka nema crteža ni blokova.
 	Only the first {n} are shown.	Prikazano je samo prvih {n}.
 	Additional Tools	Dodatni alati
+	Maximize	Maksimiziraj
+	Minimize	Minimiziraj
+	Licence	Licenca
+	Website	Web stranica
+	Backup copies are off, so the current file will be replaced.	Sigurnosne kopije su isključene, pa će trenutna datoteka biti zamijenjena.
+	DXF 2010 and earlier keep them. Use Save As to keep them in the drawing.	DXF 2010 i stariji ih zadržavaju. Koristite Spremi kao da ih zadržite u crtežu.
+	DXF keeps them. Use Save As to keep them in the drawing.	DXF ih zadržava. Koristite Spremi kao da ih zadržite u crtežu.
+	Save Anyway	Ipak spremi
+	Save cancelled: {path} was not changed.	Spremanje otkazano: {path} nije promijenjen.
+	Saving {name} will remove content	Spremanjem {name} uklonit će se sadržaj
+	The current file doesn't look whole, so {name} stays as it is and the current file will be replaced.	Trenutna datoteka ne izgleda cjelovito, pa {name} ostaje kakav jest, a trenutna datoteka će biti zamijenjena.
+	The current file is kept as {name} until the next save.	Trenutna datoteka se čuva kao {name} do sljedećeg spremanja.
+	This format can't keep these objects yet: {objects}.	Ovaj format još ne može zadržati ove objekte: {objects}.
+	{count} more types	još {count} vrsta
+	Every library linetype is loaded.	Svi tipovi linija iz biblioteke su učitani.
+	Global scale factor	Globalni faktor razmjere
+	Point Size	Veličina tačke
+	This drawing has no layouts.	Ovaj crtež nema izgleda.
+	Geometric	Geometrijska
+	Constraint bar transparency (%)	Prozirnost trake ograničenja (%)
+	Dimensional	Dimenzijska
+	Distance tolerance	Tolerancija udaljenosti
+	Angle tolerance (degrees)	Tolerancija ugla (stepeni)
+	Current	Trenutno
+	Draw new objects with the selected linetype	Crtaj nove objekte odabranim tipom linije
+	New style name	Naziv novog stila
+	PDF on the paper chosen below	PDF na papiru odabranom ispod
+	Distance from the printable area's lower-left corner; values range from −100000 to 100000 mm	Udaljenost od donjeg lijevog ugla područja za štampu; vrijednosti su od −100000 do 100000 mm
+	Paper units per drawing unit, or a ratio such as 1:50	Jedinice papira po jedinici crteža, ili omjer poput 1:50
+	Plot objects with their transparency (PLOTTRANSPARENCYOVERRIDE can override it)	Ispiši objekte s njihovom prozirnošću (PLOTTRANSPARENCYOVERRIDE to može nadjačati)
+	Pick the window's corners in the drawing	Odaberite uglove prozora na crtežu
+	Save these settings in the layout's page setup	Spremi ove postavke u postavke stranice izgleda
+	The sheet as these settings plot it	List onako kako ga ove postavke ispisuju
+	From File...	Iz datoteke...
+	Hide ViewCube	Sakrij ViewCube
+	Hide UCS Icon	Sakrij ikonu UCS-a
+	Coordinate system	Koordinatni sistem
+	UCS icon: World Coordinate System	Ikona UCS-a: svjetski koordinatni sistem
+	Forja draws in the World Coordinate System; user coordinate systems aren't available yet.	Forja crta u svjetskom koordinatnom sistemu; korisnički koordinatni sistemi još nisu dostupni.
+	Forja did not close normally. These drawings were autosaved:	Forja nije normalno zatvorena. Ovi crteži su automatski spremljeni:
+	Later	Kasnije
+	The graphics device stopped working (a driver reset or a GPU that stopped responding). Forja can't draw again until it restarts.	Grafički uređaj je prestao raditi (resetiranje drajvera ili GPU koji ne odgovara). Forja ne može ponovo crtati dok se ne ponovo pokrene.
+	Nothing needed autosaving.	Ništa nije trebalo automatski spremiti.
+	A recovery copy of the open drawing with unsaved changes was autosaved.	Kopija za oporavak otvorenog crteža s nespremljenim promjenama automatski je spremljena.
+	Dismiss	Odbaci
+	Forja could not write a recovery copy, so recent changes would be lost if the app stopped now.	Forja nije mogla zapisati kopiju za oporavak, pa bi nedavne promjene bile izgubljene da se aplikacija sada zaustavi.
+	Keep the files and ask again next time	Zadrži datoteke i pitaj ponovo sljedeći put
+	Part of Forja failed, and the app kept running.	Dio Forje je zakazao, a aplikacija je nastavila raditi.
+	Part of Forja keeps failing, so it can't continue.	Dio Forje stalno zakazuje, pa ne može nastaviti.
+	Close Forja	Zatvori Forju
+	This drawing has no blocks with attributes.	Ovaj crtež nema blokova s atributima.
+	Block:	Blok:
+	Sync	Sinhroniziraj
+	Tag	Oznaka
+	Prompt	Upit
+	Mode	Način
+	Move Up	Gore
+	Move Down	Dolje
+	Bring every reference in line with these definitions	Uskladi sve reference s ovim definicijama
+	This drawing has no named viewport configurations.	Ovaj crtež nema imenovanih konfiguracija prikaza.
+	Delete the saved configuration	Izbriši spremljenu konfiguraciju

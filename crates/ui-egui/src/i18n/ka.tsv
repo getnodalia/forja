@@ -1553,3 +1553,64 @@ menu	View	ხედი
 	This library has no drawings or blocks.	ამ ბიბლიოთეკაში ნახაზები ან ბლოკები არ არის.
 	Only the first {n} are shown.	ნაჩვენებია მხოლოდ პირველი {n}.
 	Additional Tools	დამატებითი ხელსაწყოები
+	Maximize	მაქსიმიზაცია
+	Minimize	მინიმიზაცია
+	Licence	ლიცენზია
+	Website	ვებსაიტი
+	Backup copies are off, so the current file will be replaced.	სარეზერვო ასლები გამორთულია, ამიტომ მიმდინარე ფაილი ჩანაცვლდება.
+	DXF 2010 and earlier keep them. Use Save As to keep them in the drawing.	DXF 2010 და უფრო ძველი მათ ინახავს. ნახაზში შესანახად გამოიყენეთ „შენახვა როგორც“.
+	DXF keeps them. Use Save As to keep them in the drawing.	DXF მათ ინახავს. ნახაზში შესანახად გამოიყენეთ „შენახვა როგორც“.
+	Save Anyway	მაინც შენახვა
+	Save cancelled: {path} was not changed.	შენახვა გაუქმდა: {path} არ შეცვლილა.
+	Saving {name} will remove content	{name}-ის შენახვა შიგთავსს წაშლის
+	The current file doesn't look whole, so {name} stays as it is and the current file will be replaced.	მიმდინარე ფაილი სრულად არ ჩანს, ამიტომ {name} უცვლელი რჩება და მიმდინარე ფაილი ჩანაცვლდება.
+	The current file is kept as {name} until the next save.	მიმდინარე ფაილი შემდეგ შენახვამდე ინახება როგორც {name}.
+	This format can't keep these objects yet: {objects}.	ამ ფორმატს ამ ობიექტების შენახვა ჯერ არ შეუძლია: {objects}.
+	{count} more types	კიდევ {count} ტიპი
+	Every library linetype is loaded.	ბიბლიოთეკის ყველა ხაზის ტიპი ჩატვირთულია.
+	Global scale factor	გლობალური მასშტაბის კოეფიციენტი
+	Point Size	წერტილის ზომა
+	This drawing has no layouts.	ამ ნახაზს განლაგებები არ აქვს.
+	Geometric	გეომეტრიული
+	Constraint bar transparency (%)	შეზღუდვების ზოლის გამჭვირვალობა (%)
+	Dimensional	ზომითი
+	Distance tolerance	მანძილის ტოლერანტობა
+	Angle tolerance (degrees)	კუთხის ტოლერანტობა (გრადუსები)
+	Current	მიმდინარე
+	Draw new objects with the selected linetype	ახალი ობიექტების დახატვა არჩეული ხაზის ტიპით
+	New style name	ახალი სტილის სახელი
+	PDF on the paper chosen below	PDF ქვემოთ არჩეულ ქაღალდზე
+	Distance from the printable area's lower-left corner; values range from −100000 to 100000 mm	მანძილი დასაბეჭდი არეალის ქვედა მარცხენა კუთხიდან; მნიშვნელობები −100000-დან 100000 მმ-მდეა
+	Paper units per drawing unit, or a ratio such as 1:50	ქაღალდის ერთეული ნახაზის ერთეულზე, ან თანაფარდობა, მაგალითად 1:50
+	Plot objects with their transparency (PLOTTRANSPARENCYOVERRIDE can override it)	ობიექტების ბეჭდვა მათი გამჭვირვალობით (PLOTTRANSPARENCYOVERRIDE-ს შეუძლია გადაფაროს)
+	Pick the window's corners in the drawing	ნახაზში მიუთითეთ ფანჯრის კუთხეები
+	Save these settings in the layout's page setup	ამ პარამეტრების შენახვა განლაგების გვერდის პარამეტრებში
+	The sheet as these settings plot it	ფურცელი ისე, როგორც ამ პარამეტრებით დაიბეჭდება
+	From File...	ფაილიდან...
+	Hide ViewCube	ViewCube-ის დამალვა
+	Hide UCS Icon	UCS-ის ხატულის დამალვა
+	Coordinate system	კოორდინატთა სისტემა
+	UCS icon: World Coordinate System	UCS-ის ხატულა: მსოფლიო კოორდინატთა სისტემა
+	Forja draws in the World Coordinate System; user coordinate systems aren't available yet.	Forja ხატავს მსოფლიო კოორდინატთა სისტემაში; მომხმარებლის კოორდინატთა სისტემები ჯერ ხელმისაწვდომი არ არის.
+	Forja did not close normally. These drawings were autosaved:	Forja ნორმალურად არ დაიხურა. ეს ნახაზები ავტომატურად შეინახა:
+	Later	მოგვიანებით
+	The graphics device stopped working (a driver reset or a GPU that stopped responding). Forja can't draw again until it restarts.	გრაფიკული მოწყობილობა შეწყდა (დრაივერის გადატვირთვა ან GPU, რომელმაც პასუხი შეწყვიტა). Forja ვერ დახატავს, სანამ ხელახლა არ გაიშვება.
+	Nothing needed autosaving.	ავტომატურად შესანახი არაფერი იყო.
+	A recovery copy of the open drawing with unsaved changes was autosaved.	გახსნილი ნახაზის აღდგენის ასლი შეუნახავი ცვლილებებით ავტომატურად შეინახა.
+	Dismiss	დახურვა
+	Forja could not write a recovery copy, so recent changes would be lost if the app stopped now.	Forja-მ აღდგენის ასლი ვერ ჩაწერა, ამიტომ ბოლო ცვლილებები დაიკარგება, თუ აპი ახლა გაჩერდება.
+	Keep the files and ask again next time	ფაილების შენარჩუნება და მომავალ ჯერზე ხელახლა კითხვა
+	Part of Forja failed, and the app kept running.	Forja-ს ერთი ნაწილი გაუმართავად მუშაობდა, აპი კი განაგრძობდა მუშაობას.
+	Part of Forja keeps failing, so it can't continue.	Forja-ს ერთი ნაწილი განუწყვეტლივ გაუმართავად მუშაობს, ამიტომ ვერ გაგრძელდება.
+	Close Forja	Forja-ს დახურვა
+	This drawing has no blocks with attributes.	ამ ნახაზში ატრიბუტებიანი ბლოკები არ არის.
+	Block:	ბლოკი:
+	Sync	სინქრონიზაცია
+	Tag	ტეგი
+	Prompt	მოთხოვნა
+	Mode	რეჟიმი
+	Move Up	ზემოთ
+	Move Down	ქვემოთ
+	Bring every reference in line with these definitions	ყველა მითითების ამ განსაზღვრებებთან შესაბამისობაში მოყვანა
+	This drawing has no named viewport configurations.	ამ ნახაზს დასახელებული ხედების კონფიგურაციები არ აქვს.
+	Delete the saved configuration	შენახული კონფიგურაციის წაშლა

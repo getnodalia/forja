@@ -1465,3 +1465,81 @@ menu	View	عرض
 	This library has no drawings or blocks.	لا تحتوي هذه المكتبة على رسومات أو كتل.
 	Only the first {n} are shown.	يتم عرض أول {n} فقط.
 	Additional Tools	أدوات إضافية
+	Arrow size	حجم السهم
+	Forja	Forja
+	Maximize	تكبير
+	Minimize	تصغير
+	Dim scale overall	مقياس الأبعاد الكلي
+	Licence	الترخيص
+	Precision	الدقة
+	Website	الموقع الإلكتروني
+	Backup copies are off, so the current file will be replaced.	النسخ الاحتياطية متوقفة، لذا سيتم استبدال الملف الحالي.
+	DXF 2010 and earlier keep them. Use Save As to keep them in the drawing.	يحتفظ DXF 2010 وما قبله بها. استخدم «حفظ باسم» للاحتفاظ بها في الرسم.
+	DXF keeps them. Use Save As to keep them in the drawing.	يحتفظ DXF بها. استخدم «حفظ باسم» للاحتفاظ بها في الرسم.
+	Don't Save	عدم الحفظ
+	Save Anyway	الحفظ على أي حال
+	Save cancelled: {path} was not changed.	تم إلغاء الحفظ: لم يتغير {path}.
+	Save changes to {name}?	هل تريد حفظ التغييرات في {name}؟
+	Saving {name} will remove content	حفظ {name} سيزيل محتوى
+	The current file doesn't look whole, so {name} stays as it is and the current file will be replaced.	لا يبدو الملف الحالي كاملًا، لذا يبقى {name} كما هو وسيتم استبدال الملف الحالي.
+	The current file is kept as {name} until the next save.	يُحفظ الملف الحالي باسم {name} حتى الحفظ التالي.
+	This format can't keep these objects yet: {objects}.	لا يستطيع هذا التنسيق الاحتفاظ بهذه الكائنات بعد: {objects}.
+	Your changes will be lost if you don't save them.	ستفقد تغييراتك إن لم تحفظها.
+	{count} more types	{count} أنواع أخرى
+	Every library linetype is loaded.	تم تحميل جميع أنواع خطوط المكتبة.
+	Global scale factor	عامل المقياس العام
+	Point Size	حجم النقطة
+	This drawing has no layouts.	لا تحتوي هذه الرسمة على تخطيطات.
+	Printer/plotter	الطابعة/الراسمة
+	Paper size	حجم الورق
+	Orientation	الاتجاه
+	Plot area	منطقة الطباعة
+	Plot offset	إزاحة الطباعة
+	Window <	نافذة <
+	Apply to Layout	تطبيق على التخطيط
+	Geometric	هندسية
+	Constraint bar transparency (%)	شفافية شريط القيود (%)
+	Dimensional	أبعادية
+	Distance tolerance	تسامح المسافة
+	Angle tolerance (degrees)	تسامح الزاوية (درجات)
+	Current	الحالي
+	Draw new objects with the selected linetype	رسم الكائنات الجديدة بنوع الخط المحدد
+	New style name	اسم النمط الجديد
+	PDF on the paper chosen below	PDF على الورق المختار أدناه
+	Distance from the printable area's lower-left corner; values range from −100000 to 100000 mm	المسافة من الزاوية السفلية اليسرى للمنطقة القابلة للطباعة؛ تتراوح القيم من −100000 إلى 100000 مم
+	Paper units per drawing unit, or a ratio such as 1:50	وحدات الورق لكل وحدة رسم، أو نسبة مثل 1:50
+	Plot objects with their transparency (PLOTTRANSPARENCYOVERRIDE can override it)	طباعة الكائنات مع شفافيتها (يمكن لـ PLOTTRANSPARENCYOVERRIDE تجاوزها)
+	Pick the window's corners in the drawing	حدد زوايا النافذة في الرسم
+	Save these settings in the layout's page setup	حفظ هذه الإعدادات في إعداد صفحة التخطيط
+	The sheet as these settings plot it	الورقة كما تطبعها هذه الإعدادات
+	From File...	من ملف...
+	Hide ViewCube	إخفاء ViewCube
+	Hide UCS Icon	إخفاء أيقونة UCS
+	Coordinate system	نظام الإحداثيات
+	UCS icon: World Coordinate System	أيقونة UCS: نظام الإحداثيات العالمي
+	Forja draws in the World Coordinate System; user coordinate systems aren't available yet.	يرسم Forja في نظام الإحداثيات العالمي؛ أنظمة إحداثيات المستخدم غير متاحة بعد.
+	Insertion scale	مقياس الإدراج
+	Units to scale inserted content	وحدات لتحجيم المحتوى المُدرج
+	Sample output	مخرجات نموذجية
+	Forja did not close normally. These drawings were autosaved:	لم يُغلق Forja بشكل طبيعي. تم حفظ هذه الرسومات تلقائيًا:
+	Later	لاحقًا
+	The graphics device stopped working (a driver reset or a GPU that stopped responding). Forja can't draw again until it restarts.	توقف جهاز الرسوميات عن العمل (إعادة ضبط للمشغّل أو وحدة معالجة رسومات توقفت عن الاستجابة). لا يستطيع Forja الرسم مجددًا حتى تتم إعادة تشغيله.
+	Nothing needed autosaving.	لم يكن هناك ما يحتاج إلى حفظ تلقائي.
+	A recovery copy of the open drawing with unsaved changes was autosaved.	تم حفظ نسخة استرداد تلقائيًا من الرسم المفتوح الذي يحتوي على تغييرات غير محفوظة.
+	Dismiss	تجاهل
+	Forja could not write a recovery copy, so recent changes would be lost if the app stopped now.	تعذر على Forja كتابة نسخة استرداد، لذا ستضيع التغييرات الأخيرة إذا توقف التطبيق الآن.
+	Keep the files and ask again next time	الاحتفاظ بالملفات والسؤال مرة أخرى في المرة القادمة
+	Part of Forja failed, and the app kept running.	فشل جزء من Forja، واستمر التطبيق في العمل.
+	Part of Forja keeps failing, so it can't continue.	يفشل جزء من Forja باستمرار، لذا لا يمكنه المتابعة.
+	Close Forja	إغلاق Forja
+	This drawing has no blocks with attributes.	لا تحتوي هذه الرسمة على كتل ذات سمات.
+	Block:	الكتلة:
+	Sync	مزامنة
+	Tag	وسم
+	Prompt	موجّه
+	Mode	الوضع
+	Move Up	أعلى
+	Move Down	أسفل
+	Bring every reference in line with these definitions	مواءمة كل المراجع مع هذه التعريفات
+	This drawing has no named viewport configurations.	لا تحتوي هذه الرسمة على تكوينات إطارات عرض مسماة.
+	Delete the saved configuration	حذف التكوين المحفوظ

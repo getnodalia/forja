@@ -1987,3 +1987,102 @@ menu	Dimension	Wymiarowanie
 	Specify control point	Wskaż punkt sterujący
 	Arrow size	Rozmiar grotu
 	Dim scale overall	Ogólna skala wymiarowania
+	Forja	Forja
+	Maximize	Maksymalizuj
+	Minimize	Minimalizuj
+	Licence	Licencja
+	Website	Witryna
+	Every library linetype is loaded.	Wszystkie typy linii z biblioteki są wczytane.
+	Global scale factor	Globalny współczynnik skali
+	Point Size	Rozmiar punktu
+	This drawing has no layouts.	Ten rysunek nie ma układów.
+	Printer/plotter	Drukarka/ploter
+	Paper size	Rozmiar papieru
+	Orientation	Orientacja
+	Plot area	Obszar wydruku
+	Plot offset	Przesunięcie wydruku
+	Window <	Okno <
+	Apply to Layout	Zastosuj do układu
+	Geometric	Geometryczne
+	Constraint bar transparency (%)	Przezroczystość paska ograniczeń (%)
+	Dimensional	Wymiarowe
+	Distance tolerance	Tolerancja odległości
+	Angle tolerance (degrees)	Tolerancja kąta (stopnie)
+	Current	Bieżący
+	Draw new objects with the selected linetype	Rysuj nowe obiekty wybranym typem linii
+	New style name	Nazwa nowego stylu
+	PDF on the paper chosen below	PDF na papierze wybranym poniżej
+	Distance from the printable area's lower-left corner; values range from −100000 to 100000 mm	Odległość od lewego dolnego rogu obszaru drukowania; wartości od −100000 do 100000 mm
+	Paper units per drawing unit, or a ratio such as 1:50	Jednostki papieru na jednostkę rysunku lub proporcja, na przykład 1:50
+	Plot objects with their transparency (PLOTTRANSPARENCYOVERRIDE can override it)	Drukuj obiekty z ich przezroczystością (PLOTTRANSPARENCYOVERRIDE może ją zastąpić)
+	Pick the window's corners in the drawing	Wskaż narożniki okna na rysunku
+	Save these settings in the layout's page setup	Zapisz te ustawienia w ustawieniach strony układu
+	The sheet as these settings plot it	Arkusz tak, jak wydrukują go te ustawienia
+	From File...	Z pliku...
+	Hide ViewCube	Ukryj ViewCube
+	Hide UCS Icon	Ukryj ikonę UKW
+	Coordinate system	Układ współrzędnych
+	UCS icon: World Coordinate System	Ikona UKW: światowy układ współrzędnych
+	Forja draws in the World Coordinate System; user coordinate systems aren't available yet.	Forja rysuje w światowym układzie współrzędnych; układy współrzędnych użytkownika nie są jeszcze dostępne.
+	Insertion scale	Skala wstawiania
+	Units to scale inserted content	Jednostki do skalowania wstawianej zawartości
+	Sample output	Przykładowy wydruk
+	Forja did not close normally. These drawings were autosaved:	Forja nie została zamknięta w normalny sposób. Te rysunki zostały zapisane automatycznie:
+	Later	Później
+	The graphics device stopped working (a driver reset or a GPU that stopped responding). Forja can't draw again until it restarts.	Urządzenie graficzne przestało działać (reset sterownika lub procesor graficzny, który przestał odpowiadać). Forja nie może rysować, dopóki nie zostanie uruchomiona ponownie.
+	Nothing needed autosaving.	Nic nie wymagało automatycznego zapisu.
+	A recovery copy of the open drawing with unsaved changes was autosaved.	Kopia odzyskiwania otwartego rysunku z niezapisanymi zmianami została zapisana automatycznie.
+	Dismiss	Odrzuć
+	Forja could not write a recovery copy, so recent changes would be lost if the app stopped now.	Forja nie mogła zapisać kopii odzyskiwania, więc ostatnie zmiany zostałyby utracone, gdyby aplikacja teraz się zatrzymała.
+	Keep the files and ask again next time	Zachowaj pliki i zapytaj ponownie następnym razem
+	Part of Forja failed, and the app kept running.	Część Forji uległa awarii, a aplikacja działała dalej.
+	Part of Forja keeps failing, so it can't continue.	Część Forji ciągle ulega awarii, więc nie może kontynuować.
+	Close Forja	Zamknij Forję
+	This drawing has no blocks with attributes.	Ten rysunek nie ma bloków z atrybutami.
+	Block:	Blok:
+	Sync	Synchronizuj
+	Tag	Znacznik
+	Prompt	Monit
+	Mode	Tryb
+	Move Up	W górę
+	Move Down	W dół
+	Bring every reference in line with these definitions	Dostosuj wszystkie odwołania do tych definicji
+	This drawing has no named viewport configurations.	Ten rysunek nie ma nazwanych konfiguracji rzutni.
+	Delete the saved configuration	Usuń zapisaną konfigurację
+	Not affiliated with Autodesk, Inc.	Bez powiązania z Autodesk, Inc.
+	A bracket with its layouts	Wspornik z jego układami
+	Back to drawing	Wróć do rysunku
+	Drawing (inches)	Rysunek (cale)
+	Drawing (mm)	Rysunek (mm)
+	Imperial units	Jednostki imperialne
+	Menu	Menu
+	Metric units	Jednostki metryczne
+	Sample drawing	Przykładowy rysunek
+	There is nothing here yet. To get started, create or open a drawing.	Nic tu jeszcze nie ma. Aby zacząć, utwórz lub otwórz rysunek.
+	Add a drawing file as a block library	Dodaj plik rysunku jako bibliotekę bloków
+	Add a folder of drawings or a drawing file to use its blocks.	Dodaj folder z rysunkami lub plik rysunku, aby używać jego bloków.
+	Block Libraries	Biblioteki bloków
+	Block Library	Biblioteka bloków
+	Blocks Palette	Paleta bloków
+	Click a block, then pick its insertion point.	Kliknij blok, a następnie wskaż jego punkt wstawienia.
+	Current Drawing	Bieżący rysunek
+	Details	Szczegóły
+	Extra Large Icons	Bardzo duże ikony
+	Folder or file	Folder lub plik
+	Import Library Block	Importuj blok z biblioteki
+	Insert and Explode	Wstaw i rozbij
+	Large Icons	Duże ikony
+	Libraries	Biblioteki
+	Medium Icons	Średnie ikony
+	No block matches the filter.	Żaden blok nie pasuje do filtra.
+	This block is already in the drawing, so its definition is used.	Ten blok jest już w rysunku, więc używana jest jego definicja.
+	Open Library...	Otwórz bibliotekę...
+	Read the library again	Odczytaj bibliotekę ponownie
+	Reading the library...	Odczytywanie biblioteki...
+	Remove from the list	Usuń z listy
+	Repeat Placement	Powtórz umieszczanie
+	Small Icons	Małe ikony
+	This drawing has no blocks.	Ten rysunek nie ma bloków.
+	This library has no drawings or blocks.	Ta biblioteka nie ma rysunków ani bloków.
+	Only the first {n} are shown.	Wyświetlono tylko pierwsze {n}.
+	Additional Tools	Dodatkowe narzędzia

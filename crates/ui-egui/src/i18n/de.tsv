@@ -1427,3 +1427,117 @@
 	This library has no drawings or blocks.	Diese Bibliothek enthält keine Zeichnungen oder Blöcke.
 	Only the first {n} are shown.	Nur die ersten {n} werden angezeigt.
 	Additional Tools	Zusätzliche Werkzeuge
+	Arrow size	Pfeilgröße
+	Forja	Forja
+	Maximize	Maximieren
+	Minimize	Minimieren
+	Dim scale overall	Gesamtmaßstab der Bemaßung
+	Licence	Lizenz
+	Precision	Genauigkeit
+	Website	Website
+	Backup copies are off, so the current file will be replaced.	Sicherungskopien sind ausgeschaltet, daher wird die aktuelle Datei ersetzt.
+	DXF 2010 and earlier keep them. Use Save As to keep them in the drawing.	DXF 2010 und früher behalten sie. Mit „Speichern unter“ bleiben sie in der Zeichnung erhalten.
+	DXF keeps them. Use Save As to keep them in the drawing.	DXF behält sie. Mit „Speichern unter“ bleiben sie in der Zeichnung erhalten.
+	Don't Save	Nicht speichern
+	Save Anyway	Trotzdem speichern
+	Save cancelled: {path} was not changed.	Speichern abgebrochen: {path} wurde nicht geändert.
+	Save changes to {name}?	Änderungen in {name} speichern?
+	Saving {name} will remove content	Beim Speichern von {name} gehen Inhalte verloren
+	The current file doesn't look whole, so {name} stays as it is and the current file will be replaced.	Die aktuelle Datei sieht nicht vollständig aus, daher bleibt {name} unverändert und die aktuelle Datei wird ersetzt.
+	The current file is kept as {name} until the next save.	Die aktuelle Datei bleibt bis zum nächsten Speichern als {name} erhalten.
+	This format can't keep these objects yet: {objects}.	Dieses Format kann diese Objekte noch nicht behalten: {objects}.
+	Your changes will be lost if you don't save them.	Ihre Änderungen gehen verloren, wenn Sie sie nicht speichern.
+	{count} more types	{count} weitere Typen
+	Every library linetype is loaded.	Alle Linientypen der Bibliothek sind geladen.
+	Global scale factor	Globaler Skalierungsfaktor
+	Point Size	Punktgröße
+	This drawing has no layouts.	Diese Zeichnung hat keine Layouts.
+	Printer/plotter	Drucker/Plotter
+	Paper size	Papierformat
+	Orientation	Ausrichtung
+	Plot area	Plotbereich
+	Plot offset	Plotversatz
+	Window <	Fenster <
+	Apply to Layout	Auf Layout anwenden
+	Geometric	Geometrisch
+	Constraint bar transparency (%)	Transparenz der Abhängigkeitsleiste (%)
+	Dimensional	Bemaßung
+	Distance tolerance	Abstandstoleranz
+	Angle tolerance (degrees)	Winkeltoleranz (Grad)
+	Current	Aktuell
+	Draw new objects with the selected linetype	Neue Objekte mit dem gewählten Linientyp zeichnen
+	New style name	Name des neuen Stils
+	PDF on the paper chosen below	PDF auf dem unten gewählten Papier
+	Distance from the printable area's lower-left corner; values range from −100000 to 100000 mm	Abstand von der linken unteren Ecke des druckbaren Bereichs; die Werte reichen von −100000 bis 100000 mm
+	Paper units per drawing unit, or a ratio such as 1:50	Papiereinheiten je Zeichnungseinheit oder ein Verhältnis wie 1:50
+	Plot objects with their transparency (PLOTTRANSPARENCYOVERRIDE can override it)	Objekte mit ihrer Transparenz plotten (PLOTTRANSPARENCYOVERRIDE kann sie überschreiben)
+	Pick the window's corners in the drawing	Die Fensterecken in der Zeichnung wählen
+	Save these settings in the layout's page setup	Diese Einstellungen in der Seiteneinrichtung des Layouts speichern
+	The sheet as these settings plot it	Das Blatt, wie diese Einstellungen es plotten
+	From File...	Aus Datei...
+	Hide ViewCube	ViewCube ausblenden
+	Hide UCS Icon	BKS-Symbol ausblenden
+	Coordinate system	Koordinatensystem
+	UCS icon: World Coordinate System	BKS-Symbol: Weltkoordinatensystem
+	Forja draws in the World Coordinate System; user coordinate systems aren't available yet.	Forja zeichnet im Weltkoordinatensystem; benutzerdefinierte Koordinatensysteme sind noch nicht verfügbar.
+	Insertion scale	Einfügemaßstab
+	Units to scale inserted content	Einheiten zum Skalieren eingefügter Inhalte
+	Sample output	Beispielausgabe
+	Forja did not close normally. These drawings were autosaved:	Forja wurde nicht normal beendet. Diese Zeichnungen wurden automatisch gespeichert:
+	Later	Später
+	The graphics device stopped working (a driver reset or a GPU that stopped responding). Forja can't draw again until it restarts.	Das Grafikgerät hat nicht mehr funktioniert (ein Treiber-Reset oder eine GPU, die nicht mehr antwortete). Forja kann erst nach einem Neustart wieder zeichnen.
+	Nothing needed autosaving.	Es musste nichts automatisch gespeichert werden.
+	A recovery copy of the open drawing with unsaved changes was autosaved.	Eine Wiederherstellungskopie der geöffneten Zeichnung mit ungespeicherten Änderungen wurde automatisch gespeichert.
+	Dismiss	Verwerfen
+	Forja could not write a recovery copy, so recent changes would be lost if the app stopped now.	Forja konnte keine Wiederherstellungskopie schreiben, daher gingen die letzten Änderungen verloren, wenn die App jetzt anhielte.
+	Keep the files and ask again next time	Dateien behalten und beim nächsten Mal erneut fragen
+	Part of Forja failed, and the app kept running.	Ein Teil von Forja ist ausgefallen, die App lief aber weiter.
+	Part of Forja keeps failing, so it can't continue.	Ein Teil von Forja fällt immer wieder aus, daher kann es nicht fortfahren.
+	Close Forja	Forja schließen
+	This drawing has no blocks with attributes.	Diese Zeichnung hat keine Blöcke mit Attributen.
+	Block:	Block:
+	Sync	Synchronisieren
+	Tag	Tag
+	Prompt	Eingabeaufforderung
+	Mode	Modus
+	Move Up	Nach oben
+	Move Down	Nach unten
+	Bring every reference in line with these definitions	Alle Referenzen an diese Definitionen angleichen
+	This drawing has no named viewport configurations.	Diese Zeichnung hat keine benannten Ansichtsfensterkonfigurationen.
+	Delete the saved configuration	Gespeicherte Konfiguration löschen
+	SVG drawings (SVG, SVGZ)	SVG-Zeichnungen (SVG, SVGZ)
+	Turned off, a right-click while a command runs always opens the shortcut menu.	Ist die Option aus, öffnet ein Rechtsklick während eines Befehls immer das Kontextmenü.
+	Add Vertex	Scheitelpunkt hinzufügen
+	Close All Other Drawings	Alle anderen Zeichnungen schließen
+	Convert to Arc	In Bogen umwandeln
+	Convert to Line	In Linie umwandeln
+	Copy Full File Path	Vollständigen Dateipfad kopieren
+	Copy History	Verlauf kopieren
+	Display	Anzeige
+	Drawing Template (DWT)	Zeichnungsvorlage (DWT)
+	Edit Attributes...	Attribute bearbeiten...
+	Enter	Eingabe
+	From Template...	Aus Vorlage...
+	Hide Palette	Palette ausblenden
+	Lines of Command History	Zeilen des Befehlsverlaufs
+	Loaded	Geladen
+	Not Found	Nicht gefunden
+	Not loaded	Nicht geladen
+	Open and Save	Öffnen und Speichern
+	Polyline Edit	Polylinie bearbeiten
+	Profiles	Profile
+	Recent Commands	Letzte Befehle
+	Recent Input	Letzte Eingaben
+	Remove Vertex	Scheitelpunkt entfernen
+	Selection	Auswahl
+	Settings...	Einstellungen...
+	Snap Overrides	Objektfang-Überschreibungen
+	Spline Edit	Spline bearbeiten
+	Stretch Vertex	Scheitelpunkt strecken
+	Temporary track point	Temporärer Spurpunkt
+	Thaw Layer	Layer auftauen
+	Turn On Layer	Layer einschalten
+	Unloaded	Entladen
+	Unreferenced	Nicht referenziert
+	Unresolved	Nicht aufgelöst
+	User Preferences	Benutzereinstellungen

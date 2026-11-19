@@ -1470,3 +1470,80 @@ menu	Modify	수정
 	This library has no drawings or blocks.	이 라이브러리에는 도면이나 블록이 없습니다.
 	Only the first {n} are shown.	처음 {n}개만 표시됩니다.
 	Additional Tools	추가 도구
+	Arrow size	화살표 크기
+	Maximize	최대화
+	Minimize	최소화
+	Dim scale overall	전체 치수 축척
+	Licence	라이선스
+	Precision	정밀도
+	Website	웹사이트
+	Backup copies are off, so the current file will be replaced.	백업 복사본이 꺼져 있어 현재 파일이 교체됩니다.
+	DXF 2010 and earlier keep them. Use Save As to keep them in the drawing.	DXF 2010 이전 버전은 이를 유지합니다. 도면에 유지하려면 다른 이름으로 저장을 사용하세요.
+	DXF keeps them. Use Save As to keep them in the drawing.	DXF는 이를 유지합니다. 도면에 유지하려면 다른 이름으로 저장을 사용하세요.
+	Don't Save	저장 안 함
+	Save Anyway	그래도 저장
+	Save cancelled: {path} was not changed.	저장이 취소되었습니다: {path}은(는) 변경되지 않았습니다.
+	Save changes to {name}?	변경 내용을 {name}에 저장할까요?
+	Saving {name} will remove content	{name}을(를) 저장하면 내용이 제거됩니다
+	The current file doesn't look whole, so {name} stays as it is and the current file will be replaced.	현재 파일이 온전해 보이지 않으므로 {name}은(는) 그대로 두고 현재 파일을 교체합니다.
+	The current file is kept as {name} until the next save.	현재 파일은 다음 저장 전까지 {name}(으)로 보관됩니다.
+	This format can't keep these objects yet: {objects}.	이 형식은 아직 다음 객체를 유지할 수 없습니다: {objects}.
+	Your changes will be lost if you don't save them.	저장하지 않으면 변경 내용이 사라집니다.
+	{count} more types	{count}개 유형 더 있음
+	Every library linetype is loaded.	라이브러리의 모든 선종류가 불러와졌습니다.
+	Global scale factor	전체 축척 비율
+	Point Size	점 크기
+	This drawing has no layouts.	이 도면에는 배치가 없습니다.
+	Printer/plotter	프린터/플로터
+	Paper size	용지 크기
+	Orientation	방향
+	Plot area	플롯 영역
+	Plot offset	플롯 간격 띄우기
+	Window <	창 <
+	Apply to Layout	배치에 적용
+	Geometric	기하
+	Constraint bar transparency (%)	구속조건 막대 투명도(%)
+	Dimensional	치수
+	Distance tolerance	거리 공차
+	Angle tolerance (degrees)	각도 공차(도)
+	Current	현재
+	Draw new objects with the selected linetype	선택한 선종류로 새 객체 그리기
+	New style name	새 스타일 이름
+	PDF on the paper chosen below	아래에서 선택한 용지에 PDF 출력
+	Distance from the printable area's lower-left corner; values range from −100000 to 100000 mm	인쇄 가능 영역의 왼쪽 아래 모서리로부터의 거리; 값 범위는 −100000~100000mm입니다
+	Paper units per drawing unit, or a ratio such as 1:50	도면 단위당 용지 단위 또는 1:50 같은 비율
+	Plot objects with their transparency (PLOTTRANSPARENCYOVERRIDE can override it)	객체를 투명도와 함께 플롯(PLOTTRANSPARENCYOVERRIDE로 재정의할 수 있음)
+	Pick the window's corners in the drawing	도면에서 창의 모서리를 지정하세요
+	Save these settings in the layout's page setup	이 설정을 배치의 페이지 설정에 저장
+	The sheet as these settings plot it	이 설정으로 플롯되는 용지
+	From File...	파일에서...
+	Hide ViewCube	ViewCube 숨기기
+	Hide UCS Icon	UCS 아이콘 숨기기
+	Coordinate system	좌표계
+	UCS icon: World Coordinate System	UCS 아이콘: 세계 좌표계
+	Forja draws in the World Coordinate System; user coordinate systems aren't available yet.	Forja는 세계 좌표계에서 그립니다. 사용자 좌표계는 아직 사용할 수 없습니다.
+	Insertion scale	삽입 축척
+	Units to scale inserted content	삽입된 내용의 크기를 조정할 단위
+	Sample output	출력 예시
+	Forja did not close normally. These drawings were autosaved:	Forja가 정상적으로 종료되지 않았습니다. 다음 도면이 자동 저장되었습니다:
+	Later	나중에
+	The graphics device stopped working (a driver reset or a GPU that stopped responding). Forja can't draw again until it restarts.	그래픽 장치가 작동을 멈췄습니다(드라이버 재설정 또는 응답하지 않는 GPU). Forja는 다시 시작할 때까지 그릴 수 없습니다.
+	Nothing needed autosaving.	자동 저장할 내용이 없었습니다.
+	A recovery copy of the open drawing with unsaved changes was autosaved.	저장하지 않은 변경 내용이 있는 열린 도면의 복구 사본이 자동 저장되었습니다.
+	Dismiss	닫기
+	Forja could not write a recovery copy, so recent changes would be lost if the app stopped now.	Forja가 복구 사본을 쓰지 못했으므로 지금 앱이 중지되면 최근 변경 내용이 사라집니다.
+	Keep the files and ask again next time	파일을 유지하고 다음에 다시 묻기
+	Part of Forja failed, and the app kept running.	Forja의 일부가 실패했지만 앱은 계속 실행되었습니다.
+	Part of Forja keeps failing, so it can't continue.	Forja의 일부가 계속 실패하여 계속할 수 없습니다.
+	Close Forja	Forja 닫기
+	This drawing has no blocks with attributes.	이 도면에는 속성이 있는 블록이 없습니다.
+	Block:	블록:
+	Sync	동기화
+	Tag	태그
+	Prompt	프롬프트
+	Mode	모드
+	Move Up	위로 이동
+	Move Down	아래로 이동
+	Bring every reference in line with these definitions	모든 참조를 이 정의에 맞추기
+	This drawing has no named viewport configurations.	이 도면에는 이름이 지정된 뷰포트 구성이 없습니다.
+	Delete the saved configuration	저장된 구성 삭제

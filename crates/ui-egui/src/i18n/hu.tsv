@@ -1481,3 +1481,81 @@ menu	View	Nézet
 	This library has no drawings or blocks.	Ez a könyvtár nem tartalmaz rajzokat vagy blokkokat.
 	Only the first {n} are shown.	Csak az első {n} látható.
 	Additional Tools	További eszközök
+	Arrow size	Nyílhegy mérete
+	Forja	Forja
+	Maximize	Maximalizálás
+	Minimize	Minimalizálás
+	Dim scale overall	Teljes méretezési arány
+	Licence	Licenc
+	Precision	Pontosság
+	Website	Weboldal
+	Backup copies are off, so the current file will be replaced.	A biztonsági másolatok ki vannak kapcsolva, ezért a jelenlegi fájl felülíródik.
+	DXF 2010 and earlier keep them. Use Save As to keep them in the drawing.	A DXF 2010 és a korábbiak megtartják őket. A Mentés másként használatával megtarthatja őket a rajzban.
+	DXF keeps them. Use Save As to keep them in the drawing.	A DXF megtartja őket. A Mentés másként használatával megtarthatja őket a rajzban.
+	Don't Save	Ne mentse
+	Save Anyway	Mentés mindenképp
+	Save cancelled: {path} was not changed.	A mentés megszakadt: a(z) {path} nem módosult.
+	Save changes to {name}?	Menti a változtatásokat a(z) {name} fájlba?
+	Saving {name} will remove content	A(z) {name} mentése tartalmat távolít el
+	The current file doesn't look whole, so {name} stays as it is and the current file will be replaced.	A jelenlegi fájl nem tűnik teljesnek, ezért a(z) {name} változatlan marad, a jelenlegi fájl pedig felülíródik.
+	The current file is kept as {name} until the next save.	A jelenlegi fájl a következő mentésig {name} néven marad meg.
+	This format can't keep these objects yet: {objects}.	Ez a formátum még nem tudja megőrizni ezeket az objektumokat: {objects}.
+	Your changes will be lost if you don't save them.	A módosítások elvesznek, ha nem menti őket.
+	{count} more types	További {count} típus
+	Every library linetype is loaded.	A könyvtár összes vonaltípusa be van töltve.
+	Global scale factor	Globális méretezési tényező
+	Point Size	Pontméret
+	This drawing has no layouts.	Ebben a rajzban nincsenek elrendezések.
+	Printer/plotter	Nyomtató/plotter
+	Paper size	Papírméret
+	Orientation	Tájolás
+	Plot area	Nyomtatási terület
+	Plot offset	Nyomtatási eltolás
+	Window <	Ablak <
+	Apply to Layout	Alkalmazás az elrendezésre
+	Geometric	Geometriai
+	Constraint bar transparency (%)	Kényszersáv átlátszósága (%)
+	Dimensional	Méretezési
+	Distance tolerance	Távolságtűrés
+	Angle tolerance (degrees)	Szögtűrés (fok)
+	Current	Aktuális
+	Draw new objects with the selected linetype	Új objektumok rajzolása a kijelölt vonaltípussal
+	New style name	Új stílus neve
+	PDF on the paper chosen below	PDF az alább kiválasztott papíron
+	Distance from the printable area's lower-left corner; values range from −100000 to 100000 mm	Távolság a nyomtatható terület bal alsó sarkától; az értékek −100000 és 100000 mm között lehetnek
+	Paper units per drawing unit, or a ratio such as 1:50	Papírmértékegység rajzegységenként, vagy egy arány, például 1:50
+	Plot objects with their transparency (PLOTTRANSPARENCYOVERRIDE can override it)	Az objektumok kinyomtatása átlátszóságukkal (a PLOTTRANSPARENCYOVERRIDE felülbírálhatja)
+	Pick the window's corners in the drawing	Jelölje ki az ablak sarkait a rajzon
+	Save these settings in the layout's page setup	A beállítások mentése az elrendezés oldalbeállításába
+	The sheet as these settings plot it	A lap úgy, ahogy ezek a beállítások nyomtatják
+	From File...	Fájlból...
+	Hide ViewCube	ViewCube elrejtése
+	Hide UCS Icon	UCS-ikon elrejtése
+	Coordinate system	Koordináta-rendszer
+	UCS icon: World Coordinate System	UCS-ikon: világ-koordináta-rendszer
+	Forja draws in the World Coordinate System; user coordinate systems aren't available yet.	A Forja a világ-koordináta-rendszerben rajzol; a felhasználói koordináta-rendszerek még nem érhetők el.
+	Insertion scale	Beszúrási méretezés
+	Units to scale inserted content	Egységek a beszúrt tartalom méretezéséhez
+	Sample output	Mintakimenet
+	Forja did not close normally. These drawings were autosaved:	A Forja nem rendesen zárult be. Ezeket a rajzokat automatikusan mentette:
+	Later	Később
+	The graphics device stopped working (a driver reset or a GPU that stopped responding). Forja can't draw again until it restarts.	A grafikus eszköz leállt (illesztőprogram-visszaállítás vagy nem válaszoló GPU). A Forja nem tud újra rajzolni az újraindításig.
+	Nothing needed autosaving.	Nem volt mit automatikusan menteni.
+	A recovery copy of the open drawing with unsaved changes was autosaved.	A nyitott rajz helyreállítási másolata a nem mentett módosításokkal automatikusan mentve lett.
+	Dismiss	Elvetés
+	Forja could not write a recovery copy, so recent changes would be lost if the app stopped now.	A Forja nem tudott helyreállítási másolatot írni, így a legutóbbi módosítások elvesznének, ha az alkalmazás most leállna.
+	Keep the files and ask again next time	A fájlok megtartása és újbóli rákérdezés legközelebb
+	Part of Forja failed, and the app kept running.	A Forja egy része hibázott, az alkalmazás tovább futott.
+	Part of Forja keeps failing, so it can't continue.	A Forja egy része folyamatosan hibázik, ezért nem folytathatja.
+	Close Forja	Forja bezárása
+	This drawing has no blocks with attributes.	Ebben a rajzban nincsenek attribútumos blokkok.
+	Block:	Blokk:
+	Sync	Szinkronizálás
+	Tag	Címke
+	Prompt	Kérdés
+	Mode	Mód
+	Move Up	Feljebb
+	Move Down	Lejjebb
+	Bring every reference in line with these definitions	Minden hivatkozás összehangolása ezekkel a definíciókkal
+	This drawing has no named viewport configurations.	Ebben a rajzban nincsenek elnevezett nézetablak-konfigurációk.
+	Delete the saved configuration	A mentett konfiguráció törlése
