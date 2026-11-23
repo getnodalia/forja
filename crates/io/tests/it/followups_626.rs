@@ -8,6 +8,7 @@ use forja_geom::{Vec2, Vec3};
 use forja_io::{SaveOptions, Version};
 
 fn save(d: &Drawing, name: &str, v: Version) -> Vec<u8> {
+    forja_io::dwg_worker::allow_in_process();
     forja_io::write_with(d, name, &SaveOptions { version: Some(v), binary: false }).unwrap()
 }
 

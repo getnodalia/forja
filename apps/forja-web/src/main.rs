@@ -128,6 +128,10 @@ mod web {
             groups: forja_io::entity_groups,
             entity: forja_io::entity_from_groups,
         });
+        // ... and non-graphic objects (tables, dictionaries, layouts) as DXF records.
+        forja_engine::cmd::file::set_object_records(forja_io::object_records);
+        // What a DXF before 2007 leaves out for its proxies' string streams (#3229).
+        forja_engine::cmd::file::set_proxies_lost(forja_io::proxies_lost);
         let Some(canvas) = app_canvas() else {
             log::error!("missing <canvas id=\"{CANVAS_ID}\">");
             return;

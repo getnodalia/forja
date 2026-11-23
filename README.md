@@ -184,6 +184,34 @@ in the text style or set `FONTFALLBACK` (`FORJA_FONTFALLBACK="Vazirmatn"`). Form
 inside a word (an MTEXT colour change in the middle of a Persian word) break the joining at that
 point.
 
+### Portable Windows ZIP
+
+The Windows portable ZIP includes `portable.txt` beside `forja.exe`. With that
+marker present, the desktop app's settings, logs, autosaves, workspace data,
+plotter files, and eframe preferences/window state stay in `ForjaData` beside
+the executable. eframe saves its preferences and window state in `ForjaData/app.ron`.
+Keep that directory when replacing the binaries. The MSI does not include the
+marker and continues to use the normal user profile.
+
+`FORJA_CONFIG_DIR` takes precedence over the marker, including an empty or
+blank value that disables the settings folder. If `ForjaData` cannot be
+created or written, Forja warns and uses the normal profile. Existing profile
+settings are not automatically copied into the portable directory.
+
+Before switching an existing Windows installation to portable mode, close Forja,
+back up `%APPDATA%\Forja`, and copy the settings you want to retain into
+`ForjaData`. Include the `autosave` folder if you need to recover unsaved drawings. The
+preferences and window state are kept apart, in `%APPDATA%\dev.danielmiguelt.Forja\data\app.ron`:
+copy that file to `ForjaData\app.ron` to keep them.
+Updating a portable ZIP, including through the updater, can restore `portable.txt`;
+set `FORJA_CONFIG_DIR` to your existing profile folder to keep using it across updates.
+
+`forja-cli.exe` does not detect the marker. To share the desktop app's portable
+settings, pass `--config-dir` with the full path to `ForjaData`, or set
+`FORJA_CONFIG_DIR` to that path. The marker is also recognized on other desktop
+platforms, but is intended for a standalone writable installation, not inside a
+signed macOS application bundle.
+
 ### Logs
 
 The desktop app writes its `log` records to standard error and to `logs/forja.log` in the
@@ -208,6 +236,8 @@ The logger is `apps/forja/src/logging.rs`; the web build logs to the browser con
 forja-cli mcp
 # …or bridged to the running app (start it with --control 7979):
 forja-cli mcp --connect 127.0.0.1:7979
+# …or headless, with the agent confined to a work folder:
+forja-cli mcp --automation-read-root ~/work --automation-write-root ~/work/out
 
 # One-shot headless runs:
 forja-cli run --sample --script 'CIRCLE 22,3 1\n' --save out.dxf --export out.png

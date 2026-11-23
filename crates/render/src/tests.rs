@@ -3,6 +3,11 @@ use crate::*;
 use forja_doc::{Common, Drawing, EntityKind, Hatch, HatchLoop, Space};
 use forja_geom::{PolyVertex, Vec3};
 
+// The synthetic TrueType file both this suite and the PDF writer's build: the fonts layer's
+// test-only helper, inlined rather than published or depended on.
+#[path = "../../fonts/tests/support/sfnt.rs"]
+mod sfnt;
+
 fn sample() -> Drawing {
     let mut d = Drawing::new_imperial();
     d.add(&Space::Model, Common::default(), EntityKind::Line(forja_doc::Line { a: Vec3::new(0.0, 0.0, 0.0), b: Vec3::new(10.0, 0.0, 0.0) })).unwrap();
@@ -276,6 +281,44 @@ fn system_font() -> Option<&'static str> {
     ["Arial", "Helvetica", "DejaVuSans", "Verdana", "LiberationSans-Regular"].into_iter().find(|n| forja_fonts::ttf::find(n).is_some())
 }
 
+// ---------- a fixture TrueType font: no font file, no installed font ----------
+
+/// A closed ellipse round (500, 350), wound by `clockwise`: one contour of a glyph outline.
+fn ring(rx: f64, ry: f64, points: usize, clockwise: bool) -> Vec<(i16, i16)> {
+    let dir = if clockwise { -1.0 } else { 1.0 };
+    (0..points)
+        .map(|i| {
+            (
+                (500.0 + rx * (dir * std::f64::consts::TAU * i as f64 / points as f64).cos()) as i16,
+                (350.0 + ry * (dir * std::f64::consts::TAU * i as f64 / points as f64).sin()) as i16,
+            )
+        })
+        .collect()
+}
+
+/// A TrueType font whose only glyph, "O", is a 128-point ring: the flattened outline a real font's
+/// curve gives, at the same scale, with plenty of detail to simplify. It is built in code so the
+/// level-of-detail test needs no installed font and no font file in the repository (#651).
+fn fixture_font() -> &'static str {
+    const NAME: &str = "forja-render-lod.ttf";
+    static ONCE: std::sync::Once = std::sync::Once::new();
+    ONCE.call_once(|| forja_fonts::ttf::register(NAME, fixture_font_bytes()));
+    NAME
+}
+
+fn fixture_font_bytes() -> Vec<u8> {
+    sfnt::bytes(&sfnt::Sfnt {
+        // Glyph 1 is "O": a 128-point ring, its counter a second, oppositely wound contour.
+        glyphs: &[sfnt::notdef(), sfnt::glyph(&[ring(500.0, 350.0, 128, false), ring(250.0, 150.0, 128, true)])],
+        cmap: &[(0x4F, 0x4F, 1 - 0x4F)], // "O" → glyph 1
+        advance: 1000,                   // one em wide
+        lsb: 0,
+        metrics: 2,                 // hmtx matches the two metrics hhea declares
+        fs_type: 0,                 // any use
+        ink_box: [0, 0, 1000, 700], // the ring's box; the 700-unit cap height is the unit scale
+    })
+}
+
 #[test]
 fn truetype_text_is_filled_or_outlined() {
     let Some(font) = system_font() else { return };
@@ -295,6 +338,31 @@ fn truetype_text_is_filled_or_outlined() {
     let l = build(&d, &Space::Model, &Options::default());
     assert!(l.prims.iter().all(|p| p.kind == Kind::Polyline), "TEXTFILL=0 outlines");
     assert!(l.prims.len() >= 3, "O has two contours, H one");
+}
+
+// Regression test for #651: filled TrueType text was triangulated at full outline detail at every
+// zoom, so a page of small text on screen produced millions of triangles and froze the canvas.
+#[test]
+fn small_filled_text_on_screen_is_simplified_but_plots_keep_full_detail() {
+    let d = text_doc(fixture_font(), "OOOO");
+    let tris = |l: &DisplayList| l.prims.iter().filter(|p| p.kind == Kind::Tris).map(|p| l.points(p).len() / 3).sum::<usize>();
+    let plot = build_plot(&d, &Space::Model, &Options::default());
+    let full = tris(&plot);
+    assert!(full > 100, "a plot keeps every point of the 128-point rings: {full} triangles");
+    // One pixel is a tenth of the cap height: the rings are simplified to a few points, the shapes
+    // stay.
+    let reduced = build(&d, &Space::Model, &screen(0.1, None));
+    assert!(tris(&reduced) < full / 2, "{} triangles at 10 px per cap height, {full} in a plot", tris(&reduced));
+    assert!(tris(&reduced) > 0 && reduced.bounds.width() > plot.bounds.width() * 0.9, "{:?} vs {:?}", reduced.bounds, plot.bounds);
+    // An em under two pixels is drawn as the ink's box: two triangles a glyph, same extent.
+    let tiny = build(&d, &Space::Model, &screen(2.0, None));
+    assert_eq!(tris(&tiny), 2 * 4, "one box per glyph");
+    assert!(
+        tiny.bounds.width() > plot.bounds.width() * 0.9 && tiny.bounds.height() > plot.bounds.height() * 0.9,
+        "{:?} vs {:?}",
+        tiny.bounds,
+        plot.bounds
+    );
 }
 
 #[test]
@@ -928,6 +996,105 @@ fn cancelled_build_stops_early() {
     assert!(crate::hatch::pattern_lines_until(&drawing, &h, &loops, 0.0, None, set.as_deref()).is_empty());
 }
 
+// ---------- locked-layer fade ----------
+
+/// A line on locked layer "Locked" (own transparency `own`) and a line on layer 0.
+fn locked_lines(own: forja_doc::Transparency) -> Drawing {
+    let mut d = Drawing::new_imperial();
+    d.layers.push(forja_doc::Layer { name: "Locked".into(), locked: true, ..Default::default() });
+    let (c, k) = line_common(Common { layer: "Locked".into(), transparency: own, ..Default::default() });
+    d.add(&Space::Model, c, k).unwrap();
+    let (c, k) = line_common(Common::default());
+    d.add(&Space::Model, c, k).unwrap();
+    d
+}
+
+fn faded(l: &DisplayList) -> Vec<u8> {
+    l.prims.iter().map(|p| p.transparency).collect()
+}
+
+fn on_screen(o: Options) -> Options {
+    Options { on_screen: true, ..o }
+}
+
+#[test]
+fn objects_on_locked_layers_fade_on_screen() {
+    use forja_doc::Transparency::{ByLayer, Percent};
+    let mut d = locked_lines(ByLayer);
+    // Default 50, whether transparency display is on or off; the unlocked line is unchanged.
+    for opts in [on_screen(Options::default()), on_screen(with_transparency())] {
+        let l = build(&d, &Space::Model, &opts);
+        assert_eq!(faded(&l), vec![50, 0]);
+        assert!(l.prims[0].alpha() < 255);
+        assert_eq!(l.prims[1].alpha(), 255);
+    }
+    // Builds without the on-screen flag (exports) and plots never fade.
+    for opts in [Options::default(), with_transparency()] {
+        assert_eq!(faded(&build(&d, &Space::Model, &opts)), vec![0, 0]);
+    }
+    assert_eq!(faded(&build_plot(&d, &Space::Model, &on_screen(Options::default()))), vec![0, 0]);
+    for (v, want) in [(0, 0), (-30, 0), (70, 70)] {
+        d.header.set_i64("LAYLOCKFADECTL", v);
+        assert_eq!(faded(&build(&d, &Space::Model, &on_screen(Options::default()))), vec![want, 0], "LAYLOCKFADECTL {v}");
+    }
+    // An object more transparent than the fade keeps its own transparency.
+    let d = locked_lines(Percent(80));
+    assert_eq!(faded(&build(&d, &Space::Model, &on_screen(with_transparency()))), vec![80, 0]);
+    assert_eq!(faded(&build(&d, &Space::Model, &on_screen(Options::default()))), vec![50, 0]);
+    assert_eq!(faded(&build(&d, &Space::Model, &with_transparency())), vec![80, 0]);
+}
+
+#[test]
+fn layer_zero_in_a_block_on_a_locked_layer_fades() {
+    let mut d = Drawing::new_imperial();
+    d.layers.push(forja_doc::Layer { name: "Locked".into(), locked: true, ..Default::default() });
+    let mut blk = forja_doc::Block::new("B");
+    let (c, k) = line_common(Common::default());
+    blk.entities.push(block_entity(1, c, k));
+    d.blocks.insert("B".into(), std::sync::Arc::new(blk));
+    d.add(&Space::Model, Common { layer: "Locked".into(), ..Default::default() }, insert_of("B")).unwrap();
+    assert_eq!(faded(&build(&d, &Space::Model, &on_screen(Options::default()))), vec![50]);
+    assert_eq!(faded(&build(&d, &Space::Model, &Options::default())), vec![0]);
+}
+#[test]
+fn byblock_child_on_an_unlocked_layer_does_not_inherit_the_fade() {
+    use forja_doc::Transparency::{ByBlock, ByLayer, Percent};
+    // A ByBlock line on unlocked layer "Open" in a block inserted on locked layer "Locked".
+    let drawing = |insert_transparency| {
+        let mut d = Drawing::new_imperial();
+        d.layers.push(forja_doc::Layer { name: "Locked".into(), locked: true, ..Default::default() });
+        d.layers.push(forja_doc::Layer { name: "Open".into(), ..Default::default() });
+        let mut blk = forja_doc::Block::new("B");
+        let (c, k) = line_common(Common { layer: "Open".into(), transparency: ByBlock, ..Default::default() });
+        blk.entities.push(block_entity(1, c, k));
+        d.blocks.insert("B".into(), std::sync::Arc::new(blk));
+        let common = Common { layer: "Locked".into(), transparency: insert_transparency, ..Default::default() };
+        d.add(&Space::Model, common, insert_of("B")).unwrap();
+        d
+    };
+    // The child takes the reference's own transparency, not its display fade.
+    assert_eq!(faded(&build(&drawing(ByLayer), &Space::Model, &on_screen(with_transparency()))), vec![0]);
+    assert_eq!(faded(&build(&drawing(Percent(20)), &Space::Model, &on_screen(with_transparency()))), vec![20]);
+}
+
+#[test]
+fn byblock_attribute_on_an_unlocked_layer_does_not_inherit_the_fade() {
+    use forja_doc::Transparency::{ByBlock, Percent};
+    // A ByBlock attribute definition on unlocked layer "Open", in a reference on locked "Locked".
+    for (reference, want) in [(forja_doc::Transparency::ByLayer, 0), (Percent(20), 20)] {
+        let mut d = attributed(
+            Common { layer: "Open".into(), transparency: ByBlock, ..Default::default() },
+            Common { layer: "Locked".into(), transparency: reference, ..Default::default() },
+        );
+        d.layers.push(forja_doc::Layer { name: "Open".into(), ..Default::default() });
+        d.layer_mut("Locked").unwrap().locked = true;
+        let l = build(&d, &Space::Model, &on_screen(with_transparency()));
+        let (line, text) = l.prims.split_first().unwrap();
+        assert_eq!(line.transparency, 50, "the layer-0 line takes the locked reference layer's fade");
+        assert!(!text.is_empty() && text.iter().all(|p| p.transparency == want), "{:?}", faded(&l));
+    }
+}
+
 /// #1434: a closed polyline with a global width narrower than a pixel loses whole sides at
 /// some zooms, while the same polyline with width 0 always shows every side.
 #[test]
@@ -1215,4 +1382,50 @@ fn rotated_and_reversed_copies_of_a_curved_loop_fill_once() {
         sources: Vec::new(),
     });
     assert_eq!(loops_of(&h).len(), 2);
+}
+
+// ---------- point budget (#1922) ----------
+
+fn circle() -> EntityKind {
+    EntityKind::Circle(forja_doc::Circle { center: Vec3::ZERO, radius: 100.0 })
+}
+
+/// A block of one circle referenced as 1,000 copies in place: every copy is cheap to the
+/// block-expansion budget but costs hundreds of points.
+fn arrayed_circles() -> Drawing {
+    let mut d = Drawing::new_imperial();
+    let mut blk = forja_doc::Block::new("B");
+    blk.entities.push(block_entity(1, Common::default(), circle()));
+    d.blocks.insert("B".into(), std::sync::Arc::new(blk));
+    let EntityKind::Insert(mut ins) = insert_of("B") else { panic!("an insert") };
+    ins.cols = 1000;
+    d.add(&Space::Model, Common::default(), EntityKind::Insert(ins)).unwrap();
+    d
+}
+
+fn points(l: &DisplayList) -> usize {
+    l.verts.len() + l.tris.len()
+}
+
+#[test]
+fn block_copies_stop_at_the_point_budget_and_say_so() {
+    let d = arrayed_circles();
+    let full = build(&d, &Space::Model, &Options::default());
+    assert!(!full.truncated && points(&full) > 100_000, "{}", points(&full));
+    let l = crate::pipeline::build_space_within(&d, &Space::Model, &Options::default(), false, 10_000);
+    assert!(l.truncated);
+    assert!(points(&l) > 0 && points(&l) <= 10_000, "{}", points(&l));
+    assert!(l.prims.iter().all(|p| p.start as usize + p.len as usize <= l.verts.len()));
+}
+
+#[test]
+fn objects_built_on_all_cores_stop_at_the_point_budget_and_say_so() {
+    // Enough objects for the parallel build: the parts share one budget and report together.
+    let mut d = Drawing::new_imperial();
+    for _ in 0..600 {
+        d.add(&Space::Model, Common::default(), circle()).unwrap();
+    }
+    let l = crate::pipeline::build_space_within(&d, &Space::Model, &Options::default(), false, 10_000);
+    assert!(l.truncated);
+    assert!(points(&l) > 0 && points(&l) <= 10_000, "{}", points(&l));
 }

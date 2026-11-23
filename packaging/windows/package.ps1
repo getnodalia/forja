@@ -126,6 +126,8 @@ $Portable = Join-Path $TargetDir "windows-package\forja-$Version-windows-$Arch-p
 Remove-Item -Recurse -Force $Portable -ErrorAction SilentlyContinue
 New-Item -ItemType Directory -Force -Path $Portable | Out-Null
 Copy-Item (Join-Path $Stage '*.exe') $Portable
+# The ZIP is portable by default; keep the marker out of the MSI staging directory.
+Set-Content -LiteralPath (Join-Path $Portable 'portable.txt') -Encoding Ascii -Value 'Forja portable mode: settings and logs are stored in ForjaData beside the executable.'
 foreach ($f in 'README.md', 'LICENSE', 'LICENSE-MIT', 'LICENSE-APACHE', 'NOTICE', 'ATTRIBUTION.md') {
   $p = Join-Path $Root $f
   if (Test-Path $p) { Copy-Item $p $Portable }

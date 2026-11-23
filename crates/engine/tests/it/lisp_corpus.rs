@@ -6,7 +6,7 @@
 use std::path::{Path, PathBuf};
 
 use forja_engine::Session;
-use forja_engine::cmd::file::{EntityCodec, set_entity_codec};
+use forja_engine::cmd::file::{EntityCodec, set_entity_codec, set_object_records};
 use forja_engine::doc::Entity;
 use serde_json::{Value, json};
 
@@ -220,6 +220,8 @@ fn run_case(dir: &Path) -> Result<(), String> {
 #[test]
 fn autolisp_corpus() {
     set_entity_codec(EntityCodec { groups: forja_io::entity_groups, entity: forja_io::entity_from_groups });
+    // ... and non-graphic objects (tables, dictionaries, layouts) as DXF records.
+    set_object_records(forja_io::object_records);
     let Some(dir) = cases_dir() else {
         eprintln!("FORJA_LISP_CORPUS is not set: the AutoLISP corpus is skipped");
         return;
