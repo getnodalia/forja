@@ -131,14 +131,17 @@ pub fn title_and_toolbar(app: &mut CadApp, ui: &mut egui::Ui) {
                     ui.painter().circle_filled(br.center() + vec2(offset, 0.0), 1.5, t.text);
                 }
                 icons::describe_control(ui, &response, "More toolbar commands", None, false);
-                egui::Popup::menu(&response).show(|ui| {
+                let look = crate::menus::look();
+                nodalia_theme::engineering::menu::popup(egui::Popup::menu(&response), &look).show(|ui| {
                     for (position, index) in fit.overflow.iter().enumerate() {
                         let Some(group) = TOOLBAR.get(*index) else { continue };
                         if position > 0 {
-                            ui.separator();
+                            nodalia_theme::engineering::menu::separator(ui, &look);
                         }
                         for (_, command, label, _) in *group {
-                            let response = ui.button(crate::i18n::t(label));
+                            let label_text = crate::i18n::t(label);
+                            let response =
+                                nodalia_theme::engineering::menu::item(ui, &look, &nodalia_theme::engineering::menu::Item::new(label_text));
                             crate::control::record_widget(ui, &response, label, "button", None);
                             if response.clicked() {
                                 clicked = Some(*command);
@@ -259,14 +262,24 @@ fn title_menus(app: &mut CadApp, ui: &mut egui::Ui) {
     let ctx = ui.ctx().clone();
     let at = |id: egui::Id| ctx.data(|d| d.get_temp::<egui::Pos2>(id.with("at"))).unwrap_or_default();
     let file = crate::menus::tree(app).into_iter().find(|(name, _)| name == "File");
-    egui::Popup::new(file_menu_id(), ctx.clone(), at(file_menu_id()), ui.layer_id()).kind(egui::PopupKind::Menu).open_memory(None).show(|ui| {
+    let look = crate::menus::look();
+    let popup = |id: egui::Id| {
+        nodalia_theme::engineering::menu::popup(
+            egui::Popup::new(id, ctx.clone(), at(id), ui.layer_id()).kind(egui::PopupKind::Menu).open_memory(None),
+            &look,
+        )
+    };
+    popup(file_menu_id()).show(|ui| {
+        ui.set_min_width(nodalia_theme::engineering::menu::metric::MIN_WIDTH);
         for e in file.iter().flat_map(|(_, entries)| entries) {
             crate::menus::entry_ui(ui, e, &mut clicked);
         }
     });
-    egui::Popup::new(app_menu_id(), ctx.clone(), at(app_menu_id()), ui.layer_id()).kind(egui::PopupKind::Menu).open_memory(None).show(|ui| {
+    popup(app_menu_id()).show(|ui| {
+        ui.set_min_width(nodalia_theme::engineering::menu::metric::MIN_WIDTH);
         for (id, label) in APP_MENU {
-            let response = ui.button(crate::i18n::t(label));
+            let label_text = crate::i18n::t(label);
+            let response = nodalia_theme::engineering::menu::item(ui, &look, &nodalia_theme::engineering::menu::Item::new(label_text));
             crate::control::record_widget(ui, &response, label, "button", None);
             if response.clicked() {
                 clicked = Some((*id).to_string());

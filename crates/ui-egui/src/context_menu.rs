@@ -303,7 +303,7 @@ pub fn choose_snap(app: &mut CadApp, id: &str) {
 pub fn groups_ui(ui: &mut egui::Ui, groups: &[Vec<Entry>], clicked: &mut Option<String>) {
     for (i, group) in groups.iter().enumerate() {
         if i > 0 {
-            ui.separator();
+            nodalia_theme::engineering::menu::separator(ui, &crate::menus::look());
         }
         for e in group {
             entry_ui(ui, e, clicked);
@@ -331,7 +331,7 @@ pub fn show(app: &mut CadApp, resp: &egui::Response) {
         }
         return;
     }
-    resp.context_menu(|ui| {
+    nodalia_theme::engineering::menu::popup(egui::Popup::context_menu(resp), &crate::menus::look()).show(|ui| {
         let groups = if snap { snap_entries(app) } else { entries(app) };
         groups_ui(ui, &groups, &mut clicked);
     });
@@ -388,11 +388,12 @@ pub fn in_command(app: &mut CadApp, ui: &egui::Ui, inside: bool, right_clicked: 
         return false;
     }
     let mut clicked = None;
-    let popup = egui::Popup::new(popup_id, ctx, egui::PopupAnchor::PointerFixed, ui.layer_id())
-        .kind(egui::PopupKind::Menu)
-        .layout(egui::Layout::top_down_justified(egui::Align::Min))
-        .style(egui::containers::menu::menu_style)
-        .open_memory(open.then_some(egui::SetOpenCommand::Bool(true)));
+    let popup = nodalia_theme::engineering::menu::popup(
+        egui::Popup::new(popup_id, ctx, egui::PopupAnchor::PointerFixed, ui.layer_id())
+            .kind(egui::PopupKind::Menu)
+            .open_memory(open.then_some(egui::SetOpenCommand::Bool(true))),
+        &crate::menus::look(),
+    );
     popup.show(|ui| {
         if let Some(groups) = command_entries(app) {
             groups_ui(ui, &groups, &mut clicked);

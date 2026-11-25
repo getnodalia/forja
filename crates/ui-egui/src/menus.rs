@@ -737,20 +737,29 @@ pub(crate) fn shortcut_label(s: &str, mac: bool) -> String {
     format!("{shift}{cmd}{}", s.replace("Cmd+", "").replace("Shift+", ""))
 }
 
+/// The look the suite's menus are drawn with (`nodalia_theme::engineering::menu`).
+pub(crate) fn look() -> nodalia_theme::engineering::Look {
+    nodalia_theme::engineering::Look::new(crate::theme::ndl_palette())
+}
+
 pub(crate) fn entry_ui(ui: &mut egui::Ui, e: &Entry, clicked: &mut Option<String>) {
+    use nodalia_theme::engineering::menu;
+    let look = look();
     match e {
         Entry::Item { label, id, shortcut, enabled } => {
-            let mut b = egui::Button::new(crate::i18n::t(label));
-            if let Some(s) = shortcut {
-                b = b.shortcut_text(shortcut_label(s, ui.ctx().os().is_mac()));
+            let label = crate::i18n::t(label);
+            let shortcut = shortcut.as_ref().map(|s| shortcut_label(s, ui.ctx().os().is_mac()));
+            let mut row = menu::Item::new(label).enabled(*enabled);
+            if let Some(s) = &shortcut {
+                row = row.shortcut(s);
             }
-            if ui.add_enabled(*enabled, b).clicked() {
+            if menu::item(ui, &look, &row).clicked() {
                 *clicked = Some(id.clone());
                 ui.close();
             }
         }
         Entry::Sub { label, children } => {
-            ui.menu_button(crate::i18n::menu(label), |ui| {
+            menu::submenu(ui, &look, &menu::Item::new(crate::i18n::menu(label)), |ui| {
                 for c in children {
                     entry_ui(ui, c, clicked);
                 }
@@ -771,7 +780,7 @@ pub fn menu_bar(app: &mut CadApp, ui: &mut egui::Ui) {
                 let titles: Vec<egui::Response> = tree.iter().map(|(name, _)| ui.add(egui::Button::new(crate::i18n::menu(name)))).collect();
                 switch_on_hover(ui.ctx(), &titles);
                 for ((_, entries), title) in tree.iter().zip(&titles) {
-                    egui::Popup::menu(title).show(|ui| {
+                    nodalia_theme::engineering::menu::popup(egui::Popup::menu(title), &look()).show(|ui| {
                         for e in entries {
                             entry_ui(ui, e, &mut clicked);
                         }
