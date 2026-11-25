@@ -76,9 +76,10 @@ fn render(app: &mut CadApp, ctx: &egui::Context) -> Result<(TextureHandle, Strin
     let r = app.session.execute("preview", &json!({ "width": 1600 })).map_err(|e| e.to_string())?;
     let png = r["data"].as_str().and_then(forja_engine::cmd::file::base64_decode).ok_or("the preview has no image")?;
     let tex = preview_texture(ctx, &png)?;
-    let mut info = format!("{} · {}", r["layout"].as_str().unwrap_or(""), r["paper"].as_str().unwrap_or(""));
+    let mut info = format!("{} · {}", crate::i18n::keyword(r["layout"].as_str().unwrap_or("")), r["paper"].as_str().unwrap_or(""));
     if r["landscape"].as_bool() == Some(true) {
-        info.push_str(" · landscape");
+        info.push_str(" · ");
+        info.push_str(crate::tl!("landscape"));
     }
     Ok((tex, info))
 }
@@ -106,24 +107,29 @@ pub fn dialog(app: &mut CadApp, ctx: &egui::Context, open: &mut bool) {
         }
     };
     let (mut close, mut print) = (false, false);
-    crate::ndl_window::Window::new("Plot Preview").open(open).collapsible(false).resizable(false).show(ctx, |ui| {
-        match &preview.shown {
-            Ok((tex, info)) => {
-                ui.label(info);
-                let size = tex.size_vec2();
-                let k = (760.0 / size.x).min(540.0 / size.y).min(1.0);
-                ui.image((tex.id(), size * k));
+    crate::ndl_window::Window::new(crate::tl!("Plot Preview"))
+        .id(egui::Id::unique("Plot Preview"))
+        .open(open)
+        .collapsible(false)
+        .resizable(false)
+        .show(ctx, |ui| {
+            match &preview.shown {
+                Ok((tex, info)) => {
+                    ui.label(info);
+                    let size = tex.size_vec2();
+                    let k = (760.0 / size.x).min(540.0 / size.y).min(1.0);
+                    ui.image((tex.id(), size * k));
+                }
+                Err(e) => {
+                    ui.label(e);
+                }
             }
-            Err(e) => {
-                ui.label(e);
-            }
-        }
-        ui.add_space(4.0);
-        ui.horizontal(|ui| {
-            print = ui.button(crate::tl!("Print...")).clicked();
-            close = ui.button(crate::tl!("Close")).clicked();
+            ui.add_space(4.0);
+            ui.horizontal(|ui| {
+                print = ui.button(crate::tl!("Print...")).clicked();
+                close = ui.button(crate::tl!("Close")).clicked();
+            });
         });
-    });
     if ctx.input(|i| i.key_pressed(egui::Key::Escape)) {
         close = true;
     }

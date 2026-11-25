@@ -29,9 +29,14 @@ fn preview(ui: &mut egui::Ui, tiles: &[VportTile], t: &Tokens) {
 pub fn dialog(app: &mut CadApp, ctx: &egui::Context, open: &mut bool) -> Option<(&'static str, Value)> {
     let t = Tokens::get();
     let Ok(d) = app.session.doc() else {
-        crate::ndl_window::Window::new("Named Viewports").open(open).collapsible(false).resizable(false).show(ctx, |ui| {
-            ui.label(crate::tl!("Open a drawing first."));
-        });
+        crate::ndl_window::Window::new(crate::tl!("Named Viewports"))
+            .id(egui::Id::unique("Named Viewports"))
+            .open(open)
+            .collapsible(false)
+            .resizable(false)
+            .show(ctx, |ui| {
+                ui.label(crate::tl!("Open a drawing first."));
+            });
         return None;
     };
     let configs: Vec<(String, Vec<VportTile>)> = d.vports.iter().filter(|c| !c.is_active()).map(|c| (c.name.clone(), c.tiles.clone())).collect();
@@ -44,52 +49,57 @@ pub fn dialog(app: &mut CadApp, ctx: &egui::Context, open: &mut bool) -> Option<
     let mut action: Option<(&'static str, Value)> = None;
     let mut restore = false;
     let mut close = false;
-    crate::ndl_window::Window::new("Named Viewports").open(open).default_width(400.0).resizable(false).show(ctx, |ui| {
-        if model {
-            ui.label(format!("Current name: {}", current.as_deref().unwrap_or(VportConfig::ACTIVE)));
-        } else {
-            ui.label(RichText::new("Saved model space configurations to place in this layout").color(t.text_dim));
-        }
-        ui.separator();
-        if configs.is_empty() {
-            ui.label(crate::tl!("This drawing has no named viewport configurations."));
-        }
-        ui.horizontal_top(|ui| {
-            egui::ScrollArea::vertical().id_salt("namedvp_list").max_height(120.0).min_scrolled_width(180.0).show(ui, |ui| {
-                ui.set_min_width(180.0);
-                for (name, _) in &configs {
-                    let r = ui.selectable_label(sel.as_deref() == Some(name.as_str()), name);
-                    if r.clicked() {
-                        sel = Some(name.clone());
+    crate::ndl_window::Window::new(crate::tl!("Named Viewports"))
+        .id(egui::Id::unique("Named Viewports"))
+        .open(open)
+        .default_width(400.0)
+        .resizable(false)
+        .show(ctx, |ui| {
+            if model {
+                ui.label(crate::tf!("Current name: {current}", current = current.as_deref().unwrap_or(VportConfig::ACTIVE)));
+            } else {
+                ui.label(RichText::new(crate::tl!("Saved model space configurations to place in this layout")).color(t.text_dim));
+            }
+            ui.separator();
+            if configs.is_empty() {
+                ui.label(crate::tl!("This drawing has no named viewport configurations."));
+            }
+            ui.horizontal_top(|ui| {
+                egui::ScrollArea::vertical().id_salt("namedvp_list").max_height(120.0).min_scrolled_width(180.0).show(ui, |ui| {
+                    ui.set_min_width(180.0);
+                    for (name, _) in &configs {
+                        let r = ui.selectable_label(sel.as_deref() == Some(name.as_str()), name);
+                        if r.clicked() {
+                            sel = Some(name.clone());
+                        }
+                        if r.double_clicked() {
+                            sel = Some(name.clone());
+                            restore = true;
+                        }
                     }
-                    if r.double_clicked() {
-                        sel = Some(name.clone());
-                        restore = true;
-                    }
+                });
+                let tiles = sel.as_ref().and_then(|s| configs.iter().find(|c| c.0 == *s)).map(|c| c.1.as_slice()).unwrap_or_default();
+                preview(ui, tiles, &t);
+            });
+            ui.separator();
+            ui.horizontal(|ui| {
+                let hint = if model { "Show this configuration's viewports" } else { "Place this configuration's viewports in the layout" };
+                if ui.add_enabled(sel.is_some(), egui::Button::new(crate::tl!("Restore"))).on_hover_text(hint).clicked() {
+                    restore = true;
+                }
+                if ui
+                    .add_enabled(sel.is_some(), egui::Button::new(crate::tl!("Delete")))
+                    .on_hover_text(crate::tl!("Delete the saved configuration"))
+                    .clicked()
+                    && let Some(n) = &sel
+                {
+                    action = Some(("vports.named", json!({ "name": n, "delete": true })));
+                }
+                if ui.button(crate::tl!("Close")).clicked() {
+                    close = true;
                 }
             });
-            let tiles = sel.as_ref().and_then(|s| configs.iter().find(|c| c.0 == *s)).map(|c| c.1.as_slice()).unwrap_or_default();
-            preview(ui, tiles, &t);
         });
-        ui.separator();
-        ui.horizontal(|ui| {
-            let hint = if model { "Show this configuration's viewports" } else { "Place this configuration's viewports in the layout" };
-            if ui.add_enabled(sel.is_some(), egui::Button::new(crate::tl!("Restore"))).on_hover_text(hint).clicked() {
-                restore = true;
-            }
-            if ui
-                .add_enabled(sel.is_some(), egui::Button::new(crate::tl!("Delete")))
-                .on_hover_text(crate::tl!("Delete the saved configuration"))
-                .clicked()
-                && let Some(n) = &sel
-            {
-                action = Some(("vports.named", json!({ "name": n, "delete": true })));
-            }
-            if ui.button(crate::tl!("Close")).clicked() {
-                close = true;
-            }
-        });
-    });
     if let Some(n) = sel.clone() {
         set_temp(ctx, "namedvp_sel", n);
     }

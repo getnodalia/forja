@@ -341,6 +341,12 @@ pub fn tr<'a>(language: &str, source: &'a str) -> &'a str {
     catalog(language).and_then(|c| c.get(&("", source))).copied().unwrap_or(source)
 }
 
+/// A name the drawing owns, shown translated when it is one of the keywords every drawing starts
+/// with (`Standard`, `ByLayer`, `ByBlock`, `Model`); any other name is the user's and stays as typed.
+pub fn keyword(name: &str) -> &str {
+    if matches!(name, "Standard" | "ByLayer" | "ByBlock" | "Model") { t(name) } else { name }
+}
+
 pub fn t(source: &str) -> &str {
     CURRENT.with(|l| tr(l.get(), source))
 }

@@ -235,10 +235,10 @@ const INSERTION_UNITS: [&str; 25] = [
 
 /// A combo box over `(value, label)` options.
 fn pick(ui: &mut egui::Ui, salt: &str, value: &mut i64, options: &[(i64, String)]) {
-    let current = options.iter().find(|o| o.0 == *value).map(|o| o.1.clone()).unwrap_or_default();
+    let current = options.iter().find(|o| o.0 == *value).map(|o| crate::i18n::t(&o.1).to_string()).unwrap_or_default();
     crate::ndl_widgets::combo(salt).selected_text(current).width(180.0).show_ui(ui, |ui| {
         for (k, label) in options {
-            ui.selectable_value(value, *k, label);
+            ui.selectable_value(value, *k, crate::i18n::t(label));
         }
     });
 }
@@ -269,47 +269,52 @@ fn units(app: &mut CadApp, ctx: &egui::Context, open: &mut bool) {
             .unwrap_or([2, 4, 0, 0, 1])
     });
     let (mut apply, mut cancel) = (false, false);
-    crate::ndl_window::Window::new("Drawing Units").open(open).resizable(false).collapsible(false).show(ctx, |ui| {
-        let [lu, lp, au, ap, ins] = &mut v;
-        let types = |t: &[(i64, &str)]| t.iter().map(|(k, l)| (*k, l.to_string())).collect::<Vec<_>>();
-        egui::Grid::new("units_grid").num_columns(2).spacing(vec2(12.0, 6.0)).show(ui, |ui| {
-            ui.strong(crate::tl!("Length"));
-            ui.end_row();
-            ui.label(crate::tl!("Type"));
-            pick(ui, "units_lunits", lu, &types(&LENGTH_TYPES));
-            ui.end_row();
-            ui.label(crate::tl!("Precision"));
-            pick(ui, "units_luprec", lp, &length_precisions(*lu));
-            ui.end_row();
-            ui.strong(crate::tl!("Angle"));
-            ui.end_row();
-            ui.label(crate::tl!("Type"));
-            pick(ui, "units_aunits", au, &types(&ANGLE_TYPES));
-            ui.end_row();
-            ui.label(crate::tl!("Precision"));
-            pick(ui, "units_auprec", ap, &(0..=8).map(|p| (p, format_angle(45f64.to_radians(), *au, p))).collect::<Vec<_>>());
-            ui.end_row();
-            ui.strong(crate::tl!("Insertion scale"));
-            ui.end_row();
-            ui.label(crate::tl!("Units to scale inserted content"));
-            let names = INSERTION_UNITS.iter().enumerate().map(|(k, l)| (k as i64, l.to_string())).collect::<Vec<_>>();
-            pick(ui, "units_insunits", ins, &names);
-            ui.end_row();
-            ui.strong(crate::tl!("Sample output"));
-            ui.end_row();
-            ui.label("");
-            ui.label(format!("{},{},{}", format_distance(1.5, *lu, *lp), format_distance(2.0039, *lu, *lp), format_distance(0.0, *lu, *lp)));
-            ui.end_row();
-            ui.label("");
-            ui.label(format_angle(45f64.to_radians(), *au, *ap));
-            ui.end_row();
+    crate::ndl_window::Window::new(crate::tl!("Drawing Units"))
+        .id(egui::Id::unique("Drawing Units"))
+        .open(open)
+        .resizable(false)
+        .collapsible(false)
+        .show(ctx, |ui| {
+            let [lu, lp, au, ap, ins] = &mut v;
+            let types = |t: &[(i64, &str)]| t.iter().map(|(k, l)| (*k, l.to_string())).collect::<Vec<_>>();
+            egui::Grid::new("units_grid").num_columns(2).spacing(vec2(12.0, 6.0)).show(ui, |ui| {
+                ui.strong(crate::tl!("Length"));
+                ui.end_row();
+                ui.label(crate::tl!("Type"));
+                pick(ui, "units_lunits", lu, &types(&LENGTH_TYPES));
+                ui.end_row();
+                ui.label(crate::tl!("Precision"));
+                pick(ui, "units_luprec", lp, &length_precisions(*lu));
+                ui.end_row();
+                ui.strong(crate::tl!("Angle"));
+                ui.end_row();
+                ui.label(crate::tl!("Type"));
+                pick(ui, "units_aunits", au, &types(&ANGLE_TYPES));
+                ui.end_row();
+                ui.label(crate::tl!("Precision"));
+                pick(ui, "units_auprec", ap, &(0..=8).map(|p| (p, format_angle(45f64.to_radians(), *au, p))).collect::<Vec<_>>());
+                ui.end_row();
+                ui.strong(crate::tl!("Insertion scale"));
+                ui.end_row();
+                ui.label(crate::tl!("Units to scale inserted content"));
+                let names = INSERTION_UNITS.iter().enumerate().map(|(k, l)| (k as i64, l.to_string())).collect::<Vec<_>>();
+                pick(ui, "units_insunits", ins, &names);
+                ui.end_row();
+                ui.strong(crate::tl!("Sample output"));
+                ui.end_row();
+                ui.label("");
+                ui.label(format!("{},{},{}", format_distance(1.5, *lu, *lp), format_distance(2.0039, *lu, *lp), format_distance(0.0, *lu, *lp)));
+                ui.end_row();
+                ui.label("");
+                ui.label(format_angle(45f64.to_radians(), *au, *ap));
+                ui.end_row();
+            });
+            ui.separator();
+            ui.horizontal(|ui| {
+                apply = ui.button(crate::tl!("OK")).clicked();
+                cancel = ui.button(crate::tl!("Cancel")).clicked();
+            });
         });
-        ui.separator();
-        ui.horizontal(|ui| {
-            apply = ui.button("OK").clicked();
-            cancel = ui.button(crate::tl!("Cancel")).clicked();
-        });
-    });
     if apply {
         let [lu, lp, au, ap, ins] = v;
         let _ = app.run("units", json!({ "lunits": lu, "luprec": lp, "aunits": au, "auprec": ap, "insunits": ins }));

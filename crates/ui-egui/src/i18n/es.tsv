@@ -162,7 +162,7 @@
 	Command Line History Lines	Líneas del historial de comandos
 	Command Reference	Referencia de comandos
 	Command line history	Historial de la línea de comandos
-	Commits	Commits
+	Commits	Confirmaciones
 	Company	Empresa
 	Compare Drawings...	Comparar dibujos...
 	Computer-aided design and drafting: an open-source, clean-room CAD application written in pure Rust.	Diseño y dibujo asistidos por computadora: una aplicación CAD de código abierto, desarrollada de forma independiente y escrita íntegramente en Rust.
@@ -1259,20 +1259,20 @@
 	Check for Updates…	Buscar actualizaciones…
 	Forja is up to date.	Forja está actualizado.
 	Could not check for updates.	No se pudo buscar actualizaciones.
-	Find All	Find All
-	Find what:	Find what:
-	Match case	Match case
-	Replace	Replace
-	Replace All	Replace All
-	Replace with:	Replace with:
-	Replacement text	Replacement text
-	Results	Results
-	Searches the current space.	Searches the current space.
-	Text to find	Text to find
-	Whole words	Whole words
-	Nothing found	Nothing found
-	Ctrl+Enter to apply	Ctrl+Enter to apply
-	Edit Text	Edit Text
+	Find All	Buscar todo
+	Find what:	Buscar:
+	Match case	Coincidir mayúsculas y minúsculas
+	Replace	Reemplazar
+	Replace All	Reemplazar todo
+	Replace with:	Reemplazar con:
+	Replacement text	Texto de reemplazo
+	Results	Resultados
+	Searches the current space.	Busca en el espacio actual.
+	Text to find	Texto que buscar
+	Whole words	Palabras completas
+	Nothing found	No se encontró nada
+	Ctrl+Enter to apply	Ctrl+Intro para aplicar
+	Edit Text	Editar texto
 	The drawing changed. Close the window and open it again.	El dibujo cambió. Cierre la ventana y ábrala de nuevo.
 # Home, Options, hatch, block editor, aliases, shortcuts and save dialogs (added with the Nodalia interface).
 	A bracket with its layouts	Un soporte con sus presentaciones
@@ -1545,3 +1545,4 @@
 	Bring every reference in line with these definitions	Poner todas las referencias de acuerdo con estas definiciones
 	This drawing has no named viewport configurations.	Este dibujo no tiene configuraciones de ventanas gráficas con nombre.
 	Delete the saved configuration	Eliminar la configuración guardada
+	landscape	horizontal
