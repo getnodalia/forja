@@ -234,9 +234,9 @@ const INSERTION_UNITS: [&str; 25] = [
 ];
 
 /// A combo box over `(value, label)` options.
-fn pick(ui: &mut egui::Ui, salt: &str, value: &mut i64, options: &[(i64, String)]) {
+fn pick(ui: &mut egui::Ui, widget: &str, value: &mut i64, options: &[(i64, String)]) {
     let current = options.iter().find(|o| o.0 == *value).map(|o| crate::i18n::t(&o.1).to_string()).unwrap_or_default();
-    crate::ndl_widgets::combo(salt).selected_text(current).width(180.0).show_ui(ui, |ui| {
+    crate::ndl_widgets::combo(widget).selected_text(current).width(180.0).show_ui(ui, |ui| {
         for (k, label) in options {
             ui.selectable_value(value, *k, crate::i18n::t(label));
         }
