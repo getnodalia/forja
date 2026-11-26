@@ -159,6 +159,20 @@ pub enum Icon {
     ZoomFit,
     TextStyle,
     DimStyle,
+    // The 3D modelling tools: the only icons drawn in volume (see `ndl_icons::volumetric_name`).
+    Box,
+    Cylinder,
+    Cone,
+    Sphere,
+    Torus,
+    Pyramid,
+    Extrude,
+    Revolve,
+    Sweep,
+    Loft,
+    Union,
+    Subtract,
+    Intersect,
 }
 
 /// Every icon, for tests and the icon catalogue.
@@ -311,6 +325,19 @@ pub const ALL: &[Icon] = &[
     Icon::ZoomFit,
     Icon::TextStyle,
     Icon::DimStyle,
+    Icon::Box,
+    Icon::Cylinder,
+    Icon::Cone,
+    Icon::Sphere,
+    Icon::Torus,
+    Icon::Pyramid,
+    Icon::Extrude,
+    Icon::Revolve,
+    Icon::Sweep,
+    Icon::Loft,
+    Icon::Union,
+    Icon::Subtract,
+    Icon::Intersect,
 ];
 
 /// Paint `icon` into `rect` (square), with `dim` for disabled.
@@ -323,6 +350,17 @@ pub fn paint(p: &Painter, rect: Rect, icon: Icon, dim: bool) {
     crate::ndl_icons::paint(p, rect, icon, alpha(t.icon), alpha(t.icon_accent));
 }
 
+/// [`paint`] for a tool button of the Tool Sets: every tool in the CAD style (fine stroke, the
+/// geometry it creates in the accent), so Copy, Rotate or Erase do not turn bold next to Trim.
+pub fn paint_tool(p: &Painter, rect: Rect, icon: Icon, dim: bool) {
+    if rect.width() >= crate::ndl_icons::VOLUMETRIC_FROM && crate::ndl_icons::paint_volumetric(p, rect, icon, dim) {
+        return;
+    }
+    let t = Tokens::get();
+    let alpha = |c: Color32| if dim { c.gamma_multiply(0.4) } else { c };
+    crate::ndl_icons::paint_kind(p, rect, icon, crate::ndl_icons::Kind::Cad, alpha(t.icon), alpha(t.icon_accent));
+}
+
 /// A shared button interaction with Forja's original multicolor icon painting.
 pub fn button(ui: &mut egui::Ui, icon: Icon, size: f32, tooltip: &str, selected: bool) -> egui::Response {
     button_bare(ui, icon, size, tooltip, selected).on_hover_text(crate::i18n::t(tooltip))
@@ -330,6 +368,15 @@ pub fn button(ui: &mut egui::Ui, icon: Icon, size: f32, tooltip: &str, selected:
 
 /// [`button`] without its hover text, for callers that show a richer tooltip of their own.
 pub fn button_bare(ui: &mut egui::Ui, icon: Icon, size: f32, tooltip: &str, selected: bool) -> egui::Response {
+    button_with(ui, icon, size, tooltip, selected, paint)
+}
+
+/// A Tool Sets button: [`button`] drawn with [`paint_tool`].
+pub fn tool_button(ui: &mut egui::Ui, icon: Icon, size: f32, tooltip: &str, selected: bool) -> egui::Response {
+    button_with(ui, icon, size, tooltip, selected, paint_tool).on_hover_text(crate::i18n::t(tooltip))
+}
+
+fn button_with(ui: &mut egui::Ui, icon: Icon, size: f32, tooltip: &str, selected: bool, draw: fn(&Painter, Rect, Icon, bool)) -> egui::Response {
     let t = Tokens::get();
     let visuals = |fill| ButtonVisuals { fill, stroke: Stroke::NONE, icon: t.icon };
     let style = IconButtonStyle {
@@ -343,7 +390,7 @@ pub fn button_bare(ui: &mut egui::Ui, icon: Icon, size: f32, tooltip: &str, sele
     let resp = IconButton::new(crate::i18n::t(tooltip), egui::vec2(size, size), &style).selected(selected).show(ui, |ui, rect, _| {
         // A single tint would erase the blue geometry and orange picked points. Keep the
         // original painter and its explicit dimming on the same parent-enabled UI.
-        paint(ui.painter(), rect.shrink(size * 0.08), icon, !ui.is_enabled());
+        draw(ui.painter(), rect.shrink(size * 0.08), icon, !ui.is_enabled());
     });
     crate::control::record_widget(ui, &resp, tooltip, "button", Some(selected));
     resp

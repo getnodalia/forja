@@ -227,17 +227,15 @@ pub fn toolsets(app: &mut CadApp, ui: &mut egui::Ui) {
                     });
                     if !collapsed {
                         ui.add_space(4.0);
-                        // Large icons.
-                        if !large.is_empty() {
+                        // Large icons, 4 per row.
+                        let large_shown: Vec<Tool> = large.iter().copied().filter(|(_, cmd, _)| !hidden(cmd)).collect();
+                        for row in large_shown.chunks(4) {
                             ui.horizontal(|ui| {
                                 ui.add_space(8.0);
                                 ui.spacing_mut().item_spacing = vec2(8.0, 0.0);
-                                for (icon, cmd, tip) in large.iter() {
-                                    if hidden(cmd) {
-                                        continue;
-                                    }
+                                for (icon, cmd, tip) in row.iter() {
                                     ui.add_enabled_ui(command_known(cmd), |ui| {
-                                        if icons::button(ui, *icon, 40.0, tip, false).clicked() {
+                                        if icons::tool_button(ui, *icon, 40.0, tip, false).clicked() {
                                             clicked = Some(cmd);
                                         }
                                     });
@@ -253,7 +251,7 @@ pub fn toolsets(app: &mut CadApp, ui: &mut egui::Ui) {
                                 ui.spacing_mut().item_spacing = vec2(2.0, 0.0);
                                 for (icon, cmd, tip) in row.iter() {
                                     ui.add_enabled_ui(command_known(cmd), |ui| {
-                                        if icons::button(ui, *icon, 23.0, tip, false).clicked() {
+                                        if icons::tool_button(ui, *icon, 23.0, tip, false).clicked() {
                                             clicked = Some(cmd);
                                         }
                                     });
@@ -294,15 +292,27 @@ pub fn toolsets(app: &mut CadApp, ui: &mut egui::Ui) {
 pub const MODELING: &[(&str, &[Tool], &[Tool])] = &[
     (
         "Primitives",
-        &[(Icon::Blocks, "box", "Box"), (Icon::Circle, "cylinder", "Cylinder"), (Icon::Polygon, "pyramid", "Pyramid")],
-        &[(Icon::Ellipse, "sphere", "Sphere"), (Icon::Donut, "torus", "Torus"), (Icon::Arc, "cone", "Cone")],
+        &[
+            (Icon::Box, "box", "Box"),
+            (Icon::Cylinder, "cylinder", "Cylinder"),
+            (Icon::Cone, "cone", "Cone"),
+            (Icon::Sphere, "sphere", "Sphere"),
+            (Icon::Torus, "torus", "Torus"),
+            (Icon::Pyramid, "pyramid", "Pyramid"),
+        ],
+        &[],
     ),
     (
         "Solid",
-        &[(Icon::Extend, "extrude", "Extrude"), (Icon::Rotate, "revolve", "Revolve")],
-        &[(Icon::Spline, "sweep", "Sweep"), (Icon::Offset, "loft", "Loft")],
+        &[
+            (Icon::Extrude, "extrude", "Extrude"),
+            (Icon::Revolve, "revolve", "Revolve"),
+            (Icon::Sweep, "sweep", "Sweep"),
+            (Icon::Loft, "loft", "Loft"),
+        ],
+        &[],
     ),
-    ("Boolean", &[(Icon::Join, "union", "Union"), (Icon::Trim, "subtract", "Subtract"), (Icon::Region, "intersect", "Intersect")], &[]),
+    ("Boolean", &[(Icon::Union, "union", "Union"), (Icon::Subtract, "subtract", "Subtract"), (Icon::Intersect, "intersect", "Intersect")], &[]),
     ("View", &[(Icon::Orbit, "3dorbit", "Orbit"), (Icon::ZoomExtents, "zoom.extents", "Zoom Extents")], &[]),
 ];
 
