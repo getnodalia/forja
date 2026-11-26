@@ -83,8 +83,8 @@ when done.
   storytold", whose name is kept for branch protection). Licences stay inside Foundation's
   allowlist.
 - **Rust only, and never break wasm** (`cargo xtask wasm`).
-- The weekly upstream sync keeps the files listed in `.github/upstream-keep`; add any file this
-  project owns there.
+- There is no upstream sync: Forja is its own app, and the origin of its code base is credited in
+  `NOTICE`.
 
 ## NDL
 
