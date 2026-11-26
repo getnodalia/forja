@@ -697,3 +697,107 @@ fn the_recovery_and_manager_dialogs_speak_spanish() {
     });
     with_language("en", || assert_eq!(t("Close Forja"), "Close Forja"));
 }
+
+/// Each separate piece of text a frame paints, one line at a time.
+fn painted_lines(shapes: &[egui::epaint::ClippedShape]) -> BTreeSet<String> {
+    painted_text(shapes).lines().map(str::trim).filter(|l| !l.is_empty()).map(str::to_owned).collect()
+}
+
+/// The text one surface paints in `language`: the dialog (if any), over the window's own chrome.
+fn surface_lines(language: Preference, dialog: Option<&str>) -> BTreeSet<String> {
+    let mut app = CadApp::new(Session::new(), Services::default());
+    app.ui.in_window_menu = true;
+    app.ui.interface_language = language;
+    app.ui.dialog = dialog.map(str::to_owned);
+    let ctx = egui::Context::default();
+    app.logic(&ctx);
+    let input = egui::RawInput { screen_rect: Some(egui::Rect::from_min_size(egui::Pos2::ZERO, egui::vec2(1600.0, 1000.0))), ..Default::default() };
+    let mut lines = BTreeSet::new();
+    for _ in 0..3 {
+        let mut output = ctx.run_ui(input.clone(), |ui| app.ui(ui));
+        lines = painted_lines(&output.shapes);
+        output.textures_delta.clear();
+    }
+    lines
+}
+
+/// Every dialog the app can show, by the name `ui.dialog` takes.
+fn dialog_names() -> Vec<String> {
+    let mut names: Vec<String> = [
+        "spacemouse",
+        "language",
+        "layers",
+        "qselect",
+        "parameters",
+        "dsettings",
+        "units",
+        "hatch",
+        "aliasedit",
+        "find",
+        crate::keys::DIALOG,
+        "about",
+        "preview",
+        "commands",
+        "bedit",
+        "authoring",
+        "stylesmanager",
+        "battman",
+        "linetype",
+        "ptype",
+        "textstyle",
+        "tablestyle",
+        "mleaderstyle",
+        "pagesetup",
+        "csettings",
+        "namedvports",
+        "plot",
+    ]
+    .iter()
+    .map(|n| (*n).to_owned())
+    .collect();
+    names.extend(["display", "files", "drafting", "selection", "preferences", "profiles"].iter().map(|id| format!("options:{id}")));
+    names
+}
+
+/// Lines a surface paints the same in English and in `language` although the catalog translates
+/// them: text drawn without going through the catalog.
+fn untranslated_lines(language: &Language, dialog: Option<&str>) -> Vec<String> {
+    let preference = Preference::parse(language.code).unwrap();
+    let english = surface_lines(Preference::English, dialog);
+    let translated = surface_lines(preference, dialog);
+    english.intersection(&translated).filter(|line| tr(language.code, line) != line.as_str()).cloned().collect()
+}
+
+/// A screen that paints a line the Spanish catalog translates, without going through the catalog,
+/// shows English to everyone who runs Forja in Spanish.
+#[test]
+fn spanish_interface_draws_no_line_the_catalog_translates_in_english() {
+    let spanish = LANGUAGES.iter().find(|l| l.code == "es").unwrap();
+    let mut failures = Vec::new();
+    for dialog in std::iter::once(None).chain(dialog_names().into_iter().map(Some)) {
+        let lines = untranslated_lines(spanish, dialog.as_deref());
+        if !lines.is_empty() {
+            failures.push(format!("{}: {lines:?}", dialog.as_deref().unwrap_or("main window")));
+        }
+    }
+    assert!(failures.is_empty(), "lines drawn in English although Spanish has them:\n{}", failures.join("\n"));
+}
+
+/// Prints, per surface, the lines that read the same in English and Spanish and that the catalog
+/// does not know either: `cargo test -p forja-ui-egui --lib -- --ignored --nocapture untranslated_report`.
+#[test]
+#[ignore = "a report"]
+fn untranslated_report() {
+    let spanish = LANGUAGES.iter().find(|l| l.code == "es").unwrap();
+    for dialog in std::iter::once(None).chain(dialog_names().into_iter().map(Some)) {
+        let preference = Preference::Spanish;
+        let english = surface_lines(Preference::English, dialog.as_deref());
+        let translated = surface_lines(preference, dialog.as_deref());
+        let same: Vec<_> = english.intersection(&translated).filter(|l| l.chars().any(|c| c.is_alphabetic())).collect();
+        println!("== {}", dialog.as_deref().unwrap_or("main window"));
+        for line in same {
+            let note = if tr(spanish.code, line) != line.as_str() { " [HAS ROW]" } else { "" };
+            println!("   {line}{note}");
+        }
+    }
+}

@@ -592,8 +592,8 @@ fn report_bad(app: &mut CadApp, bad: Option<String>) {
 
 /// A drop-down of `items` showing `current`; returns the item clicked.
 fn pick_menu(ui: &mut egui::Ui, current: &str, items: impl IntoIterator<Item = String>) -> Option<String> {
-    // Names are the drawing's own; only the ByLayer/ByBlock keywords are translated.
-    let shown = |s: &str| if ["ByLayer", "ByBlock"].contains(&s) { crate::i18n::t(s).to_string() } else { s.to_string() };
+    // Names are the drawing's own; only the keywords every drawing starts with are translated.
+    let shown = |s: &str| crate::i18n::keyword(s).to_string();
     let mut out = None;
     ui.menu_button(shown(current), |ui| {
         for it in items {
