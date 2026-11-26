@@ -1,59 +1,68 @@
-//! The About window, laid out like every Nodalia app's About: the app icon, its name, who makes
-//! it, the version as a pill and one line on what it is, then a card of rows (website, licence).
+//! The About window every Nodalia app shows (`nodalia_theme::about`): the heading with its round
+//! close button, then the page with Forja's icon, name and version, what it is, the suite it
+//! belongs to and the links, in the engineering suite's faces. There are no Contributors or Models
+//! tabs; the authors of the code this app began from are credited in `NOTICE`.
 
-use egui::{Color32, RichText, Sense, TextureHandle, Ui, vec2};
+use egui::{Rect, TextureHandle};
+use nodalia_theme::about as ndl;
+use nodalia_theme::engineering::{self as eng, Look};
 
-use crate::icons::Icon;
 use crate::ndl_window;
-use crate::theme::Tokens;
 
-const WEBSITE: &str = "https://github.com/danielmigueltejedor/forja";
+const WEBSITE: &str = "https://getnodalia.com/forja";
+const GITHUB: &str = "https://github.com/getnodalia/forja";
+const ISSUES: &str = "https://github.com/getnodalia/forja/issues";
 const ICON_PNG: &[u8] = include_bytes!("../../../assets/app-icon/hicolor/128x128/apps/dev.danielmiguelt.Forja.png");
-/// The width of the About page: NDL's dialog width.
-const WIDTH: f32 = 380.0;
 
 pub fn show(ctx: &egui::Context, open: &mut bool) {
+    let look = eng::about_look(&Look::new(crate::theme::ndl_palette()));
+    let mut close = false;
+    let mut link = None;
     ndl_window::Window::new("")
         .id(egui::Id::unique("About Forja"))
         .open(open)
+        .title_bar(false)
         .resizable(false)
         .pivot(egui::Align2::CENTER_CENTER)
         .default_pos(ctx.content_rect().center())
         .show(ctx, |ui| {
-            ui.set_width(WIDTH);
-            about_page(ui);
+            ui.set_width(ndl::measures::WIDTH);
+            close = ndl::heading(ui, &look, crate::tl!("About Forja"), egui::Id::NULL.with("forja.about.close")).closed;
+            let version = crate::tf!("Version {version}", version = env!("CARGO_PKG_VERSION"));
+            let links = [
+                ndl::Link { label: crate::tl!("Forja page"), url: WEBSITE },
+                ndl::Link { label: crate::tl!("GitHub"), url: GITHUB },
+                ndl::Link { label: crate::tl!("Report an issue"), url: ISSUES },
+            ];
+            let info = ndl::Info {
+                name: "Forja",
+                version: &version,
+                tagline: crate::tl!("Computer-aided design and drafting: an open-source, clean-room CAD application written in pure Rust."),
+                suite: crate::tl!("Part of the Nodalia suite of open engineering tools."),
+                links: &links,
+                footer: crate::tl!("Open source. No telemetry."),
+            };
+            let icon = icon(ui.ctx());
+            let page = ndl::page(ui, &look, &info, |ui, rect: Rect| {
+                if let Some(icon) = &icon {
+                    egui::Image::new(icon).fit_to_exact_size(rect.size()).paint_at(ui, rect);
+                }
+            });
+            if let Some(i) = page.picked {
+                link = links.get(i).map(|l| l.url);
+            }
+            ui.add_space(4.0);
+            ui.vertical_centered(|ui| {
+                let dim = ui.visuals().weak_text_color();
+                ui.label(egui::RichText::new(crate::tl!("Not affiliated with Autodesk, Inc.")).small().color(dim));
+            });
         });
-}
-
-fn about_page(ui: &mut Ui) {
-    let t = Tokens::get();
-    ui.vertical_centered(|ui| {
-        if let Some(icon) = icon(ui.ctx()) {
-            ui.add(egui::Image::new(&icon).fit_to_exact_size(vec2(112.0, 112.0)));
-        }
-        ui.add_space(4.0);
-        ui.label(RichText::new("Forja").size(26.0).strong().color(t.text));
-        ui.label(RichText::new("Daniel Miguel Tejedor").color(t.text_dim));
-        ui.add_space(4.0);
-        pill(ui, env!("CARGO_PKG_VERSION"));
-        ui.add_space(8.0);
-        ui.label(
-            RichText::new(crate::tl!("Computer-aided design and drafting: an open-source, clean-room CAD application written in pure Rust."))
-                .color(t.text),
-        );
-    });
-    ui.add_space(14.0);
-    card(ui, |ui| {
-        if row(ui, Some(Icon::Share), crate::tl!("Website"), None, true) {
-            ui.ctx().open_url(egui::OpenUrl::new_tab(WEBSITE));
-        }
-        separator(ui);
-        row(ui, None, crate::tl!("Licence"), Some("MIT OR Apache-2.0"), false);
-    });
-    ui.add_space(10.0);
-    ui.vertical_centered(|ui| {
-        ui.label(RichText::new(crate::tl!("Not affiliated with Autodesk, Inc.")).small().color(t.text_faint));
-    });
+    if let Some(url) = link {
+        ctx.open_url(egui::OpenUrl::new_tab(url));
+    }
+    if close {
+        *open = false;
+    }
 }
 
 /// The app icon as a texture, decoded once.
@@ -70,67 +79,4 @@ pub(crate) fn icon(ctx: &egui::Context) -> Option<TextureHandle> {
     let texture = ctx.load_texture("about_icon", image, options);
     ctx.data_mut(|d| d.insert_temp(id, texture.clone()));
     Some(texture)
-}
-
-/// A small rounded label: NDL's pill, as wide as its text.
-fn pill(ui: &mut Ui, text: &str) {
-    let p = crate::theme::ndl_palette();
-    let font = egui::TextStyle::Small.resolve(ui.style());
-    let galley = ui.painter().layout_no_wrap(text.to_owned(), font, crate::theme::ndl_color(p.accent_text));
-    let size = galley.size() + vec2(20.0, 6.0);
-    let (rect, _) = ui.allocate_exact_size(size, Sense::hover());
-    ui.painter().rect_filled(rect, size.y / 2.0, crate::theme::ndl_color(p.accent_subtle));
-    ui.painter().galley(rect.center() - galley.size() / 2.0, galley, Color32::PLACEHOLDER);
-}
-
-/// NDL's grouped card: rows on a raised surface with rounded corners.
-fn card(ui: &mut Ui, add: impl FnOnce(&mut Ui)) {
-    egui::Frame::new().fill(ndl_window::raised(ui, 0)).corner_radius(12.0).inner_margin(egui::Margin::symmetric(4, 4)).show(ui, |ui| {
-        ui.set_width(ui.available_width());
-        ui.spacing_mut().item_spacing.y = 0.0;
-        add(ui);
-    });
-}
-
-fn separator(ui: &mut Ui) {
-    let t = Tokens::get();
-    let w = ui.available_width();
-    let (rect, _) = ui.allocate_exact_size(vec2(w, 1.0), Sense::hover());
-    ui.painter().hline(rect.x_range().shrink(10.0), rect.center().y, egui::Stroke::new(1.0, t.border));
-}
-
-/// One row of a card. True when an activatable row was clicked.
-fn row(ui: &mut Ui, icon: Option<Icon>, title: &str, value: Option<&str>, activatable: bool) -> bool {
-    let t = Tokens::get();
-    let w = ui.available_width();
-    let sense = if activatable { Sense::click() } else { Sense::hover() };
-    let (rect, response) = ui.allocate_exact_size(vec2(w, 40.0), sense);
-    if activatable && response.hovered() {
-        ui.painter().rect_filled(rect, 9.0, ndl_window::raised(ui, 2));
-    }
-    let inner = rect.shrink2(vec2(12.0, 0.0));
-    let mut x = inner.left();
-    if let Some(icon) = icon {
-        let r = egui::Rect::from_center_size(egui::pos2(x + 9.0, inner.center().y), vec2(18.0, 18.0));
-        crate::ndl_icons::paint_ink(ui.painter(), r, icon, t.text_dim);
-        x += 28.0;
-    }
-    let font = egui::TextStyle::Body.resolve(ui.style());
-    ui.painter().text(egui::pos2(x, inner.center().y), egui::Align2::LEFT_CENTER, title, font.clone(), t.text);
-    if let Some(value) = value {
-        ui.painter().text(inner.right_center(), egui::Align2::RIGHT_CENTER, value, font, t.text_dim);
-    } else if activatable {
-        chevron(ui, inner.right_center(), t.text_dim);
-    }
-    let response = response.on_hover_cursor(if activatable { egui::CursorIcon::PointingHand } else { egui::CursorIcon::Default });
-    response.widget_info(|| egui::WidgetInfo::labeled(egui::Role::Button, true, title));
-    activatable && response.clicked()
-}
-
-/// A ›, drawn so it matches NDL's stroke rather than a font's glyph.
-fn chevron(ui: &Ui, right_center: egui::Pos2, color: Color32) {
-    let c = right_center - vec2(5.0, 0.0);
-    let s = egui::Stroke::new(1.75, color);
-    ui.painter().line_segment([c + vec2(-3.0, -5.0), c + vec2(2.0, 0.0)], s);
-    ui.painter().line_segment([c + vec2(2.0, 0.0), c + vec2(-3.0, 5.0)], s);
 }

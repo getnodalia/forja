@@ -111,5 +111,9 @@ editing the parity docs.
 
 - `mv` and `cp` may be aliased interactive: use `/bin/mv -f` and `/bin/cp -f`.
 - Other apps use control ports too: pick a free one.
-- About ▸ Contributors is compiled from `contributors/contributors.json` (generated, never edit by
-  hand) and `contributors/people.toml` (only a person's own entry, added after asking them).
+
+## About window
+
+- About is the shared Nodalia page from `nodalia_theme::about` (`crates/ui-egui/src/about.rs`): icon,
+  name, version, links and a footer. It has no Contributors or Models tabs, and there are no
+  contributor or model lists compiled into the binary; the upstream authors stay credited in `NOTICE`.
