@@ -24,12 +24,11 @@ the interface uses Nodalia Design throughout.
 |---|---|---|---|
 | craft-common-actions `release.yml`, `refresh-contributors.yml`, `resolve-version`, `draft-release` | `.github/workflows/release.yml` (a push to `release`) | `release-auto.yml`: Foundation's `release-tag`, Forja's `release-linux`, `macos` and `release-windows`, then `release-publish` | its first release; then remove `release.yml` |
 | craft-common-actions `windows-arm64.yml` | `.github/workflows/windows-arm64.yml` | a Foundation workflow | writing it |
-| Weekly sync from the upstream project | `.github/workflows/upstream-sync.yml` | none: intended, renames upstream names | — |
 
 ## Technical debt
 
-- Internal names inherited from upstream still appear in some crates and docs; the upstream sync
-  renames them as it merges.
+- Internal names inherited from upstream may still appear in some crates and docs; rename them
+  when touched.
 - SonarCloud analysis was removed with this migration; CodeQL and Scorecard remain.
 
 ## Reusable Nodalia components

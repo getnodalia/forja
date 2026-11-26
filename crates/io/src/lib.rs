@@ -68,9 +68,9 @@ fn forja_dwg_message(message: &str) -> String {
         .replace("types this bridge can't preserve", "types Forja doesn't keep")
         .replace("this bridge writes", "Forja writes")
         .replace("accepted for DWG conversion", "Forja converts to DWG")
-        // The shared reader's wording, put in Forja's. rebrand: keep
-        .replace(" CADCraft reads (set CADCRAFT_MAX_DXF_TAGS ", " Forja reads (set FORJA_MAX_DXF_TAGS ") // rebrand: keep
-        .replace(" Forja reads (set CADCRAFT_MAX_DXF_TAGS ", " Forja reads (set FORJA_MAX_DXF_TAGS ") // rebrand: keep
+        // The shared reader's wording, put in Forja's
+        .replace(" CADCraft reads (set CADCRAFT_MAX_DXF_TAGS ", " Forja reads (set FORJA_MAX_DXF_TAGS ")
+        .replace(" Forja reads (set CADCRAFT_MAX_DXF_TAGS ", " Forja reads (set FORJA_MAX_DXF_TAGS ")
 }
 
 /// The variable that overrides how many DXF group codes Forja reads from one file. The shared
