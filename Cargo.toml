@@ -33,7 +33,8 @@ forja-mcp = { path = "crates/mcp" }
 nodalia-mcp = { git = "https://github.com/getnodalia/foundation", rev = "86af25ee14d6fd9189c3623a188532968e469eb5" }
 nodalia-jsonrpc = { git = "https://github.com/getnodalia/foundation", rev = "86af25ee14d6fd9189c3623a188532968e469eb5" }
 # SVG/SVGZ import and export geometry (nodalia-libs#778).
-nodalia-svg = { git = "https://github.com/getnodalia/foundation", rev = "e6d43b3f7eccbf590256d9c5112733aa51edd658" }
+# default-features = false: the geometry reader (`paths`) pulls in Pluma-class path crates and Forja does not use it.
+nodalia-svg = { git = "https://github.com/getnodalia/foundation", rev = "91ab24c9fe626e44641f8ba42b2557728b114446", default-features = false }
 # Which paths stored in a drawing (xrefs, data links) may be opened.
 nodalia-docpath = { version = "0.1.0", git = "https://github.com/getnodalia/foundation", rev = "65a463571dd29bc67bee88b9c096b96888c2c3c3" }
 # PDF writing (krilla) for plots, and reading them back in tests. The root patches below pin
@@ -133,7 +134,3 @@ egui_kittest = { git = "https://github.com/getnodalia/foundation", rev = "6d518f
 eframe = { git = "https://github.com/getnodalia/foundation", rev = "6d518fc799681571963842f95b55a6b68431b15a" }
 winit = { git = "https://github.com/getnodalia/foundation", rev = "a517b3846ee8457d84ee4975110bfda6797c44dc" }
 
-# nodalia-svg's path geometry, served from Nodalia's own copy of the same commit.
-[patch."https://github.com/getnodalia/foundation"]
-vectorcraft-geom = { git = "https://github.com/getnodalia/pluma", rev = "6b3a6b8788ebcb420d69449199cbdf323888d27e" }
-vectorcraft-pathops = { git = "https://github.com/getnodalia/pluma", rev = "6b3a6b8788ebcb420d69449199cbdf323888d27e" }
