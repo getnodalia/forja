@@ -20,10 +20,9 @@
   <launchable type="desktop-id">dev.danielmiguelt.Forja.desktop</launchable>
   <icon type="stock">dev.danielmiguelt.Forja</icon>
   <!-- Only url types known to appstream 0.15 (Ubuntu 22.04, where CI validates): no vcs-browser. -->
-  <url type="homepage">https://getartcraft.com/apps/forja</url>
-  <url type="bugtracker">https://github.com/danielmigueltejedor/forja/issues</url>
-  <url type="help">https://github.com/danielmigueltejedor/forja</url>
-  <url type="contact">https://discord.gg/artcraft</url>
+  <url type="homepage">https://getnodalia.com</url>
+  <url type="bugtracker">https://github.com/getnodalia/forja/issues</url>
+  <url type="help">https://github.com/getnodalia/forja</url>
   <categories>
     <category>Graphics</category>
     <category>Engineering</category>
@@ -37,7 +36,7 @@
   <screenshots>
     <screenshot type="default">
       <caption>A mechanical part drawing with dimensions, hatching and layers</caption>
-      <image>https://raw.githubusercontent.com/danielmigueltejedor/forja/main/docs/images/ui-bracket.png</image>
+      <image>https://raw.githubusercontent.com/getnodalia/forja/main/docs/images/ui-bracket.png</image>
     </screenshot>
   </screenshots>
   <branding>
