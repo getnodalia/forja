@@ -102,7 +102,6 @@ fn missing_marked_ui_literals(language: &str) -> BTreeSet<String> {
         "canvas",
         "chrome",
         "cmdline",
-        "credits",
         "dialogs",
         "hatchdlg",
         "aliasdlg",
@@ -480,7 +479,7 @@ fn dialogs_render_in_every_language_and_keep_their_source_ids() {
     for language in translated() {
         for (dialog, heading) in [
             ("dsettings", "Drafting Settings"),
-            ("about", "Website"),
+            ("about", "Forja page"),
             ("commands", "Command Reference"),
             ("layers", "Layer Properties Manager"),
             ("qselect", "Quick Select"),

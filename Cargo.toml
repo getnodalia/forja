@@ -4,7 +4,7 @@ members = ["crates/*", "apps/*", "xtask"]
 # default-members
 
 [workspace.package]
-version = "0.3.0"
+version = "0.3.1"
 edition = "2024"
 license = "MIT OR Apache-2.0"
 rust-version = "1.95"
@@ -77,9 +77,7 @@ nodalia-window = { version = "0.1.0", git = "https://github.com/getnodalia/found
 egui = { version = "0.37", default-features = false, features = ["default_fonts", "monochrome_emoji_fonts"] }
 # The Nodalia Design Language: tokens and the egui style built from them.
 # Nodalia Design Language: tokens, icons and the engineering suite's shared parts and IBM Plex faces.
-nodalia-theme = { git = "https://github.com/getnodalia/nodalia-design", rev = "2df3ef50e1f694376e32da2b2d70a8811bbc4515", features = ["engineering"] }
-# Resizable table columns (About ▸ Contributors / Models); no image loaders.
-egui_extras = { version = "0.37", default-features = false }
+nodalia-theme = { git = "https://github.com/getnodalia/nodalia-design", rev = "a44fa27219fe36cbc58228858084b6ad4007f6ef", features = ["engineering"] }
 egui_kittest = "0.37"
 eframe = { version = "0.37", default-features = false }
 egui-wgpu = "0.37"
@@ -131,7 +129,6 @@ egui = { git = "https://github.com/getnodalia/foundation", rev = "6d518fc7996815
 egui-winit = { git = "https://github.com/getnodalia/foundation", rev = "6d518fc799681571963842f95b55a6b68431b15a" }
 egui-wgpu = { git = "https://github.com/getnodalia/foundation", rev = "6d518fc799681571963842f95b55a6b68431b15a" }
 egui_glow = { git = "https://github.com/getnodalia/foundation", rev = "6d518fc799681571963842f95b55a6b68431b15a" }
-egui_extras = { git = "https://github.com/getnodalia/foundation", rev = "6d518fc799681571963842f95b55a6b68431b15a" }
 egui_kittest = { git = "https://github.com/getnodalia/foundation", rev = "6d518fc799681571963842f95b55a6b68431b15a" }
 eframe = { git = "https://github.com/getnodalia/foundation", rev = "6d518fc799681571963842f95b55a6b68431b15a" }
 winit = { git = "https://github.com/getnodalia/foundation", rev = "a517b3846ee8457d84ee4975110bfda6797c44dc" }

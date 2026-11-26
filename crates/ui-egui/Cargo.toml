@@ -22,7 +22,6 @@ forja-fonts = { workspace = true }
 nodalia-window = { workspace = true }
 egui = { workspace = true }
 nodalia-theme = { workspace = true }
-egui_extras = { workspace = true }
 # GPU canvas paint callback (same egui-wgpu/wgpu eframe uses with its "wgpu" feature).
 egui-wgpu = { workspace = true }
 serde = { workspace = true }
@@ -44,6 +43,3 @@ egui_kittest = { workspace = true, features = ["wgpu", "snapshot"] }
 # Validates the canvas WGSL and its GLSL ES 3.0 (WebGL2) translation in tests (same naga wgpu uses).
 naga = { version = "30", features = ["wgsl-in", "glsl-out"] }
 
-[build-dependencies]
-serde_json = { workspace = true }
-toml = "1"

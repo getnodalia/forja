@@ -27,7 +27,6 @@ pub mod closing;
 pub mod cmdline;
 pub mod context_menu;
 pub mod control;
-pub mod credits;
 pub mod dialogs;
 pub mod docking;
 pub mod fault;
