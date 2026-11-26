@@ -118,6 +118,37 @@ fn toggle(ui: &mut Ui, kind: Kind, on: bool, text: WidgetText) -> Response {
     response
 }
 
+/// An NDL slider: a visible rail (the theme's inset control colour is nearly the dialog colour,
+/// so egui's default rail vanishes), an accent fill up to the handle and an accent-ringed handle.
+/// The value is shown by the caller, so the slider never draws its own.
+pub fn slider<N: egui::emath::Numeric>(ui: &mut Ui, value: &mut N, range: std::ops::RangeInclusive<N>, integer: bool) -> Response {
+    ui.scope(|ui| {
+        let p = ndl_palette();
+        let accent = ndl_color(p.accent_default);
+        let rail = ndl_color(p.border_default);
+        let v = ui.visuals_mut();
+        v.slider_trailing_fill = true;
+        v.selection.bg_fill = accent;
+        for (w, fill) in [
+            (&mut v.widgets.inactive, rail),
+            (&mut v.widgets.hovered, ndl_color(p.border_strong)),
+            (&mut v.widgets.active, ndl_color(p.border_strong)),
+        ] {
+            w.bg_fill = fill;
+            w.weak_bg_fill = fill;
+            // The accent fill overhangs the rail by this radius, so a pill radius would paint the whole rail.
+            w.corner_radius = egui::CornerRadius::same(3);
+            w.fg_stroke = Stroke::new(2.0, accent);
+        }
+        let mut slider = egui::Slider::new(value, range).show_value(false);
+        if integer {
+            slider = slider.integer();
+        }
+        ui.add(slider)
+    })
+    .inner
+}
+
 /// A combo box with NDL's chevron (nodalia_ui's combo with its triangle replaced).
 pub fn combo(id_salt: impl egui::AsIdSalt) -> nodalia_ui::ComboBox<'static> {
     nodalia_ui::ComboBox::from_id_salt(id_salt).icon(chevron_icon)

@@ -192,7 +192,7 @@ fn display(app: &CadApp, ui: &mut egui::Ui, changes: &mut Map<String, Value>) {
         ui.horizontal(|ui| {
             let mut size = app.session.settings.cursorsize;
             // The slider's own value box is a separate spin button: name both halves with the row label.
-            let slider = ui.add(egui::Slider::new(&mut size, 1.0..=100.0).integer().show_value(false)).labelled_by(crosshair_caption.id);
+            let slider = crate::ndl_widgets::slider(ui, &mut size, 1.0..=100.0, true).labelled_by(crosshair_caption.id);
             let field = ui.add(egui::DragValue::new(&mut size).range(1.0..=100.0).max_decimals(0).suffix(" %")).labelled_by(crosshair_caption.id);
             if slider.changed() || field.changed() {
                 changes.insert("CURSORSIZE".into(), json!(size));
@@ -322,7 +322,7 @@ fn drafting(app: &CadApp, ui: &mut egui::Ui, changes: &mut Map<String, Value>, s
         let marker_caption = ui.label(crate::tl!("Object snap marker size"));
         ui.horizontal(|ui| {
             let mut size = app.options.snap_marker_size;
-            let slider = ui.add(egui::Slider::new(&mut size, super::SNAP_MARKER_SIZES).integer().show_value(false)).labelled_by(marker_caption.id);
+            let slider = crate::ndl_widgets::slider(ui, &mut size, super::SNAP_MARKER_SIZES, true).labelled_by(marker_caption.id);
             let field = ui.add(egui::DragValue::new(&mut size).range(super::SNAP_MARKER_SIZES).max_decimals(0)).labelled_by(marker_caption.id);
             if slider.changed() || field.changed() {
                 changes.insert("snapMarkerSize".into(), json!(size));
@@ -334,7 +334,7 @@ fn drafting(app: &CadApp, ui: &mut egui::Ui, changes: &mut Map<String, Value>, s
         let aperture_caption = ui.label(crate::tl!("Object snap aperture"));
         ui.horizontal(|ui| {
             let mut aperture = app.session.settings.aperture;
-            let slider = ui.add(egui::Slider::new(&mut aperture, 1.0..=50.0).integer().show_value(false)).labelled_by(aperture_caption.id);
+            let slider = crate::ndl_widgets::slider(ui, &mut aperture, 1.0..=50.0, true).labelled_by(aperture_caption.id);
             let field = ui.add(egui::DragValue::new(&mut aperture).range(1.0..=50.0).max_decimals(0).suffix(" px")).labelled_by(aperture_caption.id);
             if slider.changed() || field.changed() {
                 changes.insert("APERTURE".into(), json!(aperture));
@@ -364,7 +364,7 @@ fn selection(app: &CadApp, ui: &mut egui::Ui, changes: &mut Map<String, Value>) 
         let pickbox_caption = heading(left, crate::tl!("Pickbox size"));
         left.horizontal(|ui| {
             let mut pickbox = st.pickbox;
-            let slider = ui.add(egui::Slider::new(&mut pickbox, 0.0..=50.0).integer().show_value(false)).labelled_by(pickbox_caption.id);
+            let slider = crate::ndl_widgets::slider(ui, &mut pickbox, 0.0..=50.0, true).labelled_by(pickbox_caption.id);
             let field = ui.add(egui::DragValue::new(&mut pickbox).range(0.0..=50.0).max_decimals(0).suffix(" px")).labelled_by(pickbox_caption.id);
             if slider.changed() || field.changed() {
                 changes.insert("PICKBOX".into(), json!(pickbox));
@@ -412,7 +412,7 @@ fn selection(app: &CadApp, ui: &mut egui::Ui, changes: &mut Map<String, Value>) 
         let grip_caption = heading(right, crate::tl!("Grip size"));
         right.horizontal(|ui| {
             let mut grip = st.gripsize;
-            let slider = ui.add(egui::Slider::new(&mut grip, 1.0..=20.0).integer().show_value(false)).labelled_by(grip_caption.id);
+            let slider = crate::ndl_widgets::slider(ui, &mut grip, 1.0..=20.0, true).labelled_by(grip_caption.id);
             let field = ui.add(egui::DragValue::new(&mut grip).range(1.0..=20.0).max_decimals(0).suffix(" px")).labelled_by(grip_caption.id);
             if slider.changed() || field.changed() {
                 changes.insert("GRIPSIZE".into(), json!(grip));
@@ -487,7 +487,7 @@ fn visual_effects(ctx: &egui::Context, st: &forja_engine::Settings, open: &mut b
                     let opacity_caption = ui.label(crate::tl!("Selection area opacity:"));
                     ui.horizontal(|ui| {
                         let mut opacity = st.selectionareaopacity;
-                        let slider = ui.add(egui::Slider::new(&mut opacity, 0..=100).show_value(false)).labelled_by(opacity_caption.id);
+                        let slider = crate::ndl_widgets::slider(ui, &mut opacity, 0..=100, false).labelled_by(opacity_caption.id);
                         let field = ui.add(egui::DragValue::new(&mut opacity).range(0..=100)).labelled_by(opacity_caption.id);
                         if slider.changed() || field.changed() {
                             changes.insert("SELECTIONAREAOPACITY".into(), json!(opacity));

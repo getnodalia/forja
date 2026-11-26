@@ -38,9 +38,6 @@ pub fn name(icon: Icon) -> (&'static str, Kind) {
         Copy => "copy",
         Rotate => "rotate",
         Erase => "delete",
-        Lock => "lock",
-        Unlock => "unlock",
-        Sun => "sun",
         Gear => "settings",
         ChevronDown => "chevron-down",
         ChevronUp => "chevron-up",
@@ -174,77 +171,55 @@ pub fn name(icon: Icon) -> (&'static str, Kind) {
         MoveBottom => "move-bottom",
         TextStyle => "text-style",
         DimStyle => "dim-style",
+        // The state of a layer or a viewport reads next to the tools, so it is drawn like them.
+        Lock => "lock",
+        Unlock => "unlock",
+        Sun => "sun",
+        // The 3D modelling tools: drawn in volume wherever there is room (`volumetric_name`),
+        // with the nearest flat icon as the small fallback.
+        Box => "cube",
+        Cylinder => "cylinder",
+        Cone => "triangle",
+        Sphere => "sphere",
+        Torus => "donut",
+        Pyramid => "triangle",
+        Extrude => "extrude",
+        Revolve => "revolve",
+        Sweep => "spline",
+        Loft => "blend",
+        Union => "union",
+        Subtract => "subtract",
+        Intersect => "intersect",
         _ => "",
     };
     (cad, Kind::Cad)
 }
 
-/// The volumetric NDL icon for `icon`, when the set has one. Tool Sets and the quick toolbar draw
-/// these; interface, constraint and utility icons (layers, properties, snap, export...) stay flat.
+/// The volumetric NDL icon for `icon`, when it has one. Volume is for what is a solid: the 3D
+/// modelling tools (primitives, solid operations, booleans). Everything else in Forja is flat
+/// and drawn in one family, so a drafting tool never changes style with the size of its button.
 pub fn volumetric_name(icon: Icon) -> Option<&'static str> {
     use Icon::*;
     Some(match icon {
-        ArrayPolar => "pattern-circ",
-        ArrayRect => "pattern-rect",
-        Arc => "arc3",
-        AddLeader => "add-leader",
-        AlignLeaders => "align-leaders",
-        Area => "area",
-        Blocks => "blocks",
-        BlockCreate => "block-create",
-        BlockEdit => "block-edit",
-        Break => "break",
-        Chamfer => "sketch-chamfer",
-        Circle => "circle",
-        DimAligned => "dim-aligned",
-        DimAngular => "dim-angle",
-        DimArc => "dim-arc",
-        DimBaseline => "dim-baseline",
-        DimContinue => "dim-continue",
-        DimDiameter => "dim-diameter",
-        DimLinear => "dimension",
-        DimOrdinate => "dim-ordinate",
-        DimRadius => "dim-radius",
-        Distance => "distance",
-        Donut => "donut",
-        Ellipse => "ellipse",
-        Explode => "explode",
-        Extend => "extend",
-        Fillet => "sketch-fillet",
-        Gradient => "gradient",
-        Hatch => "hatch",
-        Insert => "insert",
-        Join => "join",
-        Lengthen => "lengthen",
-        Line => "line",
-        Measure => "measure",
-        MLeader => "m-leader",
-        Mirror => "mirror",
-        Move => "move",
-        MText => "m-text",
-        Offset => "offset",
-        Point => "point",
-        Polygon => "polygon",
-        Polyline => "polyline",
-        QDim => "q-dim",
-        Ray => "ray",
-        Rectangle => "rect",
-        RemoveLeader => "remove-leader",
-        Region => "region",
-        RevCloud => "rev-cloud",
-        Scale => "scale",
-        Spline => "spline",
-        Stretch => "stretch",
-        Text => "text",
-        Trim => "trim",
-        Wipeout => "wipeout",
-        XLine => "infinite",
+        Box => "box",
+        Cylinder => "cylinder",
+        Cone => "cone",
+        Pyramid => "pyramid",
+        Sphere => "sphere",
+        Torus => "torus",
+        Extrude => "extrude",
+        Revolve => "revolve",
+        Sweep => "sweep",
+        Loft => "loft",
+        Union => "combine",
+        Subtract => "cut",
+        Intersect => "intersect",
         _ => return None,
     })
 }
 
-/// The icon size from which a tool is drawn in volume.
-pub const VOLUMETRIC_FROM: f32 = 20.0;
+/// The icon size from which a 3D modelling tool is drawn in volume.
+pub const VOLUMETRIC_FROM: f32 = 18.0;
 
 /// Paint the volumetric icon of `icon` into `rect`, in Forja's light or dark roles and accent.
 /// False when there is none.
@@ -273,7 +248,14 @@ pub fn paint_volumetric(p: &Painter, rect: Rect, icon: Icon, dim: bool) -> bool 
 /// Paint `icon` into the square `rect`: in `ink`, with the accented parts of a CAD icon in
 /// `accent`. False when NDL has no such icon (nothing is painted).
 pub fn paint(p: &Painter, rect: Rect, icon: Icon, ink: Color32, accent: Color32) -> bool {
-    let (name, kind) = name(icon);
+    let (_, kind) = name(icon);
+    paint_kind(p, rect, icon, kind, ink, accent)
+}
+
+/// [`paint`] in an explicit `kind`: the Tool Sets draw every tool in the CAD style, whichever
+/// family the icon belongs to in the toolbars.
+pub fn paint_kind(p: &Painter, rect: Rect, icon: Icon, kind: Kind, ink: Color32, accent: Color32) -> bool {
+    let (name, _) = name(icon);
     let Some(def) = ndl::get(name) else {
         return false;
     };
