@@ -25,7 +25,7 @@ commands:
   ci              fmt --check, clippy -D warnings, test, i18n, assets, layers, wasm (stops at first failure)
   corpus [DIR] [--out DIR] [--keep-saved] [--same-format]
                   open -> save -> reopen every DXF/DWG of a real-file corpus (DIR, default
-                  $FORJA_CORPUS_DIR or ../cadcraft-corpus) and write report.md + report.json
+                  $FORJA_CORPUS_DIR or ../nodalia-corpus/forja) and write report.md + report.json
                   (default DIR/report); runs `forja-cli roundtrip` in release mode
   stats [--exact] count tests and lines per crate (--exact: ask the test harness via `-- --list`)
   parity          recompute the AutoCAD menu-breadth checklist in docs/parity-checklist.md
@@ -229,7 +229,7 @@ fn cmd_ci() -> Result<(), String> {
 }
 
 /// `corpus [DIR] [options]`: the round-trip report over a real-file corpus (gaps FF1, FF5). The
-/// corpus lives outside this repo (storytold/cadcraft-corpus); its files are never committed here.
+/// corpus lives outside this repo (getnodalia/nodalia-corpus, folder `forja`); its files are never committed here.
 fn cmd_corpus(args: &[&str]) -> Result<(), String> {
     // `forja-cli` runs from the repository root: relative paths are made absolute against the
     // folder `cargo xtask` was run from first, so they mean what the user typed.
@@ -256,13 +256,13 @@ fn cmd_corpus(args: &[&str]) -> Result<(), String> {
             _ => return Err("corpus takes one DIR".into()),
         }
     }
-    let dir = dir
-        .or_else(|| std::env::var("FORJA_CORPUS_DIR").ok())
-        .unwrap_or_else(|| root().parent().map(|p| p.join("cadcraft-corpus").display().to_string()).unwrap_or_else(|| "../cadcraft-corpus".into()));
+    let dir = dir.or_else(|| std::env::var("FORJA_CORPUS_DIR").ok()).unwrap_or_else(|| {
+        root().parent().map(|p| p.join("nodalia-corpus").join("forja").display().to_string()).unwrap_or_else(|| "../nodalia-corpus/forja".into())
+    });
     let dir = here.join(&dir);
     if !dir.is_dir() {
         return Err(format!(
-            "no corpus at `{}`: clone storytold/cadcraft-corpus next to this repo, set FORJA_CORPUS_DIR or pass DIR \
+            "no corpus at `{}`: clone getnodalia/nodalia-corpus next to this repo (the files are in its `forja` folder), set FORJA_CORPUS_DIR or pass DIR \
              (never commit corpus files to this repo)",
             dir.display()
         ));
