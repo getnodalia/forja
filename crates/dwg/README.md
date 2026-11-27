@@ -11,11 +11,15 @@ work in progress and **not wired into Forja yet**: the app still opens and saves
   sections, and the object map (pages, handle and offset deltas, checksums).
 - Every object's frame (size, type, handle, checksum), checked against the object map.
 - The entities **LINE, CIRCLE, ARC and POINT**, with their layer handle, colour, linetype scale,
-  invisibility and lineweight. Any other object is counted in `Drawing::skipped` by type code.
+  invisibility and lineweight.
+- **Layers** (the layer table entries): name, frozen, off, locked, frozen in new viewports, plots,
+  line weight and colour. `Drawing::layer_of` resolves an entity's layer. Names are recovered exactly
+  for UTF-8 and Latin-1 text; the code page is not applied yet.
+- Any other object is counted in `Drawing::skipped` by type code.
 
 ## What it does not read yet
 
-Layer names (LAYER table objects) and the header variables, every other entity (TEXT, MTEXT, INSERT,
+The header variables, the other tables (line types, styles, blocks), every other entity (TEXT, MTEXT, INSERT,
 LWPOLYLINE, dimensions, hatches…), blocks, R2004 and later (compressed sections, R2007, R2013/R2018),
 and writing. Until those land, nothing here is a replacement for acadrust.
 

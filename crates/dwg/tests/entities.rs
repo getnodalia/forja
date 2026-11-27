@@ -76,3 +76,56 @@ fn random_drawings_match_what_was_written() {
         assert_eq!(seen.len(), layers.len(), "seed {seed}: two layer names share a handle");
     }
 }
+
+#[test]
+fn layers_are_read_with_their_state_and_entities_resolve_to_them() {
+    for seed in [1u64, 7] {
+        let (dwg, sources) = random_dwg(seed, 200);
+        let drawing = forja_dwg::read(&dwg).unwrap();
+        assert!(drawing.damaged.is_empty(), "{:?}", drawing.damaged);
+        for (i, name) in common::LAYERS.iter().enumerate() {
+            let layer = drawing.layers.values().find(|l| l.name == *name).unwrap_or_else(|| panic!("layer {name} missing"));
+            assert_eq!(layer.color as usize, i + 1, "colour of {name}");
+            assert!(!layer.frozen && !layer.off && !layer.locked, "{name}");
+        }
+        for (e, s) in drawing.entities.iter().zip(&sources) {
+            let (Source::Line { layer, .. } | Source::Circle { layer, .. } | Source::Arc { layer, .. } | Source::Point { layer, .. }) = s;
+            assert_eq!(drawing.layer_of(e).map(|l| l.name.as_str()), Some(*layer), "seed {seed}");
+        }
+    }
+}
+
+#[test]
+fn layer_flags_are_read() {
+    let mut s = String::new();
+    let mut g = |c: i32, v: &str| s.push_str(&format!("{c:>3}\n{v}\n"));
+    g(0, "SECTION");
+    g(2, "HEADER");
+    g(9, "$ACADVER");
+    g(1, "AC1015");
+    g(0, "ENDSEC");
+    g(0, "SECTION");
+    g(2, "TABLES");
+    g(0, "TABLE");
+    g(2, "LAYER");
+    g(70, "5");
+    for (name, flags, color) in [("0", "0", "7"), ("Frozen", "1", "1"), ("Locked", "4", "2"), ("Hidden", "0", "-3"), ("Both", "5", "-250")] {
+        g(0, "LAYER");
+        g(2, name);
+        g(70, flags);
+        g(62, color);
+        g(6, "CONTINUOUS");
+    }
+    g(0, "ENDTAB");
+    g(0, "ENDSEC");
+    g(0, "EOF");
+    let dwg = nodalia_dwg::dxf_to_dwg_as(s.as_bytes(), "AC1015").unwrap();
+    let drawing = forja_dwg::read(&dwg).unwrap();
+    let by = |n: &str| drawing.layers.values().find(|l| l.name == n).unwrap_or_else(|| panic!("{n} missing"));
+    let state = |n: &str| (by(n).frozen, by(n).off, by(n).locked, by(n).color);
+    assert_eq!(state("0"), (false, false, false, 7));
+    assert_eq!(state("Frozen"), (true, false, false, 1));
+    assert_eq!(state("Locked"), (false, false, true, 2));
+    assert_eq!(state("Hidden"), (false, true, false, 3));
+    assert_eq!(state("Both"), (true, true, true, 250));
+}

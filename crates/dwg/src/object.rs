@@ -174,11 +174,46 @@ pub enum Entity {
     Point { common: Common, position: [f64; 3], thickness: f64, extrusion: [f64; 3], x_axis_angle: f64 },
 }
 
+/// A layer (an entry of the layer table).
+#[derive(Clone, Debug, PartialEq)]
+pub struct Layer {
+    /// The layer's handle: what an entity's [`Common::layer`] refers to.
+    pub handle: u64,
+    /// The layer's name. The file stores it in its code page; only UTF-8 and Latin-1 text is
+    /// recovered exactly so far.
+    pub name: String,
+    /// True when the layer is frozen.
+    pub frozen: bool,
+    /// True when the layer is turned off.
+    pub off: bool,
+    /// True when the layer is frozen in new viewports.
+    pub frozen_in_new: bool,
+    /// True when the layer is locked.
+    pub locked: bool,
+    /// True when the layer plots.
+    pub plot: bool,
+    /// Line weight code (31 = default).
+    pub lineweight: u8,
+    /// Colour index.
+    pub color: u16,
+}
+
+impl Entity {
+    /// The properties every entity has.
+    pub fn common(&self) -> &Common {
+        match self {
+            Entity::Line { common, .. } | Entity::Circle { common, .. } | Entity::Arc { common, .. } | Entity::Point { common, .. } => common,
+        }
+    }
+}
+
 /// What reading one object gave.
 #[derive(Clone, Debug, PartialEq)]
 pub enum Decoded {
     /// A supported entity.
     Entity(Entity),
+    /// A layer table entry.
+    Layer(Layer),
     /// An entity or object this reader does not decode yet (its type code).
     Skipped(u16),
 }
@@ -267,6 +302,9 @@ fn read_layer(bits: &mut Bits<'_>, h: &Header, p: &Prefix) -> Result<Option<u64>
 pub fn decode(data: &[u8], at: ObjectRef, _classes: &[Class]) -> Result<Decoded> {
     let body = body(data, at)?;
     let (h, mut bits) = header(body, at.handle)?;
+    if h.code == 51 {
+        return decode_layer(&h, bits).map(Decoded::Layer);
+    }
     if !matches!(h.code, 17 | 18 | 19 | 27) {
         return Ok(Decoded::Skipped(h.code));
     }
@@ -311,6 +349,37 @@ pub fn decode(data: &[u8], at: ObjectRef, _classes: &[Class]) -> Result<Decoded>
         }
         Kind::Point { position, thickness, extrusion, x_axis_angle } => Entity::Point { common, position, thickness, extrusion, x_axis_angle },
     }))
+}
+
+/// Decode a LAYER object: the common object data, the name, then a packed flags short (bit 0
+/// frozen, 1 off, 2 frozen in new viewports, 3 locked, 4 plots, 5-9 line weight) and the colour.
+fn decode_layer(h: &Header, mut bits: Bits<'_>) -> Result<Layer> {
+    skip_extended_data(&mut bits)?;
+    let reactors = bits.bl()?;
+    if reactors > MAX_LISTED {
+        return Err(Error::TooLarge("reactor list"));
+    }
+    let raw = bits.text()?;
+    let name = match String::from_utf8(raw) {
+        Ok(s) => s,
+        Err(e) => e.into_bytes().into_iter().map(char::from).collect(),
+    };
+    bits.bit()?; // the "64" flag: set when something refers to the layer
+    bits.bs()?; // external reference index
+    bits.bit()?; // depends on an external reference
+    let flags = bits.bs()?;
+    let color = bits.bs()?;
+    Ok(Layer {
+        handle: h.handle,
+        name,
+        frozen: flags & 1 != 0,
+        off: flags & 2 != 0,
+        frozen_in_new: flags & 4 != 0,
+        locked: flags & 8 != 0,
+        plot: flags & 16 != 0,
+        lineweight: ((flags >> 5) & 0x1F) as u8,
+        color,
+    })
 }
 
 enum Kind {
