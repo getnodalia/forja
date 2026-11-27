@@ -2,7 +2,7 @@
 //! Forja's own DWG reader, written from the Open Design Alliance's public specification.
 //!
 //! It is a work in progress: it reads the 2000 format (`AC1015`) container, classes, object map
-//! and a first set of entities. Everything else (other versions, most entity types, writing) still
+//! and a first set of entities and layers. Everything else (other versions, most entity types, writing) still
 //! goes through the bridge in `nodalia-dwg`. See the crate README for what is and is not covered.
 #![deny(clippy::unwrap_used, clippy::expect_used, clippy::panic, clippy::unimplemented, clippy::todo, clippy::unreachable)]
 #![forbid(unsafe_code)]
@@ -17,7 +17,7 @@ pub use error::{Error, Result};
 
 use std::collections::BTreeMap;
 
-use object::{Decoded, Entity};
+use object::{Decoded, Entity, Layer};
 
 /// The version code this reader decodes.
 pub const SUPPORTED_VERSION: &str = "AC1015";
@@ -37,10 +37,19 @@ pub struct Drawing {
     pub classes: Vec<file::Class>,
     /// The entities this reader decodes, in object-map order.
     pub entities: Vec<Entity>,
+    /// The layers, by handle.
+    pub layers: BTreeMap<u64, Layer>,
     /// Objects of types not decoded yet, counted by type code.
     pub skipped: BTreeMap<u16, usize>,
     /// Objects that were present but damaged: their handle and the reason.
     pub damaged: Vec<(u64, Error)>,
+}
+
+impl Drawing {
+    /// The layer an entity is on, if its layer handle resolves to a decoded layer.
+    pub fn layer_of(&self, entity: &Entity) -> Option<&Layer> {
+        self.layers.get(&entity.common().layer?)
+    }
 }
 
 /// Read a drawing from DWG bytes. Only the 2000 format is decoded so far; any other version fails
@@ -55,6 +64,9 @@ pub fn read(bytes: &[u8]) -> Result<Drawing> {
     for at in &container.objects {
         match object::decode(bytes, *at, &container.classes) {
             Ok(Decoded::Entity(e)) => drawing.entities.push(e),
+            Ok(Decoded::Layer(l)) => {
+                drawing.layers.insert(l.handle, l);
+            }
             Ok(Decoded::Skipped(code)) => *drawing.skipped.entry(code).or_insert(0) += 1,
             Err(e) => drawing.damaged.push((at.handle, e)),
         }
