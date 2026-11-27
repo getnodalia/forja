@@ -2,7 +2,7 @@
 //! Forja's own DWG reader, written from the Open Design Alliance's public specification.
 //!
 //! It is a work in progress: it reads the 2000 format (`AC1015`) container, classes, object map
-//! and a first set of entities and layers. Everything else (other versions, most entity types, writing) still
+//! and a first set of entities, layers and blocks. Everything else (other versions, most entity types, writing) still
 //! goes through the bridge in `nodalia-dwg`. See the crate README for what is and is not covered.
 #![deny(clippy::unwrap_used, clippy::expect_used, clippy::panic, clippy::unimplemented, clippy::todo, clippy::unreachable)]
 #![forbid(unsafe_code)]
@@ -17,7 +17,7 @@ pub use error::{Error, Result};
 
 use std::collections::BTreeMap;
 
-use object::{Decoded, Entity, Layer};
+use object::{Block, Decoded, Entity, Insert, Layer};
 
 /// The version code this reader decodes.
 pub const SUPPORTED_VERSION: &str = "AC1015";
@@ -39,6 +39,8 @@ pub struct Drawing {
     pub entities: Vec<Entity>,
     /// The layers, by handle.
     pub layers: BTreeMap<u64, Layer>,
+    /// The block definitions, by block header handle.
+    pub blocks: BTreeMap<u64, Block>,
     /// Objects of types not decoded yet, counted by type code.
     pub skipped: BTreeMap<u16, usize>,
     /// Objects that were present but damaged: their handle and the reason.
@@ -49,6 +51,16 @@ impl Drawing {
     /// The layer an entity is on, if its layer handle resolves to a decoded layer.
     pub fn layer_of(&self, entity: &Entity) -> Option<&Layer> {
         self.layers.get(&entity.common().layer?)
+    }
+
+    /// The block definition an insert refers to, if its handle resolves to a decoded block.
+    pub fn block_of(&self, insert: &Insert) -> Option<&Block> {
+        self.blocks.get(&insert.block?)
+    }
+
+    /// The entities inside the block definition with this header handle (not model space).
+    pub fn entities_of_block(&self, block: u64) -> impl Iterator<Item = &Entity> {
+        self.entities.iter().filter(move |e| e.common().owner == Some(block))
     }
 }
 
@@ -66,6 +78,9 @@ pub fn read(bytes: &[u8]) -> Result<Drawing> {
             Ok(Decoded::Entity(e)) => drawing.entities.push(e),
             Ok(Decoded::Layer(l)) => {
                 drawing.layers.insert(l.handle, l);
+            }
+            Ok(Decoded::Block(b)) => {
+                drawing.blocks.insert(b.handle, b);
             }
             Ok(Decoded::Skipped(code)) => *drawing.skipped.entry(code).or_insert(0) += 1,
             Err(e) => drawing.damaged.push((at.handle, e)),

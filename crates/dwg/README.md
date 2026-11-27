@@ -15,12 +15,17 @@ work in progress and **not wired into Forja yet**: the app still opens and saves
 - **Layers** (the layer table entries): name, frozen, off, locked, frozen in new viewports, plots,
   line weight and colour. `Drawing::layer_of` resolves an entity's layer. Names are recovered exactly
   for UTF-8 and Latin-1 text; the code page is not applied yet.
+- **TEXT** (insertion and alignment points, height, rotation, oblique angle, width factor, text,
+  generation and alignment codes, style handle), **LWPOLYLINE** (vertices, bulges, widths, closed,
+  constant width, elevation) and **INSERT** (position, scale, rotation, block handle).
+- **Blocks** (the block table entries): name, anonymous, external reference. `Drawing::block_of`
+  resolves an insert to its definition and `Drawing::entities_of_block` lists what a block holds.
 - Any other object is counted in `Drawing::skipped` by type code.
 
 ## What it does not read yet
 
-The header variables, the other tables (line types, styles, blocks), every other entity (TEXT, MTEXT, INSERT,
-LWPOLYLINE, dimensions, hatches…), blocks, R2004 and later (compressed sections, R2007, R2013/R2018),
+The header variables, the other tables (line types, styles), every other entity (MTEXT, POLYLINE, SPLINE,
+ELLIPSE, dimensions, hatches, attributes…), R2004 and later (compressed sections, R2007, R2013/R2018),
 and writing. Until those land, nothing here is a replacement for acadrust.
 
 ## Never crash
@@ -35,6 +40,8 @@ rest of the drawing is still read; a damaged header or object map is an error.
 - `tests/entities.rs` writes drawings with the `nodalia-dwg` bridge (R2000) and checks that this
   reader returns exactly the same entities: a small sample and 1,600 random entities over four seeds.
   The bridge is a test oracle only, a dev-dependency on native targets.
+- `tests/more_entities.rs`: TEXT, 60 random LWPOLYLINEs, INSERTs with a block definition, all compared
+  with what was written, plus 4,000 mutations of a file that holds them.
 - `tests/hostile.rs`: unsupported versions, every truncation, 6,000 random mutations, a damaged
   object and a damaged header.
 
