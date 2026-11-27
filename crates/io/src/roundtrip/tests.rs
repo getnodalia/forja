@@ -485,7 +485,7 @@ fn corpus_files_walks_folders_and_skips_the_report() {
 }
 
 /// The real-file corpus: set `FORJA_CORPUS_DIR` to a folder of DXF/DWG files (a checkout of
-/// `storytold/cadcraft-corpus`) to open, save and reopen each one and write `report.md` and
+/// `getnodalia/nodalia-corpus`'s `forja` folder) to open, save and reopen each one and write `report.md` and
 /// `report.json` to `FORJA_CORPUS_REPORT` (default: the corpus folder's `report`). Skipped
 /// when the variable is unset, so CI passes without the corpus. It reports, it doesn't fail on
 /// differences; set `FORJA_CORPUS_STRICT=1` to fail when a file doesn't open, save or reopen,
