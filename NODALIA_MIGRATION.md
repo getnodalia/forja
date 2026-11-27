@@ -7,23 +7,20 @@ getnodalia/foundation) and this pull request (CI on Foundation's reusable workfl
 ## Current state
 
 Pure-Rust CAD app (egui), MIT OR Apache-2.0. Cargo git dependencies all come from
-getnodalia/foundation; the "Git dependencies come from storytold" job (name kept for branch
-protection) rejects any other owner. The gate, ast-grep, FreeBSD, Nix, packaging lint and AGENTS.md
+getnodalia/foundation; the "Git dependencies come from getnodalia" job rejects any other owner. The gate, ast-grep, FreeBSD, Nix, packaging lint and AGENTS.md
 checks call getnodalia/foundation workflows pinned by commit. Releases go through
 `release-auto.yml` (Foundation's `release-tag`/`release-publish`), and the macOS DMG is built by
 `release-macos.yml` on a standard runner.
 
 ## Desired state
 
-No workflow, dependency or document depends on storytold; Forja has its own release workflow;
+No workflow, dependency or document depends on a repository outside Nodalia; Forja has its own release workflow;
 the interface uses Nodalia Design throughout.
 
 ## Inherited dependencies still pending
 
 | Dependency | Where | Replacement | Blocked on |
 |---|---|---|---|
-| craft-common-actions `release.yml`, `refresh-contributors.yml`, `resolve-version`, `draft-release` | `.github/workflows/release.yml` (a push to `release`) | `release-auto.yml`: Foundation's `release-tag`, Forja's `release-linux`, `macos` and `release-windows`, then `release-publish` | its first release; then remove `release.yml` |
-| craft-common-actions `windows-arm64.yml` | `.github/workflows/windows-arm64.yml` | a Foundation workflow | writing it |
 
 ## Technical debt
 

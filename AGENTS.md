@@ -80,7 +80,7 @@ when done.
   own (`crates/doc/src/library.rs`), and the drafting font is ours (`crates/fonts/src/stroke.rs`).
   Every asset file has a row in `ATTRIBUTION.md` (`cargo xtask assets`).
 - **Dependencies.** Git dependencies come only from getnodalia (CI job "Git dependencies come from
-  storytold", whose name is kept for branch protection). Licences stay inside Foundation's
+  getnodalia"). Licences stay inside Foundation's
   allowlist.
 - **Rust only, and never break wasm** (`cargo xtask wasm`).
 - There is no upstream sync: Forja is its own app, and the origin of its code base is credited in

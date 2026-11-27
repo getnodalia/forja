@@ -2,7 +2,7 @@
 
 `forja-cli` is headless Forja: it reads, converts and exports drawings, runs scripts and
 commands, prints the command catalog and serves MCP. It follows
-[RFC-0012: Command-line conventions](https://github.com/storytold/craft-contrib/pull/18).
+RFC-0012: Command-line conventions.
 
 `forja-cli --help` and `forja-cli help <subcommand>` (or `<subcommand> --help`) are the
 reference for every subcommand, flag and value; this page doesn't repeat them. Examples are in the
