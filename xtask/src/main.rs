@@ -256,9 +256,9 @@ fn cmd_corpus(args: &[&str]) -> Result<(), String> {
             _ => return Err("corpus takes one DIR".into()),
         }
     }
-    let dir = dir
-        .or_else(|| std::env::var("FORJA_CORPUS_DIR").ok())
-        .unwrap_or_else(|| root().parent().map(|p| p.join("nodalia-corpus").join("forja").display().to_string()).unwrap_or_else(|| "../nodalia-corpus/forja".into()));
+    let dir = dir.or_else(|| std::env::var("FORJA_CORPUS_DIR").ok()).unwrap_or_else(|| {
+        root().parent().map(|p| p.join("nodalia-corpus").join("forja").display().to_string()).unwrap_or_else(|| "../nodalia-corpus/forja".into())
+    });
     let dir = here.join(&dir);
     if !dir.is_dir() {
         return Err(format!(
