@@ -52,7 +52,7 @@ muda = { version = "0.21", default-features = false }
 # View ▸ Accessibility ▸ Animation Effects ▸ Use System Setting: the system's Reduce motion
 # (system_animations.rs). Already in Cargo.lock through muda.
 objc2-app-kit = { version = "0.3", default-features = false, features = ["std", "NSWorkspace", "NSAccessibility"] }
-# The same winit eframe uses (the storytold fork, patched in the workspace): its opt-in that turns
+# The same winit eframe uses (the getnodalia/foundation copy, patched in the workspace): its opt-in that turns
 # AppKit's terminate (Cmd+Q, Dock Quit) into a close request, so unsaved changes are asked about.
 # `rwh_06`: the window handle a file dialog shown as a sheet attaches to (src/sheet.rs).
 winit = { version = "0.30", default-features = false, features = ["rwh_06"] }

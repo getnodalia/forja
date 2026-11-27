@@ -22,8 +22,7 @@ jobs:
     uses: getnodalia/foundation/.github/workflows/nix.yml@ec62c63fd3206e4ed729fccf18a57170f8fa5dd6 # foundation main
 
   git-sources:
-    # The check keeps its old name: branch protection may require it. Sources now come from getnodalia.
-    name: Git dependencies come from storytold
+    name: Git dependencies come from getnodalia
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
