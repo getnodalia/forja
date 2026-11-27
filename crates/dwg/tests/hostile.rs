@@ -44,12 +44,7 @@ fn mutated_files_never_panic() {
 fn a_damaged_object_is_reported_and_the_rest_still_reads() {
     let (dwg, sources) = common::random_dwg(11, 30);
     let good = read(&dwg).unwrap();
-    let first = good.entities.first().map(|e| match e {
-        forja_dwg::object::Entity::Line { common, .. }
-        | forja_dwg::object::Entity::Circle { common, .. }
-        | forja_dwg::object::Entity::Arc { common, .. }
-        | forja_dwg::object::Entity::Point { common, .. } => common.handle,
-    });
+    let first = good.entities.first().map(|e| e.common().handle);
     let handle = first.unwrap();
     let container = forja_dwg::file::Container::parse(&dwg).unwrap();
     let at = container.objects.iter().find(|o| o.handle == handle).unwrap();
