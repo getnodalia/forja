@@ -1,0 +1,15 @@
+[package]
+name = "forja-dwg"
+description = "Forja's own DWG reader: the file container, bit codes, classes, object map and entities (R2000 so far)"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[lints]
+workspace = true
+
+[dependencies]
+
+# The test oracle: files written (and read back) by the existing bridge. Not used by the reader.
+[target.'cfg(not(any(target_arch = "wasm32", all(target_os = "freebsd", target_arch = "aarch64"))))'.dev-dependencies]
+nodalia-dwg = { workspace = true }
