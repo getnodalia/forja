@@ -1616,6 +1616,13 @@ dependencies = [
 ]
 
 [[package]]
+name = "forja-dwg"
+version = "0.3.1"
+dependencies = [
+ "nodalia-dwg",
+]
+
+[[package]]
 name = "forja-engine"
 version = "0.3.1"
 dependencies = [
